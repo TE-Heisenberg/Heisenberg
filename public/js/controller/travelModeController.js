@@ -1,11 +1,90 @@
 angular.module("app")
     .controller('travelModeController', function ($rootScope,$timeout, $q, $scope) {
-      
+    $rootScope.currentEdgeIndex=0;
+    $rootScope.edge =
+          [
+              {
+                  mode: 'Flight',
+                  date: '',
+                  preference: 'Bla',
+                  startNode: 0,
+                  endNode: 1
+              }
+            ];
+
+      $rootScope.node = [
+          {
+
+              city: {"value":"california","display":"California"},
+              accommodation: [
+                  {
+                      rootInfo: [],
+                      address: "",
+                      expense: {
+                          value: 0,
+                          currency: ""
+                      },
+                      name: "",
+                      checkinDate: "",
+                      checkoutDate: "",
+                      checkinTime: "",
+                      area: "",
+                      options: {}
+
+                  }
+              ],
+              localTravel: [
+                  {
+                      pickupPoint: "",
+                      dropPoint: "",
+                      date: "",
+                      time: "",
+                      companyName: "",
+                      options: {}
+                  }
+              ]
+
+          },
+          {
+
+              city: {"value":"california","display":"California"},
+              accommodation: [
+                  {
+                      rootInfo: [],
+                      address: "",
+                      expense: {
+                          value: 0,
+                          currency: ""
+                      },
+                      name: "",
+                      checkinDate: "",
+                      checkoutDate: "",
+                      checkinTime: "",
+                      area: "",
+                      options: {}
+
+                  }
+              ],
+              localTravel: [
+                  {
+                      pickupPoint: "",
+                      dropPoint: "",
+                      date: "",
+                      time: "",
+                      companyName: "",
+                      options: {}
+                  }
+              ]
+
+          }
+
+      ];
+
         // For AutoComplete
         var self = this;
-        $scope.source = "Alabama";
-        $scope.destination = "California";
-        $scope.selectedMode='Flight';
+        $rootScope.source = "Alabama";
+        $rootScope.destination = "California";
+        $rootScope.selectedMode='Flight';
         // list of `state` value/display objects
         self.states = loadAll();
         self.querySearch = querySearch;
@@ -80,11 +159,14 @@ angular.module("app")
         $scope.flightFilters = ['Economy', 'Business'];
         $scope.trainFilters = ['3A', '2A', 'SL'];
         $scope.busFilters = ['Sleeper', 'Semi Sleeper', "Seater"];
-        $scope.selectedItem;
         $scope.getSelectedText = function () {
-            if ($scope.selectedItem !== undefined) {
-                return $scope.selectedItem;
+            console.log("getSelectedText has been called");
+            if ($rootScope.edge[$rootScope.currentEdgeIndex].preference !== undefined) {
+              console.log("getSelectedText in if");
+              console.log($rootScope.edge[$rootScope.currentEdgeIndex].preference);
+                return $rootScope.edge[$rootScope.currentEdgeIndex].preference;
             } else {
+              console.log("getSelectedText else");
                 return "Enter your Preference";
             }
         };
