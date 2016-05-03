@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="public/css/style.css">
+<div class=" margin-node" style="" ng-app="app" ng-controller="nodestructurecontroller">
+    <div class="line">
+
+        <div class="node">
+            <div class="node-md " ng-click="node_md_action_default_show()">{{node_0}}</div>
+            <div class="glyphicon glyphicon-home node-1-1"></div>
+            <div class="glyphicon glyphicon-phone node-1-2"></div>
+
+            <div class="node-md-action" style="" ng-show="node_0_show">
+                <input type="search" name="usrname" class="node-md-action-input" ng-model="node_0">
+            </div>
+        </div>
+            <div ng-repeat="x in node_add_repeat" class="node-add-action">
+                <div class="progress-line">
+                    <div class=" node-sm travel-button" ng-model="newObject[x.edge]"
+                         ng-click="Flight_buttion_Action(x)"><i
+                            class="material-icons"
+                            style=" transform: rotate(90deg);">flight</i>
+                    </div>
+                    <div class="middle-bar"></div>
+                    <div class="travel-button-action" ng-show="x.flightShow==true">
+                        <i class="material-icons">flight</i>
+                        <i class="material-icons">train</i>
+                        <i class="material-icons">directions_bus</i>
+                        <i class="material-icons">directions_car</i>
+                    </div>
+
+                </div>
+
+                <div class="node">
+                    <div class="node-md" ng-click="node_md_action_show(x)">{{newObject[x.node]}}</div>
+                    <div class="glyphicon glyphicon-home node-1-1"></div>
+                    <div class="glyphicon glyphicon-phone node-1-2"></div>
+                    <div class="node-md-action" style="position: absolute" ng-show="x.show==true">
+                        <input type="search" name="usrname" class="node-md-action-input" ng-model="newObject[x.node]">
+                    </div>
+                </div>
+                <div class=" node-add node" id="node_Add" ng-show="$index == node_add_repeat.length-1">
+                    <div class=" glyphicon glyphicon-plus" ng-click="add()"></div>
+                </div>
+                <div class=" node-add node" id="node_Sub" ng-show="node_add_repeat.length >= 2 && $index == node_add_repeat.length-1">
+                    <div class="glyphicon glyphicon-minus" ng-click="sub()"></div>
+                </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

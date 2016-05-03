@@ -1,0 +1,19 @@
+{
+
+  "userid":,
+  "favourite":,
+  "traveltype": {
+    "one-way":,
+    "return":,
+    "multicity":
+  },
+  "state":{initial,booking,peeking,final},
+  "legs":
+  [
+    "leg1":
+    {
+      source:''
+
+    }
+  ]
+}

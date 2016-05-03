@@ -1,0 +1,143 @@
+
+  <div class="content_div" ng-cloak>
+        <div class="header">
+          <span>K2</span>
+          <div class="icons">
+            <i class="material-icons">home</i>
+            <i class="material-icons">notifications</i>
+            <i class="material-icons">person</i>
+          </div>
+        </div>
+        <!-- <div style="height:160px;text-align:center;background-color:white;border-bottom:2px solid orange;">
+          <div style="border:0px solid;margin-left:25%;width:50%;padding:10px 10px 0 20px;float:left;">
+            <md-button class="md-fab" style="float:left">BLR</md-button>
+            <div style="float:left;width:70%;">
+              <span style="font-size:18px;position:relative;left:-20%;">23/04/2016</span>
+              <i class="material-icons" style="position:relative;left:-5%;top:10px;color:green;font-size:50px;-webkit-transform: rotate(0deg);">train</i>
+              <hr style="background-color:red;">
+            </div>
+            <md-button class="md-fab" style="float:left">HYD</md-button>
+          </div>
+          <div align="center" style="width:50%;margin:auto;font-size:16px;">
+            <div style="width:20%;border:0px solid;float:left;text-align:center;">
+              <font>Bangalore</font>
+            </div>
+            <div style="width:20%;border:0px solid;margin-right:-10px;float:right;text-align:center;">
+              <font>Hyderabad</font><br>
+              <font>Stay?</font>
+              <font>LocalTravel?</font>
+            </div>
+          </div>
+        </div> -->
+        <div id="sidebar">
+            <md-grid-list md-cols=2 md-row-height="4:1">
+              <md-grid-tile>Filter results</md-grid-tile>
+              <md-grid-tile><md-button class="md-primary" ng-click="reset()">Reset All</md-grid-tile>
+            </md-grid-list>
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  Price
+                </md-card-title-text>
+              </md-card-title>
+                <md-card-content>
+                  <span ng-bind="range"></span>
+                  <input class="mdl-slider mdl-js-slider" ng-change="slideP(range)" type="range"  min="300" max="5000" ng-model="range" tabindex="0" />
+                </md-card-content>
+            </md-card>
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  Departure Time
+                </md-card-title-text>
+              </md-card-title>
+              <md-card-content>
+                <button ng-click="mrngDep('departure_time')">0-6</button>
+                <button ng-click="aftnDep('departure_time')">6-12</button>
+                <button ng-click="evngDep('departure_time')">12-18</button>
+                <button ng-click="nightDep('departure_time')">18-24</button>
+              </md-card-content>
+            </md-card>
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  Arrival Time
+                </md-card-title-text>
+              </md-card-title>
+              <md-card-content>
+                <button type="button" name="button" ng-click="mrngDep('arrival_time')">0-6</button>
+                <button type="button" name="button" ng-click="aftnDep('arrival_time')">6-12</button>
+                <button type="button" name="button" ng-click="evngDep('arrival_time')">12-18</button>
+                <button type="button" name="button" ng-click="nightDep('arrival_time')">18-24</button>
+              </md-card-content>
+            </md-card>
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  Bangalore stations
+                </md-card-title-text>
+              </md-card-title>
+
+                <md-checkbox ng-model="sbc" ng-change="scc('sbc')">Bangalore CY JN</md-checkbox>
+                <!-- <span ng-bind="sbc"></span> -->
+                <md-checkbox ng-model="yp" ng-change="scc('yp')" >Yesvanthapur JN</md-checkbox>
+
+            </md-card>
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  Hyderabad stations
+                </md-card-title-text>
+              </md-card-title>
+                <md-checkbox ng-model="kcg" ng-change="scc('kcg')">Kacheguda JN</md-checkbox>
+                <md-checkbox ng-model="sec" ng-change="scc('sec')">Secundrabad JN</md-checkbox>
+            </md-card>
+      </div>
+        <div id="mainbar">
+          <md-grid-list class="det_header" md-cols="7" md-gutter="1em" md-row-height="4:1">
+            <md-grid-tile >Train name(No)</md-grid-tile>
+            <md-grid-tile >Departure<i class="material-icons" ng-click="sort('departure_time')">arrow_drop_down</i></md-grid-tile>
+            <md-grid-tile >Arrival<i class="material-icons" ng-click="sort('arrival_time')">arrow_drop_down</i></md-grid-tile>
+            <md-grid-tile >Duration</md-grid-tile>
+            <md-grid-tile >Availability/WL</md-grid-tile>
+            <md-grid-tile >Price<i class="material-icons">arrow_drop_down</i></md-grid-tile>
+            <md-grid-tile ></md-grid-tile>
+          </md-grid-list>
+
+          <md-card class="animate-repeat" ng-repeat="one in data" id="{{$index}}">
+            <md-grid-list class="det_cards" md-cols="7"  md-row-height="1:1">
+              <md-grid-tile>
+                <div>{{one.trainNo}}<br>
+                <span>{{one.Name}}</span>
+                </div>
+              </md-grid-tile>
+              <md-grid-tile>{{one.departure_time}}</md-grid-tile>
+              <md-grid-tile>{{one.arrival_time}}</md-grid-tile>
+              <md-grid-tile>{{one.duration}}</md-grid-tile>
+              <md-grid-tile >{{one.Availability}}</md-grid-tile>
+              <md-grid-tile>Rs.{{one.price}}</md-grid-tile>
+              <md-grid-tile>
+                <div>
+                <md-button class="md-primary selectButton">Select</md-button>
+                <md-button class="md-primary" ng-show="showbutton" ng-click="hidebutton=true;showbutton=false;expandCard($index)">ShowDetails</md-button>
+                <md-button class="md-primary" ng-show="hidebutton" ng-click="showbutton=true;hidebutton=false;hideCard($index)">HideDetails</md-button>
+                </div>
+              </md-grid-tile>
+            </md-grid-list>
+            <!-- <div ng-show="showDiv">
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div> -->
+          </md-card>
+
+        </div>
+      </div>
