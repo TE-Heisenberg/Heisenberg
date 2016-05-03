@@ -67,6 +67,9 @@ body{
     margin-top: 40px;
     margin-left: 30px;
 }
+.secondDiv{
+    width: 50%;
+}
 .image{
     width: 250px;
     height: 80px;
@@ -100,5 +103,3 @@ md-card-content div{
     font-size: large;
     font-weight: 200;
 }
-
-
