@@ -28,26 +28,20 @@ body{
 }
 #line{
     height: 100px;
-    width: 1px;
+    width: 1.8%;
     background-color: black;
-    margin-left: 25px;
-}
-#line1{
-    height: 50px;
-    width: 1px;
-    background-color: black;
-    margin-left: 25px;
+    margin-left: 50%;
 }
 #box{
-    width: 50px;
-    height: 50px;                           /* icon box*/
-    background-color: #00CCFF;
+    width: 35px;
+    height: 35px;                           /* icon box*/
+    background-color: #330099;
     position: relative;
 }
 #circle{
-    width: 50px;
-    height: 50px;
-    background-color: #00CCFF;
+    width: 35px;
+    height: 35px;
+    background-color: #330099;
     position: relative;                       /* icon circle*/
     border-radius: 500px;
     -webkit-border-radius: 500px;
@@ -63,12 +57,23 @@ body{
 
 }
 #rightColumn{
-    width: 85%;
+    float: left;
+    width: 100%;
     margin-top: 40px;
     margin-left: 30px;
 }
-.secondDiv{
-    width: 50%;
+i.material-icons {
+    position: absolute;
+    top: 18%;
+    left: 16%;
+    color: white;
+}
+md-card{
+    width: 80%;
+    margin-left: 5%;
+}
+.alignStart{
+    width: 80%;
 }
 .image{
     width: 250px;
@@ -78,6 +83,9 @@ body{
     width: 80px;
     height: 1px;
     background-color: #686868;
+}
+.secondDiv{
+    width: 50%;
 }
 md-card-content div{
     align-self: center;
