@@ -1,54 +1,54 @@
-	  			html, body {
-    				overflow: auto;
-				}
+html, body {
+    overflow: auto;
+}
 
-				body{
-					background: #e3e3e3;
-				}
+body {
 
-				#main-wrapper{
-					/*background: #e3e3e3;*/
-				}
+}
 
-				.results-card{
-					height: 150px;
-				}
+#main-wrapper {
+    /*background: #e3e3e3;*/
+}
 
-				.hotel-price{
-					font-size: 22px;
-				}
+.results-card {
+    height: 150px;
+}
 
-				.facilities-text{
-					margin-right: 10px;
-					margin-left: 2px;
-				}
+.hotel-price {
+    font-size: 22px;
+}
 
-				.star-rating-wrapper{
-					margin-top: 2px;
-				}
+.facilities-text {
+    margin-right: 10px;
+    margin-left: 2px;
+}
 
-				.facilities-wrapper{
-					margin-top: 5px;
-				}
+.star-rating-wrapper {
+    margin-top: 2px;
+}
 
-				.star-rating{
-					font-size: 15px;
-				}
+.facilities-wrapper {
+    margin-top: 5px;
+}
 
-				@media (max-width: 959px){
-					#filter-wrapper{
-						display: none;
-					}
-				}
+.star-rating {
+    font-size: 15px;
+}
 
-				@media (max-width: 745px){
-					.facilities-text{
-						display: none;
-					}
-				}
+@media (max-width: 959px) {
+    #filter-wrapper {
+        display: none;
+    }
+}
 
-				@media (max-width: : 550px){
-					.select-button{
-						font-size: 5px;
-					}
-				}
+@media (max-width: 745px) {
+    .facilities-text {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .select-button {
+        font-size: 5px;
+    }
+}

@@ -2,23 +2,27 @@
  * Created by lenovo on 25-04-2016.
  */
 angular.module("app")
-    .controller("nodestructurecontroller", function ( $scope, $rootScope, $timeout, $q) {
+    .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q) {
 
-      $rootScope.edge =
+
+        $rootScope.go = function (path) {
+            $location.path(path);
+        }
+
+        $rootScope.edges =
             [
                 {
-                    mode: 'Flight',
+                    mode: 'flight',
                     date: '',
                     preference: 'Bla',
                     startNode: 0,
                     endNode: 1
                 }
-              ];
+            ];
 
-        $rootScope.node = [
+        $rootScope.nodes = [
             {
-
-                city: {"value":"california","display":"Alaska"},
+                city: {"value": "alaska", "display": "Alaska"},
                 accommodation: [
                     {
                         rootInfo: [],
@@ -50,7 +54,7 @@ angular.module("app")
             },
             {
 
-                city: {"value":"california","display":"California"},
+                city: {"value": "california", "display": "California"},
                 accommodation: [
                     {
                         rootInfo: [],
@@ -84,73 +88,73 @@ angular.module("app")
         ];
 
 
-        var edgeCount = 1;
-        var nodeCount = 2;
-        var node_md_action = 2;
-
-        $rootScope.node_add_repeat = [
-            {
-                edge: "edge_0",
-                node: "node_1",
-                show: false,
-                flightShow: false,
-            }
-        ];
-
         $rootScope.add = function () {
-            var node_add_temp = {
-                edge: "edge_" + edgeCount++,
-                node: "node_" + nodeCount++,
+            var newNode = {
+                city: {"value": "", "display": ""},
+                accommodation: [
+                    {
+                        rootInfo: [],
+                        address: "",
+                        expense: {
+                            value: 0,
+                            currency: ""
+                        },
+                        name: "",
+                        checkinDate: "",
+                        checkoutDate: "",
+                        checkinTime: "",
+                        area: "",
+                        options: {}
+
+                    }
+                ],
+                localTravel: [
+                    {
+                        pickupPoint: "",
+                        dropPoint: "",
+                        date: "",
+                        time: "",
+                        companyName: "",
+                        options: {}
+                    }
+                ]
+
             };
 
-            $rootScope.node_add_repeat.push(node_add_temp);
+            var newEdge = {
+                mode: 'Flight',
+                date: '',
+                preference: 'Bla',
+                startNode: 0,
+                endNode: 1
+            };
+
+            $scope.nodes.push(newNode);
+            $scope.edges.push(newEdge);
 
         }
 
         $rootScope.sub = function () {
 
-            $rootScope.node_add_repeat.splice(-1, 1);
+            $rootScope.nodes.splice(-1, 1);
 
+        };
+        $rootScope.travel_mode = "flight";
+        $rootScope.change_travel_mode = function (index, icon) {
+            console.log(index);
+            $rootScope.edges[index].mode = icon;
         };
 
         $rootScope.node_md_action_default_show = function () {
-            console.log("Show the box");
             if ($rootScope.node_0_show == false) {
                 $rootScope.node_0_show = true;
-                $rootScope.node_0_hide=false;
+                $rootScope.node_0_hide = false;
             } else {
                 $rootScope.node_0_show = false;
-                $rootScope.node_0_hide=true;
+                $rootScope.node_0_hide = true;
             }
-            console.log($rootScope.node_0_show);
 
         };
-        //
-        // $rootScope.hideBox = function(x) {
-        //
-        //   console.log("Entered into HideBox");
-        //   var firstNode=false;
-        //   if (x==undefined)
-        //     {
-        //       console.log("Inide if og HideBox");
-        //       x={};
-        //       x.show=$rootScope.node_0_show;
-        //       x.hide=$rootScope.node_0_hide;
-        //       firstNode=true;
-        //
-        //     }
-        //   if(x.show == true && $rootScope.node_0_hide==true)
-        //   {
-        //     if(firstNode == true){
-        //       $rootScope.node_0_show=false
-        //     }
-        //     else
-        //       x.show=false;
-        //
-        //     console.log("inside second if of HideBox");
-        //     console.log($rootScope.node_0_show);
-        //   }
-        // };
 
         $rootScope.node_0_show = false;
         $rootScope.node_md_action_show = function (x) {
@@ -190,7 +194,6 @@ angular.module("app")
          */
 
         function querySearch(query) {
-            console.log("Entered querySearch");
             var results = query ? self.states.filter(createFilterFor(
                 query)) : self.states;
             var deferred = $q.defer();
@@ -205,7 +208,6 @@ angular.module("app")
          */
 
         function loadAll() {
-            console.log("Entered loadAll");
             var allStates =
                 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
       Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
@@ -232,6 +234,7 @@ angular.module("app")
                 return (state.value.indexOf(lowercaseQuery) === 0);
             };
         }
+
 
         //Auto Complete End
 

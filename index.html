@@ -6,7 +6,8 @@
 
     <!--css libs-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet"
+          href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.css" rel="stylesheet">
     <link rel="stylesheet" href="public/css/style.css">
 
@@ -27,42 +28,41 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
     <script src="https://cdn.rawgit.com/bradberger/angular-material-calendar/master/dist/angular-material-calendar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.0/angular-material-icons.min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script type="text/javascript" src="public/js/lib/angular-clickout.js">
-
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="public/js/lib/angular-clickout.js"></script>-->
 
 
-   <link rel="stylesheet" href="public/css/lp.css">
-   <link rel="stylesheet" href="public/css/searchResult.css">
-   <link rel="stylesheet" href="public/css/flight.css">
-   <link rel="stylesheet" href="public/css/hotelSearchResults.css">
+    <link rel="stylesheet" href="public/css/lp.css">
+    <link rel="stylesheet" href="public/css/searchResult.css">
+    <!--<link rel="stylesheet" href="public/css/flight.css">-->
+    <link rel="stylesheet" href="public/css/hotelSearchResults.css">
+
+
+    <!--Javascript custom-->
+    <script src="public/js/routeprovider.js"></script>
+    <script src="public/js/controller/nodestructurecontroller.js"></script>
+    <script src="public/js/controller/travelModeController.js"></script>
+    <script src="public/js/controller/landingController.js"></script>
+    <script src="public/js/controller/trainsearchresultsController.js"></script>
+    <script src="public/js/controller/hotelSearchController.js"></script>
+    <script src="public/js/controller/hotelSearchResultsController.js"></script>
+    <script src="public/js/controller/itineraryController.js"></script>
 
 
 </head>
 <body ng-app="app">
-  <div>
-      <img src="public/assets/images/logo.png" alt="logo">
-      <div class="header_icons">
-          <i class="material-icons">home</i>
-          <i class="material-icons">notifications</i>
-          <i class="material-icons">person</i>
-      </div>
-  </div>
-  <div id="nodes" ng-include src="'views/travelplan.html'" ng-hide="landingPage==true" ></div>
-  <div ng-view>
+<div>
+    <img src="public/assets/images/logo.png" alt="logo">
+    <div class="header_icons">
+        <i class="material-icons">home</i>
+        <i class="material-icons">notifications</i>
+        <i class="material-icons">person</i>
+    </div>
+</div>
+<div id="nodes"  ng-include src="'views/travelplan.html'" ng-hide="landingPage==true"></div>
+<div ng-view>
 
-  </div>
-<!--Javascript custom-->
-<script src="public/js/routeprovider.js"></script>
-<script src="public/js/controller/nodestructurecontroller.js"></script>
-<script src="public/js/controller/travelModeController.js"></script>
-<script src="public/js/controller/landingController.js"></script>
-<script src="public/js/controller/flightSearchResultController.js"></script>
-<script src="public/js/controller/trainsearchresultsController.js"></script>
-<script src="public/js/controller/hotelSearchController.js"></script>
-<script src="public/js/controller/hotelSearchResultsController.js"></script>
-<script src="public/js/controller/itineraryController.js"></script>
+</div>
 
 
 </body>
