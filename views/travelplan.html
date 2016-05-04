@@ -1,34 +1,9 @@
-<div class=" margin-node" style="" ng-app="app" ng-controller="nodestructurecontroller as ctrl1">
+<div class=" margin-node" ng-app="app" ng-controller="nodestructurecontroller as ctrl1">
     <div class="line">
 
-        <div class="node">
-            <div class="node-md " ng-click="go('Travelbooking'); node_md_action_default_show(); ">{{node[0].city.display
-                |
-                limitTo:3 |
-                uppercase}}
-            </div>
-            <i class="material-icons node-1-1" ng-click="go('staybooking');">hotel</i>
-            <i class="material-icons node-1-2">directions_car</i>
-            <!-- <div class="glyphicon glyphicon-home node-1-1"></div> -->
+        <div ng-repeat="x in nodes" class="node-add-action">
 
-            <!-- <div class="glyphicon glyphicon-car node-1-2"></div> -->
-
-            <div class="node-md-action" style="" ng-show="node_0_show">
-
-                <md-autocomplete class="node-md-action-input" flex="" required="" md-input-name="autocompleteField"
-                                 md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
-                                 md-selected-item="node[0].city" md-search-text="ctrl1.searchText[0]"
-                                 md-items="item in ctrl1.querySearch(ctrl1.searchText[0])" md-item-text="item.display"
-                                 md-floating-label="Location">
-
-                    <md-item-template>
-                        <span md-highlight-text="ctrl1.searchText[0]">{{item.display}}</span>
-                    </md-item-template>
-                </md-autocomplete>
-            </div>
-        </div>
-        <div ng-repeat="x in node_add_repeat" class="node-add-action">
-            <div class="progress-line">
+            <div class="progress-line" ng-if="$index==1">
                 <div class=" node-sm travel-button" ng-model="newObject[x.edge]"
                      ng-click="Flight_buttion_Action(x)"><i
                         class="material-icons"
@@ -45,7 +20,7 @@
 
             <div class="node">
                 <div class="node-md" ng-click="go('Travelbooking'); node_md_action_show(x)">
-                    {{node[$index+1].city.display
+                    {{x.city.display
                     | limitTo:3 |
                     uppercase}}
                 </div>
@@ -55,26 +30,28 @@
                 <div class="glyphicon glyphicon-phone node-1-2"></div> -->
                 <div class="node-md-action" style="position: absolute" ng-show="x.show==true">
 
-                    <md-autocomplete class="node-md-action-input" flex="" required="" md-input-name="autocompleteField"
+                    <md-autocomplete class="node-md-action-input" flex="" required=""
+                                     md-input-name="autocompleteField"
                                      md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
-                                     md-selected-item="node[$index+1].city" md-search-text="ctrl1.searchText[$index+1]"
+                                     md-selected-item="node[$index+1].city"
+                                     md-search-text="ctrl1.searchText[$index+1]"
                                      md-items="item in ctrl1.querySearch(ctrl1.searchText[$index+1])"
-                                     md-item-text="item.display" md-floating-label="Source" ng-mouseleave="count=true"
+                                     md-item-text="item.display" md-floating-label="Source"
+                                     ng-mouseleave="count=true"
                                      ng-hide
                     "count">
 
                     <md-item-template>
-                        <span md-highlight-text="ctrl1.searchText[$index+1]">{{item.display}}</span>
+                        <span md-highlight-text="ctrl1.searchText[$index+1]">{{x.city.display}}</span>
                     </md-item-template>
                     </md-autocomplete>
 
                 </div>
             </div>
-            <div class=" node-add node" id="node_Add" ng-show="$index == node_add_repeat.length-1">
+            <div class=" node-add node" ng-show="$index == nodes.length-1">
                 <div class=" glyphicon glyphicon-plus" ng-click="add()"></div>
             </div>
-            <div class=" node-add node" id="node_Sub"
-                 ng-show="node_add_repeat.length >= 2 && $index == node_add_repeat.length-1">
+            <div class=" node-add node" ng-show="nodes.length >= 2 && $index == nodes.length-1">
                 <div class="glyphicon glyphicon-minus" ng-click="sub()"></div>
             </div>
         </div>
@@ -83,6 +60,7 @@
     </div>
 
 </div>
+
 
 </body>
 </html>

@@ -10,7 +10,7 @@ angular.module("app")
             $location.path(path);
         }
 
-        $rootScope.edge =
+        $rootScope.edges =
             [
                 {
                     mode: 'Flight',
@@ -21,10 +21,9 @@ angular.module("app")
                 }
             ];
 
-        $rootScope.node = [
+        $rootScope.nodes = [
             {
-
-                city: {"value": "california", "display": "Alaska"},
+                city: {"value": "alaska", "display": "Alaska"},
                 accommodation: [
                     {
                         rootInfo: [],
@@ -90,26 +89,9 @@ angular.module("app")
         ];
 
 
-        var edgeCount = 1;
-        var nodeCount = 2;
-        var node_md_action = 2;
-
-        $rootScope.node_add_repeat = [
-            {
-                edge: "edge_0",
-                node: "node_1",
-                show: false,
-                flightShow: false,
-            }
-        ];
-
+        console.log($rootScope.nodes);
         $rootScope.add = function () {
-            var node_add_temp = {
-                edge: "edge_" + edgeCount++,
-                node: "node_" + nodeCount++,
-            };
 
-            $rootScope.node_add_repeat.push(node_add_temp);
 
         }
 

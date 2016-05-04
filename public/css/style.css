@@ -24,6 +24,7 @@
         width: 100%;
         height: 100px;
         display: inline-block;
+        text-align: center;
     }
 }
 
@@ -46,6 +47,7 @@
     .line {
         margin-right: -15px;
         margin-left: -15px;
+
     }
 }
 
