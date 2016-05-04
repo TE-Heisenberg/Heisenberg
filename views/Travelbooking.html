@@ -20,19 +20,13 @@
                         <div layout-gt-xs="row">
 
                 <md-autocomplete flex="" required="" md-input-name="autocompleteField" md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache" md-selected-item="node[edge[currentEdgeIndex].startNode].city" md-search-text="ctrl1.searchText" md-items="item in ctrl1.querySearch(ctrl1.searchText)" md-item-text="item.display" md-floating-label="Source">
-                                             md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
-                                             md-selected-item="source" md-search-text="ctrl1.searchText"
-                                             md-items="item in ctrl1.querySearch(ctrl1.searchText)"
-                                             md-item-text="item.display" md-floating-label="Source">
+
                                 <md-item-template>
                                     <span md-highlight-text="ctrl1.searchText">{{item.display}}</span>
                                 </md-item-template>
                             </md-autocomplete>
                 <md-autocomplete flex="" required="" md-input-name="autocompleteField" md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache" md-selected-item="node[edge[currentEdgeIndex].endNode].city" md-search-text="ctrl1.searchText2" md-items="item in ctrl1.querySearch(ctrl1.searchText2)" md-item-text="item.display" md-floating-label="Destination">
-                                             md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
-                                             md-selected-item="destination" md-search-text="ctrl1.searchText2"
-                                             md-items="item in ctrl1.querySearch(ctrl1.searchText2)"
-                                             md-item-text="item.display" md-floating-label="Destination">
+
                                 <md-item-template>
                                     <span md-highlight-text="ctrl1.searchText2">{{item.display}}</span>
                                 </md-item-template>
@@ -43,7 +37,6 @@
                                  </div>-->
                             </md-autocomplete>
                 <md-datepicker flex-offset="5" ng-model="edge[currentEdgeIndex].date" md-placeholder="Enter date" ></md-datepicker>
-                                           md-placeholder="Enter date"></md-datepicker>
                             <md-input-container flex-offset="5">
                                 <label>Preferences</label>
                     <md-select ng-model="edge[currentEdgeIndex].preference">

@@ -15,7 +15,7 @@ angular.module("app")
       $rootScope.node = [
           {
 
-              city: {"value":"california","display":"California"},
+              city: {"value":"california","display":"Alaska"},
               accommodation: [
                   {
                       rootInfo: [],
@@ -122,6 +122,7 @@ angular.module("app")
       North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
       South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
       Wisconsin, Wyoming';
+
             return allStates.split(/, +/g).map(function (state) {
                 return {
                     value: state.toLowerCase(),

@@ -45,7 +45,7 @@ angular.module("app").controller("calendarCtrl", ["$scope", "$filter", "$http", 
 
     };
 
-}]).controller("con", ["$scope", "$http", function ($scope, $http) {
+}]).controller("con", ["$scope", "$http","$location", function ($scope, $http,$location) {
 
     var url = "json1.json";
 
@@ -68,5 +68,9 @@ angular.module("app").controller("calendarCtrl", ["$scope", "$filter", "$http", 
         $scope.array1 = response;
         console.log(response);
     });
+    $scope.go=function(path){
+      console.log("helllo");
+      $location.path(path);
+    }
 
 }]);
