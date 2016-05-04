@@ -1,47 +1,8 @@
-<style>
-				#main-wrapper{
-					background: #e3e3e3;
-				}
-
-				.results-card{
-					height: 150px;
-				}
-
-				.hotel-price{
-					font-size: 22px;
-				}
-
-				.facilities-text{
-					margin-right: 10px;
-					margin-left: 2px;
-				}
-
-				.star-rating-wrapper{
-					margin-top: 2px;
-				}
-
-				.facilities-wrapper{
-					margin-top: 5px;
-				}
-
-				.star-rating{
-					font-size: 15px;
-				}
-</style>
-
-<div class='container' layout='row' id='main-wrapper'>
-				<div flex='20' id='fliter-wrapper'>
-					<md-card>
-						<md-card-content>
-							<div>
-								Price
-							</div>
-						</md-card-content>
-					</md-card>
-
+			<div class='container' layout='row' id='main-wrapper'>
+				<div flex='25' id='filter-wrapper'>
 					<md-card>
 						<md-card-content layout='column'>
-							<p>Rating:</p>
+							<p><b>Rating:</b></p>
 							<md-checkbox class='md-primary'>
 								<i class="material-icons star-rating">star star star star star</i>
 							</md-checkbox>
@@ -62,7 +23,7 @@
 
 					<md-card>
 						<md-card-content layout='column'>
-							<p>Amenities:</p>
+							<p><b>Amenities:</b></p>
 							<md-checkbox class='md-primary'>
 								<div layout='row'>
 									<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
@@ -90,14 +51,35 @@
 							</md-checkbox>
 						</md-card-content>
 					</md-card>
+
+					<md-card>
+						<md-card-content layout='column'>
+							<p><b>Location:</b></p>
+							<md-checkbox class='md-primary'>
+								Lonavala
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								Lavasa
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								Shivaji Nagar
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								Pushpam Colony
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								Mansarovar
+							</md-checkbox>
+						</md-card-content>
+					</md-card>
 				</div>
 
-				<div flex='80' id='results-wrapper'>
-					<md-card class='results-card' layout='row'>
-						<img flex='20' src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
-						<md-card-content flex='65'>
+				<div flex='75' flex-sm='100' flex-xs='100' id='results-wrapper'>
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/1.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
 							<div>
-								Lemon Tree Hotel
+								<h4>Lemon Tree Hotel</h4>
 							</div>
 							<div>
 								Pune
@@ -114,22 +96,19 @@
 								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
 								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
 							</div>
-							<div>
-								<a ng-href='#' ng-click='expandCard()'>Photos</a>
-							</div>
 						</md-card-content>
-						<div flex='15' layout='column' layout-align='none center'>
+						<div flex='25' layout='column' layout-align='none center'>
 							<div flex='25'></div>
-							<div class='hotel-price'>$4345</div>
-							<md-button class='md-raised md-primary'>Select</md-button>
+							<div class='hotel-price'>Rs. 5400/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
 						</div>
 					</md-card>
 
-					<md-card class='results-card' layout='row'>
-						<img flex='20' src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
-						<md-card-content flex='65'>
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/2.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
 							<div>
-								Lemon Tree Hotel
+								<h4>St. Laurn Business Hotel</h4>
 							</div>
 							<div>
 								Pune
@@ -138,8 +117,8 @@
 								<i class="material-icons star-rating">star</i>
 								<i class="material-icons star-rating">star</i>
 								<i class="material-icons star-rating">star</i>
-								<i class="material-icons star-rating">star_half</i>
-								<i class="material-icons star-rating">star_border</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
 							</div>
 							<div layout='row' class='facilities-wrapper'>
 								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
@@ -147,603 +126,186 @@
 								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
 							</div>
 						</md-card-content>
-						<div flex='15' layout='column' layout-align='none center'>
+						<div flex='25' layout='column' layout-align='none center'>
 							<div flex='25'></div>
-							<div class='hotel-price'>$4345</div>
-							<md-button class='md-raised md-primary'>Select</md-button>
+							<div class='hotel-price'>Rs. 1700/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
 						</div>
 					</md-card>
 
-					<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <div ng-show='expanded'>
-			              	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae nam, illum commodi sequi blanditiis dignissimos dolorem quos consectetur veritatis deleniti aperiam ratione vero reprehenderit modi ducimus nostrum, quae, quo asperiores!
-			              	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ipsum ipsam ducimus impedit doloremque quasi itaque, distinctio voluptatem corporis ullam suscipit, rerum quam ex sequi deleniti accusamus eos! Porro, quas.
-			              	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus officiis possimus, temporibus molestiae est quo tempora architecto amet voluptatibus fuga minus dolore, iure sit, rerum alias eius. Quibusdam, aut atque.
-			              	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt asperiores earum beatae tenetur cupiditate facere, deleniti harum natus aperiam perferendis! Placeat odit eaque reiciendis deserunt animi pariatur a omnis sunt!
-			              </div>
-			              <md-button ng-hide='expanded' class='md-raised md-primary' ng-click="expanded=true; expand()" style="margin-left:0">Expand</md-button>
-			              <md-button ng-show='expanded' class='md-raised md-primary' ng-click="expanded=false; collapse()" style="margin-left:0">Collapse</md-button>
-			            </div>
-			    	</md-card>
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/3.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>The O Hotel</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 3000/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
 
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/4.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>Aurora</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 4300/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
 
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/5.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>Hotel Sagar Plaza</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 2500/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
 
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/6.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>The Centurian Hotel</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 4700/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
 
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/7.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>The E Square</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 3500/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
 
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
-
-			    	<md-card layout='row' id='aaaa' layout-align='space-between'>
-			            <md-card-media>
-			              <img style="height: 100px !important;
-			              width: 100px !important;" src="lemonTreeHotelPune.jpg" alt="lemonTreeHotelPune">
-			            </md-card-media>
-			            <div layout='column' flex style='margin-right:10px; margin-left:10px;'>
-			              <md-card-text>Lemon Tree Hotels Pune</md-card-text>
-			              <div layout='row'>
-			                <md-card-text flex='50'>
-			                  Koregaon Park, Pune
-			                </md-card-text>
-			                <div layout='column' flex>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">wifi</i>
-			                    <md-card-text>
-			                      Free WiFi
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">free_breakfast</i>
-			                    <md-card-text>
-			                      Free Breakfast
-			                    </md-card-text>
-			                  </div>
-			                  <div layout='row' layout-align='none center'>
-			                    <i class="material-icons">time_to_leave</i>
-			                    <md-card-text>
-			                      Free Parking
-			                    </md-card-text>
-			                  </div>
-			                </div>
-			              </div>
-			            </div>
-			            <div layout='column' layout-align='space-around center' flex='40'>
-			              <md-card-text>$4345</md-card-text>
-			              <md-button class='md-raised md-primary' ng-click="pressed()" style="margin-left:0">Select</md-button>
-			            </div>
-			    	</md-card>
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/8.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>Golden Emarald Hotel</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 7000/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
 				</div>
 		    </div>
+</body>
