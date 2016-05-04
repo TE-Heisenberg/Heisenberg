@@ -6,14 +6,13 @@ angular.module("app")
 
 
         $rootScope.go = function (path) {
-            console.log("hello");
             $location.path(path);
         }
 
         $rootScope.edges =
             [
                 {
-                    mode: 'Flight',
+                    mode: 'flight',
                     date: '',
                     preference: 'Bla',
                     startNode: 0,
@@ -89,20 +88,64 @@ angular.module("app")
         ];
 
 
-        console.log($rootScope.nodes);
         $rootScope.add = function () {
+            var newNode = {
+                city: {"value": "india", "display": "India"},
+                accommodation: [
+                    {
+                        rootInfo: [],
+                        address: "",
+                        expense: {
+                            value: 0,
+                            currency: ""
+                        },
+                        name: "",
+                        checkinDate: "",
+                        checkoutDate: "",
+                        checkinTime: "",
+                        area: "",
+                        options: {}
 
+                    }
+                ],
+                localTravel: [
+                    {
+                        pickupPoint: "",
+                        dropPoint: "",
+                        date: "",
+                        time: "",
+                        companyName: "",
+                        options: {}
+                    }
+                ]
+
+            };
+
+            var newEdge = {
+                mode: 'Flight',
+                date: '',
+                preference: 'Bla',
+                startNode: 0,
+                endNode: 1
+            };
+
+            $scope.nodes.push(newNode);
+            $scope.edges.push(newEdge);
 
         }
 
         $rootScope.sub = function () {
 
-            $rootScope.node_add_repeat.splice(-1, 1);
+            $rootScope.nodes.splice(-1, 1);
 
+        };
+        $rootScope.travel_mode = "flight";
+        $rootScope.change_travel_mode = function (index, icon) {
+            console.log(index);
+            $rootScope.edges[index].mode = icon;
         };
 
         $rootScope.node_md_action_default_show = function () {
-            console.log("Show the box");
             if ($rootScope.node_0_show == false) {
                 $rootScope.node_0_show = true;
                 $rootScope.node_0_hide = false;
@@ -110,35 +153,8 @@ angular.module("app")
                 $rootScope.node_0_show = false;
                 $rootScope.node_0_hide = true;
             }
-            console.log($rootScope.node_0_show);
 
         };
-        //
-        // $rootScope.hideBox = function(x) {
-        //
-        //   console.log("Entered into HideBox");
-        //   var firstNode=false;
-        //   if (x==undefined)
-        //     {
-        //       console.log("Inide if og HideBox");
-        //       x={};
-        //       x.show=$rootScope.node_0_show;
-        //       x.hide=$rootScope.node_0_hide;
-        //       firstNode=true;
-        //
-        //     }
-        //   if(x.show == true && $rootScope.node_0_hide==true)
-        //   {
-        //     if(firstNode == true){
-        //       $rootScope.node_0_show=false
-        //     }
-        //     else
-        //       x.show=false;
-        //
-        //     console.log("inside second if of HideBox");
-        //     console.log($rootScope.node_0_show);
-        //   }
-        // };
 
         $rootScope.node_0_show = false;
         $rootScope.node_md_action_show = function (x) {
@@ -178,7 +194,6 @@ angular.module("app")
          */
 
         function querySearch(query) {
-            console.log("Entered querySearch");
             var results = query ? self.states.filter(createFilterFor(
                 query)) : self.states;
             var deferred = $q.defer();
@@ -193,7 +208,6 @@ angular.module("app")
          */
 
         function loadAll() {
-            console.log("Entered loadAll");
             var allStates =
                 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
       Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
