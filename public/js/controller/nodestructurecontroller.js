@@ -90,7 +90,7 @@ angular.module("app")
 
         $rootScope.add = function () {
             var newNode = {
-                city: {"value": "india", "display": "India"},
+                city: {"value": "", "display": ""},
                 accommodation: [
                     {
                         rootInfo: [],
