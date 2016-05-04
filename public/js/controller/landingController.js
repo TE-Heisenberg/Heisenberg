@@ -1,4 +1,4 @@
-angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$location", function ($scope,$filter, $http, $q,$location) {
+angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$location" ,"$mdDialog","$mdMedia", function ($scope,$filter, $http, $q,$location, $mdDialog, $mdMedia) {
     // -------------------------------
 
         $scope.dayFormat = "d";
@@ -74,4 +74,56 @@ angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$loc
       $location.path(path);
     }
 
+
+
+
+    //code for intermediate page dialog
+
+    
+             $scope.showAdvanced = function(ev) {
+            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+
+              $mdDialog.show({
+                controller: DialogController,
+             /* templateUrl: 'dialog1.tmpl.html',*/
+              templateUrl: 'views/travelPreferenceDialog.html',
+              parent: angular.element(document.body),
+              targetEvent: ev,
+              clickOutsideToClose:true,
+              fullscreen: useFullScreen
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+             
+            }, function() {
+            $scope.status = 'You cancelled the dialog.';
+            });
+
+
+
+            $scope.$watch(function() {
+              return $mdMedia('xs') || $mdMedia('sm');
+            }, function(wantsFullScreen) {
+              $scope.customFullscreen = (wantsFullScreen === true);
+            });
+
+          };
+
+
 }]);
+
+
+          function DialogController($scope, $mdDialog) {
+  $scope.hide = function() {
+    $mdDialog.hide();
+  };
+
+  $scope.cancel = function() {
+    $mdDialog.hide();
+  };
+
+  $scope.answer = function(answer) {
+   
+    $mdDialog.hide(answer);
+  };       
+}
