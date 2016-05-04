@@ -2,9 +2,15 @@
  * Created by lenovo on 25-04-2016.
  */
 angular.module("app")
-    .controller("nodestructurecontroller", function ( $scope, $rootScope, $timeout, $q) {
+    .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q) {
 
-      $rootScope.edge =
+
+        $rootScope.go = function (path) {
+            console.log("hello");
+            $location.path(path);
+        }
+
+        $rootScope.edge =
             [
                 {
                     mode: 'Flight',
@@ -13,12 +19,12 @@ angular.module("app")
                     startNode: 0,
                     endNode: 1
                 }
-              ];
+            ];
 
         $rootScope.node = [
             {
 
-                city: {"value":"california","display":"Alaska"},
+                city: {"value": "california", "display": "Alaska"},
                 accommodation: [
                     {
                         rootInfo: [],
@@ -50,7 +56,7 @@ angular.module("app")
             },
             {
 
-                city: {"value":"california","display":"California"},
+                city: {"value": "california", "display": "California"},
                 accommodation: [
                     {
                         rootInfo: [],
@@ -117,10 +123,10 @@ angular.module("app")
             console.log("Show the box");
             if ($rootScope.node_0_show == false) {
                 $rootScope.node_0_show = true;
-                $rootScope.node_0_hide=false;
+                $rootScope.node_0_hide = false;
             } else {
                 $rootScope.node_0_show = false;
-                $rootScope.node_0_hide=true;
+                $rootScope.node_0_hide = true;
             }
             console.log($rootScope.node_0_show);
 
@@ -232,6 +238,7 @@ angular.module("app")
                 return (state.value.indexOf(lowercaseQuery) === 0);
             };
         }
+
 
         //Auto Complete End
 

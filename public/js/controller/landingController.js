@@ -1,4 +1,4 @@
-angular.module("app").controller("calendarCtrl", ["$scope", "$filter", "$http", "$q", function ($scope, $filter, $http, $q) {
+angular.module("app").controller("calendarCtrl", ["$rootScope", "$scope", "$filter", "$http", "$q", function ($rootScope, $scope, $filter, $http, $q) {
 
     $scope.dayFormat = "d";
 
@@ -45,7 +45,7 @@ angular.module("app").controller("calendarCtrl", ["$scope", "$filter", "$http", 
 
     };
 
-}]).controller("con", ["$scope", "$http","$location", function ($scope,$http,$location) {
+}]).controller("con", ["$rootScope", "$scope", "$http", "$location", function ($rootScope, $scope, $http, $location) {
 
     var url = "json1.json";
 
@@ -69,10 +69,9 @@ angular.module("app").controller("calendarCtrl", ["$scope", "$filter", "$http", 
         console.log(response);
     });
 
-    $scope.go=function(path)
-    {
-      console.log("hello");
-      $location.path(path);
+    $rootScope.go = function (path) {
+        console.log("hello");
+        $location.path(path);
     }
 
 }]);
