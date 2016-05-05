@@ -1,7 +1,7 @@
 <div class=" margin-node" ng-app="app" ng-controller="nodestructurecontroller as ctrl1">
     <div class=" line">
 
-        <div ng-repeat="(key, value) in jsonData.nodes" class="node-add-action" ng-click="clickOut(value)">
+        <div ng-repeat="(key, value) in travelPlanJSON.nodes" class="node-add-action" ng-click="clickOut(value)">
 
             <div ng-if="key.indexOf('node')>-1" )>
 
@@ -10,16 +10,17 @@
             <div class="progress-line" ng-if="$index>=1">
                 <div class=" node-sm travel-button" ng-model="newObject[x.edge]"
                      ng-click="Flight_buttion_Action(value)">
-                    <i class="material-icons">{{jsonData.edges['edge'+$index].childServices.edgeMode1.request.mode |
+                    <i class="material-icons">{{travelPlanJSON.edges['edge'+$index].childServices.edgeMode1.request.mode
+                        |
                         lowercase}}</i>
                 </div>
                 <div class="middle-bar"></div>
                 <div class="travel-button-action" ng-show="value.flightShow==true">
                     <i class="material-icons"
-                       ng-click="change_travel_mode(jsonData.edges['edge'+$index].childServices,'flight')">flight</i>
-                    <i class="material-icons" ng-click="change_travel_mode(jsonData.edges,'train')">train</i>
+                       ng-click="change_travel_mode(travelPlanJSON.edges['edge'+$index].childServices,'flight')">flight</i>
+                    <i class="material-icons" ng-click="change_travel_mode(travelPlanJSON.edges,'train')">train</i>
                     <i class="material-icons"
-                       ng-click="change_travel_mode(jsonData.edges,'directions_bus')">directions_bus</i>
+                       ng-click="change_travel_mode(travelPlanJSON.edges,'directions_bus')">directions_bus</i>
                 </div>
 
             </div>
@@ -51,10 +52,10 @@
 
                 </div>
             </div>
-            <div class=" node-add node" ng-if="$index>0" ng-show="$index == (jsonData.nodes | keylength)-1 ">
+            <div class=" node-add node" ng-if="$index>0" ng-show="$index == (travelPlanJSON.nodes | keylength)-1 ">
                 <div class=" glyphicon glyphicon-plus" ng-click="addNode($index)"></div>
             </div>
-            <div class=" node-add node" ng-if="$index>1" ng-show="$index == (jsonData.nodes | keylength)-1 ">
+            <div class=" node-add node" ng-if="$index>1" ng-show="$index == (travelPlanJSON.nodes | keylength)-1 ">
                 <div class="glyphicon glyphicon-minus" ng-click="sub()"></div>
             </div>
         </div>

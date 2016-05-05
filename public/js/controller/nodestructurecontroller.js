@@ -12,7 +12,7 @@ angular.module("app")
         //Ajax Request for json Template
         $http.get("public/data/travelplan.json").success(function (response) {
 
-            $rootScope.jsonData = response;
+            $rootScope.travelPlanJSON = response;
 
         });
 
@@ -161,9 +161,9 @@ angular.module("app")
                 }
             };
 
-            $rootScope.jsonData.nodes[nodeId] = newNode;
-            $rootScope.jsonData.edges[edgeId] = newEdge;
-            console.log($rootScope.jsonData);
+            $rootScope.travelPlanJSON.nodes[nodeId] = newNode;
+            $rootScope.travelPlanJSON.edges[edgeId] = newEdge;
+            console.log($rootScope.travelPlanJSON);
         }
 
         $rootScope.sub = function () {
