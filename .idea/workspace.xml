@@ -34,8 +34,8 @@
       <file leaf-file-name="travelplan.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/data/travelplan.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="97" column="20" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="20" />
+            <state relative-caret-position="330">
+              <caret line="102" column="23" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -44,8 +44,8 @@
       <file leaf-file-name="travelplan.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/travelplan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            <state relative-caret-position="204">
+              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding>
                 <marker date="1462428985775" expanded="false" signature="1167:2660" placeholder="..." />
               </folding>
@@ -330,10 +330,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -452,12 +448,12 @@
       <updated>1461907114955</updated>
       <workItem from="1461907116711" duration="5608000" />
       <workItem from="1462163757169" duration="15686000" />
-      <workItem from="1462286606195" duration="31341000" />
+      <workItem from="1462286606195" duration="31600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52635000" />
+    <option name="totallyTimeSpent" value="52894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -842,6 +838,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/data/travelplan.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="102" column="23" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/controller/nodestructurecontroller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -850,18 +854,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/data/travelplan.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="97" column="20" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/travelplan.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding>
             <marker date="1462428985775" expanded="false" signature="1167:2660" placeholder="..." />
           </folding>
