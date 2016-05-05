@@ -8,12 +8,13 @@
 #sidebar md-card{
   margin-bottom:10px;
 }
-#sidebar md-card button{
-  width:20%;
+.filt_button{
+  display: inline;
+}
+.filt_button button{
+  width: 20%;
   height:40px;
   border: none;
-  font-size:12px;
-  display:inline;
 }
 #sidebar md-checkbox{
   margin:0 5px 10px 15px;
