@@ -25,7 +25,6 @@
                     "id": "location",
                     "type": "autoComplete",
                     "data-reference": "essential.location"
-
                   },
                 	"area": {
                 		"mandatory": true,
