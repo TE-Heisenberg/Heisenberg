@@ -13,12 +13,157 @@ angular.module("app")
         $http.get("public/data/travelplan.json").success(function (response) {
 
             $rootScope.jsonData = response;
-            console.log($rootScope.jsonData.nodes.node1.childServices);
+
         });
 
+        $rootScope.clickOut = function (x) {
 
-        $rootScope.add = function () {
+            
+        };
 
+        $rootScope.addNode = function (index) {
+            var nodeIdNumber = index + 2;
+            var edgeIdNumber = index + 1;
+
+            var nodeId = "node" + nodeIdNumber;
+            var edgeId = "edge" + edgeIdNumber;
+            var newNode = {
+                "cityName": "",
+                "status": "",
+                "childServices": {
+                    "nodeS1": {
+                        "type": "",
+                        "status": "",
+                        "request": {
+                            "area": "",
+                            "rating": "",
+                            "roomType": "",
+                            "checkinDate": "",
+                            "checkoutDate": ""
+                        },
+                        "final": {
+                            "image": "",
+                            "name": "",
+                            "rating": "",
+                            "location": "",
+                            "roomType": "",
+                            "checkinDate": "",
+                            "checkinTime": "",
+                            "checkoutDate": "",
+                            "checkoutTime": "",
+                            "price": "",
+                            "comments": ""
+                        }
+                    },
+                    "nodeT1": {
+                        "type": "",
+                        "status": "",
+                        "request": {
+                            "source": "",
+                            "destination": "",
+                            "type": "",
+                            "pickupDate": "",
+                            "pickupTime": ""
+                        },
+                        "final": {
+                            "source": "",
+                            "destination": "",
+                            "type": "",
+                            "pickupDate": "",
+                            "pickupTime": "",
+                            "dropDate": "",
+                            "dropTime": "",
+                            "cab": {
+                                "image": "",
+                                "companyName": "",
+                                "cabNumber": "",
+                                "driverDetails": {
+                                    "name": ""
+                                },
+                                "estimatedPrice": "",
+                                "cabType": ""
+                            },
+                            "bus": {
+                                "image": "",
+                                "companyName": "",
+                                "busNumber": "",
+                                "busType": "",
+                                "seatsType": "",
+                                "price": ""
+                            }
+                        }
+                    }
+                }
+            };
+            var newEdge = {
+                "status": "",
+                "childServices": {
+                    "edgeMode1": {
+                        "status": "",
+                        "request": {
+                            "travelStartDate": "",
+                            "mode": "Flight",
+                            "flight": {
+                                "state": "",
+                                "class": "",
+                                "Nonstop": ""
+                            },
+                            "bus": {
+                                "state": "",
+                                "class": "",
+                                "seatType": ""
+                            },
+                            "train": {
+                                "state": "",
+                                "class": ""
+                            }
+                        },
+                        "final": {
+                            "travelStartDate": "",
+                            "mode": "",
+                            "flight": {
+                                "companyName": "",
+                                "flightID": "",
+                                "seatNumber": "",
+                                "price": "",
+                                "preferences": {
+                                    "class": "",
+                                    "Nonstop": "",
+                                    "meals": "",
+                                    "extra Baggage": ""
+                                }
+                            },
+                            "bus": {
+                                "companyName": "",
+                                "busNumber": "",
+                                "seatNumber": "",
+                                "price": "",
+                                "preferences": {
+                                    "class": "",
+                                    "seatType": ""
+                                }
+                            },
+                            "train": {
+                                "companyName": "",
+                                "trainNumber": "",
+                                "seatNumber": "",
+                                "coachNumber": "",
+                                "price": "",
+                                "preferences": {
+                                    "class": ""
+                                }
+                            },
+                            "travelStartTime": "",
+                            "travelEndDate": "",
+                            "travelEndTime": ""
+                        }
+                    }
+                }
+            };
+
+            $rootScope.jsonData.nodes[nodeId] = newNode;
+            $rootScope.jsonData.edges[edgeId] = newEdge;
+            console.log($rootScope.jsonData);
         }
 
         $rootScope.sub = function () {
@@ -60,7 +205,6 @@ angular.module("app")
             }
         }
 
-
         //Auto Complete Start
         var self = this;
 
@@ -77,6 +221,7 @@ angular.module("app")
          */
 
         function querySearch(query) {
+            console.log("Entered querySearch");
             var results = query ? self.states.filter(createFilterFor(
                 query)) : self.states;
             var deferred = $q.defer();
@@ -91,6 +236,7 @@ angular.module("app")
          */
 
         function loadAll() {
+            console.log("Entered loadAll");
             var allStates =
                 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
       Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
@@ -107,6 +253,7 @@ angular.module("app")
             });
         }
 
+
         /**
          * Create filter function for a query string
          */
@@ -118,7 +265,12 @@ angular.module("app")
             };
         }
 
-
         //Auto Complete End
-
-    });
+    }).filter('keylength', function () {
+    return function (input) {
+        if (!angular.isObject(input)) {
+            throw Error("Usage of non-objects with keylength filter!!")
+        }
+        return Object.keys(input).length;
+    }
+});

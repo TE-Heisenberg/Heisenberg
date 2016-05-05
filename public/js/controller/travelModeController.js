@@ -1,6 +1,6 @@
 angular.module("app")
     .controller('travelModeController', function ($rootScope,$timeout, $q, $scope) {
-    $rootScope.currentEdgeIndex=0;
+  /*  /!*$rootScope.currentEdgeIndex=0;
     $rootScope.edge =
           [
               {
@@ -79,7 +79,7 @@ angular.module("app")
           }
 
       ];
-
+*!/
         // For AutoComplete
         var self = this;
         $rootScope.source = "Alabama";
@@ -92,10 +92,10 @@ angular.module("app")
         // ******************************
         // Internal methods
         // ******************************
-        /**
+        /!**
          * Search for states... use $timeout to simulate
          * remote dataservice call.
-         */
+         *!/
 
         function querySearch(query) {
             console.log("Entered querySearch");
@@ -108,9 +108,9 @@ angular.module("app")
             return deferred.promise;
         }
 
-        /**
+        /!**
          * Build `states` list of key/value pairs
-         */
+         *!/
 
         function loadAll() {
             console.log("Entered loadAll");
@@ -131,9 +131,9 @@ angular.module("app")
             });
         }
 
-        /**
+        /!**
          * Create filter function for a query string
-         */
+         *!/
 
         function createFilterFor(query) {
             var lowercaseQuery = angular.lowercase(query);
@@ -174,5 +174,5 @@ angular.module("app")
     }).config(function ($mdThemingProvider) {
     // Configure a dark theme with primary foreground yellow
     $mdThemingProvider.theme('docs-dark', 'default').primaryPalette(
-        'yellow').dark();
+        'yellow').dark();*/
 });
