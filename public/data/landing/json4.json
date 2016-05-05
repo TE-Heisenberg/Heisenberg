@@ -1,14 +1,12 @@
-[
+
+{
+"local":
   {
-    "date": "Travel from Chennai to Banglore"
-  },
-  {
-    "date": "Travel from Newyork to Bali"
-  },
-  {
-    "date": "Lemon Tree hotel in Chennai"
-  },
-  {
-    "date": "Gateway Hotel in Electronicity"
-  }
-]
+    "data": ["Travel from Chennai to Banglore","Lemon Tree hotel in Chennai","Travel from Bangalore to Hyderabad"]
+    },
+
+  "global":
+   {
+     "data": ["Travel from Chennai to Chicago","Travel from Bangalore to London"]
+   }
+}

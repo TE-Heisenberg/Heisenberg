@@ -12,24 +12,17 @@
                         <md-list>
                             <md-list-item class="md-3-line">
                                 <div layout="column" class="md-list-item-text lay">
-                                    <div ng-repeat="item2 in array2 ">
+                                   <!--  <div ng-repeat="item2 in array2 ">
                                     <h4>{{item2.data}}</h4>
-                                    </div>
-                                    <!-- <ul class="pager" style="padding-bottom: 15px;">
-                                    <li style="display:inline;"><a href="#">Previous</a></li>
-                                    <li style="display:inline;"><a href="#">Next</a></li>
-                                  </ul> -->
+                                    </div> -->
+                                    <md-virtual-repeat-container id="horizontal-container" md-orient-horizontal>
+                                 <div md-virtual-repeat="item2 in array2"
+                               class="repeated-item" flex>
+                               {{item2}}
+                              </div>
+                       </md-virtual-repeat-container>
 
-                                    <div layout="row" id="myCarousel" class="carousel slide caro" data-ride="carousel">
 
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                            &nbsp;
-                                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                                            &nbsp;
-                                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                                        </ol>
-                                    </div>
                                 </div>
 
 
@@ -238,7 +231,7 @@
                 </md-button>
                 <md-button class="md-raised md-warn main_buttons3" ng-click="go('Hotelbooking')">Configure</md-button>
             </div>
-            <div layout="column" flex-xs="100" flex-gt-xs>
+            <div layout="column" flex-xs flex-gt-xs="100">
                 <md-card id="fav">
                     <md-card-title-text>
               <span class="md-headline">
