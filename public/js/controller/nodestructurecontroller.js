@@ -2,147 +2,188 @@
  * Created by lenovo on 25-04-2016.
  */
 angular.module("app")
-    .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q) {
+    .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q, $http) {
 
 
         $rootScope.go = function (path) {
             $location.path(path);
         }
 
-        $rootScope.edges =
-            [
-                {
-                    mode: 'flight',
-                    date: '',
-                    preference: 'Bla',
-                    startNode: 0,
-                    endNode: 1
-                }
-            ];
+        //Ajax Request for json Template
+        $http.get("public/data/travelplan.json").success(function (response) {
 
-        $rootScope.nodes = [
-            {
-                city: {"value": "alaska", "display": "Alaska"},
-                accommodation: [
-                    {
-                        rootInfo: [],
-                        address: "",
-                        expense: {
-                            value: 0,
-                            currency: ""
-                        },
-                        name: "",
-                        checkinDate: "",
-                        checkoutDate: "",
-                        checkinTime: "",
-                        area: "",
-                        options: {}
+            $rootScope.travelPlanJSON = response;
 
-                    }
-                ],
-                localTravel: [
-                    {
-                        pickupPoint: "",
-                        dropPoint: "",
-                        date: "",
-                        time: "",
-                        companyName: "",
-                        options: {}
-                    }
-                ]
+        });
 
-            },
-            {
-
-                city: {"value": "california", "display": "California"},
-                accommodation: [
-                    {
-                        rootInfo: [],
-                        address: "",
-                        expense: {
-                            value: 0,
-                            currency: ""
-                        },
-                        name: "",
-                        checkinDate: "",
-                        checkoutDate: "",
-                        checkinTime: "",
-                        area: "",
-                        options: {}
-
-                    }
-                ],
-                localTravel: [
-                    {
-                        pickupPoint: "",
-                        dropPoint: "",
-                        date: "",
-                        time: "",
-                        companyName: "",
-                        options: {}
-                    }
-                ]
-
-            }
-
-        ];
+        $rootScope.clickOut = function (x) {
 
 
-        $rootScope.add = function () {
+        };
+
+        $rootScope.addNode = function (index) {
+            var nodeIdNumber = index + 2;
+            var edgeIdNumber = index + 1;
+
+            var nodeId = "node" + nodeIdNumber;
+            var edgeId = "edge" + edgeIdNumber;
             var newNode = {
-                city: {"value": "", "display": ""},
-                accommodation: [
-                    {
-                        rootInfo: [],
-                        address: "",
-                        expense: {
-                            value: 0,
-                            currency: ""
+                "cityName": "",
+                "status": "",
+                "childServices": {
+                    "nodeS1": {
+                        "type": "",
+                        "status": "",
+                        "request": {
+                            "area": "",
+                            "rating": "",
+                            "roomType": "",
+                            "checkinDate": "",
+                            "checkoutDate": ""
                         },
-                        name: "",
-                        checkinDate: "",
-                        checkoutDate: "",
-                        checkinTime: "",
-                        area: "",
-                        options: {}
-
+                        "final": {
+                            "image": "",
+                            "name": "",
+                            "rating": "",
+                            "location": "",
+                            "roomType": "",
+                            "checkinDate": "",
+                            "checkinTime": "",
+                            "checkoutDate": "",
+                            "checkoutTime": "",
+                            "price": "",
+                            "comments": ""
+                        }
+                    },
+                    "nodeT1": {
+                        "type": "",
+                        "status": "",
+                        "request": {
+                            "source": "",
+                            "destination": "",
+                            "type": "",
+                            "pickupDate": "",
+                            "pickupTime": ""
+                        },
+                        "final": {
+                            "source": "",
+                            "destination": "",
+                            "type": "",
+                            "pickupDate": "",
+                            "pickupTime": "",
+                            "dropDate": "",
+                            "dropTime": "",
+                            "cab": {
+                                "image": "",
+                                "companyName": "",
+                                "cabNumber": "",
+                                "driverDetails": {
+                                    "name": ""
+                                },
+                                "estimatedPrice": "",
+                                "cabType": ""
+                            },
+                            "bus": {
+                                "image": "",
+                                "companyName": "",
+                                "busNumber": "",
+                                "busType": "",
+                                "seatsType": "",
+                                "price": ""
+                            }
+                        }
                     }
-                ],
-                localTravel: [
-                    {
-                        pickupPoint: "",
-                        dropPoint: "",
-                        date: "",
-                        time: "",
-                        companyName: "",
-                        options: {}
-                    }
-                ]
-
+                }
             };
-
             var newEdge = {
-                mode: 'Flight',
-                date: '',
-                preference: 'Bla',
-                startNode: 0,
-                endNode: 1
+                "status": "",
+                "childServices": {
+                    "edgeMode1": {
+                        "status": "",
+                        "request": {
+                            "travelStartDate": "",
+                            "mode": "Flight",
+                            "flight": {
+                                "state": "",
+                                "class": "",
+                                "Nonstop": ""
+                            },
+                            "bus": {
+                                "state": "",
+                                "class": "",
+                                "seatType": ""
+                            },
+                            "train": {
+                                "state": "",
+                                "class": ""
+                            }
+                        },
+                        "final": {
+                            "travelStartDate": "",
+                            "mode": "",
+                            "flight": {
+                                "companyName": "",
+                                "flightID": "",
+                                "seatNumber": "",
+                                "price": "",
+                                "preferences": {
+                                    "class": "",
+                                    "Nonstop": "",
+                                    "meals": "",
+                                    "extra Baggage": ""
+                                }
+                            },
+                            "bus": {
+                                "companyName": "",
+                                "busNumber": "",
+                                "seatNumber": "",
+                                "price": "",
+                                "preferences": {
+                                    "class": "",
+                                    "seatType": ""
+                                }
+                            },
+                            "train": {
+                                "companyName": "",
+                                "trainNumber": "",
+                                "seatNumber": "",
+                                "coachNumber": "",
+                                "price": "",
+                                "preferences": {
+                                    "class": ""
+                                }
+                            },
+                            "travelStartTime": "",
+                            "travelEndDate": "",
+                            "travelEndTime": ""
+                        }
+                    }
+                }
             };
 
-            $scope.nodes.push(newNode);
-            $scope.edges.push(newEdge);
+            $rootScope.travelPlanJSON.nodes[nodeId] = newNode;
+            $rootScope.travelPlanJSON.edges[edgeId] = newEdge;
 
         }
 
-        $rootScope.sub = function () {
+        $rootScope.subNode = function (index) {
 
-            $rootScope.nodes.splice(-1, 1);
+            var deleteNodeIDnumber = index + 1;
+            var deleteEdgeIDnumber = index;
 
+            var nodeId = "node" + deleteNodeIDnumber;
+            var edgeId = "edge" + deleteEdgeIDnumber;
+
+            delete $rootScope.travelPlanJSON.nodes[nodeId];
+            delete $rootScope.travelPlanJSON.edges[edgeId];
+
+            console.log($rootScope.travelPlanJSON)
         };
         $rootScope.travel_mode = "flight";
         $rootScope.change_travel_mode = function (index, icon) {
-            console.log(index);
-            $rootScope.edges[index].mode = icon;
+            index.edgeMode1.request.mode = icon;
+           
+            //$rootScope.edges[index].mode = icon;
         };
 
         $rootScope.node_md_action_default_show = function () {
@@ -174,13 +215,9 @@ angular.module("app")
             }
         }
 
-
         //Auto Complete Start
         var self = this;
-        // $rootScope.source = "Alabama";
-        // $rootScope.destination = "California";
-        // $rootScope.selectedMode='Flight';
-        // list of `state` value/display objects
+
         self.states = loadAll();
         self.searchText = [];
         self.querySearch = querySearch;
@@ -194,6 +231,7 @@ angular.module("app")
          */
 
         function querySearch(query) {
+            console.log("Entered querySearch");
             var results = query ? self.states.filter(createFilterFor(
                 query)) : self.states;
             var deferred = $q.defer();
@@ -208,6 +246,7 @@ angular.module("app")
          */
 
         function loadAll() {
+            console.log("Entered loadAll");
             var allStates =
                 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
       Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
@@ -224,6 +263,7 @@ angular.module("app")
             });
         }
 
+
         /**
          * Create filter function for a query string
          */
@@ -235,7 +275,12 @@ angular.module("app")
             };
         }
 
-
         //Auto Complete End
-
-    });
+    }).filter('keylength', function () {
+    return function (input) {
+        if (!angular.isObject(input)) {
+            throw Error("Usage of non-objects with keylength filter!!")
+        }
+        return Object.keys(input).length;
+    }
+});
