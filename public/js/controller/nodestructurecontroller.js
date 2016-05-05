@@ -188,11 +188,14 @@ angular.module("app")
             console.log($rootScope.travelPlanJSON)
         };
         $rootScope.travel_mode = "flight";
-        $rootScope.change_travel_mode = function (index, icon) {
+        $rootScope.change_travel_mode = function (count, index, icon) {
             index.edgeMode1.request.mode = icon;
+            console.log(count);
+
+            $rootScope.currentIndex = count;
 
             //$rootScope.edges[index].mode = icon;
-            console.log($rootScope.travelPlanJSON);
+            // console.log($rootScope.travelPlanJSON);
         };
 
         $rootScope.node_md_action_default_show = function () {
