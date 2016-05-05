@@ -24,8 +24,7 @@ angular.module("app", [ "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute
         }).when("/Travelbooking", {
 
             templateUrl: "views/Travelbooking.html",
-            controller: "travelModeController",
-            controllerAs: "ctrl1"
+            controller: "travelModeController"
 
         }).when("/staybooking", {
 

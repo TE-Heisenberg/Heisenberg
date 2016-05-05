@@ -4,7 +4,7 @@
 angular.module("app")
     .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q, $http) {
 
-
+        console.log("nodestructurecontroller");
         $rootScope.go = function (path) {
             $location.path(path);
         }
@@ -20,6 +20,9 @@ angular.module("app")
 
 
         };
+
+        $rootScope.currentIndex = 1;
+
 
         $rootScope.addNode = function (index) {
             var nodeIdNumber = index + 2;
@@ -164,6 +167,11 @@ angular.module("app")
             $rootScope.travelPlanJSON.nodes[nodeId] = newNode;
             $rootScope.travelPlanJSON.edges[edgeId] = newEdge;
 
+
+            $rootScope.currentIndex++;
+            ;
+
+
         }
 
         $rootScope.subNode = function (index) {
@@ -182,8 +190,9 @@ angular.module("app")
         $rootScope.travel_mode = "flight";
         $rootScope.change_travel_mode = function (index, icon) {
             index.edgeMode1.request.mode = icon;
-           
+
             //$rootScope.edges[index].mode = icon;
+            console.log($rootScope.travelPlanJSON);
         };
 
         $rootScope.node_md_action_default_show = function () {
