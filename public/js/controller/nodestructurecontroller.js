@@ -18,7 +18,7 @@ angular.module("app")
 
         $rootScope.clickOut = function (x) {
 
-            
+
         };
 
         $rootScope.addNode = function (index) {
@@ -163,16 +163,26 @@ angular.module("app")
 
             $rootScope.travelPlanJSON.nodes[nodeId] = newNode;
             $rootScope.travelPlanJSON.edges[edgeId] = newEdge;
-            console.log($rootScope.travelPlanJSON);
+
         }
 
-        $rootScope.sub = function () {
+        $rootScope.subNode = function (index) {
 
+            var deleteNodeIDnumber = index + 1;
+            var deleteEdgeIDnumber = index;
 
+            var nodeId = "node" + deleteNodeIDnumber;
+            var edgeId = "edge" + deleteEdgeIDnumber;
+
+            delete $rootScope.travelPlanJSON.nodes[nodeId];
+            delete $rootScope.travelPlanJSON.edges[edgeId];
+
+            console.log($rootScope.travelPlanJSON)
         };
         $rootScope.travel_mode = "flight";
         $rootScope.change_travel_mode = function (index, icon) {
-            console.log(index);
+            index.edgeMode1.request.mode = icon;
+           
             //$rootScope.edges[index].mode = icon;
         };
 
