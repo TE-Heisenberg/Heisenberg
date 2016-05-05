@@ -2,147 +2,33 @@
  * Created by lenovo on 25-04-2016.
  */
 angular.module("app")
-    .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q) {
+    .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q, $http) {
 
 
         $rootScope.go = function (path) {
             $location.path(path);
         }
 
-        $rootScope.edges =
-            [
-                {
-                    mode: 'flight',
-                    date: '',
-                    preference: 'Bla',
-                    startNode: 0,
-                    endNode: 1
-                }
-            ];
+        //Ajax Request for json Template
+        $http.get("public/data/travelplan.json").success(function (response) {
 
-        $rootScope.nodes = [
-            {
-                city: {"value": "alaska", "display": "Alaska"},
-                accommodation: [
-                    {
-                        rootInfo: [],
-                        address: "",
-                        expense: {
-                            value: 0,
-                            currency: ""
-                        },
-                        name: "",
-                        checkinDate: "",
-                        checkoutDate: "",
-                        checkinTime: "",
-                        area: "",
-                        options: {}
-
-                    }
-                ],
-                localTravel: [
-                    {
-                        pickupPoint: "",
-                        dropPoint: "",
-                        date: "",
-                        time: "",
-                        companyName: "",
-                        options: {}
-                    }
-                ]
-
-            },
-            {
-
-                city: {"value": "california", "display": "California"},
-                accommodation: [
-                    {
-                        rootInfo: [],
-                        address: "",
-                        expense: {
-                            value: 0,
-                            currency: ""
-                        },
-                        name: "",
-                        checkinDate: "",
-                        checkoutDate: "",
-                        checkinTime: "",
-                        area: "",
-                        options: {}
-
-                    }
-                ],
-                localTravel: [
-                    {
-                        pickupPoint: "",
-                        dropPoint: "",
-                        date: "",
-                        time: "",
-                        companyName: "",
-                        options: {}
-                    }
-                ]
-
-            }
-
-        ];
+            $rootScope.jsonData = response;
+            console.log($rootScope.jsonData.nodes.node1.childServices);
+        });
 
 
         $rootScope.add = function () {
-            var newNode = {
-                city: {"value": "", "display": ""},
-                accommodation: [
-                    {
-                        rootInfo: [],
-                        address: "",
-                        expense: {
-                            value: 0,
-                            currency: ""
-                        },
-                        name: "",
-                        checkinDate: "",
-                        checkoutDate: "",
-                        checkinTime: "",
-                        area: "",
-                        options: {}
-
-                    }
-                ],
-                localTravel: [
-                    {
-                        pickupPoint: "",
-                        dropPoint: "",
-                        date: "",
-                        time: "",
-                        companyName: "",
-                        options: {}
-                    }
-                ]
-
-            };
-
-            var newEdge = {
-                mode: 'Flight',
-                date: '',
-                preference: 'Bla',
-                startNode: 0,
-                endNode: 1
-            };
-
-            $scope.nodes.push(newNode);
-            $scope.edges.push(newEdge);
 
         }
 
         $rootScope.sub = function () {
 
-            $rootScope.nodes.splice(-1, 1);
 
         };
         $rootScope.travel_mode = "flight";
         $rootScope.change_travel_mode = function (index, icon) {
             console.log(index);
-            $rootScope.edges[index].mode = icon;
+            //$rootScope.edges[index].mode = icon;
         };
 
         $rootScope.node_md_action_default_show = function () {
@@ -177,10 +63,7 @@ angular.module("app")
 
         //Auto Complete Start
         var self = this;
-        // $rootScope.source = "Alabama";
-        // $rootScope.destination = "California";
-        // $rootScope.selectedMode='Flight';
-        // list of `state` value/display objects
+
         self.states = loadAll();
         self.searchText = [];
         self.querySearch = querySearch;

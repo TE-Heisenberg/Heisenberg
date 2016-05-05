@@ -1,9 +1,14 @@
 <div class=" margin-node" ng-app="app" ng-controller="nodestructurecontroller as ctrl1">
     <div class="line">
 
-        <div ng-repeat="x in nodes" class="node-add-action">
+        <div ng-repeat="(key, value) in jsonData.nodes" class="node-add-action">
 
-            <div class="progress-line" ng-if="$index>=1">
+            <div ng-if="key.indexOf('node')>-1" )>
+                {{$index}}
+
+            </div>
+
+           <!-- <div class="progress-line" ng-if="$index>=1">
                 <div class=" node-sm travel-button" ng-model="newObject[x.edge]"
                      ng-click="Flight_buttion_Action(x)">
                     <i class="material-icons">{{edges[$index-1].mode | lowercase}}</i>
@@ -16,9 +21,9 @@
                        ng-click="change_travel_mode($index-1,'directions_bus')">directions_bus</i>
                 </div>
 
-            </div>
+            </div>-->
 
-            <div class="node">
+           <!-- <div class="node">
                 <div class="node-md" ng-click="go('Travelbooking'); node_md_action_show(x)">
                     {{x.city.display
                     | limitTo:3 |
@@ -50,7 +55,7 @@
             </div>
             <div class=" node-add node" ng-show="nodes.length >= 3 && $index == nodes.length-1">
                 <div class="glyphicon glyphicon-minus" ng-click="sub()"></div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
