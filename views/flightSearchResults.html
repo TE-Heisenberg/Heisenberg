@@ -22,9 +22,9 @@
           </div>
           </md-card>
         </div>
-        <div class="results" layout='column' flex='75' flex-sm="100" flex-xs="100">
-          <md-card ng-model="flightSearchResults" ng-repeat="flightSearchResult in flightSearchResults">
-            <div layout="row"  layout-align="space-around center">
+        <div layout-xs="column" class="results" layout='column' flex='75' flex-sm="100" flex-xs="100">
+          <md-card  flex-xs="50" ng-model="flightSearchResults" ng-repeat="flightSearchResult in flightSearchResults">
+            <div layout="row"  layout-align="space-around center" layout-xs="column">
               <div>
                 <img  class="img" ng-src="public/assets/images/{{flightSearchResult.imagePath}}" alt="{{flightSearchResult.imagePath}}">
               </div>
