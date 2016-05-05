@@ -1,35 +1,7 @@
 
-  <div class="content_div" ng-cloak>
-        <div class="header">
-          <span>K2</span>
-          <div class="icons">
-            <i class="material-icons">home</i>
-            <i class="material-icons">notifications</i>
-            <i class="material-icons">person</i>
-          </div>
-        </div>
-        <!-- <div style="height:160px;text-align:center;background-color:white;border-bottom:2px solid orange;">
-          <div style="border:0px solid;margin-left:25%;width:50%;padding:10px 10px 0 20px;float:left;">
-            <md-button class="md-fab" style="float:left">BLR</md-button>
-            <div style="float:left;width:70%;">
-              <span style="font-size:18px;position:relative;left:-20%;">23/04/2016</span>
-              <i class="material-icons" style="position:relative;left:-5%;top:10px;color:green;font-size:50px;-webkit-transform: rotate(0deg);">train</i>
-              <hr style="background-color:red;">
-            </div>
-            <md-button class="md-fab" style="float:left">HYD</md-button>
-          </div>
-          <div align="center" style="width:50%;margin:auto;font-size:16px;">
-            <div style="width:20%;border:0px solid;float:left;text-align:center;">
-              <font>Bangalore</font>
-            </div>
-            <div style="width:20%;border:0px solid;margin-right:-10px;float:right;text-align:center;">
-              <font>Hyderabad</font><br>
-              <font>Stay?</font>
-              <font>LocalTravel?</font>
-            </div>
-          </div>
-        </div> -->
-        <div id="sidebar">
+  <div class="content_div" ng-cloak layout="row" layout-sm="column">
+
+        <div id="sidebar" hide-sm hide-xs flex="25">
             <md-grid-list md-cols=2 md-row-height="4:1">
               <md-grid-tile>Filter results</md-grid-tile>
               <md-grid-tile><md-button class="md-primary" ng-click="reset()">Reset All</md-grid-tile>
@@ -42,7 +14,7 @@
               </md-card-title>
                 <md-card-content>
                   <span ng-bind="range"></span>
-                  <input class="mdl-slider mdl-js-slider" ng-change="slideP(range)" type="range"  min="300" max="5000" ng-model="range" tabindex="0" />
+                  <input class="md-slider" ng-change="slideP(range)" type="range"  min="300" max="5000" ng-model="range" />
                 </md-card-content>
             </md-card>
             <md-card>
@@ -93,22 +65,22 @@
                 <md-checkbox ng-model="sec" ng-change="scc('sec')">Secundrabad JN</md-checkbox>
             </md-card>
       </div>
-        <div id="mainbar">
+        <div id="mainbar" flex="100" flex-gt-sm="75">
           <md-grid-list class="det_header" md-cols="7" md-gutter="1em" md-row-height="4:1">
             <md-grid-tile >Train name(No)</md-grid-tile>
             <md-grid-tile >Departure<i class="material-icons" ng-click="sort('departure_time')">arrow_drop_down</i></md-grid-tile>
             <md-grid-tile >Arrival<i class="material-icons" ng-click="sort('arrival_time')">arrow_drop_down</i></md-grid-tile>
             <md-grid-tile >Duration</md-grid-tile>
             <md-grid-tile >Availability/WL</md-grid-tile>
-            <md-grid-tile >Price<i class="material-icons">arrow_drop_down</i></md-grid-tile>
+            <md-grid-tile >Price<i class="material-icons" ng-click="sort('price')">arrow_drop_down</i></md-grid-tile>
             <md-grid-tile ></md-grid-tile>
           </md-grid-list>
 
-          <md-card class="animate-repeat" ng-repeat="one in data" id="{{$index}}">
+          <md-card class="animate-repeat" ng-repeat="one in data | orderBy:myOrder" id="{{$index}}">
             <md-grid-list class="det_cards" md-cols="7"  md-row-height="1:1">
               <md-grid-tile>
                 <div>{{one.trainNo}}<br>
-                <span>{{one.Name}}</span>
+                <span class="spann">{{one.Name}}</span>
                 </div>
               </md-grid-tile>
               <md-grid-tile>{{one.departure_time}}</md-grid-tile>

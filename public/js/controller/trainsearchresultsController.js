@@ -8,7 +8,6 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
 
         $scope.mrngDep=function(depar){
             $scope.data=$scope.list;
-            console.log("Mrng!!!");
             var array1=[];
             var array=$scope.data;
             for(obj in array){
@@ -22,7 +21,6 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
         };
         $scope.aftnDep=function(depar){
             $scope.data=$scope.list;
-            console.log("Mrng!!!");
             var array1=[];
             var array=$scope.data;
             for(obj in array){
@@ -36,7 +34,6 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
         };
         $scope.evngDep=function(depar){
             $scope.data=$scope.list;
-            console.log("Mrng!!!");
             var array1=[];
             var array=$scope.data;
             for(obj in array){
@@ -50,7 +47,6 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
         };
         $scope.nightDep=function(depar){
             $scope.data=$scope.list;
-            console.log("Mrng!!!");
             var array1=[];
             var array=$scope.data;
             for(obj in array){
@@ -91,7 +87,6 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
         $scope.showDiv=false;
         $scope.range=300;
         $scope.slideP=function(rang){
-            console.log("im in slider");
             $scope.data=$scope.list;
             var array1=[];
             var array=$scope.data;
@@ -103,16 +98,15 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
             }
             $scope.data=array1;
         };
-        $scope.slider = {
-            minValue: 10,
-            maxValue: 90,
-            options: {
-                floor: 0,
-                ceil: 100,
-                step: 1
-            }
+        $scope.reset=function() {
+          $scope.range=300;
+          $scope.data=$scope.list;
+          $scope.sbc=true;
+          $scope.yp=true;
+          $scope.kcg=true;
+          $scope.sec=true;
         };
-
-    }
-
-);
+        $scope.sort=function(time){
+          $scope.myOrder=time;
+        };
+});

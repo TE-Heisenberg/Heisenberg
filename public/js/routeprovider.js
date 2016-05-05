@@ -33,7 +33,7 @@ angular.module("app", [ "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute
             controller: "hotelSearchController",
             controllerAs: "ctrl2"
 
-        }).when("/flightsearchresult", {
+        }).when("/flightsearchresults", {
 
           templateUrl: "views/flightSearchResults.html",
           controller: "flightSearchResultController"

@@ -1,56 +1,46 @@
 #sidebar{
-  margin-left:1%;
-  width:20%;
-  float:left;
-  border:0px groove black;
-  height:500px;
+  margin-left:10%;
 }
 #sidebar md-grid-list{
-  margin:5px 0 0 10px;
-  width:100%;
+  margin: 10px 0 0 0;
   font-weight:bold;
 }
 #sidebar md-card{
   margin-bottom:10px;
-  width: 100%;
-  /*min-height:100px;*/
-  background-color: white;
-  border-bottom: 0px solid orange;
 }
 #sidebar md-card button{
   width:20%;
-  height:10%;
+  height:40px;
+  border: none;
   font-size:12px;
   display:inline;
 }
 #sidebar md-checkbox{
-  margin:0 5px 5px 15px;
+  margin:0 5px 10px 15px;
 }
 #mainbar{
-  margin-left:10px;
-  width:75%;
-  float:left;
-  border:0px groove black;
+  margin-left: 1%;
+  margin-right: 10%;
 }
 #mainbar .det_header{
-  margin:15px 0 0 10px;
-  width:90%;
+  margin:10px 0 0 10px;
+  padding: 10px;
   font-weight:bold;
 }
+#mainbar .det_header i{
+  color: blue;
+}
+
 #mainbar md-card{
-  border-bottom: 0px solid orange;
+  padding: 10px;
   margin-bottom: 10px;
-  width: 100%;
-  /*min-height:50px;*/
-  background-color: white;
 }
 #mainbar md-card .det_cards{
-  font-size:18px;
+  font-size:16px;
   text-align:center;
-  width: 90%;
 }
-#mainbar md-card md-grid-list span{
-  font-size:14px;
+.det_cards .spann{
+  font-size:12px;
 }
 #mainbar .selectButton{
   min-width: 20px;
@@ -58,51 +48,7 @@
 md-card-title{
   font-size: 20px;
 }
-button{
-  background-color: #e3e3e3;
-  border: none;
-}
-
 .content_div{
-  height:1200px;
-  width:80%;
+  background-color: #e3e3e3;
   margin:auto;
-  background-color:#f2f2f2;
-}
-.content_div .header{
-  height:50px;
-  background-color:white;
-  padding:20px 20px 0 20px;
-  border-bottom:0px solid orange;
-}
-.content_div .header span{
-  font-size: 30px;
-}
-.content_div .header .icons{
-  float:right;
-  font-size:40px;
-}
-@media(max-width:1000px){
-  #sidebar{
-    display: none;
-  }
-  #mainbar{
-    margin-left:0px;
-    width: 98%;
-  }
-  #mainbar .det_header{
-    margin:15px 0 0 10px;
-    width:90%;
-    font-weight:bold;
-    font-size: 10px;
-  }
-  #mainbar md-card .det_cards{
-    font-size:13px;
-    text-align:center;
-    width: 90%;
-  }
-  #mainbar md-card md-grid-list span{
-    font-size:11px;
-  }
-
 }
