@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {*/
     body {
         width: 100%
     }
@@ -128,19 +128,18 @@
     }
 
     .main_buttons {
-        height: 50px;
         width: 28%;
         margin: 2%;
     }
 
     .main_buttons2 {
-        height: 50px;
+        
         width: 28%;
         margin: 2%;
     }
 
     .main_buttons3 {
-        height: 50px;
+        
         width: 28%;
         margin: 2%;
 
@@ -193,7 +192,7 @@
     }
 
     #fav {
-        height: 250px;
+       
         padding: 12px;
         margin-bottom: 6px;
         border-bottom: 4px solid #2a8ce2;
@@ -201,6 +200,7 @@
 
     #fav .fav_icons {
         float: right;
+    
     }
 
     #fav_icon {
@@ -209,13 +209,13 @@
     }
 
     #fav_icon1 {
-        font-size: 24px;
+        font-size: 36px;
         background-color: grey;
         color: #333333;
     }
 
     #fav_icon2 {
-        font-size: 24px;
+        font-size: 36px;
         background-color: grey;
         color: #333333;
     }
@@ -223,21 +223,21 @@
     /*.md-button{
     margin:2% !important;
     }*/
-    .col1 {
+    /*.col1 {
         width: 65%;
     }
 
     .col2 {
         width: 35%;
-    }
-}
+    }*/
+/*}*/
 
 .show_sum {
     background: #2a8ce2 !important;
 }
 
-@media (max-width: 767px) {
-    body {
+/*@media (max-width: 767px) {*/
+/*    body {
         width: 100%
     }
 
@@ -418,7 +418,7 @@
     }
 
     #fav {
-        height: 250px;
+        height: 2
         padding: 12px;
         margin-bottom: 6px;
         border-bottom: 4px solid #2a8ce2;
@@ -449,15 +449,15 @@
         font-size: 12px !important;
     }
 
-    .col1 {
+    /*.col1 {
         width: 100%;
     }
 
     .col2 {
         width: 100%;
-    }
+    }*/
 
     head {
         display: none;
-    }
-}
+    }*/
+/*}*/
