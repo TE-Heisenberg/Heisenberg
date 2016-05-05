@@ -54,8 +54,10 @@ angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$loc
 
     });
     $http.get("public/data/landing/json2.json").success(function (response) {
-        $scope.plan = response;
-        console.log(response);
+        $scope.completed = response.completed.date;
+        $scope.current = response.current.date;
+        $scope.future = response.future.date;
+        console.log("res  "+$scope.completed);
     });
 
     $http.get("public/data/landing/json3.json").success(function (response) {
@@ -64,8 +66,13 @@ angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$loc
     });
 
     $http.get("public/data/landing/json4.json").success(function (response) {
-        $scope.array1 = response;
-        console.log(response);
+        $scope.fav=function(locality){
+          $scope.localit = response[locality].data;
+        };
+        $scope.localit = response.local.data;
+      //  $scope.local = response.local.data;
+        //$scope.global = response.global.data;
+        //console.log(response);
     });
 
     $scope.go=function(path)

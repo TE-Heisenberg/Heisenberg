@@ -41,7 +41,6 @@
     <link rel="stylesheet" href="public/css/hotelSearchResults.css">
 
 
-
     <!--Javascript custom-->
     <script src="public/js/routeprovider.js"></script>
     <script src="public/js/controller/nodestructurecontroller.js"></script>
@@ -52,11 +51,11 @@
     <script src="public/js/controller/hotelSearchResultsController.js"></script>
     <script src="public/js/controller/itineraryController.js"></script>
     <script src="public/js/controller/flightSearchResultController.js"></script>
-    <script  src="public/js/controller/travelPreferenceController.js"></script>
+    <script src="public/js/controller/travelPreferenceController.js"></script>
 
 
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="indexController">
 <div>
     <img src="public/assets/images/logo.png" alt="logo">
     <div class="header_icons">
@@ -65,7 +64,7 @@
         <i class="material-icons">person</i>
     </div>
 </div>
-<div id="nodes"  ng-include src="'views/travelplan.html'" ng-hide="landingPage==true"></div>
+<div id="nodes" ng-include src="'views/travelplan.html'" ng-hide="landingPage==true"></div>
 <div ng-view>
 
 </div>

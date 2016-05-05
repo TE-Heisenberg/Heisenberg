@@ -4,7 +4,7 @@
 angular.module("app")
     .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q, $http) {
 
-
+        console.log("nodestructurecontroller");
         $rootScope.go = function (path) {
             $location.path(path);
         }
@@ -18,8 +18,11 @@ angular.module("app")
 
         $rootScope.clickOut = function (x) {
 
-            
+
         };
+
+        $rootScope.currentIndex = 1;
+
 
         $rootScope.addNode = function (index) {
             var nodeIdNumber = index + 2;
@@ -163,17 +166,36 @@ angular.module("app")
 
             $rootScope.travelPlanJSON.nodes[nodeId] = newNode;
             $rootScope.travelPlanJSON.edges[edgeId] = newEdge;
-            console.log($rootScope.travelPlanJSON);
+
+
+            $rootScope.currentIndex++;
+            ;
+
+
         }
 
-        $rootScope.sub = function () {
+        $rootScope.subNode = function (index) {
 
+            var deleteNodeIDnumber = index + 1;
+            var deleteEdgeIDnumber = index;
 
+            var nodeId = "node" + deleteNodeIDnumber;
+            var edgeId = "edge" + deleteEdgeIDnumber;
+
+            delete $rootScope.travelPlanJSON.nodes[nodeId];
+            delete $rootScope.travelPlanJSON.edges[edgeId];
+
+            console.log($rootScope.travelPlanJSON)
         };
         $rootScope.travel_mode = "flight";
-        $rootScope.change_travel_mode = function (index, icon) {
-            console.log(index);
+        $rootScope.change_travel_mode = function (count, index, icon) {
+            index.edgeMode1.request.mode = icon;
+            console.log(count);
+
+            $rootScope.currentIndex = count;
+
             //$rootScope.edges[index].mode = icon;
+            // console.log($rootScope.travelPlanJSON);
         };
 
         $rootScope.node_md_action_default_show = function () {

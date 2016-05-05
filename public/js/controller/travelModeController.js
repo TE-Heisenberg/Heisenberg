@@ -23,4 +23,4 @@ angular.module("app")
       $scope.myDate.getFullYear(),
       $scope.myDate.getMonth(),
       $scope.myDate.getDate());
-});
+    });
