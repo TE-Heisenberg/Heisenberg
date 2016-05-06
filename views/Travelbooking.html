@@ -1,12 +1,13 @@
-    <div ng-cloak class="md-inline-form">
+
+    <div ng-cloak class="md-inline-form" style="background-color:#f4f3ef;">
         <md-input-container>
                     <label>{{value.displayName}}</label>
                     <md-select ng-model="node1" multiple>
                     <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
                     <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
-                    </md-select>             
+                    </md-select>
           </md-input-container>
-        <md-card ng-repeat='(serviceName, serviceParameters) in nodeMaster.services'>
+        <md-card ng-repeat='(serviceName, serviceParameters) in nodeMaster.services' class="hotel_stay">
              <div ng-repeat='(fieldName, fieldParameters) in serviceParameters'>
              <div ng-switch='fieldParameters.type'>
                 <div ng-switch-when='dropDown'>
@@ -29,7 +30,7 @@
                         </md-item-template>
                     </md-autocomplete>
                 </div>
-             </div>             
+             </div>
           </div>
         </md-card>
        <!--  <md-card>
