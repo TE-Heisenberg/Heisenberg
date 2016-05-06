@@ -57,12 +57,12 @@ angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$loc
         $scope.completed = response.completed.date;
         $scope.current = response.current.date;
         $scope.future = response.future.date;
-        console.log("res  "+$scope.completed);
+        // console.log("res  "+$scope.completed);
     });
 
     $http.get("public/data/landing/json3.json").success(function (response) {
         $scope.array2 = response;
-        console.log(response);
+        // console.log($scope.array2[0].data);
     });
 
     $http.get("public/data/landing/json4.json").success(function (response) {

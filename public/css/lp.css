@@ -28,14 +28,14 @@
     .main_content {
         background-color: #f4f3ef;
         font-family: arial;
-        margin-left: 5px;
+    
     }
 
     .title {
         height: 64px;
         background-color: white;
         border-bottom: 4px solid #28ace2;
-        padding-left: 10px;
+        
     }
 
     .card1 {
@@ -106,7 +106,6 @@
 
     .card3 {
 
-        height: 350px;
         float: left;
         padding: 12px;
         border-bottom: 4px solid #2a8ce2;
@@ -119,6 +118,7 @@
     }
 
     .card3 .res {
+        width:10%;
         color: #5bc0de;
     }
 
@@ -461,3 +461,26 @@
         display: none;
     }*/
 /*}*/
+
+
+  /*.vrepeatContainer #horizontal-container {
+           height: 100px;
+           width: 830px;
+         }
+
+
+          .vrepeatContainer .repeated-item-horizontal {
+            border-right: 1px solid #ddd;
+            box-sizing: border-box;
+            display: inline-block;
+            height: 84px;
+            padding-top: 35px;
+            text-align: center;
+            width: 50px;
+         }
+
+
+         .vrepeatContainer md-content {
+            margin: 16px;
+         }
+         */
