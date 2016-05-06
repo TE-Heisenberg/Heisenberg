@@ -16,11 +16,6 @@ angular.module("app")
 
         });
 
-        $rootScope.clickOut = function (x) {
-
-
-        };
-
         $rootScope.currentIndex = 1;
 
 
@@ -218,6 +213,12 @@ angular.module("app")
             }
 
         };
+
+        $rootScope.closeThis= function(x){
+           console.log("closing");
+           x.show = false;
+         }
+
 
         $rootScope.Flight_buttion_Action = function (x) {
             if (x.flightShow == false) {

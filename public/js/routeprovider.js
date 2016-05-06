@@ -1,7 +1,7 @@
 /**
  * Created by lenovo on 29-04-2016.
  */
-angular.module("app", [ "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute", "ngMdIcons", "ngMessages", "mdPickers"])
+angular.module("app", [ "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute", "ngMdIcons", "ngMessages", "mdPickers","angular-click-outside"])
     .run(function ($rootScope, $location) {
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
             if ($location.path().indexOf('landing') > 0) {
@@ -60,7 +60,7 @@ angular.module("app", [ "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute
 
 
     }).controller('indexController', function ($rootScope) {
-    
+
 })
 
 ;
