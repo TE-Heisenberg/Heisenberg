@@ -53,3 +53,11 @@ md-card-title{
   background-color: #e3e3e3;
   margin:auto;
 }
+#moreDetails{
+  border:1px ridge black;
+  padding: 10px;
+}
+
+#moreDetails .value{
+  font-size: 18px;
+}

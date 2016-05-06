@@ -18,7 +18,6 @@
                     <input ng-change="slideP(range)" type="range"  min={{filt.data.min}} max={{filt.data.max}} ng-model="range" />
                   </div>
                   <div ng-show={{filt.type=='checkbox'}}>
-                    <!-- {{filt.data}} -->
                     <div ng-repeat="area in filt.data">
                       <md-checkbox ng-model="chkbox" ng-change="scc(area,chkbox);">{{area}}</md-checkbox>
                     </div>
@@ -42,7 +41,7 @@
             <md-grid-tile ></md-grid-tile>
           </md-grid-list>
 
-          <md-card class="animate-repeat" ng-repeat="one in data | orderBy:myOrder" id="{{$index}}">
+          <md-card class="animate-repeat" ng-repeat="one in data | orderBy:myOrder">
             <md-grid-list class="det_cards" md-cols="7"  md-row-height="1:1">
               <md-grid-tile>
                 <div>{{one.trainNo}}<br>
@@ -62,6 +61,28 @@
                 </div>
               </md-grid-tile>
             </md-grid-list>
+            <div ng-show="{{'showDiv'+$index}}" id="moreDetails">
+              <div layout="row">
+              <div flex="50">
+                Train No: 
+                <font class="value">{{one.trainNo}}</font>
+              </div>
+              <div flex="50">
+                Train Name:
+                <font class="value">{{one.Name}}</font>
+              </div>
+            </div>
+            <div layout="row">
+              <div flex="50">
+                Departure Station:
+                <font class="value">{{one.departure_station}}</font>
+              </div>
+              <div flex="50">
+                Arrival Station:
+                <font class="value">{{one.arrival_station}}</font>
+              </div>
+            </div>
+            </div>
           </md-card>
 
         </div>
