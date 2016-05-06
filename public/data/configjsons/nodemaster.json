@@ -25,7 +25,6 @@
                     "id": "location",
                     "type": "autoComplete",
                     "data-reference": "essential.location"
-
                   },
                 	"area": {
                 		"mandatory": true,
@@ -103,14 +102,14 @@
                     "mandatory": false,
                 		"displayName": "Amenities",
                 		"id": "amenities",
-                		"type": "multiSelect",
+                		"type": "dropDown",
                 		"data":["meeting rooms", "swimming pool", "fitness", "restaurants"]
                   },
                   "proximity": {
                     "mandatory": false,
                 		"displayName": "Proximity",
                 		"id": "proximity",
-                		"type": "multiSelect",
+                		"type": "dropDown",
                 		"data":["metro station", "taxi stands", "airports", "railway stations" ]
 
                   }

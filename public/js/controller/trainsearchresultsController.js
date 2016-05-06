@@ -1,58 +1,20 @@
-angular.module('app').controller('trainSearchResultsController',function($scope,$http) {
+angular.module('app').controller('trainSearchResultsController',function($scope,$http,$filter) {
 
         $http.get('public/data/trainInfo.json').success(function(data){
 
-            $scope.list=data;
+            $scope.list=data.trainResult;
             $scope.data=$scope.list;
+            $scope.filtrs=data.filters;
         });
 
-        $scope.mrngDep=function(depar){
+        $scope.mrngDep=function(depar,time){
             $scope.data=$scope.list;
             var array1=[];
             var array=$scope.data;
             for(obj in array){
                 var object=(array[obj][depar]);
                 var dep=object.substring(0,2);
-                if(parseInt(dep)>=0 && parseInt(dep)<=6){
-                    array1.push(array[obj]);
-                }
-            }
-            $scope.data=array1;
-        };
-        $scope.aftnDep=function(depar){
-            $scope.data=$scope.list;
-            var array1=[];
-            var array=$scope.data;
-            for(obj in array){
-                var object=(array[obj][depar]);
-                var dep=object.substring(0,2);
-                if(parseInt(dep)>=6 && parseInt(dep)<=12){
-                    array1.push(array[obj]);
-                }
-            }
-            $scope.data=array1;
-        };
-        $scope.evngDep=function(depar){
-            $scope.data=$scope.list;
-            var array1=[];
-            var array=$scope.data;
-            for(obj in array){
-                var object=(array[obj][depar]);
-                var dep=object.substring(0,2);
-                if(parseInt(dep)>=12 && parseInt(dep)<=18){
-                    array1.push(array[obj]);
-                }
-            }
-            $scope.data=array1;
-        };
-        $scope.nightDep=function(depar){
-            $scope.data=$scope.list;
-            var array1=[];
-            var array=$scope.data;
-            for(obj in array){
-                var object=(array[obj][depar]);
-                var dep=object.substring(0,2);
-                if(parseInt(dep)>=18 && parseInt(dep)<=24){
+                if(parseInt(dep)>=time*6 && parseInt(dep)<=(time+1)*6){
                     array1.push(array[obj]);
                 }
             }
@@ -98,15 +60,25 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
             }
             $scope.data=array1;
         };
+        $scope.chkbox=false;
         $scope.reset=function() {
           $scope.range=300;
           $scope.data=$scope.list;
-          $scope.sbc=true;
-          $scope.yp=true;
-          $scope.kcg=true;
-          $scope.sec=true;
+          $scope.chkbox=true;
         };
         $scope.sort=function(time){
           $scope.myOrder=time;
         };
+        $scope.scc=function(station,chec){
+          $scope.chkbox=chec;
+          console.log(chec);
+          if($scope.chkbox==true){
+            $scope.data=$filter('filter')($scope.data,station);
+            $scope.chkbox=false;
+          }
+          else {
+            $scope.data=$scope.list;
+          }
+        };
+
 });
