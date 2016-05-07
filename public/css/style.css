@@ -1,3 +1,57 @@
+.travelplan_page{
+  background-color:#f4f3ef;
+}
+
+.Acomodation_header{
+  /*border-bottom: 4px solid #2a8ce2;*/
+margin-top: 80px;
+margin-left: 0px !important;
+margin-right: 0px !important;
+
+}
+/*.mainTravelDiv{
+  border-bottom: 2px solid #2a8ce2;
+  margin-top: 50px;
+}*/
+.md-headline{
+margin-top: 15px !important;
+}
+.bidi{
+  margin-top: 10px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-top: 10px !important;
+  padding-top: 0px !important;
+
+}
+.bidi_details{
+  border-bottom: 4px solid #2a8ce2;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-top: 14px !important;
+  padding-top: 0px !important;
+}
+ .city_field{
+   margin-top: 50px;
+ }
+ .hotel_stay{
+     border-bottom: 4px solid #2a8ce2;
+     margin-left: 0px !important;
+     margin-right: 0px !important;
+ }
+.text-center {
+  text-align:center;
+  color:black;
+}
+.header{
+  /*background-color:#D3D3D3;*/
+}
+.main_component{
+layout-align:"center center";
+/*background-color: #D3D3D3;*/
+margin-left: 50px;
+/*border-bottom: 4px solid #2a8ce2;*/
+}
 @media screen and (min-width: 768px) {
     .node-md {
         display: block;
@@ -12,6 +66,8 @@
         box-shadow: 0 0 3px gray;
         font-size: 15px;
         cursor: pointer;
+        background-color: #2a8ce2;
+
 
     }
 
@@ -167,8 +223,8 @@
 }
 
 .margin-node {
-    width: 90%;
-    margin: 20px auto;
+    /*width: 90%;*/
+    /*margin: 20px auto;*/
 
 }
 
@@ -215,7 +271,7 @@
 @media screen and (min-width: 768px) {
     .middle-bar {
         height: 3px;
-        background: #464646;
+        background-color:#0000cc;
     }
 }
 
@@ -223,7 +279,7 @@
     .middle-bar {
         width: 3px;
         height: 150px;
-        background: #464646;
+        background:#0000cc;
     }
 
 }
@@ -238,6 +294,7 @@
         position: absolute;
         margin-left: 2%;
         margin-top: 2%;
+        background-color:#6666ff;
     }
 }
 
@@ -252,6 +309,7 @@
         position: relative;
         margin-left: 32%;
         margin-top: -65%;
+        background-color:#6666ff;
     }
 }
 

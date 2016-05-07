@@ -2,7 +2,9 @@
     body {
         width: 100%
     }
-
+.main-header{
+    border-bottom: 4px solid #2a8ce2;
+}
     .plan_1{
         width: 70%;
         float: left;
@@ -28,14 +30,14 @@
     .main_content {
         background-color: #f4f3ef;
         font-family: arial;
-    
+        margin-left: 0px !important;
     }
 
     .title {
         height: 64px;
         background-color: white;
         border-bottom: 4px solid #28ace2;
-        
+
     }
 
     .card1 {
@@ -57,10 +59,7 @@
         font-weight: normal;
     }
 
-    .caro {
-        margin-top: 20px;
-        margin-left: 600px;
-    }
+
 
     .card2 {
 
@@ -133,13 +132,13 @@
     }
 
     .main_buttons2 {
-        
+
         width: 28%;
         margin: 2%;
     }
 
     .main_buttons3 {
-        
+
         width: 28%;
         margin: 2%;
 
@@ -192,7 +191,7 @@
     }
 
     #fav {
-       
+
         padding: 12px;
         margin-bottom: 6px;
         border-bottom: 4px solid #2a8ce2;
@@ -200,7 +199,7 @@
 
     #fav .fav_icons {
         float: right;
-    
+
     }
 
     #fav_icon {
