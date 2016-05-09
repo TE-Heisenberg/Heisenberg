@@ -27,10 +27,10 @@
   "edges": {
     "edge1": {
       "status": "request",
-      "child-services": {
+      "childServices": {
         "edge1mode1": {
-          "status": "booking",
-          "requested": {
+            "status": "booking",
+            "requested": {
             "travelStartDate": "5/1/2016",
             "mode": "flight",
             "flight": {
@@ -52,9 +52,12 @@
             "travelStartDate": "5/1/2016",
             "mode": "flight",
             "flight": {
+              "image":"Images/indigo.png",
               "companyName": "Air Costa",
               "flightID": "AC2456",
               "seatNumber": "45H",
+              "sourceAirport":"koramangala airport",
+              "destinationAirport":"delhi airport",
               "price": "876547 INR",
               "preferences": {
                 "class": "Bussiness",
@@ -64,9 +67,12 @@
               }
             },
             "bus": {
+              "image":"Images/bus.png",
               "companyName": "Air Costa",
               "busNumber": "AC2456",
               "seatNumber": "45H",
+              "sourceBusStop":"koramangala bus stop",
+              "destinationBusStop":"delhi bus stop",
               "price": "876547 INR",
               "preferences": {
                 "class": "Deluxe AC",
@@ -74,10 +80,13 @@
               }
             },
             "train": {
+              "image":"Images/rail.png",
               "companyName": "Air Costa",
               "trainNumber": "AC2456",
               "seatNumber": "45H",
               "coachNumber": "7A",
+              "sourceStation":"koramangala railway station",
+              "destinationStation":"new delhi railway station",
               "price": "876547 INR",
               "preferences": {
                 "class": "2 AC"
@@ -93,9 +102,123 @@
   },
   "nodes": {
     "node1": {
-      "cityName": "New Delhi",
+      "cityName": "bangalore",
       "status": "selection",
-      "child-services": {
+      "childServices": {
+        "node1T1": {
+          "type": "localTravel",
+          "status": "picking",
+          "requestedData": {
+            "source": "Rajiv Chowk",
+            "destination": "New Delhi IGI Airport",
+            "type": "cab",
+            "pickupDate": "4/30/2016",
+            "pickupTime": "10:00 AM"
+          },
+          "selectedData": {
+            "source": "Rajiv nagar Chowk",
+            "destination": "New Delhi IGI Airport",
+            "type": "bus",
+            "pickupDate": "4/30/2016",
+            "pickupTime": "10:00 AM",
+            "dropDate": "4/30/2016",
+            "dropTime": "12:00 PM",
+            "cab": {
+              "image": "Images/uber.png",
+              "companyName": "Uber",
+              "cabNumber": "DL AJ 5034",
+              "driverDetails": {
+                "name": "Job Elton"
+              },
+              "estimatedPrice": "800 INR",
+              "cabType": "sedan"
+            },
+            "bus": {
+              "image": "Images/localBus.png",
+              "companyName": "red bus",
+              "busNumber": "AB 327014",
+              "busType": "AC bus",
+              "seatsType": "sleeper",
+              "price": "100 INR"
+            }
+          }
+        },
+        "node1T2": {
+          "type": "localTravel",
+          "status": "picking",
+          "requestedData": {
+            "source": "Rajiv nagar Chowk",
+            "destination": "New Delhi IGI Airport",
+            "type": "cab",
+            "pickupDate": "4/30/2016",
+            "pickupTime": "10:00 AM"
+          },
+          "selectedData": {
+            "source": "Rajiv nagar Chowk",
+            "destination": "New Delhi IGI Airport",
+            "type": "cab",
+            "pickupDate": "4/30/2016",
+            "pickupTime": "10:00 AM",
+            "dropDate": "4/30/2016",
+            "dropTime": "12:00 PM",
+            "cab": {
+              "image": "Images/ola.png",
+              "companyName": "Uber",
+              "cabNumber": "DL AJ 5034",
+              "driverDetails": {
+                "name": "Job Elton"
+              },
+              "estimatedPrice": "800 INR",
+              "cabType": "sedan"
+            },
+            "bus": {
+              "image": "",
+              "companyName": "",
+              "busNumber": "",
+              "busType": "",
+              "seatsType": "",
+              "price": "100 INR"
+            }
+          }
+        },
+        "node1T3": {
+          "type": "localTravel",
+          "status": "picking",
+          "requestedData": {
+            "source": "Rajiv nagar Chowk",
+            "destination": "New Delhi IGI Airport",
+            "type": "cab",
+            "pickupDate": "4/30/2016",
+            "pickupTime": "10:00 AM"
+          },
+          "selectedData": {
+            "source": "Rajiv Chowk",
+            "destination": "New Delhi IGI Airport",
+            "type": "cab",
+            "pickupDate": "4/30/2016",
+            "pickupTime": "10:00 AM",
+            "dropDate": "4/30/2016",
+            "dropTime": "12:00 PM",
+            "cab": {
+              "image": "Images/uber.png",
+              "companyName": "Uber",
+              "cabNumber": "DL AJ 5034",
+              "driverDetails": {
+                "name": "Job Elton"
+              },
+              "estimatedPrice": "800 INR",
+              "cabType": "sedan"
+            },
+            "bus": {
+              "image": "",
+              "companyName": "",
+              "busNumber": "",
+              "busType": "",
+              "seatsType": "",
+              "price": "100 INR"
+            }
+          }
+        },
         "node1S1": {
           "type": "stay",
           "status": "booking",
@@ -107,7 +230,7 @@
             "checkoutDate": "5/01/2016"
           },
           "selectedData": {
-            "image": "./image.png",
+            "image": "Images/taj1.png",
             "name": "JW Mariott",
             "rating": "5",
             "location": "hotel's exact address",
@@ -131,7 +254,61 @@
             "checkoutDate": "7/01/2016"
           },
           "selectedData": {
-            "image": "./image.png",
+            "image": "Images/hotel3.png",
+            "name": "JW Mariott",
+            "rating": "5",
+            "location": "hotel's exact address",
+            "roomType": "Deluxe",
+            "checkinDate": "6/30/2016",
+            "checkinTime": "2:00 PM",
+            "checkoutDate": "7/01/2016",
+            "checkoutTime": "3:00 PM",
+            "price": "10000 INR",
+            "comments": "Some useful comment which you may want to convey to the hotel"
+          }
+        }
+      }
+    },
+    "node2": {
+      "cityName": "New Delhi",
+      "status": "selection",
+      "childServices": {
+        "node1S1": {
+          "type": "stay",
+          "status": "booking",
+          "requestedData": {
+            "area": "Chanakya Puri",
+            "rating": "3",
+            "roomType": "Executive",
+            "checkinDate": "4/30/2016",
+            "checkoutDate": "5/01/2016"
+          },
+          "selectedData": {
+            "image": "Images/hotel2.png",
+            "name": "JW Mariott",
+            "rating": "5",
+            "location": "hotel's exact address",
+            "roomType": "Deluxe",
+            "checkinDate": "4/30/2016",
+            "checkinTime": "2:00 PM",
+            "checkoutDate": "5/01/2016",
+            "checkoutTime": "3:00 PM",
+            "price": "9000 INR",
+            "comments": "Some useful comment which you may want to convey to the hotel"
+          }
+        },
+        "node1S2": {
+          "type": "stay",
+          "status": "request",
+          "requestedData": {
+            "area": "Hari Nagar",
+            "rating": "3",
+            "roomType": "Executive",
+            "checkinDate": "6/30/2016",
+            "checkoutDate": "7/01/2016"
+          },
+          "selectedData": {
+            "image": "Images/hotel3.png",
             "name": "JW Mariott",
             "rating": "5",
             "location": "hotel's exact address",
@@ -163,7 +340,7 @@
             "dropDate": "4/30/2016",
             "dropTime": "12:00 PM",
             "cab": {
-              "image": "./cabImage.png",
+              "image": "Images/uber.png",
               "companyName": "Uber",
               "cabNumber": "DL AJ 5034",
               "driverDetails": {
