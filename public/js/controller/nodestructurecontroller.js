@@ -4,7 +4,6 @@
 angular.module("app")
     .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q, $http) {
 
-        console.log("nodestructurecontroller");
         $rootScope.go = function (path) {
             $location.path(path);
         }
@@ -215,7 +214,6 @@ angular.module("app")
         };
 
         $rootScope.closeThis= function(x){
-           console.log("closing");
            x.show = false;
          }
 

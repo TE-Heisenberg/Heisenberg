@@ -93,7 +93,7 @@ angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$loc
               $mdDialog.show({
                 controller: DialogController,
              /* templateUrl: 'dialog1.tmpl.html',*/
-              templateUrl: 'views/travelPreferenceDialog.html',
+              templateUrl: 'views/HTML/travelPreferenceDialog.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:true,
