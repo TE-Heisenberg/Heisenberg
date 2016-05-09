@@ -266,7 +266,11 @@
         float: left;
         position: relative;
         z-index: 4;
+<<<<<<< HEAD:public/css/style.css
         margin-left: 43%;
+=======
+        margin-left: 46%;
+>>>>>>> 897a8a256e4b23cc39a522486599a8c7f936731a:public/css/travelplan.css
         margin-top: -10px;
     }
 }
@@ -283,7 +287,13 @@
 @media screen and (min-width: 768px) {
     .middle-bar {
         height: 3px;
+<<<<<<< HEAD:public/css/style.css
         background-color: #0000cc;
+=======
+        background-color:#0000cc;
+        margin-left: 11px;
+
+>>>>>>> 897a8a256e4b23cc39a522486599a8c7f936731a:public/css/travelplan.css
     }
 }
 
