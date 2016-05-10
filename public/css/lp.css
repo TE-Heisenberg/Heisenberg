@@ -1,6 +1,7 @@
 /*@media (min-width: 768px) {*/
     body {
         width: 100%
+        
     }
 
     .plan_1{
@@ -11,6 +12,10 @@
         width: 30%;
         float: left;
         margin-top: -2%;
+    }
+
+    .header_border{
+        border-bottom: 4px solid #2a8ce2;
     }
 
     .md-headline {
@@ -457,9 +462,9 @@
         width: 100%;
     }*/
 
-    head {
+    head{
         display: none;
-    }*/
+    }
 /*}*/
 
 
