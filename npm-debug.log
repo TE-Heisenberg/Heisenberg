@@ -1,0 +1,294 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'angular-clickout',
+1 verbose cli   '--save' ]
+2 info using npm@3.7.3
+3 info using node@v5.9.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData angular-clickout
+8 silly fetchNamedPackageData angular-clickout
+9 silly mapToRegistry name angular-clickout
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/angular-clickout
+13 verbose request uri https://registry.npmjs.org/angular-clickout
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 11:52:20 AM
+16 verbose request id ea021ed4bee40e82
+17 http request GET https://registry.npmjs.org/angular-clickout
+18 http 200 https://registry.npmjs.org/angular-clickout
+19 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+19 verbose headers   etag: '"A7WGJRNT23HXSHJO6658W35LE"',
+19 verbose headers   'content-type': 'application/json',
+19 verbose headers   'cache-control': 'max-age=300',
+19 verbose headers   'content-length': '5593',
+19 verbose headers   'accept-ranges': 'bytes',
+19 verbose headers   date: 'Tue, 10 May 2016 06:22:21 GMT',
+19 verbose headers   via: '1.1 varnish',
+19 verbose headers   age: '0',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-served-by': 'cache-sin6922-SIN',
+19 verbose headers   'x-cache': 'MISS',
+19 verbose headers   'x-cache-hits': '0',
+19 verbose headers   'x-timer': 'S1462861341.238892,VS0,VE248',
+19 verbose headers   vary: 'Accept-Encoding' }
+20 silly get cb [ 200,
+20 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 silly get     etag: '"A7WGJRNT23HXSHJO6658W35LE"',
+20 silly get     'content-type': 'application/json',
+20 silly get     'cache-control': 'max-age=300',
+20 silly get     'content-length': '5593',
+20 silly get     'accept-ranges': 'bytes',
+20 silly get     date: 'Tue, 10 May 2016 06:22:21 GMT',
+20 silly get     via: '1.1 varnish',
+20 silly get     age: '0',
+20 silly get     connection: 'keep-alive',
+20 silly get     'x-served-by': 'cache-sin6922-SIN',
+20 silly get     'x-cache': 'MISS',
+20 silly get     'x-cache-hits': '0',
+20 silly get     'x-timer': 'S1462861341.238892,VS0,VE248',
+20 silly get     vary: 'Accept-Encoding' } ]
+21 verbose get saving angular-clickout to C:\Users\lenovo\AppData\Roaming\npm-cache\registry.npmjs.org\angular-clickout\.cache.json
+22 verbose correctMkdir C:\Users\lenovo\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+23 silly install normalizeTree
+24 silly loadCurrentTree Finishing
+25 silly loadIdealTree Starting
+26 silly install loadIdealTree
+27 silly cloneCurrentTree Starting
+28 silly install cloneCurrentTreeToIdealTree
+29 silly cloneCurrentTree Finishing
+30 silly loadShrinkwrap Starting
+31 silly install loadShrinkwrap
+32 silly loadShrinkwrap Finishing
+33 silly loadAllDepsIntoIdealTree Starting
+34 silly install loadAllDepsIntoIdealTree
+35 silly resolveWithNewModule angular-clickout@1.0.2 checking installable status
+36 silly cache add args [ 'angular-clickout', null ]
+37 verbose cache add spec angular-clickout
+38 silly cache add parsed spec Result {
+38 silly cache add   raw: 'angular-clickout',
+38 silly cache add   scope: null,
+38 silly cache add   name: 'angular-clickout',
+38 silly cache add   rawSpec: '',
+38 silly cache add   spec: 'latest',
+38 silly cache add   type: 'tag' }
+39 silly addNamed angular-clickout@latest
+40 verbose addNamed "latest" is being treated as a dist-tag for angular-clickout
+41 info addNameTag [ 'angular-clickout', 'latest' ]
+42 silly mapToRegistry name angular-clickout
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry https://registry.npmjs.org/
+45 silly mapToRegistry uri https://registry.npmjs.org/angular-clickout
+46 verbose addNameTag registry:https://registry.npmjs.org/angular-clickout not in flight; fetching
+47 verbose get https://registry.npmjs.org/angular-clickout not expired, no request
+48 silly addNameTag next cb for angular-clickout with tag latest
+49 silly addNamed angular-clickout@1.0.2
+50 verbose addNamed "1.0.2" is a plain semver version for angular-clickout
+51 silly mapToRegistry name angular-clickout
+52 silly mapToRegistry using default registry
+53 silly mapToRegistry registry https://registry.npmjs.org/
+54 silly mapToRegistry uri https://registry.npmjs.org/angular-clickout
+55 verbose addRemoteTarball https://registry.npmjs.org/angular-clickout/-/angular-clickout-1.0.2.tgz not in flight; adding
+56 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular-clickout/-/angular-clickout-1.0.2.tgz',
+56 verbose addRemoteTarball   '44cc4cd6f8e00cc8b27f1a9f614dbcfb362a9e67' ]
+57 info retry fetch attempt 1 at 11:52:22 AM
+58 info attempt registry request try #1 at 11:52:22 AM
+59 http fetch GET https://registry.npmjs.org/angular-clickout/-/angular-clickout-1.0.2.tgz
+60 http fetch 200 https://registry.npmjs.org/angular-clickout/-/angular-clickout-1.0.2.tgz
+61 silly fetchAndShaCheck shasum 44cc4cd6f8e00cc8b27f1a9f614dbcfb362a9e67
+62 verbose addTmpTarball C:\Users\lenovo\AppData\Local\Temp\npm-2296-f9b19775\registry.npmjs.org\angular-clickout\-\angular-clickout-1.0.2.tgz not in flight; adding
+63 verbose addTmpTarball already have metadata; skipping unpack for angular-clickout@1.0.2
+64 verbose correctMkdir C:\Users\lenovo\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+65 silly cache afterAdd angular-clickout@1.0.2
+66 verbose afterAdd C:\Users\lenovo\AppData\Roaming\npm-cache\angular-clickout\1.0.2\package\package.json not in flight; writing
+67 verbose correctMkdir C:\Users\lenovo\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+68 verbose afterAdd C:\Users\lenovo\AppData\Roaming\npm-cache\angular-clickout\1.0.2\package\package.json written
+69 silly loadAllDepsIntoIdealTree Finishing
+70 silly idealTree:prePrune Heisenberg
+70 silly idealTree:prePrune +-- angular-animate@1.5.5
+70 silly idealTree:prePrune +-- angular-aria@1.5.5
+70 silly idealTree:prePrune +-- angular-clickout@1.0.2
+70 silly idealTree:prePrune +-- angular-material-calendar@0.2.14
+70 silly idealTree:prePrune | +-- angular-animate@1.4.10
+70 silly idealTree:prePrune | +-- angular-aria@1.4.10
+70 silly idealTree:prePrune | +-- angular-material@0.11.4
+70 silly idealTree:prePrune | +-- angular-sanitize@1.4.10
+70 silly idealTree:prePrune | `-- angular@1.4.10
+70 silly idealTree:prePrune +-- angular-material-icons@0.7.0
+70 silly idealTree:prePrune +-- angular-material@1.0.8
+70 silly idealTree:prePrune +-- angular-messages@1.5.5
+70 silly idealTree:prePrune +-- angular-route@1.5.5
+70 silly idealTree:prePrune +-- angular-sanitize@1.5.5
+70 silly idealTree:prePrune +-- angular@1.5.5
+70 silly idealTree:prePrune +-- bootstrap@3.3.6
+70 silly idealTree:prePrune +-- jquery@2.2.3
+70 silly idealTree:prePrune +-- mdPickers@0.7.2
+70 silly idealTree:prePrune `-- moment@2.13.0
+71 silly loadIdealTree Finishing
+72 silly currentTree Heisenberg
+72 silly currentTree +-- angular-animate@1.5.5
+72 silly currentTree +-- angular-aria@1.5.5
+72 silly currentTree +-- angular-material-calendar@0.2.14
+72 silly currentTree | +-- angular-animate@1.4.10
+72 silly currentTree | +-- angular-aria@1.4.10
+72 silly currentTree | +-- angular-material@0.11.4
+72 silly currentTree | +-- angular-sanitize@1.4.10
+72 silly currentTree | `-- angular@1.4.10
+72 silly currentTree +-- angular-material-icons@0.7.0
+72 silly currentTree +-- angular-material@1.0.8
+72 silly currentTree +-- angular-messages@1.5.5
+72 silly currentTree +-- angular-route@1.5.5
+72 silly currentTree +-- angular-sanitize@1.5.5
+72 silly currentTree +-- angular@1.5.5
+72 silly currentTree +-- bootstrap@3.3.6
+72 silly currentTree +-- jquery@2.2.3
+72 silly currentTree +-- mdPickers@0.7.2
+72 silly currentTree `-- moment@2.13.0
+73 silly idealTree Heisenberg
+73 silly idealTree +-- angular-animate@1.5.5
+73 silly idealTree +-- angular-aria@1.5.5
+73 silly idealTree +-- angular-clickout@1.0.2
+73 silly idealTree +-- angular-material-calendar@0.2.14
+73 silly idealTree | +-- angular-animate@1.4.10
+73 silly idealTree | +-- angular-aria@1.4.10
+73 silly idealTree | +-- angular-material@0.11.4
+73 silly idealTree | +-- angular-sanitize@1.4.10
+73 silly idealTree | `-- angular@1.4.10
+73 silly idealTree +-- angular-material-icons@0.7.0
+73 silly idealTree +-- angular-material@1.0.8
+73 silly idealTree +-- angular-messages@1.5.5
+73 silly idealTree +-- angular-route@1.5.5
+73 silly idealTree +-- angular-sanitize@1.5.5
+73 silly idealTree +-- angular@1.5.5
+73 silly idealTree +-- bootstrap@3.3.6
+73 silly idealTree +-- jquery@2.2.3
+73 silly idealTree +-- mdPickers@0.7.2
+73 silly idealTree `-- moment@2.13.0
+74 silly generateActionsToTake Starting
+75 silly install generateActionsToTake
+76 silly generateActionsToTake Finishing
+77 silly diffTrees action count 1
+78 silly diffTrees add angular-clickout@1.0.2
+79 silly decomposeActions action count 8
+80 silly decomposeActions fetch angular-clickout@1.0.2
+81 silly decomposeActions extract angular-clickout@1.0.2
+82 silly decomposeActions test angular-clickout@1.0.2
+83 silly decomposeActions preinstall angular-clickout@1.0.2
+84 silly decomposeActions build angular-clickout@1.0.2
+85 silly decomposeActions install angular-clickout@1.0.2
+86 silly decomposeActions postinstall angular-clickout@1.0.2
+87 silly decomposeActions finalize angular-clickout@1.0.2
+88 silly executeActions Starting
+89 silly install executeActions
+90 silly doSerial global-install 0
+91 silly doParallel fetch 1
+92 verbose correctMkdir C:\Users\lenovo\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+93 verbose lock using C:\Users\lenovo\AppData\Roaming\npm-cache\_locks\staging-78bf29fa406764ef.lock for C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging
+94 silly doParallel extract 1
+95 silly extract angular-clickout@1.0.2
+96 verbose unbuild node_modules\.staging\angular-clickout-b0f93f80
+97 silly gentlyRm C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80 is being purged from base C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg
+98 verbose gentlyRm don't care about contents; nuking C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80
+99 verbose tar unpack C:\Users\lenovo\AppData\Roaming\npm-cache\angular-clickout\1.0.2\package.tgz
+100 verbose tar unpacking to C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80
+101 silly gentlyRm C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80 is being purged
+102 verbose gentlyRm don't care about contents; nuking C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80
+103 silly gunzTarPerm modes [ '777', '666' ]
+104 silly gunzTarPerm extractEntry package.json
+105 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+106 silly gunzTarPerm extractEntry .npmignore
+107 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+108 silly gunzTarPerm extractEntry README.md
+109 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+110 silly gunzTarPerm extractEntry test.js
+111 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+112 silly gunzTarPerm extractEntry Gruntfile.js
+113 silly gunzTarPerm modified mode [ 'Gruntfile.js', 420, 438 ]
+114 silly gunzTarPerm extractEntry angular-clickout.js
+115 silly gunzTarPerm modified mode [ 'angular-clickout.js', 420, 438 ]
+116 silly gunzTarPerm extractEntry angular-clickout.min.js
+117 silly gunzTarPerm modified mode [ 'angular-clickout.min.js', 420, 438 ]
+118 silly gunzTarPerm extractEntry karma.conf.js
+119 silly gunzTarPerm modified mode [ 'karma.conf.js', 420, 438 ]
+120 silly gunzTarPerm extractEntry bower.json
+121 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+122 silly gunzTarPerm extractEntry example/index.html
+123 silly gunzTarPerm modified mode [ 'example/index.html', 420, 438 ]
+124 silly gunzTarPerm extractEntry .travis.yml
+125 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+126 silly gunzTarPerm extractEntry angular-clickout.min.js.map
+127 silly gunzTarPerm modified mode [ 'angular-clickout.min.js.map', 420, 438 ]
+128 silly gentlyRm C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80\node_modules is being purged
+129 verbose gentlyRm don't care about contents; nuking C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80\node_modules
+130 silly doParallel preinstall 1
+131 silly preinstall angular-clickout@1.0.2 C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80
+132 info lifecycle angular-clickout@1.0.2~preinstall: angular-clickout@1.0.2
+133 silly lifecycle angular-clickout@1.0.2~preinstall: no script for preinstall, continuing
+134 silly doReverseSerial remove 0
+135 silly doSerial move 0
+136 silly doSerial finalize 1
+137 silly finalize C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\angular-clickout
+138 silly doSerial build 1
+139 silly build angular-clickout@1.0.2
+140 info linkStuff angular-clickout@1.0.2
+141 silly linkStuff angular-clickout@1.0.2 has C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules as its parent node_modules
+142 verbose linkBins angular-clickout@1.0.2
+143 verbose linkMans angular-clickout@1.0.2
+144 silly doSerial global-link 0
+145 silly doParallel update-linked 0
+146 silly doSerial install 1
+147 silly install angular-clickout@1.0.2 C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging\angular-clickout-b0f93f80
+148 info lifecycle angular-clickout@1.0.2~install: angular-clickout@1.0.2
+149 verbose lifecycle angular-clickout@1.0.2~install: unsafe-perm in lifecycle true
+150 verbose lifecycle angular-clickout@1.0.2~install: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\angular-clickout\node_modules\.bin;C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.bin;C:\Program Files\nodejs;C:\oraclexe\app\oracle\product\11.2.0\server\bin;;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Common Files\Adobe\AGL;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\HashiCorp\Vagrant\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Java\jdk1.8.0_73\bin;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files\nodejs\;C:\Program Files\OpenVPN\bin;C:\Users\lenovo\AppData\Local\atom\bin;C:\Users\lenovo\AppData\Roaming\npm
+151 verbose lifecycle angular-clickout@1.0.2~install: CWD: C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\angular-clickout
+152 silly lifecycle angular-clickout@1.0.2~install: Args: [ '/d /s /c', 'bower install' ]
+153 silly lifecycle angular-clickout@1.0.2~install: Returned: code: 1  signal: null
+154 info lifecycle angular-clickout@1.0.2~install: Failed to exec install script
+155 verbose unlock done using C:\Users\lenovo\AppData\Roaming\npm-cache\_locks\staging-78bf29fa406764ef.lock for C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg\node_modules\.staging
+156 silly rollbackFailedOptional Starting
+157 silly rollbackFailedOptional Finishing
+158 silly runTopLevelLifecycles Starting
+159 silly runTopLevelLifecycles Finishing
+160 silly install printInstalled
+161 warn Invalid name: "T&E"
+162 warn angular-material@1.0.8 requires a peer of angular-mocks@>=1.3 <1.6 but none was installed.
+163 warn Heisenberg No description
+164 warn Heisenberg No repository field.
+165 warn Heisenberg No README data
+166 warn Heisenberg No license field.
+167 verbose stack Error: angular-clickout@1.0.2 install: `bower install`
+167 verbose stack Exit status 1
+167 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:239:16)
+167 verbose stack     at emitTwo (events.js:100:13)
+167 verbose stack     at EventEmitter.emit (events.js:185:7)
+167 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+167 verbose stack     at emitTwo (events.js:100:13)
+167 verbose stack     at ChildProcess.emit (events.js:185:7)
+167 verbose stack     at maybeClose (internal/child_process.js:850:16)
+167 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+168 verbose pkgid angular-clickout@1.0.2
+169 verbose cwd C:\StackRoute-Vagrant-Node5-Mongo3.2\StackRoute\TE\Heisenberg
+170 error Windows_NT 6.3.9600
+171 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-clickout" "--save"
+172 error node v5.9.0
+173 error npm  v3.7.3
+174 error code ELIFECYCLE
+175 error angular-clickout@1.0.2 install: `bower install`
+175 error Exit status 1
+176 error Failed at the angular-clickout@1.0.2 install script 'bower install'.
+176 error Make sure you have the latest version of node.js and npm installed.
+176 error If you do, this is most likely a problem with the angular-clickout package,
+176 error not with npm itself.
+176 error Tell the author that this fails on your system:
+176 error     bower install
+176 error You can get information on how to open an issue for this project with:
+176 error     npm bugs angular-clickout
+176 error Or if that isn't available, you can get their info via:
+176 error     npm owner ls angular-clickout
+176 error There is likely additional logging output above.
+177 verbose exit [ 1, true ]
