@@ -15,7 +15,7 @@ angular.module("app")
       });
 
        $http.get('public/data/travelplan.json').success(function(data){
-          $scope.currentNode= data.node.node1;
+          //$scope.currentNode= data.node.node1;
       });
 
       $scope.myDate = new Date();
