@@ -1,0 +1,34 @@
+{
+  "name": "T&E",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshitijjain/Heisenberg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kshitijjain/Heisenberg/issues"
+  },
+  "homepage": "https://github.com/kshitijjain/Heisenberg#readme",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-material": "^1.0.8",
+    "angular-material-calendar": "^0.2.14",
+    "angular-material-icons": "^0.7.0",
+    "angular-messages": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3",
+    "mdPickers": "^0.7.2",
+    "moment": "^2.13.0"
+  }
+}

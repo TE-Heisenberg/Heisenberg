@@ -48,26 +48,32 @@ angular.module("app").controller("con", ["$scope", "$filter", "$http", "$q", "$l
     // ----------------------------------
     var url = "json1.json";
 
-    $http.get("public/data/landing/json1.json").success(function (response) {
+    $http.get("public/data/landing/myworklist.json").success(function (response) {
         $scope.messages = response;
         console.log(response);
 
     });
-    $http.get("public/data/landing/json2.json").success(function (response) {
+    $http.get("public/data/landing/myplans.json").success(function (response) {
         $scope.completed = response.completed.date;
         $scope.current = response.current.date;
         $scope.future = response.future.date;
         console.log("res  " + $scope.completed);
     });
 
-    $http.get("public/data/landing/json3.json").success(function (response) {
+    $http.get("public/data/landing/alert.json").success(function (response) {
         $scope.array2 = response;
         console.log(response);
     });
 
+<<<<<<< HEAD
+    $http.get("public/data/landing/myfavourites.json").success(function (response) {
+        $scope.fav=function(locality){
+          $scope.localit = response[locality].data;
+=======
     $http.get("public/data/landing/json4.json").success(function (response) {
         $scope.fav = function (locality) {
             $scope.localit = response[locality].data;
+>>>>>>> 2bae1ef81b1a52c172f418d2b74759d6b2601e04
         };
         $scope.localit = response.local.data;
         //  $scope.local = response.local.data;
