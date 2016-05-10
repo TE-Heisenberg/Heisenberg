@@ -1,4 +1,4 @@
-angular.module("app").controller("con", ["$scope", "$filter", "$http", "$q", "$location", "$mdDialog", "$mdMedia", function ($scope, $filter, $http, $q, $location, $mdDialog, $mdMedia) {
+angular.module("app").controller("con",function ($scope, $filter, $http, $q, $location, $mdDialog, $mdMedia) {
     // -------------------------------
 
     $scope.dayFormat = "d";
@@ -46,7 +46,7 @@ angular.module("app").controller("con", ["$scope", "$filter", "$http", "$q", "$l
 
     };
     // ----------------------------------
-    var url = "json1.json";
+    var url = "myworklist.json";
 
     $http.get("public/data/landing/myworklist.json").success(function (response) {
         $scope.messages = response;
@@ -65,20 +65,11 @@ angular.module("app").controller("con", ["$scope", "$filter", "$http", "$q", "$l
         console.log(response);
     });
 
-<<<<<<< HEAD
     $http.get("public/data/landing/myfavourites.json").success(function (response) {
         $scope.fav=function(locality){
           $scope.localit = response[locality].data;
-=======
-    $http.get("public/data/landing/json4.json").success(function (response) {
-        $scope.fav = function (locality) {
-            $scope.localit = response[locality].data;
->>>>>>> 2bae1ef81b1a52c172f418d2b74759d6b2601e04
-        };
+        }
         $scope.localit = response.local.data;
-        //  $scope.local = response.local.data;
-        //$scope.global = response.global.data;
-        //console.log(response);
     });
 
     $scope.go = function (path) {
@@ -120,7 +111,7 @@ angular.module("app").controller("con", ["$scope", "$filter", "$http", "$q", "$l
     };
 
 
-}]);
+});
 
 
 function DialogController($scope, $mdDialog) {
