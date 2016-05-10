@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
 
     <title>T&E app</title>
-       <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--css libs-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/alenaksu/mdPickers/0.7.2/dist/mdPickers.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+          href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!--Javascript libs-->
     <script src="public/js/lib/angular.js"></script>
     <script src="public/js/lib/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
@@ -28,7 +38,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
-  <!------Our custom css used---->
+    <!------Our custom css used---->
     <link rel="stylesheet" href="public/css/landingpage.css">
     <link rel="stylesheet" href="public/css/searchResult.css">
     <link rel="stylesheet" href="public/css/flightSearchResults.css">
@@ -47,10 +57,13 @@
     <script src="public/js/controller/itineraryController.js"></script>
     <script src="public/js/controller/flightSearchResultController.js"></script>
     <script src="public/js/controller/travelPreferenceController.js"></script>
-      <script src="public/js/clickoutside.directive.js"></script>
+    <script src="public/js/clickoutside.directive.js"></script>
+
+    <!--components-->
+    <script src="public/js/components/travelPlan.js"></script>
 
 </head>
-<body ng-app="app" ng-controller="indexController">
+<body ng-app="app">
 <div class="main-header">
     <img src="public/assets/images/logo.png" alt="logo">
     <div class="header_icons">
@@ -59,7 +72,11 @@
         <i class="material-icons">person</i>
     </div>
 </div>
-<div id="nodes" ng-include src="'views/travelplan.html'" ng-hide="landingPage==true"></div>
+<div id="nodes" ng-hide="landingPage==true">
+
+    <travel-plan></travel-plan>
+
+</div>
 <div ng-view>
 
 </div>
