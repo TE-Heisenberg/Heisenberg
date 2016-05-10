@@ -48,24 +48,24 @@ angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$loc
     // ----------------------------------
     var url = "json1.json";
 
-    $http.get("public/data/landing/json1.json").success(function (response) {
+    $http.get("public/data/landing/myworklist.json").success(function (response) {
         $scope.messages = response;
         console.log(response);
 
     });
-    $http.get("public/data/landing/json2.json").success(function (response) {
+    $http.get("public/data/landing/myplans.json").success(function (response) {
         $scope.completed = response.completed.date;
         $scope.current = response.current.date;
         $scope.future = response.future.date;
         // console.log("res  "+$scope.completed);
     });
 
-    $http.get("public/data/landing/json3.json").success(function (response) {
+    $http.get("public/data/landing/alert.json").success(function (response) {
         $scope.array2 = response;
         // console.log($scope.array2[0].data);
     });
 
-    $http.get("public/data/landing/json4.json").success(function (response) {
+    $http.get("public/data/landing/myfavourites.json").success(function (response) {
         $scope.fav=function(locality){
           $scope.localit = response[locality].data;
         };
@@ -93,7 +93,7 @@ angular.module("app").controller("con", ["$scope", "$filter","$http", "$q","$loc
               $mdDialog.show({
                 controller: DialogController,
              /* templateUrl: 'dialog1.tmpl.html',*/
-              templateUrl: 'views/travelPreferenceDialog.html',
+              templateUrl: 'views/HTML/travelPreferenceDialog.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:true,

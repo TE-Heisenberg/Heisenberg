@@ -1,7 +1,7 @@
 /**
  * Created by lenovo on 29-04-2016.
  */
-angular.module("app", [ "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute", "ngMdIcons", "ngMessages", "mdPickers"])
+angular.module("app", ["ngMaterial", "materialCalendar", "ngSanitize", "ngRoute", "ngMdIcons", "ngMessages", "mdPickers", "angular-click-outside"])
     .run(function ($rootScope, $location) {
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
             if ($location.path().indexOf('landing') > 0) {
@@ -18,38 +18,38 @@ angular.module("app", [ "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute
 
         $routeProvider.when("/landing", {
 
-            templateUrl: "views/landing.html",
+            templateUrl: "views/HTML/landing.html",
             controller: "con"
 
         }).when("/Travelbooking", {
 
-            templateUrl: "views/Travelbooking.html",
+            templateUrl: "views/HTML/Travelbooking.html",
             controller: "travelModeController"
 
         }).when("/staybooking", {
 
-            templateUrl: "views/Hotelbooking.html",
+            templateUrl: "views/HTML/Hotelbooking.html",
             controller: "hotelSearchController",
             controllerAs: "ctrl2"
 
         }).when("/flightsearchresults", {
 
-            templateUrl: "views/flightSearchResults.html",
+            templateUrl: "views/HTML/flightSearchResults.html",
             controller: "flightSearchResultController"
 
         }).when("/trainsearchresult", {
 
-                templateUrl: "views/trainsearchresult.html",
+                templateUrl: "views/HTML/trainsearchresult.html",
                 controller: "trainSearchResultsController"
             })
             .when("/hotelsearchresult",
                 {
-                    templateUrl: "views/hotelSearchResults.html",
+                    templateUrl: "views/HTML/hotelSearchResults.html",
                     controller: "hotelSearchResultsController"
                 })
             .when("/itinerary", {
 
-                templateUrl: "views/ItineraryPage.html",
+                templateUrl: "views/HTML/ItineraryPage.html",
                 controller: "itineraryController"
 
             }).otherwise({
@@ -60,7 +60,7 @@ angular.module("app", [ "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute
 
 
     }).controller('indexController', function ($rootScope) {
-    
+
 })
 
 ;

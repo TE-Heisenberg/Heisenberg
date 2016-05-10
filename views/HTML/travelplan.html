@@ -1,14 +1,19 @@
+<div class="mainTravelDiv">
+<h1 layout="row"  layout-padding layout-align="center center">
+<div flex="auto" class="text-center">Plan Your Journey</div>
+</h1>
+<div class="main_component" layout-align="center" class="bidi_details">
 <div class=" margin-node" ng-controller="nodestructurecontroller">
     <div class=" line">
 
-        <div ng-repeat="(key, value) in travelPlanJSON.nodes" class="node-add-action" ng-click="clickOut(value)">
+        <div ng-repeat="(key, value) in travelPlanJSON.nodes" class="node-add-action">
 
             <div ng-if="key.indexOf('node')>-1" )>
 
             </div>
 
             <div class="progress-line" ng-if="$index>=1">
-                <div class=" node-sm travel-button" ng-model="newObject[x.edge]"
+                <div class=" node-sm travel-button"
                      ng-click="Flight_buttion_Action(value)">
                     <i class="material-icons">{{travelPlanJSON.edges['edge'+$index].childServices.edgeMode1.request.mode
                         |
@@ -27,14 +32,14 @@
             </div>
 
             <div class="node">
-                <div class="node-md" ng-click="go('Travelbooking'); node_md_action_show(value)">
+                <div class="node-md" ng-click="go('Travelbooking'); node_md_action_show(value)" id="nodeid" click-outside="closeThis(value)" outside-if-not="nodeid,node-md-main-action">
                     {{value.cityName
                     | limitTo:3 |
                     uppercase}}
                 </div>
                 <i class="material-icons node-1-1" ng-click="go('staybooking');">hotel</i>
                 <i class="material-icons node-1-2">directions_car</i>
-                <div class="node-md-action" style="position: absolute" ng-show="value.show==true">
+                <div class="node-md-action" id="node-md-main-action" ng-show="value.show==true">
 
 
                     <md-autocomplete class="node-md-action-input" flex="" required="" md-input-name="autocompleteField"
@@ -62,5 +67,5 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+ </div>
+ </div>

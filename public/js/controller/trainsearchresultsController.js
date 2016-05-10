@@ -23,30 +23,13 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
         $scope.hidebutton=false;
         $scope.showbutton=true;
         $scope.expandCard=function(index){
-            $('#showb'+index).css({
-                display:"none"
-            });
-            $('#hideb'+index).css({
-                display:"inline"
-            });
-            var str='#'+index;
-            $(str).animate({
-                height:'+=300px'
-            },200);
+          var asd="showDiv"+index;
+          $scope[asd]=true;
         };
         $scope.hideCard=function(index){
-            $('#showb'+index).css({
-                display:"inline"
-            });
-            $('#hideb'+index).css({
-                display:"none"
-            });
-            var str='#'+index;
-            $(str).animate({
-                height:'-=300px'
-            },200);
+          var asd="showDiv"+index;
+          $scope[asd]=false;
         };
-        $scope.showDiv=false;
         $scope.range=300;
         $scope.slideP=function(rang){
             $scope.data=$scope.list;
@@ -71,7 +54,6 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
         };
         $scope.scc=function(station,chec){
           $scope.chkbox=chec;
-          console.log(chec);
           if($scope.chkbox==true){
             $scope.data=$filter('filter')($scope.data,station);
             $scope.chkbox=false;

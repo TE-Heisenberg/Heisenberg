@@ -4,7 +4,6 @@
 angular.module("app")
     .controller("nodestructurecontroller", function ($location, $scope, $rootScope, $timeout, $q, $http) {
 
-        console.log("nodestructurecontroller");
         $rootScope.go = function (path) {
             $location.path(path);
         }
@@ -15,11 +14,6 @@ angular.module("app")
             $rootScope.travelPlanJSON = response;
 
         });
-
-        $rootScope.clickOut = function (x) {
-
-
-        };
 
         $rootScope.currentIndex = 1;
 
@@ -218,6 +212,11 @@ angular.module("app")
             }
 
         };
+
+        $rootScope.closeThis= function(x){
+           x.show = false;
+         }
+
 
         $rootScope.Flight_buttion_Action = function (x) {
             if (x.flightShow == false) {
