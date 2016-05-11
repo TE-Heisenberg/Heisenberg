@@ -5,11 +5,11 @@
   "state": "initial",
   "sequence": [
     "node1",
-    "n1s1",
-    "n1s2",
-    "n1lt1",
+    "node1.nodes1",
+    "node1.nodes2",
+    "node1.nodelt1",
     "edge1",
-    "e1mode1",
+    "edge1.mode1",
     "node2"
   ],
   "legs": {
