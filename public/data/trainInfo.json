@@ -70,6 +70,85 @@
                   "price":"2270",
                   "departure_station":"Banglore city JN",
                   "arrival_station":"Kacheguda JN"
+                  },
+                  {
+                  "trainNo":"11111",
+                  "Name":"aaaaa",
+                  "departure_time":"11:11",
+                  "arrival_time":"22:22",
+                  "duration":"33:33 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"4444",
+                  "departure_station":"Banglore city JN",
+                  "arrival_station":"Kacheguda JN"
+                  },
+                  {
+                  "trainNo":"22222",
+                  "Name":"bbbbb",
+                  "departure_time":"22:00",
+                  "arrival_time":"08:20",
+                  "duration":"10:20 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"2989",
+                  "departure_station":"Banglore city JN",
+                  "arrival_station":"Kacheguda JN"
+                  },
+                  {
+                  "trainNo":"33333",
+                  "Name":"ccccc",
+                  "departure_time":"22:00",
+                  "arrival_time":"08:20",
+                  "duration":"10:20 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"3333",
+                  "departure_station":"Banglore city JN",
+                  "arrival_station":"Kacheguda JN"
                   }
+                  ,
+                  {
+                  "trainNo":"55555",
+                  "Name":"SAMPARK KRANTI",
+                  "departure_time":"02:00",
+                  "arrival_time":"23:20",
+                  "duration":"10:20 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"3434",
+                  "departure_station":"Yeshwanthpur",
+                  "arrival_station":"Kacheguda JN"
+                  },
+                  {
+                  "trainNo":"66666",
+                  "Name":"SAMPARK KRANTI",
+                  "departure_time":"23:00",
+                  "arrival_time":"06:20",
+                  "duration":"10:20 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"1270",
+                  "departure_station":"Banglore city JN",
+                  "arrival_station":"Kacheguda JN"
+                  },
+                  {
+                  "trainNo":"99999",
+                  "Name":"SAMPARK KRANTI",
+                  "departure_time":"12:00",
+                  "arrival_time":"09:20",
+                  "duration":"10:20 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"0370",
+                  "departure_station":"Yeshwanthpur",
+                  "arrival_station":"Kacheguda JN"
+                  },
+                  {
+                  "trainNo":"33349",
+                  "Name":"SAMPARK KRANTI",
+                  "departure_time":"16:00",
+                  "arrival_time":"18:20",
+                  "duration":"10:20 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"3740",
+                  "departure_station":"Banglore city JN",
+                  "arrival_station":"Kacheguda JN"
+                  }
+
                 ]
 }

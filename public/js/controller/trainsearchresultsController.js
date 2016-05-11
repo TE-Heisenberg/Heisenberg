@@ -5,10 +5,11 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
             $scope.list=data.trainResult;
             $scope.data=$scope.list;
             $scope.filtrs=data.filters;
+            $scope.previousData=$scope.data;
         });
 
         $scope.mrngDep=function(depar,time){
-            $scope.data=$scope.list;
+            $scope.data=$scope.previousData;
             var array1=[];
             var array=$scope.data;
             for(obj in array){
@@ -19,6 +20,7 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
                 }
             }
             $scope.data=array1;
+            //$scope.previousData=array1;
         };
         $scope.hidebutton=false;
         $scope.showbutton=true;
@@ -31,36 +33,42 @@ angular.module('app').controller('trainSearchResultsController',function($scope,
           $scope[asd]=false;
         };
         $scope.range=300;
-        $scope.slideP=function(rang){
+        $scope.slideP=function(id,rang){
             $scope.data=$scope.list;
             var array1=[];
             var array=$scope.data;
             for(obj in array){
-                var object=(array[obj].price);
+                var object=(array[obj][id]);
                 if(parseInt(object)>=rang){
                     array1.push(array[obj]);
                 }
             }
             $scope.data=array1;
+            $scope.previousData=array1;
         };
         $scope.chkbox=false;
         $scope.reset=function() {
           $scope.range=300;
           $scope.data=$scope.list;
-          $scope.chkbox=true;
+
         };
         $scope.sort=function(time){
           $scope.myOrder=time;
         };
         $scope.scc=function(station,chec){
+          $scope.data=$scope.previousData;
+          var curData=$scope.data;
           $scope.chkbox=chec;
           if($scope.chkbox==true){
-            $scope.data=$filter('filter')($scope.data,station);
+            curData=$filter('filter')(curData,station);
             $scope.chkbox=false;
+            $scope.data=curData;
           }
           else {
-            $scope.data=$scope.list;
+            $scope.data=$scope.previousData;
+            console.log("prev == "+$scope.data);
           }
+          //$scope.previousData=$scope.data;
         };
-
+        $scope.sortIcon=true;
 });
