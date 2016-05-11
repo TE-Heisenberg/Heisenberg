@@ -1,0 +1,75 @@
+{
+  "filters":[
+        {
+          "Displayname":"Price",
+          "id":"price",
+          "mandatory":true,
+          "type":"slider",
+          "data":{"min":300,"max":5000}
+        },
+        {
+          "Displayname":"Departure Time",
+          "id":"departure_time",
+          "mandatory":true,
+          "type":"button",
+          "data":["0-6","6-12","12-18","18-24"]
+        },
+        {
+          "Displayname":"Arrival Time",
+          "id":"arrival_time",
+          "mandatory":true,
+          "type":"button",
+          "data":["0-6","6-12","12-18","18-24"]
+        },
+        {
+          "Displayname":"Departure Station",
+          "id":"departure_station",
+          "mandatory":true,
+          "type":"checkbox",
+          "data":["Banglore city JN","Yeshwanthpur"]
+        },
+        {
+          "Displayname":"Arrival Station",
+          "id":"arrival_station",
+          "mandatory":true,
+          "type":"checkbox",
+          "data":["Kacheguda JN","Secundrabad"]
+        }
+      ]
+  ,
+  "trainResult":[
+                  {
+                  "trainNo":"12975",
+                  "Name":"JAIPUR EXPRESS",
+                  "departure_time":"13:00",
+                  "arrival_time":"02:00",
+                  "duration":"13:00 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"2420",
+                  "departure_station":"Banglore city JN",
+                  "arrival_station":"Secundrabad"
+                  },
+                  {
+                  "trainNo":"17604",
+                  "Name":"KACHEGUDA EXP",
+                  "departure_time":"15:30",
+                  "arrival_time":"05:00",
+                  "duration":"13:30 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"2345",
+                  "departure_station":"Yeshwanthpur",
+                  "arrival_station":"Secundrabad"
+                  },
+                  {
+                  "trainNo":"12649",
+                  "Name":"SAMPARK KRANTI",
+                  "departure_time":"22:00",
+                  "arrival_time":"08:20",
+                  "duration":"10:20 hr",
+                  "Availability":"RLWL5/WL1",
+                  "price":"2270",
+                  "departure_station":"Banglore city JN",
+                  "arrival_station":"Kacheguda JN"
+                  }
+                ]
+}
