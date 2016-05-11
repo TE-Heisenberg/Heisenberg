@@ -1,8 +1,8 @@
 
   <div class="content_div" ng-cloak layout="row" layout-sm="column">
 
-        <div id="sidebar" hide-sm hide-xs flex="25">
-            <md-grid-list md-cols=2 md-row-height="4:1">
+        <div id="sidebar" hide-sm hide-xs flex="20">
+            <md-grid-list md-cols=2 md-row-height="4:1" class="det_header">
               <md-grid-tile>Filter results</md-grid-tile>
               <md-grid-tile><md-button class="md-primary" ng-click="reset()">Reset All</md-grid-tile>
             </md-grid-list>
@@ -15,11 +15,15 @@
                 <md-card-content>
                   <div ng-show={{filt.type=='slider'}}>
                     <span ng-bind="range"></span>
+
+                    <!-- <md-slider aria-label="range" ng-model="range" min={{filt.data.min}} max={{filt.data.max}} ng-change="slideP(range)">
+                    </md-slider> -->
                     <input ng-change="slideP(range)" type="range"  min={{filt.data.min}} max={{filt.data.max}} ng-model="range" />
                   </div>
                   <div ng-show={{filt.type=='checkbox'}}>
                     <div ng-repeat="area in filt.data">
-                      <md-checkbox ng-model="chkbox" ng-change="scc(area,chkbox);">{{area}}</md-checkbox>
+                      <!-- <input type="checkbox" ng-model="chkbox" ng-change="scc(area,chkbox)"/>{{area}} -->
+                      <md-checkbox ng-model="chkbox" aria-label="{{area}}" ng-change="scc(area,chkbox)" >{{area}}</md-checkbox>
                     </div>
                   </div>
                   <div ng-show={{filt.type=='button'}}>
@@ -30,8 +34,8 @@
                 </md-card-content>
             </md-card>
       </div>
-        <div id="mainbar" flex="100" flex-gt-sm="75">
-          <md-grid-list class="det_header" md-cols="7" md-gutter="1em" md-row-height="4:1">
+        <div id="mainbar" flex="100" flex-gt-sm="80">
+          <md-grid-list class="det_header md-caption" md-cols="7" md-gutter="1em" md-row-height="4:1">
             <md-grid-tile >Train name(No)</md-grid-tile>
             <md-grid-tile >Departure<i class="material-icons" ng-click="sort('departure_time')">arrow_drop_down</i></md-grid-tile>
             <md-grid-tile >Arrival<i class="material-icons" ng-click="sort('arrival_time')">arrow_drop_down</i></md-grid-tile>
@@ -54,17 +58,18 @@
               <md-grid-tile >{{one.Availability}}</md-grid-tile>
               <md-grid-tile>Rs.{{one.price}}</md-grid-tile>
               <md-grid-tile>
-                <div>
-                <md-button class="md-primary md-raised selectButton">Select</md-button>
-                <md-button class="md-primary" ng-show="showbutton" ng-click="hidebutton=true;showbutton=false;expandCard($index)">ShowDetails</md-button>
-                <md-button class="md-primary" ng-show="hidebutton" ng-click="showbutton=true;hidebutton=false;hideCard($index)">HideDetails</md-button>
+                <div id="selectButton">
+                  <button>Select</button>
+                  <button ng-show="showbutton" ng-click="hidebutton=true;showbutton=false;expandCard($index)">ShowDetails</button>
+                  <button ng-show="hidebutton" ng-click="showbutton=true;hidebutton=false;hideCard($index)">HideDetails</button>
                 </div>
+
               </md-grid-tile>
             </md-grid-list>
             <div ng-show="{{'showDiv'+$index}}" id="moreDetails">
               <div layout="row">
               <div flex="50">
-                Train No: 
+                Train No:
                 <font class="value">{{one.trainNo}}</font>
               </div>
               <div flex="50">
@@ -84,6 +89,5 @@
             </div>
             </div>
           </md-card>
-
         </div>
       </div>
