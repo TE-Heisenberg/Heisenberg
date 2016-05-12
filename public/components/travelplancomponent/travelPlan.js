@@ -4,7 +4,7 @@
 
 var app = angular.module("app").component("travelPlan", {
 
-    templateUrl: "views/component/travelPlanDiv.html",
+    templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
     controllerAs: "plan",
     controller: ["$http", travelPlanController]
 
