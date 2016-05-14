@@ -63,16 +63,20 @@
                 	  "mandatory": false,
                 		"displayName": "Preferences",
                 		"id": "preferences",
-                		"type": "dropDown",
-                		"data":["ac","non-ac"]
+                		"type": "singleSelect",
+                    "specificAttr":{
+                		      "domainList":["ac","non-ac"]
+                    }
                 	},
                 	"rating":
                 	{
                 	  "mandatory": false,
                 		"displayName": "Rating",
                 		"id": "rating",
-                		"type": "dropDown",
-                		"data":["1-star","2-star","3-star","4-star"]
+                		"type": "singleSelect",
+                    "specificAttr":{
+                		      "domainList":["1-star","2-star","3-star","4-star"]
+                        }
                 	},
                   "nearBy" : {
                     "mandatory": false,
@@ -87,30 +91,38 @@
                     "mandatory": true,
                 		"displayName": "Type Of Property",
                 		"id": "typeOfProperty",
-                		"type": "dropDown",
-                		"data":["Guest House", "Hotels"]
+                		"type": "singleSelect",
+                    "specificAttr":{
+                          "domainList":["Guest House", "Hotels"]
+                        }
                   },
                   "stars":
                 	{
                 	  "mandatory": false,
                 		"displayName": "Stars",
                 		"id": "stars",
-                		"type": "dropDown",
-                		"data":["1-star","3-star", "5-star", "7-star"]
+                		"type": "singleSelect",
+                    "specificAttr":{
+                		      "domainList":["1-star","3-star", "5-star", "7-star"]
+                        }
                 	},
                   "amenities":{
                     "mandatory": false,
                 		"displayName": "Amenities",
                 		"id": "amenities",
-                		"type": "dropDown",
-                		"data":["meeting rooms", "swimming pool", "fitness", "restaurants"]
+                		"type": "multiSelect",
+                    "specificAttr":{
+                		      "domainList":["meeting rooms", "swimming pool", "fitness", "restaurants"]
+                        }
                   },
                   "proximity": {
                     "mandatory": false,
                 		"displayName": "Proximity",
                 		"id": "proximity",
-                		"type": "dropDown",
-                		"data":["metro station", "taxi stands", "airports", "railway stations" ]
+                		"type": "singleSelect",
+                    "specificAttr":{
+                		      "domainList":["metro station", "taxi stands", "airports", "railway stations" ]
+                        }
 
                   }
 

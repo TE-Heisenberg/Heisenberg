@@ -1,0 +1,42 @@
+<p>Stay Booking Page</p>
+<!-- <div layout="row">
+  <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.firstName" bind-data-key="firstName" type='text' label="{{stayBookingCtrl.label}}" specific-attr='stayBookingCtrl.specificAttr'>
+  </custom-input-box>
+
+  <div flex="20" flex-offset="5">
+    MultiSelect Outside
+    {{stayBookingCtrl.multiSelectData.label}}
+    {{stayBookingCtrl.selectedmultiSelectedData}}
+    <br>
+    <custom-input-box   reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.selectedmultiSelectedData" bind-data-key="selectedmultiSelectedData" type='{{stayBookingCtrl.multiSelectData.type}}' label="{{stayBookingCtrl.multiSelectData.label}}" specific-attr='stayBookingCtrl.multiSelectData.specificAttr'>
+    </custom-input-box>
+  </div>
+
+  <div flex="20" flex-offset="5">
+    Single Select Outside
+    {{stayBookingCtrl.singleSelectData.label}}
+    {{stayBookingCtrl.selectedsingleSelectedData}}
+
+    <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.selectedsingleSelectedData" bind-data-key="selectedsingleSelectedData" type='{{stayBookingCtrl.singleSelectData.type}}' label="{{stayBookingCtrl.singleSelectData.label}}" specific-attr='stayBookingCtrl.singleSelectData.specificAttr'>
+    </custom-input-box>
+  </div>
+
+</div><!-- end of row -->
+
+<md-card layout="row" layout-wrap>
+<div flex="20" flex-offset="5" flex-xs="80" ng-repeat='(fieldName, fieldParameters) in stayBookingCtrl.nodeMaster.services.stay'>
+   <!-- {{fieldName}}{{fieldParameters}}{{fieldParameters.specificAttr}} -->
+
+      <div ng-if="fieldParameters.type==autoComplete">
+        <custom-input-box   reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.selectedsingleSelectedData" bind-data-key="selectedsingleSelectedData" type='{{fieldParameters.type}}' label="{{fieldParameters.displayName}}" specific-attr='stayBookingCtrl.autoCompleteData.specificAttr'>
+        </custom-input-box>
+      </div>
+
+     {{fieldParameters.displayName}}
+     {{stayBookingCtrl.selectedsingleSelectedData}}
+
+     <custom-input-box   reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.selectedsingleSelectedData" bind-data-key="selectedsingleSelectedData" type='{{fieldParameters.type}}' label="{{fieldParameters.displayName}}" specific-attr='fieldParameters.specificAttr'>
+     </custom-input-box>
+
+</div>
+</md-card>
