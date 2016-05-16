@@ -10,7 +10,8 @@ $routeConfig: [
     {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
     {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsComponent'},
     {path:'/hotelSearchResults',name:'HotelSearchResultsComponent',component:'hotelSearchResultsComponent'},
-    {path:'/itinerary',name:'ItineraryComponent',component:'itineraryComponent'}
+    {path:'/itinerary',name:'ItineraryComponent',component:'itineraryComponent'},
+    {path:'/**',redirectTo:["LandingPageComponent"]}
 
   ]
 });
