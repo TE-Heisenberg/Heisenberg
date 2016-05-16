@@ -5,11 +5,12 @@ angular.module('app')
 	controller: hotelSearchResultsController
 });
 
-function hotelSearchResultsController($http){
+function hotelSearchResultsController($http,$rootScope){
     var hotelSearchResults= this;
     hotelSearchResults.$onInit= function(){
         $http.get('public/data/hotelSearchResults.json').success(function(searchResults){
             hotelSearchResults.searchResults= searchResults;
         });
+			
     }
 }

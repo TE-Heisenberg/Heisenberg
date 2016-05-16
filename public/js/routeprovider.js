@@ -2,8 +2,24 @@
  * Created by lenovo on 29-04-2016.
  */
  var module=angular.module("app", ["ngMaterial", "materialCalendar", "ngSanitize", "ngRoute", "ngMdIcons", "ngMessages", "mdPickers", "angular-click-outside","ngComponentRouter"]);
-  
+ module.run(function ($rootScope, $location) {
+     $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
+         if ($location.path().indexOf('landingPage') > 0) {
+           console.log("Hello");
+             $rootScope.landingPage = true;
+             console.log($rootScope.landingPage);
+         }
+         else {
+             console.log("Hello2 ");
+             $rootScope.landingPage = false;
+             console.log($rootScope.landingPage);
+         }
+
+     });
+
+ });
     module.value("$routerRootComponent","mainComponent");
+
 
 //     .config(function ($routeProvider) {
 //

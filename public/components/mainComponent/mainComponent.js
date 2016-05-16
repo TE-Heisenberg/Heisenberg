@@ -10,21 +10,22 @@ $routeConfig: [
     {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
     {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsComponent'},
     {path:'/hotelSearchResults',name:'HotelSearchResultsComponent',component:'hotelSearchResultsComponent'},
-    {path:'/itinerary',name:'ItineraryComponent',component:'itineraryComponent'},
-    {path:'/**',redirectTo:["LandingPageComponent"]}
+    {path:'/itinerary',name:'ItineraryComponent',component:'itineraryComponent'}
+
   ]
 });
 function mainComponentController($rootScope,$location){
-  var mainComponent=this;
-      if ($location.path().indexOf('landingPage') > 0)
-      {
-        console.log("hello landing is there");
-          mainComponent.landingPage = true;
-          console.log(mainComponent.landingPage);
-      }
-      else {
-        console.log("hello");
-          mainComponent.landingPage = false;
-      }
+     console.log($rootScope);
+//  var mainComponent=this;
+      // if ($location.path().indexOf('landingPage') > 0)
+      // {
+      //   console.log("hello landing is there");
+      //     mainComponent.landingPage = true;
+      //     console.log(mainComponent.landingPage);
+      // }
+      // else {
+      //   console.log("hello");
+      //     mainComponent.landingPage = false;
+      // }
 
 }
