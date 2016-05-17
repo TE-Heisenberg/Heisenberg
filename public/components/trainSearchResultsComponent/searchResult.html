@@ -1,0 +1,51 @@
+
+
+<!-- <h5>searchResult component</h5> -->
+<!-- <h4>im order : {{myorder}}</h4> -->
+
+
+<md-card class="animate-repeat" ng-repeat="one in $ctrl.data | orderBy:$ctrl.myorder">
+  <md-grid-list class="det_cards" md-cols="7"  md-row-height="1:1">
+    <md-grid-tile>
+      <div>{{one.trainNo}}<br>
+      <span class="spann">{{one.Name}}</span>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>{{one.departure_time}}</md-grid-tile>
+    <md-grid-tile>{{one.arrival_time}}</md-grid-tile>
+    <md-grid-tile>{{one.duration}}</md-grid-tile>
+    <md-grid-tile >{{one.Availability}}</md-grid-tile>
+    <md-grid-tile>Rs.{{one.price}}</md-grid-tile>
+    <md-grid-tile>
+      <div id="selectButton">
+        <button>Select</button>
+        <button ng-show="showbutton" ng-click="showbutton=false;hidebutton=true;expandCard($index)">ShowDetails</button>
+        <button ng-show="hidebutton" ng-click="showbutton=true;hidebutton=false;hideCard($index)">HideDetails
+        </button>
+      </div>
+
+    </md-grid-tile>
+  </md-grid-list>
+  <div ng-show="{{'showDiv'+$index}}" id="moreDetails">
+    <div layout="row">
+    <div flex="50">
+      Train No:
+      <font class="value">{{one.trainNo}}</font>
+    </div>
+    <div flex="50">
+      Train Name:
+      <font class="value">{{one.Name}}</font>
+    </div>
+  </div>
+  <div layout="row">
+    <div flex="50">
+      Departure Station:
+      <font class="value">{{one.departure_station}}</font>
+    </div>
+    <div flex="50">
+      Arrival Station:
+      <font class="value">{{one.arrival_station}}</font>
+    </div>
+  </div>
+  </div>
+</md-card>
