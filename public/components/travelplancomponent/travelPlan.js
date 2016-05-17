@@ -27,12 +27,7 @@ function travelPlanController($http) {
         fetchJSON($http, "travelplan").then(function (json) {
             plan.travelPlanJSON = json;
         });
-        fetchJSON($http, "newNode").then(function (json) {
-            plan.newNode = json;
-        });
-        fetchJSON($http, "newEdge").then(function (json) {
-            plan.newEdge = json;
-        });
+
     }
 
     plan.addNode = function (nodeIndex) {
@@ -45,141 +40,17 @@ function travelPlanController($http) {
 
       console.log(nodeId);
       console.log(edgeId);
-      plan.travelPlanJSON.nodes[nodeId]={
-        "cityName": "",
-        "status": "",
-        "childServices": {
-          "nodeS1": {
-            "type": "",
-            "status": "",
-            "request": {
-              "area": "",
-              "rating": "",
-              "roomType": "",
-              "checkinDate": "",
-              "checkoutDate": ""
-            },
-            "final": {
-              "image": "",
-              "name": "",
-              "rating": "",
-              "location": "",
-              "roomType": "",
-              "checkinDate": "",
-              "checkinTime": "",
-              "checkoutDate": "",
-              "checkoutTime": "",
-              "price": "",
-              "comments": ""
-            }
-          },
-          "nodeT1": {
-            "type": "",
-            "status": "",
-            "request": {
-              "source": "",
-              "destination": "",
-              "type": "",
-              "pickupDate": "",
-              "pickupTime": ""
-            },
-            "final": {
-              "source": "",
-              "destination": "",
-              "type": "",
-              "pickupDate": "",
-              "pickupTime": "",
-              "dropDate": "",
-              "dropTime": "",
-              "cab": {
-                "image": "",
-                "companyName": "",
-                "cabNumber": "",
-                "driverDetails": {
-                  "name": ""
-                },
-                "estimatedPrice": "",
-                "cabType": ""
-              },
-              "bus": {
-                "image": "",
-                "companyName": "",
-                "busNumber": "",
-                "busType": "",
-                "seatsType": "",
-                "price": ""
-              }
-            }
-          }
-        }
-      };
-      plan.travelPlanJSON.edges[edgeId]={
-        "status": "",
-        "childServices": {
-          "edgeMode1": {
-            "status": "",
-            "request": {
-              "travelStartDate": "",
-              "mode": "Flight",
-              "flight": {
-                "state": "",
-                "class": "",
-                "Nonstop": ""
-              },
-              "bus": {
-                "state": "",
-                "class": "",
-                "seatType": ""
-              },
-              "train": {
-                "state": "",
-                "class": ""
-              }
-            },
-            "final": {
-              "travelStartDate": "",
-              "mode": "",
-              "flight": {
-                "companyName": "",
-                "flightID": "",
-                "seatNumber": "",
-                "price": "",
-                "preferences": {
-                  "class": "",
-                  "Nonstop": "",
-                  "meals": "",
-                  "extra Baggage": ""
-                }
-              },
-              "bus": {
-                "companyName": "",
-                "busNumber": "",
-                "seatNumber": "",
-                "price": "",
-                "preferences": {
-                  "class": "",
-                  "seatType": ""
-                }
-              },
-              "train": {
-                "companyName": "",
-                "trainNumber": "",
-                "seatNumber": "",
-                "coachNumber": "",
-                "price": "",
-                "preferences": {
-                  "class": ""
-                }
-              },
-              "travelStartTime": "",
-              "travelEndDate": "",
-              "travelEndTime": ""
-            }
-          }
-        }
-      };
-      //  plan.travelPlanJSON.nodes[nodeId] = plan.newNode;
-        //plan.travelPlanJSON.edges[edgeId] = plan.newEdge;
+
+      fetchJSON($http, "newNode").then(function (json) {
+          plan.newNode = json;
+          console.log(plan.newNode);
+      });
+      fetchJSON($http, "newEdge").then(function (json) {
+          plan.newEdge = json;
+            console.log(plan.newEdge);
+      });
+        plan.travelPlanJSON.nodes[nodeId] = plan.newNode;
+      plan.travelPlanJSON.edges[edgeId] = plan.newEdge;
         console.log(plan.travelPlanJSON);
 
     }

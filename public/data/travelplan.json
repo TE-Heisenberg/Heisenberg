@@ -32,7 +32,7 @@
           "status": "",
           "request": {
             "travelStartDate": "",
-            "mode": "Flight",
+            "mode": "flight",
             "flight": {
               "state": "",
               "class": "",
