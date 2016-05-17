@@ -11,6 +11,6 @@ function hotelSearchResultsController($http,$rootScope){
         $http.get('public/data/hotelSearchResults.json').success(function(searchResults){
             hotelSearchResults.searchResults= searchResults;
         });
-			
+
     }
 }

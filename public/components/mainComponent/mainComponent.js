@@ -17,16 +17,5 @@ $routeConfig: [
 });
 function mainComponentController($rootScope,$location){
      console.log($rootScope);
-//  var mainComponent=this;
-      // if ($location.path().indexOf('landingPage') > 0)
-      // {
-      //   console.log("hello landing is there");
-      //     mainComponent.landingPage = true;
-      //     console.log(mainComponent.landingPage);
-      // }
-      // else {
-      //   console.log("hello");
-      //     mainComponent.landingPage = false;
-      // }
 
 }
