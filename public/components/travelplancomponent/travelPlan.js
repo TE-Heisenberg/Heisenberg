@@ -6,7 +6,7 @@ var app = angular.module("app").component("travelPlan", {
 
     templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
     controllerAs: "plan",
-    controller: ["$http", travelPlanController]
+    controller: ["$http", "FetchService", travelPlanController]
 
 }).filter('keylength', function () {
     return function (input) {
@@ -17,22 +17,21 @@ var app = angular.module("app").component("travelPlan", {
     }
 });
 
-function travelPlanController($http) {
+function travelPlanController($http, FetchService) {
 
     var plan = this;
     plan.travelPlanJSON = {};
     plan.newNode = {};
     plan.newEdge = {};
+    console.log(FetchService);
     plan.$onInit = function () {
-        fetchJSON($http, "travelplan").then(function (json) {
-            plan.travelPlanJSON = json;
-        });
-        fetchJSON($http, "newNode").then(function (json) {
-            plan.newNode = json;
-        });
-        fetchJSON($http, "newEdge").then(function (json) {
-            plan.newEdge = json;
-        });
+        console.log(FetchService);
+
+        FetchService.trevelPlan().then(function (response) {
+
+            plan.travelPlanJSON = response;
+        })
+
     }
 
     plan.addNode = function (nodeIndex) {
@@ -43,143 +42,23 @@ function travelPlanController($http) {
         var nodeId = "node" + nodeIdNumber;
         var edgeId = "edge" + edgeIdNumber;
 
-      console.log(nodeId);
-      console.log(edgeId);
-      plan.travelPlanJSON.nodes[nodeId]={
-        "cityName": "",
-        "status": "",
-        "childServices": {
-          "nodeS1": {
-            "type": "",
-            "status": "",
-            "request": {
-              "area": "",
-              "rating": "",
-              "roomType": "",
-              "checkinDate": "",
-              "checkoutDate": ""
-            },
-            "final": {
-              "image": "",
-              "name": "",
-              "rating": "",
-              "location": "",
-              "roomType": "",
-              "checkinDate": "",
-              "checkinTime": "",
-              "checkoutDate": "",
-              "checkoutTime": "",
-              "price": "",
-              "comments": ""
-            }
-          },
-          "nodeT1": {
-            "type": "",
-            "status": "",
-            "request": {
-              "source": "",
-              "destination": "",
-              "type": "",
-              "pickupDate": "",
-              "pickupTime": ""
-            },
-            "final": {
-              "source": "",
-              "destination": "",
-              "type": "",
-              "pickupDate": "",
-              "pickupTime": "",
-              "dropDate": "",
-              "dropTime": "",
-              "cab": {
-                "image": "",
-                "companyName": "",
-                "cabNumber": "",
-                "driverDetails": {
-                  "name": ""
-                },
-                "estimatedPrice": "",
-                "cabType": ""
-              },
-              "bus": {
-                "image": "",
-                "companyName": "",
-                "busNumber": "",
-                "busType": "",
-                "seatsType": "",
-                "price": ""
-              }
-            }
-          }
-        }
-      };
-      plan.travelPlanJSON.edges[edgeId]={
-        "status": "",
-        "childServices": {
-          "edgeMode1": {
-            "status": "",
-            "request": {
-              "travelStartDate": "",
-              "mode": "Flight",
-              "flight": {
-                "state": "",
-                "class": "",
-                "Nonstop": ""
-              },
-              "bus": {
-                "state": "",
-                "class": "",
-                "seatType": ""
-              },
-              "train": {
-                "state": "",
-                "class": ""
-              }
-            },
-            "final": {
-              "travelStartDate": "",
-              "mode": "",
-              "flight": {
-                "companyName": "",
-                "flightID": "",
-                "seatNumber": "",
-                "price": "",
-                "preferences": {
-                  "class": "",
-                  "Nonstop": "",
-                  "meals": "",
-                  "extra Baggage": ""
-                }
-              },
-              "bus": {
-                "companyName": "",
-                "busNumber": "",
-                "seatNumber": "",
-                "price": "",
-                "preferences": {
-                  "class": "",
-                  "seatType": ""
-                }
-              },
-              "train": {
-                "companyName": "",
-                "trainNumber": "",
-                "seatNumber": "",
-                "coachNumber": "",
-                "price": "",
-                "preferences": {
-                  "class": ""
-                }
-              },
-              "travelStartTime": "",
-              "travelEndDate": "",
-              "travelEndTime": ""
-            }
-          }
-        }
-      };
-      //  plan.travelPlanJSON.nodes[nodeId] = plan.newNode;
-        //plan.travelPlanJSON.edges[edgeId] = plan.newEdge;
+        FetchService.newNode().then(function (response) {
+            
+            plan.newNode = response;
+
+            FetchService.newEdge().then(function (response) {
+
+                plan.newEdge = response;
+                console.log(plan.newEdge);
+                plan.travelPlanJSON.nodes[nodeId] = plan.newNode;
+                plan.travelPlanJSON.edges[edgeId] = plan.newEdge;
+
+            });
+        });
+
+
+        console.log(nodeId);
+
         console.log(plan.travelPlanJSON);
 
     }
@@ -206,33 +85,25 @@ function travelPlanController($http) {
         }
 
     }
-    plan.closeThis= function(x){
-           console.log("closing");
-           x.show = false;
-         }
+    plan.closeThis = function (x) {
+        console.log("closing");
+        x.show = false;
+    }
 
-      plan.Flight_buttion_Action = function (x) {
-          if (x.flightShow == false) {
-              x.flightShow = true;
-          } else {
-              x.flightShow = false;
-          }
-      }
+    plan.Flight_buttion_Action = function (x) {
+        if (x.flightShow == false) {
+            x.flightShow = true;
+        } else {
+            x.flightShow = false;
+        }
+    }
 
-      plan.change_travel_mode = function (count, index, icon) {
-              console.log(count);
-          index.edgeMode1.request.mode = icon;
+    plan.change_travel_mode = function (count, index, icon) {
+        console.log(count);
+        index.edgeMode1.request.mode = icon;
 
-      }
-
-}
-
-
-function fetchJSON($http, JSONname) {
-
-    return $http.get("public/data/" + JSONname + ".json").then(function (response) {
-        return response.data;
-
-    })
+    }
 
 }
+
+

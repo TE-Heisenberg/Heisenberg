@@ -1,0 +1,12 @@
+<div ng-repeat="(key,value) in model.value">
+    <div ng-repeat="(key,value) in value">
+
+        <div ng-if="key=='cityName'">
+            <city-component value="value"></city-component>
+        </div>
+
+        <div ng-if="key=='childServices'">
+            <child-services-component value="value" get-mode-pref="model.getModePref(type)" get-seat-pref="model.getSeatPref(value)"></child-services-component>
+        </div>
+    </div>
+</div>
