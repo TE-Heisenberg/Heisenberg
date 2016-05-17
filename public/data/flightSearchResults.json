@@ -35,19 +35,5 @@
 		"departureTime": "03:45",
 		"duration": "07:30",
 		"price": "$5999"
-	}],
-	"filters": [{
-		"name": "Price",
-		"slider": {
-			"min": "1000",
-			"max": "300000",
-			"steps": "500"
-		}
-	}, {
-		"name": "Class",
-		"options": ["Bussiness Class","Economy Class"]
-	}, {
-		"name": "Nearby",
-		"options": ["Koramangala","Sarjapur","Electronic city","Madiwala","BTM Layout"]
 	}]
 }
