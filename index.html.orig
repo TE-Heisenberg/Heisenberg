@@ -81,14 +81,23 @@
     <!-- customInputBox javascripts -->
     <!-- <script src="./javascripts/app.js"></script> -->
     <!-- <script type="text/javascript" src="custom-input-component/text/component.js">  </script>
+<<<<<<< HEAD
+     <script type="text/javascript" src="custom-input-component/autoComplete/component.js">  </script>
+    <script type="text/javascript" src="custom-input-component/singleSelect/component.js">  </script>
+    <script type="text/javascript" src="custom-input-component/multiSelect/component.js">  </script>
+  -->
+    <!-- <script type="text/javascript" src="/javascripts/outsideComponent.js">  </script> -->
+    <!-- <script type="text/javascript" src="custom-input-component/customInputBox/customInputBox.js">  </script> --> 
+=======
       <script type="text/javascript" src="custom-input-component/autoComplete/component.js">  </script>
      <script type="text/javascript" src="custom-input-component/singleSelect/component.js">  </script>
      <script type="text/javascript" src="custom-input-component/multiSelect/component.js">  </script>-->
-  -->
+
     <!-- <script type="text/javascript" src="/javascripts/outsideComponent.js">  </script> -->
     <!--
         <script type="text/javascript" src="custom-input-component/customInputBox/customInputBox.js">  </script>
     -->
+>>>>>>> 120f2ff662a9c0e2247a9248522cf0b94398a4b1
 
 </head>
 <body ng-app="app">

@@ -24,7 +24,21 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
+          <div class="progress-line" ng-if="$index>=1">
+            <div class=" node-sm travel-button" ng-click="plan.Flight_buttion_Action(value)">
+              <i class="material-icons">{{plan.travelPlanJSON.edges['edge'+($index)].childServices.edgeMode1.request.mode|lowercase}}</i>
+            </div>
+            <div class="middle-bar">
+              <div class="travel-button-action" ng-show="value.flightShow==true">
+                <i class="material-icons" ng-click="plan.change_travel_mode($index,plan.travelPlanJSON.edges['edge'+$index].childServices,'flight')">flight</i>
+                <i class="material-icons"ng-click="plan.change_travel_mode($index,plan.travelPlanJSON.edges['edge'+$index].childServices,'train')">train</i>
+                <i class="material-icons" ng-click="plan.change_travel_mode($index,plan.travelPlanJSON.edges['edge'+$index].childServices,'directions_bus')">directions_bus</i>
+              </div>
+            </div>
+=======
                     </div>
+>>>>>>> 120f2ff662a9c0e2247a9248522cf0b94398a4b1
 
                     <div class="node" id="nodeid" click-outside="plan.closeThis(value)"
                          outside-if-not="nodeid,node-md-main-action">

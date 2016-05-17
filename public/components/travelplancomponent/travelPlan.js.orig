@@ -25,12 +25,18 @@ function travelPlanController($http, FetchService) {
     plan.newEdge = {};
     console.log(FetchService);
     plan.$onInit = function () {
+<<<<<<< HEAD
+        fetchJSON($http, "travelplan").then(function (json) {
+            plan.travelPlanJSON = json;
+        });
+=======
         console.log(FetchService);
 
         FetchService.trevelPlan().then(function (response) {
 
             plan.travelPlanJSON = response;
         })
+>>>>>>> 120f2ff662a9c0e2247a9248522cf0b94398a4b1
 
     }
 
@@ -42,6 +48,21 @@ function travelPlanController($http, FetchService) {
         var nodeId = "node" + nodeIdNumber;
         var edgeId = "edge" + edgeIdNumber;
 
+<<<<<<< HEAD
+      console.log(nodeId);
+      console.log(edgeId);
+
+      fetchJSON($http, "newNode").then(function (json) {
+          plan.newNode = json;
+          console.log(plan.newNode);
+      });
+      fetchJSON($http, "newEdge").then(function (json) {
+          plan.newEdge = json;
+            console.log(plan.newEdge);
+      });
+        plan.travelPlanJSON.nodes[nodeId] = plan.newNode;
+      plan.travelPlanJSON.edges[edgeId] = plan.newEdge;
+=======
         FetchService.newNode().then(function (response) {
             
             plan.newNode = response;
@@ -59,6 +80,7 @@ function travelPlanController($http, FetchService) {
 
         console.log(nodeId);
 
+>>>>>>> 120f2ff662a9c0e2247a9248522cf0b94398a4b1
         console.log(plan.travelPlanJSON);
 
     }
