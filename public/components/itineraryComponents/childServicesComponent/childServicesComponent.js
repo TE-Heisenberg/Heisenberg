@@ -3,7 +3,7 @@
  */
 
 
-angular.module('myApp')
+angular.module('app')
     .component('childServicesComponent',{
         templateUrl:'public/components/itineraryComponents/childServicesComponent/childServicesComponent.html',
         controllerAs:'childServicesComponent',
@@ -29,5 +29,4 @@ function childServicesController($scope){
       this.seatPref=function(value){
          return this.getSeatPref({value:value});
       }
-
 }
