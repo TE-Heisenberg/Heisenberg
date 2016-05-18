@@ -3,7 +3,7 @@
   "favorite": true,
   "travelType": "oneWay",
   "state": "initial",
-  "sequence": [
+  "sequenceOfJobs": [
     "node1",
     "n1s1",
     "n1s2",
@@ -17,6 +17,9 @@
     "n2T2",
     "edge2"
   ],
+
+  "sequenceOfNodes": ["node1", "edge1", "node2"]
+  ,
   "legs": {
     "leg1": {
       "source": "node1",
