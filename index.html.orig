@@ -70,16 +70,18 @@
     <script src="public/components/hotelSearchResultsComponent/filters/amenitiesFilter/amenitiesFilter.js"></script>
     <script src="public/components/hotelSearchResultsComponent/filters/locationFilter/locationFilter.js"></script>
     <script src="public/components/hotelSearchResultsComponent/filters/ratingsFilter/ratingsFilter.js"></script>
-     <script src="public/components/flightSearchResultsComponent/flightSearchResultsComponent.js"></script>
-     <script src="public/components/flightSearchResultsComponent/flightSearchResults/flightSearchResults.js"></script>
-     <script src="public/components/flightSearchResultsComponent/filters/numberOfStopsFilter/numberOfStopsFilter.js"></script>
-     <script src="public/components/flightSearchResultsComponent/filters/departureTimeFilter/departureTimeFilter.js"></script>
 
      <script src="public/components/hotelSearchResultsComponent/hotelSearchResultsComponent.js"></script>
      <script src="public/components/hotelSearchResultsComponent/hotelSearchResult/hotelSearchResult.js"></script>
      <script src="public/components/hotelSearchResultsComponent/filters/amenitiesFilter/amenitiesFilter.js"></script>
      <script src="public/components/hotelSearchResultsComponent/filters/locationFilter/locationFilter.js"></script>
      <script src="public/components/hotelSearchResultsComponent/filters/ratingsFilter/ratingsFilter.js"></script>
+     <script src="public/components/flightSearchResultsComponent/flightSearchResultsComponent.js"></script>
+     <script src="public/components/flightSearchResultsComponent/flightSearchResults/flightSearchResults.js"></script>
+     <script src="public/components/flightSearchResultsComponent/filters/departureTimeFilter/departureTimeFilter.js"></script>
+
+
+
      <script src="public/components/trainSearchResultsComponent/searchComp.js"></script>
      <script src="public/components/itineraryComponents/mainComponent/mainComponent.js"></script>
      <script src="public/components/itineraryComponents/cityComponent/cityComponent.js"></script>
