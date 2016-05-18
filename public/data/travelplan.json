@@ -3,7 +3,7 @@
   "favorite": true,
   "travelType": "oneWay",
   "state": "initial",
-  "sequence": [
+  "sequenceOfJobs": [
     "node1",
     "n1s1",
     "n1s2",
@@ -17,6 +17,9 @@
     "n2T2",
     "edge2"
   ],
+
+  "sequenceOfNodes": ["node1", "edge1", "node2"]
+  ,
   "legs": {
     "leg1": {
       "source": "node1",
@@ -57,7 +60,7 @@
             "travelStartDate": "5/1/2016",
             "mode": "flight",
             "flight": {
-              "image":"Images/indigo.png",
+              "image":"public/assets/images/indigo.png",
               "companyName": "Air Costa",
               "flightID": "AC2456",
               "seatNumber": "45H",
@@ -72,7 +75,7 @@
               }
             },
             "bus": {
-              "image":"Images/bus.png",
+              "image":"public/assets/images/bus.png",
               "companyName": "Air Costa",
               "busNumber": "AC2456",
               "seatNumber": "45H",
@@ -85,7 +88,7 @@
               }
             },
             "train": {
-              "image":"Images/rail.png",
+              "image":"public/assets/images/rail.png",
               "companyName": "Air Costa",
               "trainNumber": "AC2456",
               "seatNumber": "45H",
@@ -131,7 +134,7 @@
             "travelStartDate": "5/1/2016",
             "mode": "flight",
             "flight": {
-              "image":"Images/indigo.png",
+              "image":"public/assets/images/indigo.png",
               "companyName": "Air Costa",
               "flightID": "AC2456",
               "seatNumber": "45H",
@@ -146,7 +149,7 @@
               }
             },
             "bus": {
-              "image":"Images/bus.png",
+              "image":"public/assets/images/bus.png",
               "companyName": "Air Costa",
               "busNumber": "AC2456",
               "seatNumber": "45H",
@@ -159,7 +162,7 @@
               }
             },
             "train": {
-              "image":"Images/rail.png",
+              "image":"public/assets/images/rail.png",
               "companyName": "Air Costa",
               "trainNumber": "AC2456",
               "seatNumber": "45H",
@@ -213,7 +216,7 @@
               "cabType": "sedan"
             },
             "localBus": {
-              "image": "Images/localBus.png",
+              "image": "public/assets/images/localBus.png",
               "companyName": "red bus",
               "busNumber": "AB 327014",
               "busType": "AC bus",
@@ -241,7 +244,7 @@
             "dropDate": "4/30/2016",
             "dropTime": "12:00 PM",
             "cab": {
-              "image": "Images/ola.png",
+              "image": "public/assets/images/ola.png",
               "companyName": "Uber",
               "cabNumber": "DL AJ 5034",
               "driverDetails": {
@@ -279,7 +282,7 @@
             "dropDate": "4/30/2016",
             "dropTime": "12:00 PM",
             "cab": {
-              "image": "Images/uber.png",
+              "image": "public/assets/images/uber.png",
               "companyName": "Uber",
               "cabNumber": "DL AJ 5034",
               "driverDetails": {
@@ -309,7 +312,7 @@
             "checkoutDate": "5/01/2016"
           },
           "selectedData": {
-            "image": "Images/taj1.png",
+            "image": "public/assets/images/taj1.png",
             "name": "JW Mariott",
             "rating": "5",
             "location": "hotel's exact address",
@@ -333,7 +336,7 @@
             "checkoutDate": "7/01/2016"
           },
           "selectedData": {
-            "image": "Images/hotel3.png",
+            "image": "public/assets/images/hotel3.png",
             "name": "JW Mariott",
             "rating": "5",
             "location": "hotel's exact address",
@@ -363,7 +366,7 @@
             "checkoutDate": "5/01/2016"
           },
           "selectedData": {
-            "image": "Images/hotel2.png",
+            "image": "public/assets/images/hotel2.png",
             "name": "JW Mariott",
             "rating": "5",
             "location": "hotel's exact address",
@@ -387,7 +390,7 @@
             "checkoutDate": "7/01/2016"
           },
           "selectedData": {
-            "image": "Images/hotel3.png",
+            "image": "public/assets/images/hotel3.png",
             "name": "JW Mariott",
             "rating": "5",
             "location": "hotel's exact address",
@@ -419,7 +422,7 @@
             "dropDate": "4/30/2016",
             "dropTime": "12:00 PM",
             "cab": {
-              "image": "Images/ola.png",
+              "image": "public/assets/images/ola.png",
               "companyName": "Uber",
               "cabNumber": "DL AJ 5034",
               "driverDetails": {
@@ -457,7 +460,7 @@
             "dropDate": "4/30/2016",
             "dropTime": "12:00 PM",
             "cab": {
-              "image": "Images/uber.png",
+              "image": "public/assets/images/uber.png",
               "companyName": "Uber",
               "cabNumber": "DL AJ 5034",
               "driverDetails": {

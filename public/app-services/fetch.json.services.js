@@ -8,13 +8,14 @@
     function Service($http, $q) {
         var service = {};
 
-        service.trevelPlan = trevelPlan;
+        service.travelPlan = travelPlan;
         service.newNode = newNode;
         service.newEdge = newEdge;
-
+        service.nodeMaster=nodeMaster;
+        service.edgeMaster=edgeMaster;
         return service;
 
-        function trevelPlan() {
+        function travelPlan() {
             var deferred = $q.defer();
 
             $http.get("public/data/travelplan.json").then(function (response) {
@@ -46,7 +47,26 @@
             return deferred.promise;
 
         }
+        function nodeMaster() {
+            var deferred = $q.defer();
 
+            $http.get("public/data/configjsons/nodeMaster.json").then(function (response) {
+
+                deferred.resolve(response.data);
+            });
+            return deferred.promise;
+
+        }
+        function edgeMaster() {
+            var deferred = $q.defer();
+
+            $http.get("public/data/configjsons/edgeMaster.json").then(function (response) {
+
+                deferred.resolve(response.data);
+            });
+            return deferred.promise;
+
+        }
 
     }
 })();
