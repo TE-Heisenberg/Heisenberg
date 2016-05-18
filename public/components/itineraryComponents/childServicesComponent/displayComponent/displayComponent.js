@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('app')
  .component('displayComponent',{
    controller: itineraryController,
    controllerAs: "itinerary",

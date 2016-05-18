@@ -2,10 +2,10 @@
  * Created by user on 12-05-2016.
  */
 
-angular.module('myApp')
+angular.module('app')
     .component('cityComponent',{
         templateUrl:'public/components/itineraryComponents/cityComponent/cityComponent.html',
-        controllerAs:'model',
+        controllerAs:'cityComponentCtrl',
         bindings:{
             value:'<'
         },
@@ -13,6 +13,6 @@ angular.module('myApp')
     });
 
 function cityController(){
-    var model=this;
-    model.data='hello';
+    var cityComponentCtrl=this;
+    cityComponentCtrl.data='hello';
 }

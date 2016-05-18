@@ -45,33 +45,33 @@ i.material-icons {
 
 /************Font Style***************/
 .preference{
-  font-size: small;
+  font-size: x-small;
 }
 .dateFont{
-  font-size: medium;
+  font-size: small;
 }
 .dataFont{
   font-size: small;
 }
 .cityNameFont{
   float: left;
-  font-size: xx-large;
+  font-size: x-large;
   color: black;
 }
 .seconDivDataFont{
-  font-size: small;
+  font-size: x-small;
   color: black;
 }
 .priceFont {
     color: black;
-    font-size: x-large;
+    font-size: large;
     font-weight: 300;
 }
 
 .timeFont {
     color: black;
-    font-size: large;
-    font-weight: 200;
+    font-size: small;
+    font-weight: bold;
 }
 
 .cityFont {
@@ -81,7 +81,7 @@ i.material-icons {
 }
 
 .nameFont {
-    font-size: large;
+    font-size: medium;
     font-weight: 200;
     color: black;
 }
