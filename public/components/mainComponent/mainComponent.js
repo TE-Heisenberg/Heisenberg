@@ -33,7 +33,7 @@ var setObj = function(obj, keyString,value) {
 
 function mainComponentController($rootScope,$location){
 
-
+    var mainComponent = this;
      mainComponent.travelPlanData = {};
      mainComponent.travelPlanInitializer = function(indexForTravelMode) {
        var modeOfTravel = ["oneWay", "twoWay", "multiWay"];

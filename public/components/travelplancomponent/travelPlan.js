@@ -26,7 +26,7 @@ function travelPlanController($http, FetchService) {
     plan.$onInit = function () {
         console.log(FetchService);
 
-        FetchService.trevelPlan().then(function (response) {
+        FetchService.travelPlan().then(function (response) {
 
             plan.travelPlanJSON = response;
         })

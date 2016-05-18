@@ -8,13 +8,13 @@
     function Service($http, $q) {
         var service = {};
 
-        service.trevelPlan = trevelPlan;
+        service.travelPlan = travelPlan;
         service.newNode = newNode;
         service.newEdge = newEdge;
 
         return service;
 
-        function trevelPlan() {
+        function travelPlan() {
             var deferred = $q.defer();
 
             $http.get("public/data/travelplan.json").then(function (response) {
