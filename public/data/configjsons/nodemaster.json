@@ -1,19 +1,24 @@
 {
   "essential": {
-    "location": {
-      "mandatory": true,
-      "displayName": "City",
-      "id": "location",
-      "type": "autoComplete",
-      "data": "sampleurl"
+    "noDependencyData":{
+      "location": {
+        "mandatory": true,
+        "displayName": "City",
+        "id": "location",
+        "type": "autoComplete",
+        "data": "sampleurl"
+
+      }
     },
     "modesToSelectTheServices": {
       "basicServices":{
         "mandatory": false,
         "displayName": "Select Basic Services",
         "id": "selectedServices",
-        "type": "multiSelectAddChild",
-        "data": ["stay","localTravel"]
+        "type": "multiSelect",
+        "specificAttr":{
+           "domainList":["stay","localTravel"]
+            }
       }
     }
   },

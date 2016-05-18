@@ -27,7 +27,7 @@ function travelPlanController($http, FetchService) {
     plan.$onInit = function () {
         console.log(FetchService);
 
-        FetchService.trevelPlan().then(function (response) {
+        FetchService.travelPlan().then(function (response) {
 
             plan.travelPlanJSON = response;
         })
@@ -43,7 +43,7 @@ function travelPlanController($http, FetchService) {
         var edgeId = "edge" + edgeIdNumber;
 
         FetchService.newNode().then(function (response) {
-            
+
             plan.newNode = response;
 
             FetchService.newEdge().then(function (response) {
@@ -105,5 +105,3 @@ function travelPlanController($http, FetchService) {
     }
 
 }
-
-
