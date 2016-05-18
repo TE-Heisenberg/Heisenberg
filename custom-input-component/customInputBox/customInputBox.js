@@ -7,7 +7,8 @@ angular.module('app')
       bindData: '<',
       bindDataKey:'@',
       reflectCustomInput: '&',
-      required: '@'
+      required: '@',
+      id: '@'
     },
 
     templateUrl: 'custom-input-component/customInputBox/customInputBox.html',
@@ -33,7 +34,7 @@ console.log("inside cib");
   ctrl.reflectCustomBox = function(newValue) {
     console.log("In reflect Custom Box");
     console.log(newValue);
-    ctrl.reflectCustomInput({'keyString':ctrl.bindDataKey,'value':newValue});
+    ctrl.reflectCustomInput({'keyString':ctrl.bindDataKey,'value':newValue, 'id':ctrl.id});
     console.log(ctrl.bindDataKey);
   }
 }
