@@ -5,10 +5,9 @@ controllerAs:"mainComponent",
 controller:["$rootScope","$location",mainComponentController],
 $routeConfig: [
 
-    {path: '/landingPage',name: 'LandingPageComponent', component: 'landingPageComponent'},
+    {path: '/landingPage',name: 'LandingPageComponent', component: 'landingPageComponent', bindings},
     {path: '/travelBooking',name: 'TravelBookingComponent', component: 'travelBookingComponent' },
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
-
     {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
     {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsComponent'},
     {path:'/hotelSearchResults',name:'HotelSearchResultsComponent',component:'hotelSearchResultsComponent'},
