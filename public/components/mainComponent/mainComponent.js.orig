@@ -5,7 +5,11 @@ controllerAs:"mainComponent",
 controller:["$rootScope","$location",mainComponentController],
 $routeConfig: [
 
+<<<<<<< HEAD
     {path: '/landingPage',name: 'LandingPageComponent', component: 'landingComponent'},
+=======
+    {path: '/landingPage',name: 'LandingPageComponent', component: 'landingPageComponent'},
+>>>>>>> 1daed2fe5f04c2566bc8957c105aebd0f16df22e
     {path: '/travelBooking',name: 'TravelBookingComponent', component: 'travelBookingComponent' },
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
     {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
