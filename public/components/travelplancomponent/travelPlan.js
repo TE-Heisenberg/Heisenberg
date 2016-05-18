@@ -7,7 +7,6 @@ var app = angular.module("app").component("travelPlan", {
     templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
     controllerAs: "plan",
     controller: ["$http", "FetchService", travelPlanController]
-
 }).filter('keylength', function () {
     return function (input) {
         if (!angular.isObject(input)) {

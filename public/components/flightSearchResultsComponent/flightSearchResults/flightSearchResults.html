@@ -1,0 +1,14 @@
+<md-card  flex-xs="50" ng-model="flightSearchResult.flightSearchResult" ng-repeat="Result in flightSearchResult.flightSearchResult">
+<div layout="row"  layout-align="space-around center" layout-xs="column">
+  <div>
+    <img  class="img" ng-src="public/assets/images/{{Result.imagePath}}" alt="{{Result.imagePath}}">
+  </div>
+  <div>{{Result.arrivalTime}}</div>
+  <div>{{Result.departureTime}}</div>
+  <div>{{Result.duration}}</div>
+  <div>{{Result.price}}</div>
+  <div layout="row" layout-align="center center">
+    <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
+  </div>
+</div>
+</md-card>
