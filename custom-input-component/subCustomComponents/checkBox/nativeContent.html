@@ -1,0 +1,6 @@
+
+
+<label>{{CheckBoxBoxCtrl.label}}</label>
+<div  ng-repeat="item in CheckBoxBoxCtrl.domainList">
+  <md-checkbox  ng-required="{{CheckBoxBoxCtrl.required && !(CheckBoxBoxCtrl.selectedData.length)}}" ng-click="CheckBoxBoxCtrl.reflectValue(item)" >{{item}}</md-checkbox>
+</div>
