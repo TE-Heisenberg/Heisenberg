@@ -1,6 +1,6 @@
-customInputComponentApp.
+angular.module('app').
   component('sliderBox',{
-    templateUrl: './subCustomComponents/slider/nativeContent.html',
+    templateUrl: 'custom-input-component/subCustomComponents/slider/nativeContent.html',
     controller: SliderBoxCtrl,
     controllerAs:"ctrl",
     bindings: {
@@ -17,9 +17,7 @@ function SliderBoxCtrl()
     var ctrl = this;
     console.log("Inside controller of sliderCtrl");
     console.log(ctrl);
-    ctrl.specificAttr.min=0;
-    ctrl.specificAttr.max=10;
-    ctrl.bindData=5;
+  
     console.log(ctrl.bindData);
     ctrl.reflectValue = function(value) {
       console.log("hello");

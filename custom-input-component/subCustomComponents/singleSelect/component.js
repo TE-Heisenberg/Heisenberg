@@ -1,6 +1,6 @@
-customInputComponentApp.
+  angular.module('app').
   component('singleSelectBox',{
-    templateUrl: './subCustomComponents/singleSelect/nativeContent.html',
+    templateUrl: 'custom-input-component/subCustomComponents/singleSelect/nativeContent.html',
     controller:singleSelectBoxCtrl,
     controllerAs: 'singleSelectBoxCtrl',
     bindings: {

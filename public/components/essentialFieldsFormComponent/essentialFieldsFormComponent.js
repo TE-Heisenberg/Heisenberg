@@ -1,5 +1,3 @@
-
-
 var essentialFieldsFormComponentCtrl = function($http, $rootScope,FetchService) {
    var essentialFieldsFormComponentCtrl=this;
    console.log(" inside essential field forms");

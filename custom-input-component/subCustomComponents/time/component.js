@@ -1,6 +1,6 @@
 angular.module('app').
   component('timePickerBox',{
-    templateUrl: './subCustomComponents/timePicker/nativeContent.html',
+    templateUrl: 'custom-input-component/subCustomComponents/time/nativeContent.html',
     controller: TimePickerBoxCtrl,
     controllerAs: "TimePickerBoxCtrl"
     ,
