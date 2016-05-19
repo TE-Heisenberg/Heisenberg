@@ -18,7 +18,7 @@
     margin-top: 15px !important;
 }
 
-.bidi {
+.comp {
     margin-top: 10px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
@@ -27,7 +27,7 @@
 
 }
 
-.bidi_details {
+.comp_details {
     border-bottom: 4px solid #2a8ce2;
     margin-left: 0px !important;
     margin-right: 0px !important;

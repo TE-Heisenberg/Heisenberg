@@ -1,0 +1,33 @@
+
+<md-card class="card2">
+  <md-card-title-text>
+    <span class="md-headline">
+      <i class="material-icons plan_icon">event_available</i>&nbsp;
+      <head>My current plan </head>
+
+      <!-- {{currentplan.mycurrentplanJSON}} -->
+    </md-card-title-text>
+    <md-card-content>
+      <div ng-cloak class="tabsdemoDynamicHeight">
+        <md-content>
+          <md-tabs md-dynamic-height="" md-border-bottom="">
+            <md-tab label="Completed">
+              <md-content class="md-padding">
+                <list-component card="myCurrentPlan" value="currentplan.completed"></list-component>
+              </md-content>
+            </md-tab>
+            <md-tab label="Current">
+              <md-content class="md-padding">
+                <list-component card="myCurrentPlan" value="currentplan.current"></list-component>
+              </md-content>
+            </md-tab>
+            <md-tab label="Future">
+              <md-content class="md-padding">
+
+                <list-component card="myCurrentPlan" value="currentplan.future"></list-component>
+              </md-content>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </md-card-content>
+    </md-card>

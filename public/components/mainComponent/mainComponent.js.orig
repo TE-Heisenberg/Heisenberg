@@ -1,11 +1,15 @@
- angular.module('app')
+angular.module('app')
 .component("mainComponent",{
 templateUrl:"public/components/mainComponent/mainComponent.html",
 controllerAs:"mainComponent",
 controller:["$rootScope","$location",mainComponentController],
 $routeConfig: [
 
+<<<<<<< HEAD
     {path: '/landingPage',name: 'LandingPageComponent', component: 'landingPageComponent'},
+=======
+    {path: '/landingPage',name: 'LandingPageComponent', component: 'landingComponent'},
+>>>>>>> 8c0c3e482c3e51597b7ee05653f3e8f857648ac7
     {path: '/travelBooking',name: 'TravelBookingComponent', component: 'travelBookingComponent' },
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
     {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
@@ -17,24 +21,23 @@ $routeConfig: [
   ]
 });
 
-var setObj = function(obj, keyString,value) {
-		console.log("Before Replace ", keyString)
-    keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
-    console.log("After first replace", keyString);
-    keyString = keyString.replace(/^\./, '');           // strip a leading dot
-    console.log("After second replace", keyString);
-    var hierarchyWiseKeysArray = keyString.split('.');
-
-    while (hierarchyWiseKeysArray.length > 1)
-        obj = obj[hierarchyWiseKeysArray.shift()];
-    return obj[hierarchyWiseKeysArray.shift()] = value;
-
-}
+// var setObj = function(obj, keyString,value) {
+// 		console.log("Before Replace ", keyString)
+//     keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
+//     console.log("After first replace", keyString);
+//     keyString = keyString.replace(/^\./, '');           // strip a leading dot
+//     console.log("After second replace", keyString);
+//     var hierarchyWiseKeysArray = keyString.split('.');
+//
+//     while (hierarchyWiseKeysArray.length > 1)
+//         obj = obj[hierarchyWiseKeysArray.shift()];
+//     return obj[hierarchyWiseKeysArray.shift()] = value;
+//
+// }
 
 function mainComponentController($rootScope,$location){
-<<<<<<< HEAD
-     console.log($rootScope);
-
+    //
+    var mainComponent = this;
      mainComponent.travelPlanData = {};
      mainComponent.travelPlanInitializer = function(indexForTravelMode) {
        var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
@@ -92,7 +95,7 @@ function mainComponentController($rootScope,$location){
 
 
      //  var mainComponent=this;
-      // if ($location.path().indexOf('landingPage') > 0)
+       // if ($location.path().indexOf('landingPage') > 0)
       // {
       //   console.log("hello landing is there");
       //     mainComponent.landingPage = true;
@@ -102,8 +105,5 @@ function mainComponentController($rootScope,$location){
       //   console.log("hello");
       //     mainComponent.landingPage = false;
       // }
-=======
-
->>>>>>> 9543795a5d9677290e1177879b7617f6e69ce3ef
 
 }
