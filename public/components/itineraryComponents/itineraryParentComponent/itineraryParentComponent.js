@@ -33,7 +33,7 @@ angular.module('app')
       });
 
   var fun=function(){
-       model.sequence=model.travelPlanData['sequence'];
+       model.sequence=model.travelPlanData['sequenceOfJobs'];
        console.log(model.sequence);
 
        model.nodesData=model.travelPlanData['nodes'];

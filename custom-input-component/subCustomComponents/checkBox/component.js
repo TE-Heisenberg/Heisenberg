@@ -1,6 +1,6 @@
 customInputComponentApp.
   component('checkBox',{
-    templateUrl: './subCustomComponents/checkBox/nativeContent.html',
+    templateUrl: 'custom-input-component/subCustomComponents/checkBox/nativeContent.html',
     controller: CheckBoxBoxCtrl,
     controllerAs: "CheckBoxBoxCtrl"
     ,

@@ -88,7 +88,10 @@
                 		"displayName": "Near By",
                 		"id": "nearBy",
                 		"type": "slider",
-                		"data": {"min":0.1, "max":100}
+                    "specificAttr":{
+                		      "min":0.1,
+                          "max":200
+                        }
                   }
                   ,
                   "typeOfProperty":
@@ -161,9 +164,10 @@
                       "mandatory": true,
                       "displayName": "Type",
                       "id": "typeOfLocalTransport",
-                      "type": "dropDown",
-                      "data": ["Cab", "Bus"
-                      ]
+                      "type": "singleSelect",
+                      "specificAttr":{
+                  		      "domainList":["Cab", "Bus"]
+                      }
                     },
 
                     "pickupDate": {

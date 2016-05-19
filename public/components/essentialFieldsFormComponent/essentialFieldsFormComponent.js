@@ -11,7 +11,7 @@ var setObj = function(obj, keyString,value) {
         obj = obj[hierarchyWiseKeysArray.shift()];
     return obj[hierarchyWiseKeysArray.shift()] = value;
 
-}
+    }//end of setObj
 
 angular.module('app')
 .component("essentialFieldsFormComponent",{

@@ -1,4 +1,4 @@
- angular.module('app')
+angular.module('app')
 .component("mainComponent",{
 templateUrl:"public/components/mainComponent/mainComponent.html",
 controllerAs:"mainComponent",
@@ -33,8 +33,11 @@ var setObj = function(obj, keyString,value) {
 
 function mainComponentController($rootScope,$location){
 <<<<<<< HEAD
-     console.log($rootScope);
 
+=======
+    //
+>>>>>>> 00bfb00a2eadd01250b6016f81b743951facf92b
+    var mainComponent = this;
      mainComponent.travelPlanData = {};
      mainComponent.travelPlanInitializer = function(indexForTravelMode) {
        var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
@@ -91,8 +94,21 @@ function mainComponentController($rootScope,$location){
 
 
 
+<<<<<<< HEAD
+      var mainComponent=this;
+       if ($location.path().indexOf('landingPage') > 0)
+      {
+        console.log("hello landing is there");
+          mainComponent.landingPage = true;
+          console.log(mainComponent.landingPage);
+      }
+      else {
+        console.log("hello");
+          mainComponent.landingPage = false;
+      }
+=======
      //  var mainComponent=this;
-      // if ($location.path().indexOf('landingPage') > 0)
+       // if ($location.path().indexOf('landingPage') > 0)
       // {
       //   console.log("hello landing is there");
       //     mainComponent.landingPage = true;
@@ -102,8 +118,6 @@ function mainComponentController($rootScope,$location){
       //   console.log("hello");
       //     mainComponent.landingPage = false;
       // }
-=======
-
->>>>>>> 9543795a5d9677290e1177879b7617f6e69ce3ef
+>>>>>>> 00bfb00a2eadd01250b6016f81b743951facf92b
 
 }
