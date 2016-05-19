@@ -9,8 +9,17 @@
 
     </div>
 </div>
-<div id="nodes" ng-if="$root.landingPage==false">
+<!-- <div id="nodes" ng-if="$root.landingPage==false">
   <travel-plan></travel-plan>
-  <!--<stay-booking-component></stay-booking-component>-->
+
+  <stay-booking-component></stay-booking-component>
+</div> -->
+<div id="nodes" >
+  <travel-plan></travel-plan>
+  <essential-fields-form-component></essential-fields-form-component>
+  
 </div>
+
+
+
 <ng-outlet></ng-outlet>
