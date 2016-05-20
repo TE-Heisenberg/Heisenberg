@@ -13,7 +13,7 @@
 		"type": "checkBox",
 		"label": "Location:",
 		"options": {
-			"domainList": ["Pune", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
+			"domainList": ["Pune", "Delhi", "Chennai", "Bengaluru", "Gurgaon"]
 		}
 	},
 
