@@ -17,11 +17,18 @@
         "id": "selectedServices",
         "type": "multiSelect",
         "specificAttr":{
-           "domainList":["stay","localTravel"]
-            }
+           "domainList":[{"serviceId":"stay", "serviceDisplayName": "Stay"},{"serviceId":"localTravel", "serviceDisplayName": "Local Travel"}]
+         },
+         "listLabelKey": "serviceId",
+         "listLabelValue": "serviceDisplayName"
       }
     }
   },
+  "servicesName":{
+    "stay": "Stay",
+    "localTravel": "Local Travel"
+  }
+  ,
   "services": {
                 "stay": {
                   "displayName": "Stay",
