@@ -38,7 +38,7 @@
 {
 	"name": "The O Hotel",
 	"location": "Bengaluru",
-	"rating": "5 star",
+	"rating": "3 star",
 	"amenities":[{
 		"iconCode":"wifi",
 		"name": "Wifi"
