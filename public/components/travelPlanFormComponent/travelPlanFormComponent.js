@@ -11,7 +11,7 @@ angular.module('app')
     }
   });
 
-function travelPlanFormCtrl(updateTravelPlan,childServicesInitializer) {
+function travelPlanFormCtrl() {
   var travelPlanFormCtrl = this;
   var fieldKey;
   travelPlanFormCtrl.essentialFormData = {};
@@ -20,7 +20,7 @@ function travelPlanFormCtrl(updateTravelPlan,childServicesInitializer) {
       travelPlanFormCtrl.essentialFormData[fieldKey] = travelPlanFormCtrl.currentFormData[fieldKey];
     }
   }
-
+travelPlanFormCtrl.currentFormFieldsEssentialData=travelPlanFormCtrl.currentFormFieldsData["essential"];
   travelPlanFormCtrl.setObj = function(obj, keyString,value) {
   		console.log("Before Replace ", keyString)
       keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
@@ -48,5 +48,5 @@ function travelPlanFormCtrl(updateTravelPlan,childServicesInitializer) {
     travelPlanFormCtrl.childServiesFormUpdate({"updatedObject": value });
   }
 
-  travelPlanFormCtrl.currentFormFieldsEssentialData=currentFormFieldsData.essential;
+
 }

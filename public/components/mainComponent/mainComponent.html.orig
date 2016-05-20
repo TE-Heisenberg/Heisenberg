@@ -9,15 +9,18 @@
 
     </div>
 </div>
+<<<<<<< HEAD
 <div id="nodes" >
-  <!-- <travel-plan></travel-plan> -->
-    <!-- <essential-fields-form-component>  </essential-fields-form-component> -->
+  <travel-plan></travel-plan>
+    <essential-fields-form-component>  </essential-fields-form-component>
     <!-- <child-services-intial-state-component></child-services-intial-state-component> -->
     <!-- <child-services-panel-component></child-services-panel-component> -->
   <child-services-wrapper-component></child-services-wrapper-component>
+=======
+<div id="nodes" ng-if="$root.landingPage==false">
+  <!-- <travel-plan></travel-plan> -->
+>>>>>>> 22063a474aecf830b2abfe2395d7d579cf143814
   <!--<stay-booking-component></stay-booking-component>-->
 </div>
-
-
 
 <ng-outlet></ng-outlet>
