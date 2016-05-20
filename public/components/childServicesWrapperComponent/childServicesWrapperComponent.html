@@ -1,7 +1,8 @@
 <div ng-repeat="serviceGroup in childServicesComponentCtrl.childServicesGroups">
 
-  <child-services-panel-component service-data = 'childServicesComponentCtrl.childServicesGroups[serviceGroup]' service-fields= "childServicesComponentCtrl.formFieldEssentialData[serviceGroup]" service-group-id="serviceGroup" reflect-serivce-data-change="childServicesComponentCtrl.reflectChangeInService(serviceData, serviceId)" ></child-services-panel-component>
-  
+  <child-services-panel-component service-data = 'childServicesComponentCtrl.childServicesGroups[serviceGroup]' service-fields= "childServicesComponentCtrl.formFieldEssentialData[serviceGroup]" service-group-id="serviceGroup"
+   reflect-service-data-change="childServicesComponentCtrl.reflectChangeInService(serviceData, serviceId)" ></child-services-panel-component>
+
 </div>
 
 

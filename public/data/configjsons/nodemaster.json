@@ -27,11 +27,10 @@
   "servicesName":{
     "stay": "Stay",
     "localTravel": "Local Travel"
-  }
+  },
   ,
   "services": {
                 "stay": {
-                  "displayName": "Stay",
                   "location":{
                     "mandatory": true,
                     "displayName": "City",
@@ -145,7 +144,6 @@
                 }
 ,
     "localTravel": {
-                    "displayName": "Local Travel",
                     "pickupPoint": {
                       "mandatory": true,
                   		"displayName": "Pick-up Point",
