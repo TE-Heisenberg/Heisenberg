@@ -1,0 +1,37 @@
+<div class="header_border">
+<body ng-app="app">
+<div class="main-header">
+    <img src="public/assets/images/logo.png" alt="logo">
+    <div class="header_icons">
+        <i class="material-icons">home</i>
+        <i class="material-icons">notifications</i>
+        <i class="material-icons">person</i>
+
+    </div>
+</div>
+<<<<<<< HEAD
+<!-- <div id="nodes" ng-if="$root.landingPage==false">
+  <travel-plan></travel-plan>
+
+  <stay-booking-component></stay-booking-component>
+</div> -->
+<div id="nodes" >
+  <travel-plan></travel-plan>
+  <essential-fields-form-component></essential-fields-form-component>
+  
+</div>
+
+
+
+=======
+<div id="nodes" >
+  <!-- <travel-plan></travel-plan> -->
+    <essential-fields-form-component>  </essential-fields-form-component>
+    <!-- <child-services-intial-state-component></child-services-intial-state-component> -->
+    <!-- <child-services-panel-component></child-services-panel-component> -->
+  <child-services-wrapper-component></child-services-wrapper-component>
+  <!--<stay-booking-component></stay-booking-component>-->
+</div>
+
+>>>>>>> 00bfb00a2eadd01250b6016f81b743951facf92b
+<ng-outlet></ng-outlet>
