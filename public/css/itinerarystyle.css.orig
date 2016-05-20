@@ -29,8 +29,13 @@
     -webkit-border-radius: 500px;
 }
 
+<<<<<<< HEAD
 i.material-icons {
     
+=======
+i.itineraryIcon {
+    position: absolute;
+>>>>>>> 322e9db08587c0d9abad82cb6b46ff8c6adae5da
     top: 25%;
     left: 25%;
     color: #333333;
