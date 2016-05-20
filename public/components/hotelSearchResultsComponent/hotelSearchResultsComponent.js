@@ -26,8 +26,8 @@ function hotelSearchResultsController($http,$rootScope){
         console.log(value);
         console.log(id);
         setObj(hotelSearchResults, keyString, value);
-
-        hotelSearchResults.selectedFilters[id]= value;
+        if(value.length==0) delete hotelSearchResults.selectedFilters[id];
+        else hotelSearchResults.selectedFilters[id]= value;
     };
 
     hotelSearchResults.applyFilters= function(searchResult){
