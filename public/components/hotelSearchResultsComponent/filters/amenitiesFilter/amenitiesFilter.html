@@ -1,4 +1,4 @@
-<md-card>
+<!-- <md-card>
 						<md-card-content layout='column'>
 							<p><b>Amenities:</b></p>
 							<md-checkbox class='md-primary'>
@@ -27,4 +27,8 @@
 								</div>
 							</md-checkbox>
 						</md-card-content>
-					</md-card>
+					</md-card> -->
+
+<md-card>
+	<custom-input-box type='checkBox' label="{{$ctrl.checkBoxInput.label}}" bind-data-key="checkBoxInput.data" specific-attr='$ctrl.checkBoxInput.specificAttr' required="true"></custom-input-box>
+</md-card>

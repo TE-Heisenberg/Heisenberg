@@ -1,12 +1,10 @@
 <div class='container' layout='row' id='main-wrapper'>
 	<div flex='25' id='filter-wrapper'>
-		<ratings-filter></ratings-filter>
-		<amenities-filter></amenities-filter>
-		<location-filter></location-filter>
+		<custom-input-box ng-repeat='filter in hotelSearchResults.filters' type='{{filter.type}}' id='{{filter.id}}' label='{{filter.label}}' specific-attr='filter.options' reflect-custom-input="hotelSearchResults.reflectValue(keyString,value, id)"></custom-input-box>
 	</div>
 
 
 	<div flex='75' flex-sm='100' flex-xs='100' id='results-wrapper'>
-		<hotel-search-result ng-repeat='searchResult in hotelSearchResults.searchResults' hotel-search-result='searchResult'></hotel-search-result>
+		<hotel-search-result ng-repeat='searchResult in hotelSearchResults.searchResults' hotel-search-result='searchResult ' selected-filters='hotelSearchResults.selectedFilters'></hotel-search-result>
 	</div>
 </div>
