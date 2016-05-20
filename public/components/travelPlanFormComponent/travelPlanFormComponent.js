@@ -1,5 +1,5 @@
 angular.module('app')
-  .components('travelPlanForm',{
+  .component('travelPlanFormComponent',{
     controller: travelPlanFormCtrl,
     templateUrl: "public/components/travelPlanFormComponent/travelPlanFormComponent.html",
     controllerAs: 'travelPlanFormCtrl',
@@ -16,7 +16,7 @@ function travelPlanFormCtrl() {
   var fieldKey;
   travelPlanFormCtrl.essentialFormData = {};
   for (fieldKey in travelPlanFormCtrl.currentFormData) {
-    if !(fieldKey ==="childServices") {
+    if (!(fieldKey ==="childServices")) {
       travelPlanFormCtrl.essentialFormData[fieldKey] = travelPlanFormCtrl.currentFormData[fieldKey];
     }
   }

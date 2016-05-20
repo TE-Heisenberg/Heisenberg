@@ -31,6 +31,7 @@ function travelPlanController($http, FetchService) {
             plan.travelPlanJSON = response;
         })
 
+
     }
 
     plan.addNode = function (nodeIndex) {
@@ -90,6 +91,7 @@ function travelPlanController($http, FetchService) {
     }
 
     plan.Flight_buttion_Action = function (x) {
+
         if (x.flightShow == false) {
             x.flightShow = true;
         } else {
@@ -99,7 +101,7 @@ function travelPlanController($http, FetchService) {
 
     plan.change_travel_mode = function (count, index, icon) {
         console.log(count);
-        index.edgeMode1.request.mode = icon;
+        index.edge1Mode1.requested.mode = icon;
 
     }
 
