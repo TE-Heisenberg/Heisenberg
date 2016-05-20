@@ -1,20 +1,21 @@
 <div>
   <div layout-xs="column" layout="row">
     <div layout="column" flex-xs="100" flex-gt-xs="65">
-      <div ng-controller="myalertctrl">
+      <!-- <div ng-controller="myalertctrl"> -->
+
         <my-alert alertdata="alertdata"></my-alert>
-      </div>
-      <div ng-controller="myctrl">
+      <!-- </div> -->
+
         <my-current-plan current="current" completed="completed" future="future"></my-current-plan>
-      </div>
-      <div ng-controller="myworkctrl" >
+
+
         <my-worklist messages="messages"></my-worklist>
-      </div>
+
     </div>
 
     <div class="button_flex col2" flex-xs="100" flex-gt-xs="35" layout="column">
       <main-buttons></main-buttons>
-      <my-favourite fav="fav"></my-favourite>
+      <my-favourite fav=fav(value) locality="locality"></my-favourite>
       <my-calendar></my-calendar>
     </div>
 

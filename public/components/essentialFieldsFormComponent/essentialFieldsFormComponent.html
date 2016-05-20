@@ -1,22 +1,24 @@
-
-
-<!-- {{essentialFieldsFormComponentCtrl.nodeMasterData.essential.noDependencyData}} -->
-
 <md-card>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Essential Fields</span>
+    </md-card-title-text>
+  </md-card-title>
   <md-card-content layout="row">
-    <div flex-offset="10" ng-repeat="(fieldId, fieldData) in      essentialFieldsFormComponentCtrl.nodeMasterData.essential.noDependencyData">
-      <custom-input-box specific-attr='fieldData.specificAttr' type='{{fieldData.type}}' label=" {{fieldData.displayName}}" bind-data="$root.travelPlan.nodes[currentThingIndex][fieldId]">
+    <div flex-offset="10" ng-repeat="(fieldId, fieldData) in essentialFieldsFormComponentCtrl.nodeMasterData.essential.noDependencyData">
+      <custom-input-box specific-attr='fieldData.specificAttr' type='{{fieldData.type}}' label=" {{fieldData.displayName}}" bind-data-key="{{'nodependencyData.'+fieldData.id}}" bind-data="essentialFieldsFormComponentCtrl.nodependencyData[fieldData.id]" reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValueOfNoDependencyFields(keyString,value,id)">
       </custom-input-box>
     </div>
+
     <div flex-offset="10" ng-repeat="(fieldId, fieldData) in  essentialFieldsFormComponentCtrl.nodeMasterData.essential.modesToSelectTheServices">
+      <custom-input-box specific-attr="fieldData.specificAttr" type="{{fieldData.type}}" label="{{fieldData.displayName}}" bind-data="essentialFieldsFormComponentCtrl.selectedServices" bind-data-key="selectedServices" reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValue(keyString,value)">
       <custom-input-box specific-attr="fieldData.specificAttr"
        type="{{fieldData.type}}" label="{{fieldData.displayName}}"
-        bind-data="essentialFieldsFormComponentCtrl.selectedServices"
-        bind-data-key="selectedServices"
-        reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValue(keyString,value)">
+        bind-data="essentialFieldsFormComponentCtrl.modesToSelectTheServices[fieldData.id]"
+        bind-data-key="{{'modesToSelectTheServices.'+fieldData.id}}",
+        id = "{{fieldData.id}}"
+        reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValueOfServices(keyString,value,id)" >
       </custom-input-box>
     </div>
-
-
   </md-card-content>
 </md-card>

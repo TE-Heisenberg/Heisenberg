@@ -2,11 +2,11 @@ var app=angular.module("app")
 app.controller('myworkctrl', function($scope,$http) {
   console.log('inside controller');
 
-  $http.get("public/data/landing/myworklist.json").success(function (response) {
-    $scope.messages = response.what;
-    console.log(response);
-
-  });
+  // $http.get("public/data/landing/myworklist.json").success(function (response) {
+  //   $scope.messages = response.what;
+  //   console.log(response);
+  //
+  // });
 });
 app.component("myWorklist",{
 
@@ -21,4 +21,5 @@ app.component("myWorklist",{
 });
 function myworklistController(){
   var worklist=this;
+  
 }

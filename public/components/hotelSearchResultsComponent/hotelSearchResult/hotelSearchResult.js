@@ -4,9 +4,12 @@ angular.module('app')
 	controllerAs:"hotelSearchResult",
 	controller: hotelSearchResultController,
 	bindings: {
-		hotelSearchResult: '<'
+		hotelSearchResult: '<',
+		selectedFilters: '<'
 	}
 });
 
 function hotelSearchResultController(){
+	
 }
+

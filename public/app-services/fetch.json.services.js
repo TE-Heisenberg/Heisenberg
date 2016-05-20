@@ -13,6 +13,7 @@
         service.newEdge = newEdge;
         service.nodeMaster=nodeMaster;
         service.edgeMaster=edgeMaster;
+        
         return service;
 
         function travelPlan() {
