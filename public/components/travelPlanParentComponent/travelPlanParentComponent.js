@@ -1,5 +1,5 @@
 angular.module('app')
-  .components('travelPlanParent',{
+  .component('travelPlanParentComponent',{
     controller: ["dataUpdateHelper",travelPlanParentCtrl],
     templateUrl: "public/components/travelPlanParentComponent/travelPlanParentComponent.html",
     controllerAs: 'travelPlanParentCtrl'
@@ -20,7 +20,7 @@ function travelPlanParentCtrl (dataUpdateHelper) {
 
   if(travelPlanParentCtrl.travelPlanExists)
   {
-    //PG: 19th May- Gettings all the fields data needed to render the forms
+    //PG: 19th May- Getting all the fields data needed to render the forms
     var elementFields = {
       "node": dataUpdateHelper.getNodes(),
       "edge": dataUpdateHelper.getEdges()
