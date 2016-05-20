@@ -17,6 +17,7 @@ function hotelSearchResultsController($http,$rootScope){
         });
 
         hotelSearchResults.selectedFilters= {};
+        hotelSearchResults.checkBoxInput= {};
     }
 
     hotelSearchResults.reflectValue = function(keyString, value, id) {

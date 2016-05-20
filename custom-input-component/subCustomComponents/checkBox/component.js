@@ -1,4 +1,4 @@
-customInputComponentApp.
+angular.module('app').
   component('checkBox',{
     templateUrl: 'custom-input-component/subCustomComponents/checkBox/nativeContent.html',
     controller: CheckBoxBoxCtrl,
