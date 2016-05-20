@@ -1,11 +1,14 @@
-
 angular.module("app")
   .component("childServicesPanelComponent",{
     templateUrl:"public/components/childServicesPanelComponent/childServicesPanelComponent.html",
     controllerAs:"childServicesPanelComponentCtrl",
     controller:["$rootScope","$http","FetchService",childServicesPanelComponentController],
     bindings:{
-      service:'<'
+      serviceData:"<",
+      serviceFields:"<",
+      serviceGroupId:"<",
+      serviceDisplayName:"<",
+      reflectServiceDataChange:"&"
     }
 });
 
@@ -43,14 +46,20 @@ function childServicesPanelComponentController($rootScope,$http,FetchService)
 
        }//end of setObj
 
-     childServicesPanelComponentCtrl.obj={"key":0};
-     childServicesPanelComponentCtrl.add=function()
+    //  childServicesPanelComponentCtrl.obj={"key":0};
+    //  childServicesPanelComponentCtrl.add=function()
+    //  {
+    //    console.log("length");
+    //    console.log(Object.keys(childServicesPanelComponentCtrl.obj).length);
+    //    console.log("inside add function_______________________________________________");
+    //    childServicesPanelComponentCtrl.obj["key"+Object.keys(childServicesPanelComponentCtrl.obj).length]=1;
+    //  };
+     childServicesPanelComponentCtrl.reflectedServiceData={}
+     childServicesPanelComponentCtrl.reflectValue=function(keyString,value,id)
      {
-       console.log("length");
-       console.log(Object.keys(childServicesPanelComponentCtrl.obj).length);
-       console.log("inside add function_______________________________________________");
-       childServicesPanelComponentCtrl.obj["key"+Object.keys(childServicesPanelComponentCtrl.obj).length]=1;
-     };
+        childServicesPanelComponentCtrl.reflectedServiceData[id]=value;
+        childServicesPanelComponentCtrl.reflectChangeInService(childServicesPanelComponentCtrl.reflectedServiceData,id)
+     }
 
           //   var currentThingIndex = $rootScope.nodeIndex;
 }
