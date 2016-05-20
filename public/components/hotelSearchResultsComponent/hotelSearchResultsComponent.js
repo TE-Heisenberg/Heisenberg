@@ -28,9 +28,22 @@ function hotelSearchResultsController($http,$rootScope){
         setObj(hotelSearchResults, keyString, value);
 
         hotelSearchResults.selectedFilters[id]= value;
-  };
-};
+    };
 
+    hotelSearchResults.applyFilters= function(searchResult){
+        var counter=0;
+        for (filter in hotelSearchResults.selectedFilters){
+            hotelSearchResults.selectedFilters[filter].forEach(function(filterValue){
+                if(filterValue==searchResult[filter]){ 
+                    counter++;
+                    return;
+                }
+            });   
+        }
+        if(counter== Object.keys(hotelSearchResults.selectedFilters).length) return true;
+        else return false;
+    }
+};
 var setObj = function(obj, keyString,value) {
         console.log("Before Replace ", keyString)
         keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
