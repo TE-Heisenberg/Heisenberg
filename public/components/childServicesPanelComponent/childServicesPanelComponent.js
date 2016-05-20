@@ -8,7 +8,9 @@ angular.module("app")
       serviceFields:"<",
       serviceGroupId:"<",
       serviceDisplayName:"<",
-      reflectServiceDataChange:"&"
+      reflectServiceDataChange:"&",
+      addOneMoreService:"&",
+      deleteTheSelectedService:"&"
     }
 });
 
@@ -61,5 +63,14 @@ function childServicesPanelComponentController($rootScope,$http,FetchService)
         childServicesPanelComponentCtrl.reflectChangeInService(childServicesPanelComponentCtrl.reflectedServiceData,id)
      }
 
+     childServicesPanelComponentCtrl.add=function()
+     {
+       childServicesPanelComponentCtrl.addOneMoreService();
+     }
+
+     childServicesPanelComponentCtrl.delete=function(serviceId)
+     {
+     childServicesPanelComponentCtrl.deleteTheSelectedService(serviceId)
+     }
           //   var currentThingIndex = $rootScope.nodeIndex;
 }
