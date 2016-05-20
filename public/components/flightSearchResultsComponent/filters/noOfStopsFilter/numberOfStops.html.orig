@@ -1,5 +1,0 @@
-<md-card layout="row" >
-  <div ng-repeat="i in [1 2 3]">
-    <a href="#" ><span>0</span><span>Stops</span></a>
-  </div>
-</md-card>

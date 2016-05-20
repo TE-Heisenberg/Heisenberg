@@ -1,0 +1,28 @@
+[
+	{
+		"id": "ratings",
+		"type": "checkBox",
+		"label": "Ratings:",
+		"options": {
+			"domainList": ["Wifi", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
+		}
+	},
+
+	{
+		"id": "location",
+		"type": "checkBox",
+		"label": "Location:",
+		"options": {
+			"domainList": ["Pune", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
+		}
+	},
+
+	{
+		"id": "amenities",
+		"type": "checkBox",
+		"label": "Amenities:",
+		"options": {
+			"domainList": ["Wifi", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
+		}
+	}
+]
