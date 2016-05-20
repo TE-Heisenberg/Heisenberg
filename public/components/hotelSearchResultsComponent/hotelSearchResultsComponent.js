@@ -11,12 +11,16 @@ function hotelSearchResultsController($http,$rootScope){
         $http.get('public/data/hotelSearchResults.json').success(function(searchResults){
             hotelSearchResults.searchResults= searchResults;
         });
+<<<<<<< HEAD
 	
         $http.get('public/data/hotelSearchResultsFilter.json').success(function(data){
             hotelSearchResults.filters= data;
         });
 
         hotelSearchResults.selectedFilters= {};
+=======
+
+>>>>>>> 8afb3e1869fa9785e7e8ced1be855495d1e89159
     }
 
     hotelSearchResults.reflectValue = function(keyString, value, id) {

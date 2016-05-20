@@ -1,0 +1,12 @@
+<div class="container" id="flightContainer">
+  <div>
+    <div layout='row'>
+      <div class='filter' flex='25' layout='column'>
+      <number-of-stops-filter></number-of-stops-filter>
+      <departure-time-filter></departure-time-filter>
+      </div>
+      <div layout-xs="column" class="results" layout='column' flex='75' flex-sm="100" flex-xs="100">
+         <flight-search-result ng-repeat='searchResult in flightSearchResults.searchResults' flight-search-result='searchResult'></flight-search-result>
+      </div>
+    </div>
+  </div>

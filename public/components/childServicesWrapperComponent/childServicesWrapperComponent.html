@@ -1,0 +1,13 @@
+<md-whiteframe class="md-whiteframe-24dp" layout="column">
+  <md-card ng-repeat="selectedBasicServices in childServicesWrapperComponentCtrl.selectedBasicServices">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{selectedBasicServices}}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <child-services-panel-component service="selectedBasicServices"></child-services-panel-component>
+  </md-card>
+  <div layout="row">
+    <md-button flex-offset="90" class="md-raised md-primary">Next</md-button>
+  </div>
+</md-whiteframe>

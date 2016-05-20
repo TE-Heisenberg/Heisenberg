@@ -28,7 +28,10 @@
    <!-- {{fieldName}}{{fieldParameters}}{{fieldParameters.specificAttr}} -->
 
       <div ng-if="fieldParameters.type==autoComplete">
-        <custom-input-box   reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.selectedsingleSelectedData" bind-data-key="selectedsingleSelectedData" type='{{fieldParameters.type}}' label="{{fieldParameters.displayName}}" specific-attr='stayBookingCtrl.autoCompleteData.specificAttr'>
+        <custom-input-box   reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)"
+         bind-data="stayBookingCtrl.selectedsingleSelectedData"
+          bind-data-key="selectedsingleSelectedData" type='{{fieldParameters.type}}'
+           label="{{fieldParameters.displayName}}" specific-attr='stayBookingCtrl.autoCompleteData.specificAttr'>
         </custom-input-box>
       </div>
 

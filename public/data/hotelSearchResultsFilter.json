@@ -1,0 +1,25 @@
+[
+	{
+		"type": "checkBox",
+		"label": "Ratings:",
+		"options": [
+			"1", "2", "3", "4", "5"
+		]
+	},
+
+	{
+		"type": "checkBox",
+		"label": "Location:",
+		"options": [
+			"Lonavala", "Lavasa", "Shivaji Nagar", "Mansarovar", "Pushpam Colony"
+		]
+	},
+
+	{
+		"type": "checkBox",
+		"label": "Amenities:",
+		"options": {
+			"domainList": ["Wifi", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
+		}
+	}
+]
