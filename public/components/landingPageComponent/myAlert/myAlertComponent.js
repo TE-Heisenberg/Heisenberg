@@ -7,23 +7,22 @@ app.component("myAlert",{
   bindings:{
 alertdata:'<'
 
-  },
+  }
 
 });
-app.controller('myalertctrl', function($scope,$http) {
-  // console.log('inside controller');
-
-  $http.get("public/data/landing/myalert.json").success(function (response) {
-
-     $scope.alertdata =response.alertdata;
-     console.log(response.alertdata);
-});
-
-
-});
+// app.controller('myalertctrl', function($scope,$http) {
+//   // console.log('inside controller');
+//
+//   $http.get("public/data/landing/myalert.json").success(function (response) {
+//
+//      $scope.alertdata =response.alertdata;
+//      console.log(response.alertdata);
+// });
+//
+//
+// });
 
 function myAlertController(){
   var alert=this;
-
-
+  console.log(alert);
 }
