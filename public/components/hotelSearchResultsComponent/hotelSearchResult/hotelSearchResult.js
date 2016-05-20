@@ -10,9 +10,6 @@ angular.module('app')
 });
 
 function hotelSearchResultController(){
-<<<<<<< HEAD
 	
 }
-=======
-}
->>>>>>> 8afb3e1869fa9785e7e8ced1be855495d1e89159
+
