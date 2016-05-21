@@ -6,18 +6,18 @@
   </md-card-title>
   <md-card-content layout="row">
     <div flex-offset="10" ng-repeat="(fieldId, fieldData) in essentialFieldsFormComponentCtrl.formFieldEssentialData.noDependencyData">
-      <custom-input-box specific-attr='fieldData.specificAttr' type='{{fieldData.type}}' label=" {{fieldData.displayName}}"
-      bind-data-key="fieldData.id"
-      bind-data="essentialFieldsFormComponentCtrl.selected[fieldData.id]"
-      reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValue(keyString,value)">
+      <custom-input-box specific-attr = 'fieldData.specificAttr' type = '{{fieldData.type}}' label = " {{fieldData.displayName}}"
+      bind-data = "essentialFieldsFormComponentCtrl.formData[fieldId]"
+      reflect-custom-input = "essentialFieldsFormComponentCtrl.reflectValue(keyString,value, )">
       </custom-input-box>
     </div>
 
     <div flex-offset="10" ng-repeat="(fieldId, fieldData) in  essentialFieldsFormComponentCtrl.formFieldEssentialData.modesToSelectTheServices">
-      <custom-input-box specific-attr="fieldData.specificAttr" type="{{fieldData.type}}" label="{{fieldData.displayName}}" bind-data="essentialFieldsFormComponentCtrl.selected[fieldData.id]"
-      bind-data-key="fieldData.id" reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValue(keyString,value)">
+      <custom-input-box specific-attr="fieldData.specificAttr" type="{{fieldData.type}}" label="{{fieldData.displayName}}" bind-data="essentialFieldsFormComponentCtrl.formData[fieldId]"
+      reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValue(keyString,value)">
       </custom-input-box>
     </div>
+
   </md-card-content>
 </md-card>
 
