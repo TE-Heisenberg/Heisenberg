@@ -4,10 +4,10 @@
   </md-card-title>
   <div ng-repeat="(serviceId,serviceValue) in  childServicesPanelComponentCtrl.serviceData">
     <div flex="20" flex-offset="5" flex-xs="80"  layout-padding  ng-repeat="(fieldId, fieldData) in childServicesPanelComponentCtrl.serviceFields">
-      <custom-input-box id="serviceId" specific-attr="fieldData.specificAttr"
+      <custom-input-box id="{{fieldId}}" specific-attr="fieldData.specificAttr"
        type="{{fieldData.type}}" label="{{fieldData.displayName}}"
        bind-data="childServicesPanelComponentCtrl.serviceValue[fieldId.id]"
-       bind-data-key="serviceValue[fieldId.id]"
+       bind-data-key="{{serviceId}}"
         reflect-custom-input="childServicesPanelComponentCtrl.reflectValue(keyString,value,id)">
       </custom-input-box>
     </div>

@@ -16,12 +16,12 @@ function essentialFieldsFormComponentCtrl()
 {
   var essentialFieldsFormComponentCtrl=this;
   essentialFieldsFormComponentCtrl.selectedServices=null;
-  essentialFieldsFormComponentCtrl.reflectValue = function(keyString,value) {
+  essentialFieldsFormComponentCtrl.reflectValue = function(keyString,value, id) {
     console.log("Inside Reflect Value");
     console.log(keyString);
     console.log(value);
     // setObj(ctrl, keyString, value);
-      essentialFieldsFormComponentCtrl.reflectFormData({"keyString":keyString,"value":value});
+      essentialFieldsFormComponentCtrl.reflectFormData({"keyString":keyString,"value":value,"fieldId": id});
 
     };
 }

@@ -1,7 +1,6 @@
 <div ng-repeat="serviceGroup in childServicesComponentCtrl.childServicesGroups">
 
-  <child-services-panel-component service-data = 'childServicesComponentCtrl.childServicesGroups[serviceGroup]' service-fields= "childServicesComponentCtrl.formFieldEssentialData[serviceGroup]" service-group-id="serviceGroup"
-   reflect-service-data-change="childServicesComponentCtrl.reflectChangeInService(serviceData, serviceId)" ></child-services-panel-component>
+  <child-services-panel-component service-data = 'childServicesComponentCtrl.childServicesGroups[serviceGroup]' service-fields= "childServicesComponentCtrl.form-fields-data[serviceGroup]" service-group-id="serviceGroup"  reflect-service-data-change="childServicesComponentCtrl.reflectChangeInService(serviceData, serviceId, fieldId)" service-display-name=".childServicesComponentCtrl.formFieldsServicesNames[serviceGroup]"></child-services-panel-component>
 
 </div>
 
@@ -10,7 +9,7 @@
   <md-card ng-repeat="serviceGroup in childServicesComponentCtrl.childServicesGroups">
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">{{childServicesComponentCtrl.formFieldEssentialData[serviceGroup]}}</span>
+        <span class="md-headline">{{childServicesComponentCtrl.form-fields-data[serviceGroup]}}</span>
       </md-card-title-text>
     </md-card-title>
     <child-services-panel-component service="serviceGroup" ></child-services-panel-component>

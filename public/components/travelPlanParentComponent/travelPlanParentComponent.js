@@ -45,12 +45,12 @@ function travelPlanParentCtrl (dataUpdateHelper) {
   }
 
 
-  travelPlanParentCtrl.essentialFieldsUpdate = function(essentialFieldsValues ) {
-    dataUpdateHelper.essentialFieldsUpdate(travelPlanParentCtrl.currentElement, travelPlanParentCtrl.currentElementId, essentialFieldsValues);
+  travelPlanParentCtrl.essentialFieldsUpdate = function(fieldId, essentialFieldsValues ) {
+    dataUpdateHelper.essentialFieldsUpdate(travelPlanParentCtrl.currentElement, travelPlanParentCtrl.currentElementId, fieldId, essentialFieldsValues);
   }
 
-  travelPlanParentCtrl.childServiesFormUpdate = function(childServicesFormValues, childServiceId) {
-    dataUpdateHelper.childServiesFormUpdate(travelPlanParentCtrl.currentElement, travelPlanParentCtrl.currentElementId, childServiceId, childServicesFormValues);
+  travelPlanParentCtrl.childServiesFormUpdate = function(childServicesFormValues, childServiceId, fieldId) {
+    dataUpdateHelper.childServiesFormUpdate(travelPlanParentCtrl.currentElement, travelPlanParentCtrl.currentElementId, childServiceId, fieldId, childServicesFormValues);
   }
 
 

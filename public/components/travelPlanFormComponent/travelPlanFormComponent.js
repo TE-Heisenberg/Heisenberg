@@ -1,3 +1,5 @@
+essential-fields-update = "travelPlanParentCtrl.essentialFieldsUpdate(fieldId, essentialFieldsValues)"
+child-servies-form-update = "travelPlanParentCtrl.childServiesFormUpdate(childServiceId, fieldId, childServicesFormValues)"
 angular.module('app')
   .components('travelPlanForm',{
     controller: travelPlanFormCtrl,
@@ -37,15 +39,15 @@ travelPlanFormCtrl.currentFormFieldsEssentialData=travelPlanFormCtrl.currentForm
 
 
 
-  travelPlanFormCtrl.essentialFieldsUpdateWrapper = function(keyString,value) {
+  travelPlanFormCtrl.essentialFieldsUpdateWrapper = function(keyString,value, fieldId) {
     travelPlanFormCtrl.setObj(travelPlanFormCtrl,keyString,value);
-    travelPlanFormCtrl.essentialFieldsUpdate({"updatedObject": value });
+    travelPlanFormCtrl.essentialFieldsUpdate({"essentialFieldsValues": value, "fieldId":id });
   }
 
 
-  travelPlanFormCtrl.childServiesFormUpdateWrapper = function(keyString,value, childServiceId) {
+  travelPlanFormCtrl.childServiesFormUpdateWrapper = function(keyString,value, childServiceId, fieldId) {
     travelPlanFormCtrl.setObj(travelPlanFormCtrl,keyString,value);
-    travelPlanFormCtrl.childServiesFormUpdate({"childServicesFormValues": value, "childServiceId": childServiceId });
+    travelPlanFormCtrl.childServiesFormUpdate({"childServicesFormValues": value, "childServiceId": childServiceId, "fieldId": fieldId });
   }
 
   travelPlanFormCtrl.currentFormFieldsEssentialData=travelPlanFormCtrl.currentFormFieldsData["essential"];
