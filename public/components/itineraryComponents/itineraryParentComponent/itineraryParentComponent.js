@@ -14,7 +14,7 @@ angular.module('app')
         controller: mainController
     })
 
- function mainController($http){
+ function mainController(mainService){
     var model=this;
 
     console.log('inside mainController');
@@ -26,11 +26,49 @@ angular.module('app')
     model.edgeObj=new Object();
     model.finalArray=[];
 
-         $http.get('public/data/travelPlan.json').success(function(data) {
-          model.travelPlanData=data;
+          /* $http.get('public/data/travelPlan.json').success(function(data) {
+           model.travelPlanData=data;
            console.log(model.travelPlanData);
            fun();
-      });
+         });*/
+
+        model.$onInit=function(){
+          //console.log('inside onInit model ');
+          //model.travelPlanData=mainService.getTravelPlanObject();
+        //  console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
+        //  fun();
+
+
+         /*model.nodesData= mainService.getElementData('nodes','node1');
+           console.log(model.nodesData);
+           console.log("k");*/
+
+          /*  model.edgesData= mainService.getEdges();
+             console.log('edge master data');
+             model.edgesData.then(function(data){
+               console.log(data);
+           })*/
+
+          /* model.object={
+             source: "Rajiv Chowk",
+             destination: "New Delhi IGI Airport",
+             type: "cab",
+             pickupDate: "4/30/2016",
+             pickupTime: "10:00 AM"
+           };
+           model.feedback=mainService.childServiesFormUpdate('nodes','node1','childServices','node1T1','requestedData',model.object);
+           console.log(model.feedback);
+
+           model.response=mainService.essentialFieldsUpdate('nodes','node1','city','bhopal');
+           console.log(model.response);*/
+
+           model.res=mainService.travelPlanInitializer(1);
+           console.log(model.res);
+
+           model.travelPlanData=mainService.getTravelPlanObject();
+           console.log(model.travelPlanData);
+
+      }
 
   var fun=function(){
        model.sequence=model.travelPlanData['sequenceOfJobs'];
