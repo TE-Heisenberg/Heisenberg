@@ -274,7 +274,7 @@
 
 @media screen and (max-width: 767px) {
     .travel-button {
-        position: absolute;
+        /*position: absolute;*/
         z-index: 4;
         margin-top: 60px;
         margin-left: -12px;

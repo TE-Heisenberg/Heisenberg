@@ -1,7 +1,7 @@
 [
 {
 	"name": "Lemon Tree Hotel",
-	"city": "Pune",
+	"location": "Pune",
 	"rating": "5 star",
 	"amenities":[{
 		"iconCode":"wifi",
@@ -19,7 +19,7 @@
 },
 {
 	"name": "St. Laurn Business Hotel",
-	"city": "Pune",
+	"location": "Delhi",
 	"rating": "5 star",
 	"amenities":[{
 		"iconCode":"wifi",
@@ -37,8 +37,8 @@
 },
 {
 	"name": "The O Hotel",
-	"city": "Pune",
-	"rating": "5 star",
+	"location": "Bengaluru",
+	"rating": "3 star",
 	"amenities":[{
 		"iconCode":"wifi",
 		"name": "Wifi"
@@ -55,7 +55,7 @@
 },
 {
 	"name": "Aurora",
-	"city": "Pune",
+	"location": "Pune",
 	"rating": "5 star",
 	"amenities":[{
 		"iconCode":"wifi",
@@ -73,7 +73,7 @@
 },
 {
 	"name": "Hotel Sagar Plaza",
-	"city": "Pune",
+	"location": "Chennai",
 	"rating": "5 star",
 	"amenities":[{
 		"iconCode":"wifi",
@@ -91,7 +91,7 @@
 },
 {
 	"name": "The Centurian Hotel",
-	"city": "Pune",
+	"location": "Delhi",
 	"rating": "5 star",
 	"amenities":[{
 		"iconCode":"wifi",
@@ -109,7 +109,7 @@
 },
 {
 	"name": "The E Square",
-	"city": "Pune",
+	"location": "Delhi",
 	"rating": "5 star",
 	"amenities":[{
 		"iconCode":"wifi",
@@ -127,7 +127,7 @@
 },
 {
 	"name": "Golden Emarald Hotel",
-	"city": "Pune",
+	"location": "Bengaluru",
 	"rating": "5 star",
 	"amenities":[{
 		"iconCode":"wifi",

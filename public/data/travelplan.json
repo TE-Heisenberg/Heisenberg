@@ -18,7 +18,8 @@
     "edge2"
   ],
 
-  "sequenceOfNodes": ["node1", "edge1", "node2"]
+  "sequenceOfNodes": ["node1", "edge1", "node2"],
+  "":
   ,
   "legs": {
     "leg1": {
@@ -184,6 +185,7 @@
   },
   "nodes": {
     "node1": {
+      "basicServices": ["stay", "localTravel"],
       "cityName": "bangalore",
       "status": "selection",
       "childServices": {
@@ -352,6 +354,7 @@
       }
     },
     "node2": {
+      "basicServices": [{"serviceId":"stay", "serviceDisplayName": "Stay"},{"serviceId":"localTravel", "serviceDisplayName": "Local Travel"}],
       "cityName": "New Delhi",
       "status": "selection",
       "childServices": {

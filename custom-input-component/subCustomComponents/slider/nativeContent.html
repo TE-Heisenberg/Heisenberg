@@ -1,16 +1,15 @@
-<br>Inside slider
- min is   {{ctrl.specificAttr.min}}
-<br>
+
 <label for="">{{ctrl.label}}</label>
 
-
+    <div layout="row">
       <div flex="10" layout="" layout-align="center center">
-        <span class="md-body-1">{{ctrl.label}}</span>
+        <!-- <span class="md-body-1">{{ctrl.label}}</span> -->
+        <label for="">{{ctrl.label}}</label>
       </div>
-   {{ctrl.bindData}}
-      <md-slider flex="40" min="{{ctrl.specificAttr.min}}" max="{{ctrl.specificAttr.max}}"
+      <md-slider flex="70" min="{{ctrl.specificAttr.min}}" max="{{ctrl.specificAttr.max}}"
       ng-model="ctrl.bindData"  aria-label="ctr" ng-change="ctrl.reflectValue(ctrl.bindData)">
       </md-slider>
       <div flex="20" layout="" layout-align="center center">
         <input flex="" type="number"    ng-model="ctrl.bindData">
       </div>
+    </div>

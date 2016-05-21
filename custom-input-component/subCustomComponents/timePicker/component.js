@@ -1,4 +1,4 @@
-customInputComponentApp.
+angular.module('app').
   component('timePickerBox',{
     templateUrl: './subCustomComponents/timePicker/nativeContent.html',
     controller: TimePickerBoxCtrl,
