@@ -4,13 +4,14 @@
 	"location": "Pune",
 	"rating": "5 star",
 	"amenities":[{
-		"iconCode":"wifi",
-		"name": "Wifi"
-		},
-		{
-			"iconCode":"free_breakfast",
-			"name": "Breakfast"
-			},{
+					"iconCode":"wifi",
+					"name": "Wifi"
+				},
+				{
+					"iconCode":"free_breakfast",
+					"name": "Breakfast"
+				},
+				{
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
