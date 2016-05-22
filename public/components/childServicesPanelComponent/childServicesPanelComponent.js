@@ -23,7 +23,7 @@ function childServicesPanelComponentController()
      childServicesPanelComponentCtrl.reflectValue=function(keyString,value,id)
      {
 
-        childServicesPanelComponentCtrl.reflectServiceDataChange("serviceData": value, "serviceId": keyString , "fieldId": id)
+        childServicesPanelComponentCtrl.reflectServiceDataChange({"serviceData": value, "serviceId": keyString , "fieldId": id});
      }
 
      childServicesPanelComponentCtrl.add=function()
