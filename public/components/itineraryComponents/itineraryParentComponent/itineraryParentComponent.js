@@ -33,19 +33,25 @@ angular.module('app')
          });*/
 
         model.$onInit=function(){
-          //console.log('inside onInit model ');
-          //model.travelPlanData=mainService.getTravelPlanObject();
-        //  console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
-        //  fun();
+           console.log('inside onInit model ');
+            model.travelPlanData=mainService.getTravelPlanObject();
+            console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
+            fun();
 
 
          /*model.nodesData= mainService.getElementData('nodes','node1');
            console.log(model.nodesData);
            console.log("k");*/
 
-          /*  model.edgesData= mainService.getEdges();
+          /* model.edgesData= mainService.getEdges();
              console.log('edge master data');
              model.edgesData.then(function(data){
+               console.log(data);
+           })*/
+
+          /* model.nodesData= mainService.getNodes();
+             console.log('node master data');
+             model.nodesData.then(function(data){
                console.log(data);
            })*/
 
@@ -57,16 +63,16 @@ angular.module('app')
              pickupTime: "10:00 AM"
            };
            model.feedback=mainService.childServiesFormUpdate('nodes','node1','childServices','node1T1','requestedData',model.object);
-           console.log(model.feedback);
+           console.log(model.feedback);*/
 
-           model.response=mainService.essentialFieldsUpdate('nodes','node1','city','bhopal');
+          /* model.response=mainService.essentialFieldsUpdate('nodes','node1','city','bhopal');
            console.log(model.response);*/
 
-           model.res=mainService.travelPlanInitializer(1);
+        /*   model.res=mainService.travelPlanInitializer(1);
            console.log(model.res);
 
            model.travelPlanData=mainService.getTravelPlanObject();
-           console.log(model.travelPlanData);
+           console.log(model.travelPlanData);*/
 
       }
 

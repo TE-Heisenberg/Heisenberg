@@ -7,7 +7,6 @@
         "id": "location",
         "type": "autoComplete",
         "data": "sampleurl"
-
       }
     },
     "modesToSelectTheServices": {
@@ -28,7 +27,6 @@
     "stay": "Stay",
     "localTravel": "Local Travel"
   },
-  ,
   "services": {
                 "stay": {
                   "location":{

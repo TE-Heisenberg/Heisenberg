@@ -1,6 +1,7 @@
 angular.module('app').factory('mainService',function($http){
 
        var travelPlanObject;
+
        var subFactories = {
 
              nodeEdgeInitializer:function(nodeOrEdge){
@@ -73,9 +74,19 @@ angular.module('app').factory('mainService',function($http){
              },
 
              essentialFieldsUpdate: function(elementType, elementId, essentialFieldKey, essentialFieldValues){
-                travelPlanObject[elementType][elementId][essentialFieldKey]=essentialFieldValues;
+               console.log(elementType);
+               if(elementType=='nodes'){
+                 console.log(elementType);
+                 $http.get('public/data/configjsons/nodemaster.json').success(function(data){
+                      console.log(data);
+
+                      return 'success';
+                   })
+               }
+              /* travelPlanObject[elementType][elementId][essentialFieldKey]=essentialFieldValues;
                 console.log(travelPlanObject);
                 return 'success';
+              }*/
               }
             }
      return subFactories;
