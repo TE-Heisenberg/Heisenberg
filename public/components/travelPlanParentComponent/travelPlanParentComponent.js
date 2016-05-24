@@ -2,14 +2,13 @@ angular.module('app')
   .component('travelPlanParentComponent',{
     templateUrl: "public/components/travelPlanParentComponent/travelPlanParentComponent.html",
     controller: travelPlanParentCtrl,
-    controllerAs: 'travelPlanParentCtrl'
+    controllerAs: "travelPlanParentCtrl"
   });
 
 
 function travelPlanParentCtrl () {
   var travelPlanParentCtrl = this;
-  travelPlanParentCtrl.travelPlan =
-  {
+  travelPlanParentCtrl.travelPlan={
     "travelType": "oneWay",
     "state": "initial",
 
@@ -133,7 +132,6 @@ function travelPlanParentCtrl () {
       }
     }
   };
-
   //PG: 19th May- It is checked before hand if the Travel Plan exists or not
   travelPlanParentCtrl.$onInit = function () {
 
@@ -150,7 +148,7 @@ function travelPlanParentCtrl () {
     //   "edge": dataUpdateHelper.getEdges()
     // }
 
-  }
+  };
 
   //PG: 19th May- This function will be called when there will be a change in the travel-plan state.
   travelPlanParentCtrl.updateCurrentState = function(elementId,elementType, childState) {
@@ -166,16 +164,15 @@ function travelPlanParentCtrl () {
 
     travelPlanParentCtrl.currentFormFieldsData =  elementFields[travelPlanParentCtrl.currentElement];
 
-  }
+  };
 
 
   travelPlanParentCtrl.essentialFieldsUpdate = function(fieldId, essentialFieldsValues ) {
    // dataUpdateHelper.essentialFieldsUpdate(travelPlanParentCtrl.currentElement, travelPlanParentCtrl.currentElementId, fieldId, essentialFieldsValues);
-  }
-
+ };
   travelPlanParentCtrl.childServicesFormUpdate = function(childServicesFormValues, childServiceId, fieldId) {
     //dataUpdateHelper.childServicesFormUpdate(travelPlanParentCtrl.currentElement, travelPlanParentCtrl.currentElementId, childServiceId, fieldId, childServicesFormValues);
-  }
+  };
 
 
 }

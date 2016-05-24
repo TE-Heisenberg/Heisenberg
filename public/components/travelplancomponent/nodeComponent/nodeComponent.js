@@ -17,6 +17,7 @@ function nodeController() {
 
     var node = this;
   node.autoCompleteInput={};
+  node.edit=false;
     // selectedAutocompleteData=null;
     node.currentNodeChild = function (nodeid, type) {
         node.currentNode({'id': nodeid, 'type': type});
@@ -26,7 +27,7 @@ function nodeController() {
         console.log(id);
         setObj(node,keyString,value);
     }
-    
+
     node.show_autocomplete=function(){
         if(node.edit==true)
         {

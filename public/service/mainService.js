@@ -141,7 +141,6 @@ angular.module('app').factory('mainService',function($http){
                    "stay": "Stay",
                    "localTravel": "Local Travel"
                  },
-                 ,
                  "services": {
                                "stay": {
                                  "location":{
@@ -335,7 +334,7 @@ angular.module('app').factory('mainService',function($http){
                 }
              },
 
-             essentialFieldsUpdate: function(elementType, elementId, essentialFieldKey, essentialFieldValues)
+            /* essentialFieldsUpdate: function(elementType, elementId, essentialFieldKey, essentialFieldValues)
              {
                 travelPlanObject[elementType][elementId][essentialFieldKey]=essentialFieldValues;
                 var elementFields;
@@ -389,21 +388,18 @@ angular.module('app').factory('mainService',function($http){
               removeServiceGroupById: function(elementType, elementId, serviceId  ) {
 
 
-              },
+              },*/
               createServiceGroupById: function(elementType, elementId, serviceId) {
                 // object.keys(travelPlanObject[elementType+"s"][elementId].childServices);
                 travelPlanObject[elementType+"s"][elementId].childServices = {
-                  "status": initial;
-                  "type":
+                  "status": initial,
+                  "type":''
                 }
               },
               deleteChildServiceById: function(elementType, elementId, serviceId) {
 
               }
-
-
-
-            }
+          }
      return subFactories;
   });
 

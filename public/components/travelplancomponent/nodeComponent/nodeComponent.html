@@ -1,13 +1,17 @@
     <i class="material-icons" ng-click="node.show_autocomplete()">mode_edit</i>
 <div class="node" click-outside="plan.closeThis(value)"
      outside-if-not="nodeid,node-md-main-action">
-    <div class="node-md" ng-click="node.currentNodeChild(node.nodeid,'node');">
+    <div class="node-md" ng-click="node.currentNodeChild(node.nodeid,'node')">
         {{node.travelobject.nodes[node.nodeid].cityName|limitTo:3|uppercase}}
     </div>
-    <i class="material-icons node-stay" ng-click="node.currentNodeChild(node.nodeid,'hotel');">hotel</i>
+    <i class="material-icons node-stay" ng-click="node.currentNodeChild(node.nodeid,'hotel')">hotel</i>
     <i class="material-icons node-local-travel" ng-click="node.currentNodeChild(node.nodeid,'local')">directions_car</i>
     <div class="node-md-action" id="node-md-main-action" ng-show="node.edit==true">
-          <custom-input-box type="autocomplete" label="City" id="City" specific-attr="{"minLength":2,"maxLength":18}" bind-data="node.autoCompleteInput.selectedAutocompleteData"  bind-data-key="autoCompleteInput.selectedAutocompleteData"></custom-input-box>
+          <custom-input-box type="autocomplete" label="City"
+          id="City" specific-attr="{'minLength':2,'maxLength':18}"
+          bind-data="node.autoCompleteInput.selectedAutocompleteData"
+          bind-data-key="autoCompleteInput.selectedAutocompleteData">
+        </custom-input-box>
     </div>
 
 </div>
