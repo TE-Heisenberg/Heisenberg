@@ -1,0 +1,25 @@
+<md-list>
+
+  <md-list-item class="md-line" ng-repeat="x in list.value">
+    <div class="md-list-item-text">
+      <h5>{{x}}</h5>
+    </div>
+    <!-- <md-button class="md-secondary" style="color:#70b900">Edit</md-button> -->
+    <div class="container">
+      <div layout=row>
+        <div  hide-xs hide-sm>
+          <md-button ng-if="list.card=='myCurrentPlan'" aria-label="show summary" class="md-raised md-warn show_sum md-secondary res" ng-click="list.showAlert($event, x)">Show Summary</md-button>
+      </div>
+      <div hide-gt-sm layout-align="end">
+        <md-button class="md-icon-button md-secondary" aria-label="show icon" ng-click="list.showAlert($event, x)">
+          <md-icon md-svg-icon="/img/svg-icons/ic_open_in_new_black_24px.svg"></md-icon>
+        </md-button>
+      </div>
+      <div hide-xs hide-sm layout-align="end" aria-label="respond">
+        <md-button ng-if="list.card=='myWorkList'" class="md-secondary res">Respond</md-button>
+      </div>
+    </div>
+  </div>
+  <md-divider ng-if="!$last"></md-divider>
+</md-list-item>
+</md-list>

@@ -1,5 +1,5 @@
 {
-  "name": "T&E",
+  "name": "Heisenberg",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -25,6 +25,7 @@
     "angular-material-icons": "^0.7.0",
     "angular-messages": "^1.5.5",
     "angular-route": "^1.5.5",
+    "angular-component-router":"^0.2.1",
     "angular-sanitize": "^1.5.5",
     "bootstrap": "^3.3.6",
     "jquery": "^2.2.3",

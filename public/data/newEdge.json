@@ -1,11 +1,11 @@
 {
   "status": "",
   "childServices": {
-    "edgeMode1": {
+    "edge1mode1": {
       "status": "",
-      "request": {
+      "requested": {
         "travelStartDate": "",
-        "mode": "Flight",
+        "mode": "flight",
         "flight": {
           "state": "",
           "class": "",
