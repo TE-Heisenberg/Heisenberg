@@ -6,7 +6,7 @@ controller:["$rootScope","$location",mainComponentController],
 $routeConfig: [
 
     {path: '/landingPage',name: 'LandingPageComponent', component: 'landingComponent'},
-    {path: '/travelBooking',name: 'TravelBookingComponent', component: 'travelPlanParentComponent' },
+    {path: '/travelBooking',name: 'TravelPlanParentComponent', component: 'travelPlanParentComponent' },
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
     {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
     {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsComponent'},
@@ -85,21 +85,6 @@ function mainComponentController($rootScope,$location){
 
      }
 
-
-
-
-
-
-      var mainComponent=this;
-       if ($location.path().indexOf('landingPage') > 0)
-      {
-        console.log("hello landing is there");
-          mainComponent.landingPage = true;
-          console.log(mainComponent.landingPage);
-      }
-      else {
-        console.log("hello");
-          mainComponent.landingPage = false;
-      }
+    
 
 }
