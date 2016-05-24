@@ -127,7 +127,6 @@
 
 @media screen and (min-width: 768px) {
     .node {
-        float: left;
         display: inline;
     }
 }
@@ -178,7 +177,6 @@
 
 @media screen and (min-width: 768px) {
     .node-add {
-        display: block;
         width: 20px;
         height: 20px;
         line-height: 19px;
@@ -192,6 +190,8 @@
         background: #464646;
         margin-top: 2%;
         cursor: pointer;
+        position: relative;
+        bottom: 60px;
 
     }
 
@@ -241,7 +241,6 @@
 
 @media screen and (min-width: 768px) {
     .progress-line {
-        float: left;
         margin-top: 25px;
         width: 200px;
         z-index: 2;
@@ -263,18 +262,15 @@
 
 @media screen and (min-width: 768px) {
     .travel-button {
-        float: left;
         position: relative;
         z-index: 4;
-        margin-left: 43%;
         margin-left: 46%;
-        margin-top: -10px;
+        top: -30px;
     }
 }
 
 @media screen and (max-width: 767px) {
     .travel-button {
-        position: absolute;
         z-index: 4;
         margin-top: 60px;
         margin-left: -12px;
@@ -286,6 +282,7 @@
         height: 3px;
         background-color: #0000cc;
       /*  margin-left: 11px;*/
+        margin-top:-50px;
 
     }
 }

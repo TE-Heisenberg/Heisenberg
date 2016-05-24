@@ -5,12 +5,16 @@ controllerAs:"mainComponent",
 controller:["$rootScope","$location",mainComponentController],
 $routeConfig: [
 
-    {path: '/landingPage',name: 'LandingPageComponent', component: 'landingPageComponent'},
+    {path: '/landingPage',name: 'LandingPageComponent', component: 'landingComponent'},
+<<<<<<< HEAD
     {path: '/travelBooking',name: 'TravelBookingComponent', component: 'travelBookingComponent' },
+=======
+    {path: '/travelBooking',name: 'TravelPlanParentComponent', component: 'travelPlanParentComponent' },
+>>>>>>> 31d96d24d55cd09275144115390243b4801b1fed
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
     {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
     {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsComponent'},
-    {path:'/hotelSearchResults',name:'HotelSearchResultsComponent',component:'hotelSearchResultsComponent'},
+    {path:'/hotelSearchResults',name:'HotelSearchResultsParentComponent',component:'hotelSearchResultsParentComponent'},
     {path:'/itinerary',name:'ItineraryComponent',component:'itineraryParentComponent'},
     {path:'/**',redirectTo:["LandingPageComponent"]}
 
@@ -32,11 +36,7 @@ var setObj = function(obj, keyString,value) {
 }
 
 function mainComponentController($rootScope,$location){
-<<<<<<< HEAD
 
-=======
-    //
->>>>>>> 00bfb00a2eadd01250b6016f81b743951facf92b
     var mainComponent = this;
      mainComponent.travelPlanData = {};
      mainComponent.travelPlanInitializer = function(indexForTravelMode) {
@@ -89,35 +89,6 @@ function mainComponentController($rootScope,$location){
 
      }
 
-
-
-
-
-
-<<<<<<< HEAD
-      var mainComponent=this;
-       if ($location.path().indexOf('landingPage') > 0)
-      {
-        console.log("hello landing is there");
-          mainComponent.landingPage = true;
-          console.log(mainComponent.landingPage);
-      }
-      else {
-        console.log("hello");
-          mainComponent.landingPage = false;
-      }
-=======
-     //  var mainComponent=this;
-       // if ($location.path().indexOf('landingPage') > 0)
-      // {
-      //   console.log("hello landing is there");
-      //     mainComponent.landingPage = true;
-      //     console.log(mainComponent.landingPage);
-      // }
-      // else {
-      //   console.log("hello");
-      //     mainComponent.landingPage = false;
-      // }
->>>>>>> 00bfb00a2eadd01250b6016f81b743951facf92b
+    
 
 }

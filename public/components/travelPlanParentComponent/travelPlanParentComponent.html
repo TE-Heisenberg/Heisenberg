@@ -1,4 +1,11 @@
+<travel-plan addnode="travelPlanParentCtrl.addNode()" subnode="travelPlanParentCtrl.subNode()" updatenode="travelPlanParentCtrl.updateNode()"
+             currentnode="travelPlanParentCtrl.currentNode()" traveljson="travelPlanParentCtrl.travelPlan">
 
-<travel-plan-form-component current-form-data="travelPlanParentCtrl.currentFormData"
+</travel-plan>
+<travel-plan-form current-form-data="travelPlanParentCtrl.currentFormData"
+                            current-form-fields-data="travelPlanParentCtrl.currentFormFieldsData"
+                            essential-fields-update="travelPlanParentCtrl.essentialFieldsUpdate(fieldId, essentialFieldsValues)"
+                            child-services-form-update="travelPlanParentCtrl.childServicesFormUpdate(childServiceId, fieldId, childServicesFormValues)">
 
-current-form-fields-data="travelPlanParentCtrl.currentFormFieldsData" essential-fields-update="travelPlanParentCtrl.essentialFieldsUpdate(essentialFieldsValues)" child-servies-form-update="childServiesFormUpdate(childServicesFormValues)"></travel-plan-form-component>
+</travel-plan-form>
+
