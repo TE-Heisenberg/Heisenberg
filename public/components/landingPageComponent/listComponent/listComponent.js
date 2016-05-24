@@ -1,4 +1,4 @@
-var app=angular.module("app")
+var app=angular.module("app");
 app.component("listComponent",{
   templateUrl:"public/components/landingPageComponent/listComponent/listcomponent.html",
   controllerAs:"list",
@@ -26,6 +26,6 @@ function listcomponentController($mdDialog){
       .ok('Got it!')
       .targetEvent(ev)
     );
-  }
+  };
 
 }
