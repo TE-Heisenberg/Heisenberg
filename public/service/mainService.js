@@ -1,8 +1,478 @@
 angular.module('app').factory('mainService',function($http){
 
-       var travelPlanObject;
+  var travelPlanObject={
+  userId: "319718",
+  favorite: true,
+  travelType: "oneWay",
+  state: "initial",
+  sequenceOfJobs: [
+    "node1",
+    "n1s1",
+    "n1s2",
+    "n1lt1",
+    "edge1",
+    "e1mode1",
+    "node2",
+    "n2S1",
+    "n2S2",
+    "n2T1",
+    "n2T2",
+    "edge2"
+  ],
 
-          {
+  edges: {
+    edge1: {
+      status: "request",
+      childServices: {
+        edge1mode1: {
+            type: "booking",
+            requested: {
+            travelStartDate: "5/1/2016",
+            mode: "flight",
+            flight: {
+              state: "booking",
+              class: "Bussiness",
+              Nonstop: "true"
+            },
+            bus: {
+              state: "booking",
+              class: "Deluxe AC",
+              seatType: "sleeper"
+            },
+            train: {
+              state: "booking",
+              class: "2 AC"
+            }
+          },
+          final: {
+            travelStartDate: "5/1/2016",
+            mode: "flight",
+            flight: {
+              image:"public/assets/images/indigo.png",
+              companyName: "Air Costa",
+              flightID: "AC2456",
+              seatNumber: "45H",
+              sourceAirport:"koramangala airport",
+              destinationAirport:"delhi airport",
+              price: "876547 INR",
+              preferences: {
+                class: "Bussiness",
+                Nonstop: "true",
+                meals: "Non Veg",
+                extraBaggage: "14 Kg"
+              }
+            },
+            bus: {
+              image:"public/assets/images/bus.png",
+              companyName: "Air Costa",
+              busNumber: "AC2456",
+              seatNumber: "45H",
+              sourceBusStop:"koramangala bus stop",
+              destinationBusStop:"delhi bus stop",
+              price: "876547 INR",
+              preferences: {
+                class: "Deluxe AC",
+                seatType: "sleeper"
+              }
+            },
+            train: {
+              image:"public/assets/images/rail.png",
+              companyName: "Air Costa",
+              trainNumber: "AC2456",
+              seatNumber: "45H",
+              coachNumber: "7A",
+              sourceStation:"koramangala railway station",
+              destinationStation:"new delhi railway station",
+              price: "876547 INR",
+              preferences: {
+              class: "2 AC"
+              }
+            },
+            travelStartTime: "2:00 AM",
+            travelEndDate: "5/2/2016",
+            travelEndTime: "3:00 AM"
+          }
+        }
+      }
+    },
+    edge2: {
+      status: "request",
+      childServices: {
+        edge1mode1: {
+            type: "booking",
+            requested: {
+            travelStartDate: "5/1/2016",
+            mode: "flight",
+            flight: {
+              state: "booking",
+              class: "Bussiness",
+              Nonstop: "true"
+            },
+            bus: {
+              state: "booking",
+              class: "Deluxe AC",
+              seatType: "sleeper"
+            },
+            train: {
+              state: "booking",
+              class: "2 AC"
+            }
+          },
+          final: {
+            travelStartDate: "5/1/2016",
+            mode: "flight",
+            flight: {
+              image:"public/assets/images/indigo.png",
+              companyName: "Air Costa",
+              flightID: "AC2456",
+              seatNumber: "45H",
+              sourceAirport:"koramangala airport",
+              destinationAirport:"delhi airport",
+              price: "876547 INR",
+              preferences: {
+                class: "Bussiness",
+                Nonstop: "true",
+                meals: "Non Veg",
+                extraBaggage: "14 Kg"
+              }
+            },
+            bus: {
+              image:"public/assets/images/bus.png",
+              companyName: "Air Costa",
+              busNumber: "AC2456",
+              seatNumber: "45H",
+              sourceBusStop:"koramangala bus stop",
+              destinationBusStop:"delhi bus stop",
+              price: "876547 INR",
+              preferences: {
+                class: "Deluxe AC",
+                seatType: "sleeper"
+              }
+            },
+            train: {
+              image:"public/assets/images/rail.png",
+              companyName: "Air Costa",
+              trainNumber: "AC2456",
+              seatNumber: "45H",
+              coachNumber: "7A",
+              sourceStation:"koramangala railway station",
+              destinationStation:"new delhi railway station",
+              price: "876547 INR",
+              preferences: {
+              class: "2 AC"
+              }
+            },
+            travelStartTime: "2:00 AM",
+            travelEndDate: "5/2/2016",
+            travelEndTime: "3:00 AM"
+          }
+        }
+      }
+    }
+  },
+  nodes: {
+    node1: {
+      cityName: "bangalore",
+      status: "selection",
+      childServices: {
+        node1T1: {
+          type: "localTravel",
+          status: "picking",
+          requestedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "cab",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM"
+          },
+          selectedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "localBus",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM",
+            dropDate: "4/30/2016",
+            dropTime: "12:00 PM",
+            cab: {
+              image: "Images/uber.png",
+              companyName: "Uber",
+              cabNumber: "DL AJ 5034",
+              driverDetails: {
+              name: "Job Elton"
+              },
+              estimatedPrice: "800 INR",
+              cabType: "sedan"
+            },
+            localBus: {
+              image: "public/assets/images/localBus.png",
+              companyName: "red bus",
+              busNumber: "AB 327014",
+              busType: "AC bus",
+              seatsType: "sleeper",
+              price: "100 INR"
+            }
+          }
+        },
+        node1T2: {
+          type: "localTravel",
+          status: "picking",
+          requestedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "cab",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM"
+          },
+          selectedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "localBus",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM",
+            dropDate: "4/30/2016",
+            dropTime: "12:00 PM",
+            cab: {
+              image: "Images/uber.png",
+              companyName: "Uber",
+              cabNumber: "DL AJ 5034",
+              driverDetails: {
+              name: "Job Elton"
+              },
+              estimatedPrice: "800 INR",
+              cabType: "sedan"
+            },
+            localBus: {
+              image: "public/assets/images/localBus.png",
+              companyName: "red bus",
+              busNumber: "AB 327014",
+              busType: "AC bus",
+              seatsType: "sleeper",
+              price: "100 INR"
+            }
+          }
+        },
+        node1T3: {
+          type: "localTravel",
+          status: "picking",
+          requestedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "cab",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM"
+          },
+          selectedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "localBus",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM",
+            dropDate: "4/30/2016",
+            dropTime: "12:00 PM",
+            cab: {
+              image: "Images/uber.png",
+              companyName: "Uber",
+              cabNumber: "DL AJ 5034",
+              driverDetails: {
+              name: "Job Elton"
+              },
+              estimatedPrice: "800 INR",
+              cabType: "sedan"
+            },
+            localBus: {
+              image: "public/assets/images/localBus.png",
+              companyName: "red bus",
+              busNumber: "AB 327014",
+              busType: "AC bus",
+              seatsType: "sleeper",
+              price: "100 INR"
+            }
+          }
+        },
+        node2S1: {
+            type: "stay",
+           status: "request",
+            requestedData: {
+            area: "Hari Nagar",
+            rating: "3",
+            roomType: "Executive",
+            checkinDate: "6/30/2016",
+            checkoutDate: "7/01/2016"
+          },
+          selectedData: {
+            image: "public/assets/images/hotel3.png",
+            name: "JW Mariott",
+            rating: "5",
+            location: "hotel's exact address",
+            roomType: "Deluxe",
+            checkinDate: "6/30/2016",
+            checkinTime: "2:00 PM",
+            checkoutDate: "7/01/2016",
+            checkoutTime: "3:00 PM",
+            price: "10000 INR",
+            comments: "Some useful comment which you may want to convey to the hotel"
+          }
+        },
+        node2S2: {
+            type: "stay",
+           status: "request",
+            requestedData: {
+            area: "Hari Nagar",
+            rating: "3",
+            roomType: "Executive",
+            checkinDate: "6/30/2016",
+            checkoutDate: "7/01/2016"
+          },
+          selectedData: {
+            image: "public/assets/images/hotel3.png",
+            name: "JW Mariott",
+            rating: "5",
+            location: "hotel's exact address",
+            roomType: "Deluxe",
+            checkinDate: "6/30/2016",
+            checkinTime: "2:00 PM",
+            checkoutDate: "7/01/2016",
+            checkoutTime: "3:00 PM",
+            price: "10000 INR",
+            comments: "Some useful comment which you may want to convey to the hotel"
+          }
+        }
+      }
+    },
+    node2: {
+      cityName: "New Delhi",
+      status: "selection",
+      childServices: {
+        node2S1: {
+            type: "stay",
+           status: "request",
+            requestedData: {
+            area: "Hari Nagar",
+            rating: "3",
+            roomType: "Executive",
+            checkinDate: "6/30/2016",
+            checkoutDate: "7/01/2016"
+          },
+          selectedData: {
+            image: "public/assets/images/hotel3.png",
+            name: "JW Mariott",
+            rating: "5",
+            location: "hotel's exact address",
+            roomType: "Deluxe",
+            checkinDate: "6/30/2016",
+            checkinTime: "2:00 PM",
+            checkoutDate: "7/01/2016",
+            checkoutTime: "3:00 PM",
+            price: "10000 INR",
+            comments: "Some useful comment which you may want to convey to the hotel"
+          }
+        },
+        node2S2: {
+            type: "stay",
+           status: "request",
+            requestedData: {
+            area: "Hari Nagar",
+            rating: "3",
+            roomType: "Executive",
+            checkinDate: "6/30/2016",
+            checkoutDate: "7/01/2016"
+          },
+          selectedData: {
+            image: "public/assets/images/hotel3.png",
+            name: "JW Mariott",
+            rating: "5",
+            location: "hotel's exact address",
+            roomType: "Deluxe",
+            checkinDate: "6/30/2016",
+            checkinTime: "2:00 PM",
+            checkoutDate: "7/01/2016",
+            checkoutTime: "3:00 PM",
+            price: "10000 INR",
+            comments: "Some useful comment which you may want to convey to the hotel"
+          }
+        },
+        node1T1: {
+          type: "localTravel",
+          status: "picking",
+          requestedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "cab",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM"
+          },
+          selectedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "localBus",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM",
+            dropDate: "4/30/2016",
+            dropTime: "12:00 PM",
+            cab: {
+              image: "Images/uber.png",
+              companyName: "Uber",
+              cabNumber: "DL AJ 5034",
+              driverDetails: {
+              name: "Job Elton"
+              },
+              estimatedPrice: "800 INR",
+              cabType: "sedan"
+            },
+            localBus: {
+              image: "public/assets/images/localBus.png",
+              companyName: "red bus",
+              busNumber: "AB 327014",
+              busType: "AC bus",
+              seatsType: "sleeper",
+              price: "100 INR"
+            }
+          }
+        },
+        node1T2: {
+          type: "localTravel",
+          status: "picking",
+          requestedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "cab",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM"
+          },
+          selectedData: {
+            source: "Rajiv Chowk",
+            destination: "New Delhi IGI Airport",
+            type: "localBus",
+            pickupDate: "4/30/2016",
+            pickupTime: "10:00 AM",
+            dropDate: "4/30/2016",
+            dropTime: "12:00 PM",
+            cab: {
+              image: "Images/uber.png",
+              companyName: "Uber",
+              cabNumber: "DL AJ 5034",
+              driverDetails: {
+              name: "Job Elton"
+              },
+              estimatedPrice: "800 INR",
+              cabType: "sedan"
+            },
+            localBus: {
+              image: "public/assets/images/localBus.png",
+              companyName: "red bus",
+              busNumber: "AB 327014",
+              busType: "AC bus",
+              seatsType: "sleeper",
+              price: "100 INR"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+        var subFactories= {
 
              nodeEdgeInitializer:function(nodeOrEdge){
                var numberOfElements = Object.keys(travelPlanObject[nodeOrEdge]).length;
@@ -141,7 +611,6 @@ angular.module('app').factory('mainService',function($http){
                    "stay": "Stay",
                    "localTravel": "Local Travel"
                  },
-                 ,
                  "services": {
                                "stay": {
                                  "location":{
@@ -306,7 +775,7 @@ angular.module('app').factory('mainService',function($http){
 
                  }
                };
-               return edgeMaster;
+               return nodeMaster;
               //  return $http.get('public/data/configjsons/nodemaster.json');
              },
 
@@ -335,25 +804,24 @@ angular.module('app').factory('mainService',function($http){
                 }
              },
 
-             essentialFieldsUpdate: function(elementType, elementId, essentialFieldKey, essentialFieldValues)
+             essentialFieldsUpdate: function(elementType, elementId, essentialFieldKey, essentialFieldValues) {
                console.log(elementType);
-               if(elementType=='nodes'){
+
                 var elementFields;
                 switch (elementType) {
                   case "node":
                       elementFields = subFactories.getNodes();
                     break;
-                  case: "edge":
+                  case "edge":
                       elementFields = subFactories.getEdges();
                 }
 
                 var actionKeys = Object.keys(elementFields.essential.modesToSelectTheServices);
-                if(actionKeys.indexOf(elementId) > -1) {
+                console.log(actionKeys);
+                if(actionKeys.indexOf(essentialFieldKey) > -1) {
                   //Element needs an action to be taken
-                  var listLabelKey = elementFields.essential.modesToSelectTheServices[elementId].listLabelKey;
+                  var listLabelKey = elementFields.essential.modesToSelectTheServices[essentialFieldKey].listLabelKey;
                   var currentActionFieldValueArray = travelPlanObject[elementType+"s"][elementId][essentialFieldKey];
-
-                  var countOfSameFields = 0;
                   var tempObj = {};
                   for(actionField in currentActionFieldValueArray)
 
@@ -364,7 +832,7 @@ angular.module('app').factory('mainService',function($http){
                       if(actionField[listLabelKey] == enteredActionField[listLabelKey])
                         {
                           present = true;
-                          countOfSameFields += 1;
+
                           tempObj[enteredActionField[listLabelKey]] = true;
                           break;
                         }
@@ -382,27 +850,46 @@ angular.module('app').factory('mainService',function($http){
                     }
                   }
                 }
-                travelPlanObject[elementType][elementId][essentialFieldKey]=essentialFieldValues;
+
+              travelPlanObject[elementType][elementId][essentialFieldKey]=essentialFieldValues;
 
 
-              },//End Of function
-              removeServiceGroupById: function(elementType, elementId, serviceId  ) {
+              } ,
+              //End Of function
 
-
+             //
+              removeServiceGroupById: function(elementType, elementId, serviceType  ) {
+                console.log(travelPlanObject[elementType][elementId].childServices);
+                 for(var key in travelPlanObject[elementType][elementId].childServices){
+                   var type=travelPlanObject[elementType][elementId].childServices[key].type;
+                   if(type==serviceType){
+                     delete travelPlanObject[elementType][elementId].childServices[key];
+                   }
+                 }
+                 console.log(travelPlanObject[elementType][elementId].childServices);
+                  return 'success';
               },
+
+              //
               createServiceGroupById: function(elementType, elementId, serviceId) {
                 // object.keys(travelPlanObject[elementType+"s"][elementId].childServices);
                 travelPlanObject[elementType+"s"][elementId].childServices = {
-                  "status": initial;
-                  "type":
-                }
+                  "status": initial
+                };
               },
+
+             //
               deleteChildServiceById: function(elementType, elementId, serviceId) {
-
+                for(var key in travelPlanObject[elementType][elementId].childServices){
+                  if(key==serviceId){
+                    console.log(travelPlanObject[elementType][elementId].childServices);
+                    delete travelPlanObject[elementType][elementId].childServices[key];
+                    console.log(travelPlanObject[elementType][elementId].childServices);
+                    return 'success';
+                  }
+                }
+                  return 'fail';
               }
-
-
-
             }
      return subFactories;
   });

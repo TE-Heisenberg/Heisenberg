@@ -34,9 +34,10 @@ angular.module('app')
 
         model.$onInit=function(){
            console.log('inside onInit model ');
-            model.travelPlanData=mainService.getTravelPlanObject();
+
+          /*  model.travelPlanData=mainService.getTravelPlanObject();
             console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
-            fun();
+            fun();*/
 
 
          /*model.nodesData= mainService.getElementData('nodes','node1');
@@ -73,6 +74,12 @@ angular.module('app')
 
            model.travelPlanData=mainService.getTravelPlanObject();
            console.log(model.travelPlanData);*/
+
+          /* model.feedback=mainService.deleteChildServiceById('nodes','node1','node1T1');
+           console.log(model.feedback);*/
+
+           model.feedback=mainService.removeServiceGroupById('edges','edge1','booking');
+           console.log(model.feedback);
 
       }
 
