@@ -823,7 +823,6 @@ angular.module('app').factory('mainService',function($http){
                  }
                  console.log(travelPlanObject[elementType][elementId].childServices);
                   return 'success';
-              },
 
               //
               createServiceGroupById: function(elementType, elementId, serviceId) {
@@ -845,7 +844,7 @@ angular.module('app').factory('mainService',function($http){
                 }
                   return 'fail';
               }
-            }
+          }
      return subFactories;
   });
 

@@ -17,16 +17,16 @@ function childServicesWrapperComponentController()
 {
 
   var childServicesWrapperComponentCtrl=this;
-  childServicesComponentCtrl.childServicesGroups = {};
-  for(childServiceId in childServicesComponentCtrl.formData) {
-     childServiceData = childServicesComponentCtrl.formData[childServiceId];
-     if(childServicesComponentCtrl.childServicesGroups[childServiceData.type] == undefined) {
-       childServicesComponentCtrl.childServicesGroups[childServiceData.type] = {};
+  childServicesWrapperComponentCtrl.childServicesGroups = {};
+  for(childServiceId in childServicesWrapperComponentCtrl.formData) {
+     childServiceData = childServicesWrapperComponentCtrl.formData[childServiceId];
+     if(childServicesWrapperComponentCtrl.childServicesGroups[childServiceData.type] == undefined) {
+       childServicesWrapperComponentCtrl.childServicesGroups[childServiceData.type] = {};
      }
-     childServicesComponentCtrl.childServicesGroups[childServiceData.type][childServiceId] = childServicesComponentCtrl.formData[childServiceId];
+     childServicesWrapperComponentCtrl.childServicesGroups[childServiceData.type][childServiceId] = childServicesWrapperComponentCtrl.formData[childServiceId];
   }
-  childServicesComponentCtrl.reflectChangeInService = function(serviceData, serviceId, fieldId) {
-    childServicesComponentCtrl.reflectFormData({"keyString": childServicesComponentCtrl.bindDataKey, "value":serviceData, "childServiceId": serviceId, "fieldId": fieldId});
+  childServicesWrapperComponentCtrl.reflectChangeInService = function(serviceData, serviceId, fieldId) {
+    childServicesWrapperComponentCtrl.reflectFormData({"keyString": childServicesWrapperComponentCtrl.bindDataKey, "value":serviceData, "childServiceId": serviceId, "fieldId": fieldId});
   }
 
 }

@@ -32,7 +32,9 @@ console.log("inside cib");
   // console.log($scope.$parent.$ctrl.label);
   // ctrl.reflectCustomBox = ctrl.reflectCustomInput;
   ctrl.reflectCustomBox = function(newValue) {
+
     console.log("In reflect Custom Box");
+    console.log(ctrl);
     console.log(newValue);
     ctrl.reflectCustomInput({'keyString':ctrl.bindDataKey,'value':newValue, 'id':ctrl.id});
     console.log(ctrl.bindDataKey);

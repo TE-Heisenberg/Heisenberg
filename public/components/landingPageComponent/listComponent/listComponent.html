@@ -8,11 +8,11 @@
     <div class="container">
       <div layout=row>
         <div  hide-xs hide-sm>
-          <md-button ng-if="list.card=='myCurrentPlan'" aria-label="show summary" class="md-raised md-warn show_sum md-secondary res" ng-click="list.showAlert($event, x)">Show Summary</md-button>
+          <md-button ng-if="list.card=='myCurrentPlan'" aria-label="show summary" class="md-raised md-warn show_sum md-secondary res" data-ng-click="list.showAlert($event, x)">Show Summary</md-button>
       </div>
       <div hide-gt-sm layout-align="end">
-        <md-button class="md-icon-button md-secondary" aria-label="show icon" ng-click="list.showAlert($event, x)">
-          <md-icon md-svg-icon="/img/svg-icons/ic_open_in_new_black_24px.svg"></md-icon>
+        <md-button class="md-icon-button md-secondary" aria-label="show icon" data-ng-click="list.showAlert($event, x)">
+          <md-icon md-svg-icon="public/assets/images/ic_open_in_new_black_24px.svg"></md-icon>
         </md-button>
       </div>
       <div hide-xs hide-sm layout-align="end" aria-label="respond">
