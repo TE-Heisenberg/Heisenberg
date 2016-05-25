@@ -1,15 +1,34 @@
-{"filters": [{
-  "name": "Price",
-  "slider": {
-    "min": "1000",
-    "max": "300000",
-    "steps": "500"
+[
+  {
+		"id": "depTime",
+		"type": "button",
+		"label": "Depart Time:",
+		"options": {
+			"domainList": ["00-06", "06-12", "12-18", "18-24"]
+		}
+  },
+  {
+		"id": "stops",
+		"type": "button",
+		"label": "STOPS:",
+		"options": {
+			"domainList": ["0", "1", "1+"]
+		}
+  },
+  {
+		"id": "Airlines",
+		"type": "checkBox",
+		"label": "AIRLINES:",
+		"options": {
+			"domainList": ["AIR INDIA", "INDIGO", "JET AIRWAYS", "SPICEJET", "TRUJET", "VISTARA"]
+		}
+  },
+  {
+		"id": "FareType",
+		"type": "checkBox",
+		"label": "FARE TYPE:",
+		"options": {
+			"domainList": ["REFUNDABLE", "NON REFUNDABLE"]
+		}
   }
-}, {
-  "name": "Class",
-  "options": ["Bussiness Class","Economy Class"]
-}, {
-  "name": "Nearby",
-  "options": ["Koramangala","Sarjapur","Electronic city","Madiwala","BTM Layout"]
-}]
-}
+]

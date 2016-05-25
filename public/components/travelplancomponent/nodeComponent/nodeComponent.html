@@ -1,13 +1,31 @@
     <i class="material-icons" ng-click="node.show_autocomplete()">mode_edit</i>
 <div class="node" click-outside="plan.closeThis(value)"
      outside-if-not="nodeid,node-md-main-action">
-    <div class="node-md" ng-click="node.currentNodeChild(node.nodeid,'node');">
+    <div class="node-md" ng-click="node.currentNodeChild(node.nodeid,'node')">
         {{node.travelobject.nodes[node.nodeid].cityName|limitTo:3|uppercase}}
     </div>
-    <i class="material-icons node-stay" ng-click="node.currentNodeChild(node.nodeid,'hotel');">hotel</i>
+    <i class="material-icons node-stay" ng-click="node.currentNodeChild(node.nodeid,'hotel')">hotel</i>
     <i class="material-icons node-local-travel" ng-click="node.currentNodeChild(node.nodeid,'local')">directions_car</i>
     <div class="node-md-action" id="node-md-main-action" ng-show="node.edit==true">
-          <custom-input-box type="autocomplete" label="City" id="City" specific-attr="{"minLength":2,"maxLength":18}" bind-data="node.autoCompleteInput.selectedAutocompleteData"  bind-data-key="autoCompleteInput.selectedAutocompleteData"></custom-input-box>
+      <md-autocomplete flex required
+       md-input-name="autocompleteField"
+       md-input-minlength="2"
+       md-input-maxlength="18"
+       md-no-cache="node.noCache"
+       md-selected-item="node.selectedItem"
+       md-search-text="node.searchText"
+       md-items="item in node.querySearch(node.searchText)"
+       md-item-text="item.display"
+       md-floating-label="Favorite state">
+     <md-item-template>
+       <span md-highlight-text="node.searchText">{{item.display}}</span>
+     </md-item-template>
+     <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+       <div ng-message="required">You <b>must</b> have a favorite state.</div>
+       <div ng-message="minlength">Your entry is not long enough.</div>
+       <div ng-message="maxlength">Your entry is too long.</div>
+     </div>
+   </md-autocomplete>
     </div>
 
 </div>
