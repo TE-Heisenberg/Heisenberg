@@ -821,10 +821,9 @@ angular.module('app').factory('mainService',function($http){
                      delete travelPlanObject[elementType][elementId].childServices[key];
                    }
                  }
-                 console.log(travelPlanObject[elementType][elementId].childServices);
                   return 'success';
 
-              //
+              },
               createServiceGroupById: function(elementType, elementId, serviceId) {
                 // object.keys(travelPlanObject[elementType+"s"][elementId].childServices);
                 travelPlanObject[elementType+"s"][elementId].childServices = {
