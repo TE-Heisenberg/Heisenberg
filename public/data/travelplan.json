@@ -19,8 +19,7 @@
   ],
 
   "sequenceOfNodes": ["node1", "edge1", "node2"],
-  "":
-  ,
+  
   "legs": {
     "leg1": {
       "source": "node1",

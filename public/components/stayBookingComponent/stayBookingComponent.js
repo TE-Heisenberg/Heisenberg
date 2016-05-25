@@ -40,13 +40,7 @@ function stayBookingController($http)
 
   stayBookingCtrl.fieldsMetaData = {
     "stay":{
-       "area": {
-          "mandatory": true,
-          "displayName": "Area",
-          "id": "area",
-          "type": "text"
-        },
-        "checkinDate":{
+          "checkinDate":{
           "mandatory": true,
           "displayName": "Check-in Date",
           "id": "checkindate",
@@ -67,16 +61,30 @@ function stayBookingController($http)
           "specificAttr":{
             "domainList":["ac","non-ac"]
           }
-        }
-    },
-    "localTravel":{
-       "area": {
-          "mandatory": true,
-          "displayName": "Area",
-          "id": "area",
-          "type": "text"
         },
-        "checkinDate":{
+          "preferencesss":{
+            "mandatory": false,
+            "displayName": "Preferences",
+            "id": "preferences",
+            "type": "singleSelect",
+            "specificAttr":{
+              "domainList":["ac","non-ac"]
+            }
+           },
+
+            "prefer":{
+              "mandatory": false,
+              "displayName": "Preferences",
+              "id": "preferences",
+              "type": "singleSelect",
+              "specificAttr":{
+                "domainList":["ac","non-ac"]
+              }
+           }
+        }
+    ,
+    "localTravel":{
+      "checkinDate":{
           "mandatory": true,
           "displayName": "Check-in Date",
           "id": "checkindate",
@@ -99,9 +107,9 @@ function stayBookingController($http)
           }
         }
     }
-  };
+};
   stayBookingCtrl.selectedChildren = {
-    "stay":"Stay/Accomodation",
+    "stay":"Stay",
     "localTravel":"Local Travel"
   }
 
