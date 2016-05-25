@@ -4,7 +4,7 @@ angular.module('app')
    controllerAs: "itinerary",
    templateUrl: "public/components/itineraryComponents/childServicesComponent/displayComponent/displayComponent.html",
    bindings: {
-     object:'<',
+     modeOrSeatKeyObject:'<',
      logo: '<',
      name:'<',
      roomType: '<',
@@ -26,7 +26,7 @@ angular.module('app')
   var itinerary=this;
   itinerary.modeKeyArray=[];
   itinerary.seatKeyArray=[];
-  console.log('object is: '+itinerary.object);
+  console.log('object is: '+itinerary.modeOrSeatKeyObject);
   itinerary.$onInit = function() {
          console.log("Inside on init")
          console.log(itinerary.modeValue);
