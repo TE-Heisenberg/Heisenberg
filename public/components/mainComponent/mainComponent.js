@@ -6,10 +6,10 @@ controller:["$rootScope","$location",mainComponentController],
 $routeConfig: [
 
     {path: '/landingPage',name: 'LandingPageComponent', component: 'landingComponent'},
-    {path: '/travelBooking',name: 'TravelPlanParentComponent', component: 'travelPlanParentComponent' },
+    {path: '/travelBooking',name: 'TravelBookingParentComponent', component: 'travelBookingParentComponent' },
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
-    {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
-    {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsComponent'},
+    {path:'/flightSearchResults',name: 'FlightSearchResultsParentComponent', component: 'flightSearchResultsParentComponent'},
+    {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsParentComponent'},
     {path:'/hotelSearchResults',name:'HotelSearchResultsParentComponent',component:'hotelSearchResultsParentComponent'},
     {path:'/itinerary',name:'ItineraryComponent',component:'itineraryParentComponent'},
     {path:'/**',redirectTo:["LandingPageComponent"]}
@@ -85,6 +85,6 @@ function mainComponentController($rootScope,$location){
 
      }
 
-    
+
 
 }
