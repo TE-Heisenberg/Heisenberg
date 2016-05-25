@@ -11,13 +11,16 @@
   <md-grid-tile >{{resultComponent.one.Availability}}</md-grid-tile>
   <md-grid-tile>Rs.{{resultComponent.one.price}}</md-grid-tile>
   <md-grid-tile>
-    <div id="selectButton">
-      <button>Select</button>
-      <button ng-show="resultComponent.showbutton" ng-click="resultComponent.showbutton=false;">ShowDetails</button>
-      <button ng-show="!resultComponent.showbutton" ng-click="resultComponent.showbutton=true;">HideDetails
-      </button>
+    <div>
+      <div id="selectButton">
+        <button>Select</button>
+      </div>
+      <div id="showMore">
+        <button ng-show="resultComponent.showbutton" ng-click="resultComponent.showbutton=false;">ShowDetails</button>
+        <button ng-show="!resultComponent.showbutton" ng-click="resultComponent.showbutton=true;">HideDetails
+        </button>
+      </div>
     </div>
-
   </md-grid-tile>
 </md-grid-list>
 <div ng-show="!resultComponent.showbutton" id="moreDetails">
