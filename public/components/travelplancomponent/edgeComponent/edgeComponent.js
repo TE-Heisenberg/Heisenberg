@@ -17,8 +17,8 @@ function edgeController() {
 
     var edge = this;
 
-    edge.selectededge = function (indexid) {
-        edge.currentnodeedge({'index': indexid, 'type': 'transit'});
+    edge.selectededge = function (indexid,type) {
+        edge.currentnodeedge({'index': indexid, 'type': type});
     }
 
 }

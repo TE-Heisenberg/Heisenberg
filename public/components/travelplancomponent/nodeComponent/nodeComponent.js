@@ -18,10 +18,12 @@ function nodeController($timeout, $q) {
     var node = this;
   node.autoCompleteInput={};
   node.edit=false;
+  console.log(node.currentnode);
     // selectedAutocompleteData=null;
-    node.selectedNode=function(indexid){
-      node.currentnodeedge({'index':indexid,'type':'location' });
-    }
+    node.selectednode=function(indexid,type){
+      console.log("Node is clicked");
+      node.currentnodeedge({'index':indexid,'type':type });
+    };
     node.show_autocomplete=function(){
         if(node.edit==true)
         {

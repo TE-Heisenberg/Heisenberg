@@ -8,7 +8,7 @@
     controller: travelPlanController,
     bindings: {
         travelplanobject:'<',
-        currentnodeedge:'&',
+        currentnodeedgetravel:'&',
         nodetype:'@',
         edgetype:'@'
     }
@@ -30,7 +30,7 @@ function travelPlanController() {
     //console.log(FetchService);
 
 
-    plan.currentnodeedge = function (id, type) {
+    plan.currentnodeedgetravel = function (id, type) {
             plan.currentnodeedge(id,type);
 
     };
