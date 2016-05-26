@@ -1,6 +1,6 @@
 angular.module('app')
 .component('hotelSearchResultsComponent', {
-	templateUrl: 'public/components/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
+	templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
 	controllerAs:"hotelSearchResults",
 	controller: hotelSearchResultsController
 });
@@ -11,7 +11,7 @@ function hotelSearchResultsController($http,$rootScope){
         $http.get('public/data/hotelSearchResults.json').success(function(searchResults){
             hotelSearchResults.searchResults= searchResults;
         });
-	
+
         $http.get('public/data/hotelSearchResultsFilter.json').success(function(data){
             hotelSearchResults.filters= data;
         });
@@ -68,11 +68,11 @@ function hotelSearchResultsController($http,$rootScope){
         var counter=0;
         for (filter in hotelSearchResults.selectedFilters){
             hotelSearchResults.selectedFilters[filter].forEach(function(filterValue){
-                if(filterValue==searchResult[filter]){ 
+                if(filterValue==searchResult[filter]){
                     counter++;
                     return;
                 }
-            });   
+            });
         }
         if(counter== Object.keys(hotelSearchResults.selectedFilters).length) return true;
         else return false;

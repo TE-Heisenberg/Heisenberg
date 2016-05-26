@@ -10,5 +10,5 @@ angular.module('app')
        }
     });
 function childrenRendererController() {
-
+  var childrenRenderer = this;
 }

@@ -17,7 +17,7 @@
             <div layout="column" flex="90" flex-xs="30">
                 <div class="nameFont">{{itinerary.name}}</div>
                 <div class="seconDivDataFont" ng-repeat='data in itinerary.modeKeyArray'>
-                     {{itinerary.object[data]}}
+                     {{itinerary.modeOrSeatKeyObject[data]}}
                 </div>
                 <div class="seconDivDataFont">{{itinerary.roomType}}</div>
                 <div class="seconDivDataFont">{{itinerary.location}}</div>
@@ -42,7 +42,7 @@
                       {{itinerary.price}}
                   </div>
                   <div class="preference" ng-repeat="seatKey in itinerary.seatKeyArray">
-                      {{seatKey}} : {{itinerary.object.preferences[seatKey]}}
+                      {{seatKey}} : {{itinerary.modeOrSeatKeyObject.preferences[seatKey]}}
                   </div>
             </div>
         </md-card-content>

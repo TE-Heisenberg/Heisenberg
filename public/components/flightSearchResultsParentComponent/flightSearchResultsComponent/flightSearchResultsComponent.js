@@ -1,6 +1,6 @@
 angular.module('app')
 .component('flightSearchResultsComponent', {
-	templateUrl: 'public/components/flightSearchResultsComponent/flightSearchResultsComponent.html',
+	templateUrl: 'public/components/flightSearchResultsParentComponent/flightSearchResultsComponent/flightSearchResultsComponent.html',
 	controllerAs:"flightSearchResults",
 	controller: flightSearchResultsController
 });

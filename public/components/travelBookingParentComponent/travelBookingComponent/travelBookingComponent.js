@@ -2,7 +2,7 @@
 angular.module('app')
   .component('travelBooking',{
     controller: travelBookingCtrl,
-    templateUrl: "public/components/travelBookingComponent/travelBookingComponent.html",
+    templateUrl: "public/components/travelBookingParentComponent/travelBookingComponent/travelBookingComponent.html",
     controllerAs: 'travelBookingCtrl',
     bindings: {
       "currentFormData": "<",

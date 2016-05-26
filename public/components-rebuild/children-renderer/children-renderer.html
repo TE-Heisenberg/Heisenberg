@@ -1,4 +1,3 @@
 <div ng-repeat="(childId, childDisplayName) in childrenRenderer.selectedChildren">
-  {{childFormRenderer.childrenFieldsMetaData[childId]}}
-  <child-card-renderer array-of-child-fields-data="childrenRenderer.chidrenFieldsData[childId]" meta-data-of-child-fields="childrenRenderer.childrenFieldsMetaData[childId]" card-heading="{{childDisplayName}}"></child-card-renderer>
+  <children-router array-of-child-fields-data="childrenRenderer.chidrenFieldsData[childId]" meta-data-of-child-fields="childrenRenderer.childrenFieldsMetaData[childId]" card-heading="{{childDisplayName}}" child-id="{{childId}}"></children-router>
 </div>

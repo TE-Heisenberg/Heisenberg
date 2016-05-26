@@ -1,6 +1,6 @@
 angular.module('app')
 .component('hotelSearchResult', {
-	templateUrl: 'public/components/hotelSearchResultsComponent/hotelSearchResult/hotelSearchResult.html',
+	templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResult/hotelSearchResult.html',
 	controllerAs:"hotelSearchResult",
 	controller: hotelSearchResultController,
 	bindings: {
@@ -10,6 +10,5 @@ angular.module('app')
 });
 
 function hotelSearchResultController(){
-	
-}
 
+}
