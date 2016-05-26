@@ -15,7 +15,8 @@ angular.module('app').
 function rangeSliderCtrl() {
   var rangeSliderCtrl = this;
   console.log("Inside rangeSliderCtrl");
-
+  console.log(rangeSliderCtrl.domainList.options);
+  // rangeSliderCtrl.domainList.options.onEnd= rangeSliderCtrl.reflectComponent;
   rangeSliderCtrl.selectedData = [];
 
   rangeSliderCtrl.reflectValue = function(value) {
