@@ -1,7 +1,7 @@
 <div class="progress-line">
-    <div class=" node-sm travel-button" ng-click="edge.currentNodeChild(edge.edgeid,'edge')">
+    <div class=" node-sm travel-button" ng-click="edge.selectededge(edge.currentedge)">
         <i class="material-icons">
-            {{edge.travelobject.edges[edge.edgeid].mode}}
+            {{edge.travelelement.childServices.booking.requested.mode}}
         </i>
     </div>
     <div class="middle-bar"></div>

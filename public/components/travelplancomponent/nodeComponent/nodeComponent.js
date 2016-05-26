@@ -7,9 +7,9 @@ var app = angular.module("app").component("nodeComponent", {
     controllerAs: "node",
     controller: ["$timeout","$q",nodeController],
     bindings: {
-        'nodeid': '<',
-        'travelobject': '<',
-        'currentNode': '&'
+        'travelelement': '<',
+        'currentnode':'<',
+        'currentnodeedge':'&'
     }
 });
 
@@ -19,15 +19,9 @@ function nodeController($timeout, $q) {
   node.autoCompleteInput={};
   node.edit=false;
     // selectedAutocompleteData=null;
-    node.currentNodeChild = function (nodeid, type) {
-        node.currentNode({'id': nodeid, 'type': type});
+    node.selectedNode=function(indexid){
+      node.currentnodeedge({'index':indexid,'type':'location' });
     }
-
-    node.reflectValue=function(keyString,value, id){
-        console.log(id);
-        setObj(node,keyString,value);
-    }
-
     node.show_autocomplete=function(){
         if(node.edit==true)
         {
@@ -82,18 +76,5 @@ function nodeController($timeout, $q) {
         return (state.value.indexOf(lowercaseQuery) === 0);
       };
     }
-
-};
-var setObj = function(obj, keyString,value) {
-    console.log("Before Replace ", keyString)
-    keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
-    console.log("After first replace", keyString);
-    keyString = keyString.replace(/^\./, '');           // strip a leading dot
-    console.log("After second replace", keyString);
-    var hierarchyWiseKeysArray = keyString.split('.');
-
-    while (hierarchyWiseKeysArray.length > 1)
-        obj = obj[hierarchyWiseKeysArray.shift()];
-    return obj[hierarchyWiseKeysArray.shift()] = value;
 
 };
