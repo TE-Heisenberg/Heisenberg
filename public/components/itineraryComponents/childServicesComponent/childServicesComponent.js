@@ -2,7 +2,6 @@
  * Created by user on 12-05-2016.
  */
 
-
 angular.module('app')
     .component('childServicesComponent',{
         templateUrl:'public/components/itineraryComponents/childServicesComponent/childServicesComponent.html',

@@ -3,7 +3,11 @@
     {{childCardRenderer.cardHeading}}
   </md-card-title>
   <div ng-repeat="childFieldsData in childCardRenderer.arrayOfChildFieldsData">
-    <child-form-renderer index="$index" fields-data="childFieldsData" fields-meta-data="childCardRenderer.metaDataOfChildFields" on-add="childCardRenderer.onAdd()" on-delete="childCardRenderer.onDelete(index)"></child-form-renderer>
+    <child-form-renderer index="$index" fields-data="childFieldsData" fields-meta-data="childCardRenderer.metaDataOfChildFields" on-add="childCardRenderer.onAdd()" on-delete="childCardRenderer.onDelete(index)" ></child-form-renderer>
+
+    <ng-md-icon flex="40" flex-offset="10" icon="delete" ng-click="childCardRenderer.onDelete(index)"></ng-md-icon>
+    <ng-md-icon flex="40" flex-offset="10" icon="add_circle" ng-click="childCardRenderer.onAdd()"></ng-md-icon>
+
     <md-divider layout-margin></md-divider>
   </div>
 </md-card>

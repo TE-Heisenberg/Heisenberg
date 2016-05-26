@@ -44,6 +44,15 @@ md-card-title{
   padding-left: 5%;
   padding-right: 5%;
 }
+#showMore{
+  display: block;
+}
+#showMore button{
+  border: none;
+  background-color: white;
+  color: blue;
+
+}
 #moreDetails{
   border:1px ridge black;
   padding: 10px;
@@ -52,10 +61,12 @@ md-card-title{
 #moreDetails .value{
   font-size: 18px;
 }
+#selectButton{
+  display: block;
+}
 #selectButton button{
   border: none;
   margin-bottom: 2px;
-  display: block;
   background-color: blue;
   color: white;
 }

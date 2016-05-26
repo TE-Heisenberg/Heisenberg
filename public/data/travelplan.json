@@ -19,7 +19,6 @@
   ],
 
   "sequenceOfNodes": ["node1", "edge1", "node2"]
-  ,
   "legs": {
     "leg1": {
       "source": "node1",
@@ -352,6 +351,7 @@
       }
     },
     "node2": {
+      "basicServices": [{"serviceId":"stay", "serviceDisplayName": "Stay"},{"serviceId":"localTravel", "serviceDisplayName": "Local Travel"}],
       "cityName": "New Delhi",
       "status": "selection",
       "childServices": {

@@ -12,58 +12,57 @@ angular.module('app').
     }
   });
 
-function rangeSliderCtrl($scope) {
-  var ctrl = this;
-  console.log("Inside CheckBoxBoxCtrl");
-  console.log(ctrl);
-  ctrl.selectedData = [];
+function rangeSliderCtrl() {
+  var rangeSliderCtrl = this;
+  console.log("Inside rangeSliderCtrl");
 
-  this.reflectValue = function(value) {
+  rangeSliderCtrl.selectedData = [];
+
+  rangeSliderCtrl.reflectValue = function(value) {
     console.log(value);
 
     console.log("Inside Toggle");
     var status = false;
-    var idx = ctrl.selectedData.indexOf(value);
+    var idx = rangeSliderCtrl.selectedData.indexOf(value);
     console.log("Index ", idx);
     if (idx > -1 )
     {
-      ctrl.selectedData.splice(idx,1);
+      rangeSliderCtrl.selectedData.splice(idx,1);
     }
     else {
       status = true;
-      ctrl.selectedData.push(value);
+      rangeSliderCtrl.selectedData.push(value);
     }
 
     console.log("Status ", status);
-    // ctrl.ngChecked({currentSelectedItems: ctrl.selectedData});
+    // rangeSliderCtrl.ngChecked({currentSelectedItems: rangeSliderCtrl.selectedData});
 
 
-    this.reflectComponent({value:ctrl.selectedData});
+    rangeSliderCtrl.reflectComponent({value:rangeSliderCtrl.selectedData});
 
 
   };
 
 
-  // ctrl.toggle = function(item){
+  // rangeSliderCtrl.toggle = function(item){
   //   console.log("Inside Toggle");
   //   var status = false;
-  //   var idx = ctrl.selectedData.indexOf(item);
+  //   var idx = rangeSliderCtrl.selectedData.indexOf(item);
   //   console.log("Index ", idx);
   //   if (idx > -1 )
   //   {
-  //     ctrl.selectedData.splice(idx,1);
+  //     rangeSliderCtrl.selectedData.splice(idx,1);
   //   }
   //   else {
   //     status = true;
-  //     ctrl.selectedData.push(item);
+  //     rangeSliderCtrl.selectedData.push(item);
   //   }
   //
   //   console.log("Status ", status);
-  //   // ctrl.ngChecked({currentSelectedItems: ctrl.selectedData});
+  //   // rangeSliderCtrl.ngChecked({currentSelectedItems: rangeSliderCtrl.selectedData});
   //
   //   return status;
   // };
 
   console.log("Inside Range Slider Ctrl");
-  console.log(CheckBoxBoxCtrl.domainList);
 }
