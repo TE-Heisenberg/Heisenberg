@@ -9,11 +9,11 @@
                 <div ng-repeat="travelelement in plan.travelplanobject" class="node-add-action">
 
                     <div ng-if="travelelement.type == plan.nodetype">
-                        <node-component travelelement="travelelement" currentnode="$index" currentnodeedgetravel="plan.currentnodeedgetravel(id,type)"></node-component>
+                        <node-component travelelement="travelelement" currentnode="$index" currentnodeedgetravel="plan.currentnodeedgetravel(value)"></node-component>
 
                     </div>
                     <div ng-if="travelelement.type == plan.edgetype">
-                        <edge-component travelelement="travelelement" currentedge="$index" currentnodeedgetravel="plan.currentnodeedgetravel(id,type)"></edge-component>
+                        <edge-component travelelement="travelelement" currentedge="$index" currentnodeedgetravel="plan.currentnodeedgetravel(value)"></edge-component>
 
                     </div>
 

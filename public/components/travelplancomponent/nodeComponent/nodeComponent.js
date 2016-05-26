@@ -9,7 +9,7 @@ var app = angular.module("app").component("nodeComponent", {
     bindings: {
         'travelelement': '<',
         'currentnode':'<',
-        'currentnodeedge':'&'
+        'currentnodeedgetravel':'&'
     }
 });
 
@@ -22,7 +22,7 @@ function nodeController($timeout, $q) {
     // selectedAutocompleteData=null;
     node.selectednode=function(indexid,type){
       console.log("Node is clicked");
-      node.currentnodeedge({'index':indexid,'type':type });
+      node.currentnodeedgetravel({'index':indexid,'type':type });
     };
     node.show_autocomplete=function(){
         if(node.edit==true)
