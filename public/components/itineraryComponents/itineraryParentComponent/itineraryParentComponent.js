@@ -26,14 +26,49 @@ angular.module('app')
     model.edgeObj=new Object();
     model.finalArray=[];
 
-
+          /* $http.get('public/data/travelPlan.json').success(function(data) {
+           model.travelPlanData=data;
+           console.log(model.travelPlanData);
+           fun();
+         });*/
 
         model.$onInit=function(){
-           console.log('inside onInit model');
+          //console.log('inside onInit model ');
+          model.travelPlanData=mainService.getTravelPlanObject();
+          console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
+         fun();
+
+
+         /*model.nodesData= mainService.getElementData('nodes','node1');
+           console.log(model.nodesData);
+           console.log("k");*/
+
+          /*  model.edgesData= mainService.getEdges();
+             console.log('edge master data');
+             model.edgesData.then(function(data){
+               console.log(data);
+           })*/
+
+          /* model.object={
+             source: "Rajiv Chowk",
+             destination: "New Delhi IGI Airport",
+             type: "cab",
+             pickupDate: "4/30/2016",
+             pickupTime: "10:00 AM"
+           };
+           model.feedback=mainService.childServiesFormUpdate('nodes','node1','childServices','node1T1','requestedData',model.object);
+           console.log(model.feedback);
+
+           model.response=mainService.essentialFieldsUpdate('nodes','node1','city','bhopal');
+           console.log(model.response);*/
+
+      /*   model.res=mainService.travelPlanInitializer(1);
+           console.log(model.res);
+
            model.travelPlanData=mainService.getTravelPlanObject();
-           console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
-           console.log(model.travelPlanData);
-        }
+           console.log(model.travelPlanData);*/
+
+      }
 
   var fun=function(){
        model.sequence=model.travelPlanData['sequenceOfJobs'];
@@ -66,7 +101,7 @@ angular.module('app')
 
 
     model.getModePref=function(type){
-      console.log('main component type value '+type);
+      console.log('main component type value'+type);
       if(type=='flight'){
            model.array=['flightID','seatNumber'];
            console.log('inside '+model.array);
@@ -107,58 +142,3 @@ angular.module('app')
     }
 
  }
-
-// services calling
-
-
-/* $http.get('public/data/travelPlan.json').success(function(data) {
- model.travelPlanData=data;
- console.log(model.travelPlanData);
- fun();
-});*/
-
-/*  model.travelPlanData=mainService.getTravelPlanObject();
-  console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
-  fun();*/
-
-
-/*model.nodesData= mainService.getElementData('nodes','node1');
- console.log(model.nodesData);
- console.log("k");*/
-
-/* model.edgesData= mainService.getEdges();
-   console.log('edge master data');
-   model.edgesData.then(function(data){
-     console.log(data);
- })*/
-
-/* model.nodesData= mainService.getNodes();
-   console.log('node master data');
-   model.nodesData.then(function(data){
-     console.log(data);
- })*/
-
-/* model.object={
-   source: "Rajiv Chowk",
-   destination: "New Delhi IGI Airport",
-   type: "cab",
-   pickupDate: "4/30/2016",
-   pickupTime: "10:00 AM"
- };
- model.feedback=mainService.childServiesFormUpdate('nodes','node1','childServices','node1T1','requestedData',model.object);
- console.log(model.feedback);*/
-
-/* model.response=mainService.essentialFieldsUpdate('nodes','node1','city','bhopal');
- console.log(model.response);*/
-
-/*   model.res=mainService.travelPlanInitializer(1);
- console.log(model.res);
-
- model.travelPlanData=mainService.getTravelPlanObject();
- console.log(model.travelPlanData);*/
-
-/* model.feedback=mainService.deleteChildServiceById('nodes','node1','node1T1');
- console.log(model.feedback);*/
-
- /*model.feedback=mainService.removeServiceGroupById('edges','edge1','booking');
- console.log(model.feedback);*/

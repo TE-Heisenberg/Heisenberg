@@ -7,11 +7,10 @@
     controllerAs: "plan",
     controller: travelPlanController,
     bindings: {
-        'addnode': '&',
-        'subnode': '&',
-        'updatenode': '&',
-        'currentnode': '&',
-        'traveljson': '<'
+        travelplanobject:'<',
+        currentnodeedge:'&',
+        nodetype:'@',
+        edgetype:'@'
     }
 }).filter('keylength', function () {
     return function (input) {
@@ -25,19 +24,38 @@
 function travelPlanController() {
 
     var plan = this;
-    plan.travelPlanJSON = {};
-    plan.newNode = {};
-    plan.newEdge = {};
-    //console.log(FetchService);
-  
 
-    plan.currentNode = function (id, type) {
+
+
+    //console.log(FetchService);
+
+
+
+    plan.currentnodeedgetravel = function (value) {
+      console.log(value);
+            plan.currentnodeedge(value);
 
     };
     plan.addNode = function () {
-
-    };
+          plan.newNode = {
+            type:"location",
+            cityName:" "
+          };
+            plan.newEdge = {
+              type:"transit",
+              childServices:
+              {
+                booking:{
+                  requested:{mode:""}
+                }
+              }
+            };
+          plan.travelplanobject.push(plan.newEdge);
+          plan.travelplanobject.push(plan.newNode);
+    }
     plan.subNode = function () {
+      plan.travelplanobject.splice(plan.travelplanobject.length-1,1);
+      plan.travelplanobject.splice(plan.travelplanobject.length-1,1);
 
     }
 
