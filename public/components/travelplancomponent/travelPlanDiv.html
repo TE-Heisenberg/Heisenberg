@@ -6,21 +6,21 @@
         <div class=" margin-node">
             <div class=" line">
 
-                <div ng-repeat="sequence in plan.traveljson.sequenceOfNodes" class="node-add-action">
+                <div ng-repeat="travelelement in plan.travelPlanObject" class="node-add-action">
 
-                    <div ng-if="sequence.type =='node'">
-                        <node-component travelobject="plan.traveljson" nodeid="sequence.id"></node-component>
+                    <div ng-if="travelelement.type =='node'">
+                        <node-component travelobject="travelelement" ></node-component>
 
                     </div>
-                    <div ng-if="sequence.type =='edge'">
-                        <edge-component travelobject="plan.traveljson" edgeid="sequence.id"></edge-component>
+                    <div ng-if="travelelement.type =='edge'">
+                        <edge-component travelobject="travelelement"></edge-component>
                     </div>
 
                 </div>
-                <div class=" node-add node" ng-show="plan.traveljson.sequenceOfNodes.length >=3">
+                <div class=" node-add node" ng-show="plan.travelPlanObject.length >=3">
                     <div class=" glyphicon glyphicon-plus" ng-click="plan.addNode()"></div>
                 </div>
-                <div class=" node-add node" ng-show="plan.traveljson.sequenceOfNodes.length >=5">
+                <div class=" node-add node" ng-show="plan.travelPlanObject.length >=5">
                     <div class="glyphicon glyphicon-minus" ng-click="plan.subNode()"></div>
                 </div>
 

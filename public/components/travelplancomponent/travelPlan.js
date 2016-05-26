@@ -25,11 +25,11 @@
 function travelPlanController() {
 
     var plan = this;
-    plan.travelPlanJSON = {};
+    plan.travelPlanObject = {};
     plan.newNode = {};
     plan.newEdge = {};
     //console.log(FetchService);
-  
+
 
     plan.currentNode = function (id, type) {
 
