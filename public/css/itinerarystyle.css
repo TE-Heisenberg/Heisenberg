@@ -29,11 +29,10 @@
     -webkit-border-radius: 500px;
 }
 
-i.material-icons {
-    
+.itineraryIcon {
     top: 25%;
     left: 25%;
-    color: #333333;
+    color: ;
 }
 /***********horizontal line***********/
 .horizontal {

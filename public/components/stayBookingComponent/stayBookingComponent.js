@@ -1,15 +1,129 @@
 var app = angular.module("app").component("stayBookingComponent", {
-
     templateUrl: "public/components/stayBookingComponent/stayBookingComponent.html",
     controllerAs: "stayBookingCtrl",
     controller: ["$http", stayBookingController]
-
-
 })
 
 function stayBookingController($http)
 {
-  // var stayBookingCtrl=this;
+
+
+  var stayBookingCtrl = this;
+
+  stayBookingCtrl.cardHeading = "Stay/Accomodation";
+
+  stayBookingCtrl.fieldsData = {
+      "stay":[{
+      "area": "Hari Nagar",
+      "preferences": "ac",
+      "checkinDate": "6/30/2016",
+      "checkoutDate": "7/01/2016"
+    }, {
+      "area": "Hari Nagar",
+      "preferences": "ac",
+      "checkinDate": "6/30/2016",
+      "checkoutDate": "7/01/2016"
+    }],
+    "localTravel":[{
+    "area": "Hari Nagar",
+    "preferences": "ac",
+    "checkinDate": "6/30/2016",
+    "checkoutDate": "7/01/2016"
+    },
+     {
+      "area": "Hari Nagar",
+      "preferences": "ac",
+      "checkinDate": "6/30/2016",
+      "checkoutDate": "7/01/2016"
+    }]
+  };
+
+  stayBookingCtrl.fieldsMetaData = {
+    "stay":{
+          "checkinDate":{
+          "mandatory": true,
+          "displayName": "Check-in Date",
+          "id": "checkindate",
+          "type": "date"
+        },
+        "checkoutDate":{
+          "mandatory": true,
+          "displayName": "Check-out Date",
+          "id": "checkoutdate",
+          "type": "date"
+        }
+        ,
+        "preferences":{
+          "mandatory": false,
+          "displayName": "Preferences",
+          "id": "preferences",
+          "type": "singleSelect",
+          "specificAttr":{
+            "domainList":["ac","non-ac"]
+          }
+        },
+          "preferencesss":{
+            "mandatory": false,
+            "displayName": "Preferences",
+            "id": "preferences",
+            "type": "singleSelect",
+            "specificAttr":{
+              "domainList":["ac","non-ac"]
+            }
+           },
+
+            "prefer":{
+              "mandatory": false,
+              "displayName": "Preferences",
+              "id": "preferences",
+              "type": "singleSelect",
+              "specificAttr":{
+                "domainList":["ac","non-ac"]
+              }
+           }
+        }
+    ,
+    "localTravel":{
+      "checkinDate":{
+          "mandatory": true,
+          "displayName": "Check-in Date",
+          "id": "checkindate",
+          "type": "date"
+        },
+        "checkoutDate":{
+          "mandatory": true,
+          "displayName": "Check-out Date",
+          "id": "checkoutdate",
+          "type": "date"
+        }
+        ,
+        "preferences":{
+          "mandatory": false,
+          "displayName": "Preferences",
+          "id": "preferences",
+          "type": "singleSelect",
+          "specificAttr":{
+            "domainList":["ac","non-ac"]
+          }
+        }
+    }
+};
+  stayBookingCtrl.selectedChildren = {
+    "stay":"Stay",
+    "localTravel":"Local Travel"
+  }
+
+  console.log(stayBookingCtrl);
+
+  stayBookingCtrl.onAdd = function() {
+    console.log("Adding something");
+  };
+
+  stayBookingCtrl.onDelete = function(index) {
+    console.log("Deleting index",index);
+  };
+
+
   // stayBookingCtrl.nodeMaster={};
   // console.log("inside stay booking controller");
   //

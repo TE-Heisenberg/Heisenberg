@@ -6,9 +6,9 @@ controller:["$rootScope","$location",mainComponentController],
 $routeConfig: [
 
     {path: '/landingPage',name: 'LandingPageComponent', component: 'landingComponent'},
-    {path: '/travelBooking',name: 'TravelPlanParentComponent', component: 'travelPlanParentComponent' },
+    {path: '/travelBooking',name: 'TravelBookingParentComponent', component: 'travelBookingParentComponent' },
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
-    {path:'/flightSearchResults',name: 'FlightSearchResultsComponent', component: 'flightSearchResultsComponent'},
+    {path:'/flightSearchResults',name: 'FlightSearchResultsParentComponent', component: 'flightSearchResultsParentComponent'},
     {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsComponent'},
     {path:'/hotelSearchResults',name:'HotelSearchResultsParentComponent',component:'hotelSearchResultsParentComponent'},
     {path:'/itinerary',name:'ItineraryComponent',component:'itineraryParentComponent'},
@@ -85,6 +85,6 @@ function mainComponentController($rootScope,$location){
 
      }
 
-    
+
 
 }
