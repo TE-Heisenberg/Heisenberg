@@ -1,6 +1,6 @@
 var app=angular.module("app");
 app.component('resultComponent',{
-  templateUrl:'public/components/trainSearchResultsParentComponent/resultComponent/resultComponent.html',
+  templateUrl:'public/components/trainSearchResultsParentComponent/trainSearchResultsComponent/resultComponent/resultComponent.html',
   controllerAs:'resultComponent',
   controller:resultComponentController,
   bindings:{

@@ -4,25 +4,55 @@
           "label":"Price",
           "id":"price",
           "type":"rangeSlider",
-          "domainList": {
-            "options":{
-            "minValue":300,
-            "maxValue":5000},
-            "maxValue":5000,
-            "minValue":300
-      		}
+          "options": {
+      						"domainList":{
+      							"minValue": 500,
+      	            "maxValue": 5000,
+      	            "options":{
+      	            	"id": "price",
+      	            	"floor": 500,
+      	            	"ceil": 5000,
+      	            	"step": 1,
+      	              "noSwitching": true
+      	          	}
+      						}
+          }
         },
         {
           "label":"Departure Time",
           "id":"departure_time",
           "type":"rangeSlider",
-          "data":["0-6","6-12","12-18","18-24"]
+          "options": {
+      						"domainList":{
+      							"minValue": 0,
+      	            "maxValue": 24,
+      	            "options":{
+      	            	"id": "departure_time",
+      	            	"floor": 0,
+      	            	"ceil": 24,
+      	            	"step": 1,
+      	              "noSwitching": true
+      	          	}
+      						}
+          }
         },
         {
           "label":"Arrival Time",
           "id":"arrival_time",
           "type":"rangeSlider",
-          "data":["0-6","6-12","12-18","18-24"]
+          "options": {
+      						"domainList":{
+      							"minValue": 0,
+      	            "maxValue": 24,
+      	            "options":{
+      	            	"id": "arrival_time",
+      	            	"floor": 0,
+      	            	"ceil": 24,
+      	            	"step": 1,
+      	              "noSwitching": true
+      	          	}
+      						}
+          }
         },
         {
           "label":"Departure Station",

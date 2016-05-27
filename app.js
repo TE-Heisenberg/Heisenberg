@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',index);
-appp.use('/landing',landingHandler);
+app.use('/landing',landingHandler);
 app.use('/booking',bookingPageHandler);
 app.use('/seachResult',searchResultHandler);
 app.use('/itinerary',itineraryHandler);

@@ -1,6 +1,6 @@
-customInputComponentApp.
+angular.module('app').
   component('textBox',{
-    templateUrl: './subCustomComponents/text/nativeContent.html',
+    templateUrl: 'custom-input-component/subCustomComponents/text/nativeContent.html',
     controller: TextBoxCtrl,
     controllerAs: "TextBoxCtrl"
     ,

@@ -1,6 +1,6 @@
 var app=angular.module("app");
 app.component('trainSearchResultsComponent',{
-  templateUrl:'public/components/trainSearchResultsParentComponent/trainSearchResultsComponent.html',
+  templateUrl:'public/components/trainSearchResultsParentComponent/trainSearchResultsComponent/trainSearchResultsComponent.html',
   controllerAs:'trainSearchResults',
   controller:trainSearchResultsController
 
@@ -11,9 +11,7 @@ function trainSearchResultsController($http,$filter) {
   trainSearchResults.range=300;
   trainSearchResults.check=false;
   trainSearchResults.sortIcon=true;
-  trainSearchResults.all={
-    price:300
-  }
+
   $http.get('public/data/trainInfo.json').success(function(data){
 
       trainSearchResults.list=data.trainResult;
@@ -86,14 +84,13 @@ function trainSearchResultsController($http,$filter) {
   };
   trainSearchResults.selectedFilters={};
   trainSearchResults.reflectValue=function(keyString,value, id){
-    if(id==="price"){
-      return trainSearchResults.onSliderChange(id,value);
-    }
-    if(id==="departure_time" || id==="arrival_time"){
-      return trainSearchResults.onTimeChange(id,value);
-    }
-    console.log("in reflectValue");
+    // if(id==="price"){
+    //   return trainSearchResults.onSliderChange(id,value);
+    // }
 
+    console.log("in reflectValue");
+    console.log(id);
+    console.log(value);
     trainSearchResults.selectedFilters[id]=value;
     selectedFilters=trainSearchResults.selectedFilters;
     var afterFilter=[];

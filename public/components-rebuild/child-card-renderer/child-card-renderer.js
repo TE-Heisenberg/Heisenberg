@@ -12,8 +12,6 @@ var app = angular.module("app").component("childCardRenderer", {
 function childCardRendererCtrl()
 {
 
-
-
   var childCardRenderer = this;
   console.log("Inside childCardRenderer");
   console.log(childCardRenderer);
