@@ -33,15 +33,15 @@
 		"options": {
 						"domainList":{
 							"minValue": 2500,
-	                        "maxValue": 9500,
-	                        "options":{
-	                        	"id": "price",
-	                        	"floor": 2000,
-	                        	"ceil": 10000,
-	                        	"step": 1,
-	                        	"noSwitching": true
-	                    	}
-	                    }
-        }	
+	            "maxValue": 9500,
+	            "options":{
+	            	"id": "price",
+	            	"floor": 2000,
+	            	"ceil": 10000,
+	            	"step": 1,
+	              "noSwitching": true
+	          	}
+						}
+    }
 	}
 ]
