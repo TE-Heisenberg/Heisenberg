@@ -6,7 +6,8 @@ angular.module('app')
        bindings: {
          chidrenFieldsData: "<",
          childrenFieldsMetaData: "<",
-         selectedChildren: "<"
+         selectedChildren: "<",
+         childrenLabels: "<"
        }
     });
 function childrenRendererController() {
