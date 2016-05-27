@@ -1,5 +1,23 @@
 [
 	{
+		"id":"price",
+		"type":"rangeSlider",
+		"label":"Price:",
+		"options": {
+						"domainList":{
+							"minValue": 2500,
+	                        "maxValue": 9500,
+	                        "options":{
+	                        	"id": "price",
+	                        	"floor": 2000,
+	                        	"ceil": 10000,
+	                        	"step": 1,
+	                        	"noSwitching": true
+	                    	}
+	                    }
+        }	
+	},
+	{
 		"id": "rating",
 		"type": "checkBox",
 		"label": "Ratings:",
@@ -24,24 +42,7 @@
 		"options": {
 			"domainList": ["Wifi", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
 		}
-	},
-
-	{
-		"id":"price",
-		"type":"rangeSlider",
-		"label":"Price:",
-		"options": {
-						"domainList":{
-							"minValue": 2500,
-	                        "maxValue": 9500,
-	                        "options":{
-	                        	"id": "price",
-	                        	"floor": 2000,
-	                        	"ceil": 10000,
-	                        	"step": 1,
-	                        	"noSwitching": true
-	                    	}
-	                    }
-        }	
 	}
+
+	
 ]
