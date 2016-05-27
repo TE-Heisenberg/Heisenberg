@@ -42,40 +42,246 @@ function travelBookingParentCtrl () {
 
   };
 
-
+  travelBookingParentCtrl.travelPlanExists = true;
   if(travelBookingParentCtrl.travelPlanExists)
   {
-    //PG: 19th May- Getting all the fields data needed to render the forms
+    // PG: 19th May- Getting all the fields data needed to render the forms
     // var elementFields = {
     //   "node": dataUpdateHelper.getNodes(),
     //   "edge": dataUpdateHelper.getEdges()
     // }
 
+    travelBookingParentCtrl.elementFields = {
+      "node": {
+        "essential": {
+          "noDependencyData":{
+            "location": {
+              "mandatory": true,
+              "displayName": "City",
+              "id": "location",
+              "type": "text"
+            }
+          },
+          "modesToSelectTheServices": {
+            "basicServices":{
+              "mandatory": false,
+              "displayName": "Select Basic Services",
+              "id": "selectedServices",
+              "type": "checkBox",
+              "specificAttr":{
+                "domainList": {"stay":"Stay","localTravel":"Local Travel"}
+                // "domainList":[{"serviceId":"stay", "serviceDisplayName": "Stay"},{"serviceId":"localTravel", "serviceDisplayName": "Local Travel"}],
+                // "listLabelKey": "serviceId",
+                // "listLabelValue": "serviceDisplayName"
+              },
+
+            }
+          }
+        },
+        "services": {
+          "stay":{
+                      "travelDate":{
+                      "mandatory": true,
+                      "displayName": "Some Good Travel date",
+                      "id": "checkindate",
+                      "type": "date"
+                    },
+                    "someOtherDate":{
+                    "mandatory": true,
+                    "displayName": "Travel date",
+                    "id": "checkindate",
+                    "type": "date"
+                  },
+                  "checkinDate":{
+                  "mandatory": true,
+                  "displayName": "Check-in Date",
+                  "id": "checkindate",
+                  "type": "date"
+                },
+                "checkoutDate":{
+                  "mandatory": true,
+                  "displayName": "Check-out Date",
+                  "id": "checkoutdate",
+                  "type": "date"
+                }
+                ,
+                "preferences":{
+                  "mandatory": false,
+                  "displayName": "Preferences",
+                  "id": "preferences",
+                  "type": "singleSelect",
+                  "specificAttr":{
+                    "domainList":["ac","non-ac"]
+                  }
+                },
+                  "preferencesss":{
+                    "mandatory": false,
+                    "displayName": "Preferences",
+                    "id": "preferences",
+                    "type": "singleSelect",
+                    "specificAttr":{
+                      "domainList":["ac","non-ac"]
+                    }
+                   },
+
+                    "prefer":{
+                      "mandatory": false,
+                      "displayName": "Preferences",
+                      "id": "preferences",
+                      "type": "singleSelect",
+                      "specificAttr":{
+                        "domainList":["ac","non-ac"]
+                      }
+                   }
+                }
+            ,
+            "localTravel":{
+              "checkinDate":{
+                  "mandatory": true,
+                  "displayName": "Check-in Date",
+                  "id": "checkindate",
+                  "type": "date"
+                },
+                "checkoutDate":{
+                  "mandatory": true,
+                  "displayName": "Check-out Date",
+                  "id": "checkoutdate",
+                  "type": "date"
+                }
+                ,
+                "preferences":{
+                  "mandatory": false,
+                  "displayName": "Preferences",
+                  "id": "preferences",
+                  "type": "singleSelect",
+                  "specificAttr":{
+                    "domainList":["ac","non-ac"]
+                  }
+                }
+            }
+        }
+      },
+      "edge": {
+        "essential": {
+          "noDependencyData":{
+            "location": {
+              "mandatory": true,
+              "displayName": "Cityy",
+              "id": "location",
+              "type": "text"
+            }
+          },
+          "modesToSelectTheServices": {
+            "basicServices":{
+              "mandatory": false,
+              "displayName": "Select Basic Services",
+              "id": "selectedServices",
+              "type": "checkBox",
+              "specificAttr":{
+                "domainList": {"stay":"Jagah","localTravel":"sthaaneey parivahan"}
+                // "domainList":[{"serviceId":"stay", "serviceDisplayName": "Stay"},{"serviceId":"localTravel", "serviceDisplayName": "Local Travel"}],
+                // "listLabelKey": "serviceId",
+                // "listLabelValue": "serviceDisplayName"
+              },
+
+            }
+          }
+        },
+        "services": {
+          "stay":{
+                      "travelDate":{
+                      "mandatory": true,
+                      "displayName": "Some Good Travel date",
+                      "id": "checkindate",
+                      "type": "date"
+                    },
+                    "someOtherDate":{
+                    "mandatory": true,
+                    "displayName": "Travel date",
+                    "id": "checkindate",
+                    "type": "date"
+                  },
+                  "checkinDate":{
+                  "mandatory": true,
+                  "displayName": "Check-in Date",
+                  "id": "checkindate",
+                  "type": "date"
+                },
+                "checkoutDate":{
+                  "mandatory": true,
+                  "displayName": "Check-out Date",
+                  "id": "checkoutdate",
+                  "type": "date"
+                }
+                ,
+                "preferences":{
+                  "mandatory": false,
+                  "displayName": "Preferences",
+                  "id": "preferences",
+                  "type": "singleSelect",
+                  "specificAttr":{
+                    "domainList":["ac","non-ac"]
+                  }
+                },
+                  "preferencesss":{
+                    "mandatory": false,
+                    "displayName": "Preferences",
+                    "id": "preferences",
+                    "type": "singleSelect",
+                    "specificAttr":{
+                      "domainList":["ac","non-ac"]
+                    }
+                   },
+
+                    "prefer":{
+                      "mandatory": false,
+                      "displayName": "Preferences",
+                      "id": "preferences",
+                      "type": "singleSelect",
+                      "specificAttr":{
+                        "domainList":["ac","non-ac"]
+                      }
+                   }
+                }
+            ,
+            "localTravel":{
+              "checkinDate":{
+                  "mandatory": true,
+                  "displayName": "Check-in Date",
+                  "id": "checkindate",
+                  "type": "date"
+                },
+                "checkoutDate":{
+                  "mandatory": true,
+                  "displayName": "Check-out Date",
+                  "id": "checkoutdate",
+                  "type": "date"
+                }
+                ,
+                "preferences":{
+                  "mandatory": false,
+                  "displayName": "Preferences",
+                  "id": "preferences",
+                  "type": "singleSelect",
+                  "specificAttr":{
+                    "domainList":["ac","non-ac"]
+                  }
+                }
+            }
+        }
+      }
+
+    };
+    travelBookingParentCtrl.tempCurrentObj = {
+      "essential": {
+      },
+      "childServices": {},
+      "type": "node",
+      "state": "initial"
+    };
+    travelBookingParentCtrl.tempSelectedChildren = ["stay", "localTravel"];
   };
 
-  //PG: 19th May- This function will be called when there will be a change in the travel-plan state.
-  travelBookingParentCtrl.updateCurrentState = function(elementId,elementType, childState) {
-    travelBookingParentCtrl.state = "travelPlanForm";
-    travelBookingParentCtrl.currentElement = elementType;
-    travelBookingParentCtrl.currentElementId = elementId;
-    if(childState != undefined) {
-      travelBookingParentCtrl.childState = childState;
-      travelBookingParentCtrl.state = "child";
-    }
-
-    travelBookingParentCtrl.currentFormData = dataUpdateHelper.getElementData(travelBookingParentCtrl.currentElement,travelBookingParentCtrl.currentElementId);
-
-    travelBookingParentCtrl.currentFormFieldsData =  elementFields[travelBookingParentCtrl.currentElement];
-
-  };
-
-
-  travelBookingParentCtrl.essentialFieldsUpdate = function(fieldId, essentialFieldsValues ) {
-   // dataUpdateHelper.essentialFieldsUpdate(travelBookingParentCtrl.currentElement, travelBookingParentCtrl.currentElementId, fieldId, essentialFieldsValues);
- };
-  travelBookingParentCtrl.childServicesFormUpdate = function(childServicesFormValues, childServiceId, fieldId) {
-    //dataUpdateHelper.childServicesFormUpdate(travelBookingParentCtrl.currentElement, travelBookingParentCtrl.currentElementId, childServiceId, fieldId, childServicesFormValues);
-  };
 
 
 }

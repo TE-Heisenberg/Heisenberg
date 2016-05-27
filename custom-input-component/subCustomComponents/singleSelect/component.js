@@ -1,5 +1,5 @@
-  angular.module('app').
-  component('singleSelectBox',{
+angular.module('app')
+  .component('singleSelectBox',{
     templateUrl: 'custom-input-component/subCustomComponents/singleSelect/nativeContent.html',
     controller:singleSelectBoxCtrl,
     controllerAs: 'singleSelectBoxCtrl',
@@ -20,19 +20,27 @@ function singleSelectBoxCtrl()
   console.log(singleSelectBoxCtrl.specificAttr);
   console.log(this);
   this.reflectValue = function(value) {
+    console.log("#############");
     console.log(value);
+
     this.reflectComponent({value:value});
 
   };
   console.log("Inside controller of single select");
 
   console.log(singleSelectBoxCtrl.specificAttr);
-  if(singleSelectBoxCtrl.specificAttr.domainList.length>0) {
-    if(singleSelectBoxCtrl.specificAttr.domainList[0].constructor === Object)
-      singleSelectBoxCtrl.listDataType="object";
-    else {
-      singleSelectBoxCtrl.listDataType="element";
+  if (singleSelectBoxCtrl.specificAttr.domainList.constructor === Object) {
+    singleSelectBoxCtrl.listType = "object"
+  }
+  else {
+    singleSelectBoxCtrl.listType = "array"
+    if(singleSelectBoxCtrl.specificAttr.domainList.length>0) {
+      if(singleSelectBoxCtrl.specificAttr.domainList[0].constructor === Object)
+        singleSelectBoxCtrl.listDataType="objectWithCustomKeys";
+      else {
+        singleSelectBoxCtrl.listDataType="element";
 
+      }
     }
   }
 

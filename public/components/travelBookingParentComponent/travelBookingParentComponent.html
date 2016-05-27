@@ -1,9 +1,17 @@
 <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"  edgetype=" transit" currentnodeedge=" travelBookingCtrl.currentnodeedge(index,type)">
 
 </travel-plan>
-<travel-booking current-form-data="travelBookingParentCtrl.currentFormData"
+<!-- Before Travel Booking comment start
+{{travelBookingParentCtrl.tempCurrentObj}}
+{{travelBookingParentCtrl.elementFields}}
+Before Travel Booking comment end -->
+<travel-booking current-selected-obj="travelBookingParentCtrl.tempCurrentObj" meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.tempCurrentObj.type]" current-selected-children="travelBookingParentCtrl.tempSelectedChildren">
+
+</travel-booking>
+
+<!-- <travel-booking current-form-data="travelBookingParentCtrl.currentFormData"
                             current-form-fields-data="travelBookingParentCtrl.currentFormFieldsData"
                             essential-fields-update="travelBookingParentCtrl.essentialFieldsUpdate(fieldId, essentialFieldsValues)"
                             child-services-form-update="travelBookingParentCtrl.childServicesFormUpdate(childServiceId, fieldId, childServicesFormValues)">
 
-</travel-booking>
+</travel-booking> -->

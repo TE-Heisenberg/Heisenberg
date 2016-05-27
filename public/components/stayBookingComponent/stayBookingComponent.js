@@ -41,9 +41,15 @@ function stayBookingController($http)
 
   stayBookingCtrl.fieldsMetaData = {
     "stay":{
-              "some other date":{
+                "travelDate":{
+                "mandatory": true,
+                "displayName": "Some Good Travel date",
+                "id": "checkindate",
+                "type": "date"
+              },
+              "someOtherDate":{
               "mandatory": true,
-              "displayName": "Some other date",
+              "displayName": "Travel date",
               "id": "checkindate",
               "type": "date"
             },

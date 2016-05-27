@@ -10,24 +10,28 @@ var app = angular.module("app").component("essentialFieldsRenderer", {
 });
 
 
-function arrayUnique(array) {
-    var a = array.concat();
-    for(var i=0; i<a.length; ++i) {
-        for(var j=i+1; j<a.length; ++j) {
-            if(a[i] === a[j])
-                a.splice(j--, 1);
-        }
-    }
-
-    return a;
-}
-
 function essentialFieldsRendererCtrl()
 {
   var essentialFieldsRenderer = this;
   console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4");
   console.log('I am inside essentialFieldsRendererCtrl');
-  console.log();
+  console.log(essentialFieldsRenderer);
+
+  essentialFieldsRenderer.arrayUnique = function(array) {
+      var a = array.concat();
+      for(var i=0; i<a.length; ++i) {
+          for(var j=i+1; j<a.length; ++j) {
+              if(a[i] === a[j])
+                  a.splice(j--, 1);
+          }
+      }
+
+      return a;
+  }
+
+
+
+
   essentialFieldsRenderer.metaDataofNoDependencyfields = essentialFieldsRenderer.metaDataOfEssentialFields.noDependencyData;
 
 
@@ -60,7 +64,7 @@ function essentialFieldsRendererCtrl()
         essentialFieldsRenderer.essentialFieldsData[noDnoDependencyField] = [essentialFieldsRenderer.essentialFieldsData[nonoDependencyField]];
       }
       noDependencyDataValues = [];
-      noDependencyDataValues = arrayUnique(noDependencyDataValues.concat(essentialFieldsRenderer.essentialFieldsData[noDependencyField]));
+      noDependencyDataValues = essentialFieldsRenderer.arrayUnique(noDependencyDataValues.concat(essentialFieldsRenderer.essentialFieldsData[noDependencyField]));
 
       console.log("Before reflection");
       console.log(noDependencyDataValues);

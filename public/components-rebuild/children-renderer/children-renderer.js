@@ -4,7 +4,7 @@ angular.module('app')
        controller: childrenRendererController,
        controllerAs: "childrenRenderer",
        bindings: {
-         chidrenFieldsData: "<",
+         childrenFieldsData: "<",
          childrenFieldsMetaData: "<",
          selectedChildren: "<",
          childrenLabels: "<"
@@ -12,4 +12,14 @@ angular.module('app')
     });
 function childrenRendererController() {
   var childrenRenderer = this;
+  console.log("&*&*&*&* I am inside childrenRendererController");
+  console.log(childrenRenderer);
+  childrenRenderer.selectedChildren.forEach(function(childId)
+   {
+    if(childrenRenderer.childrenFieldsData[childId] === undefined){
+      childrenRenderer.childrenFieldsData[childId] = [{}];
+    }
+  });
+
+
 }
