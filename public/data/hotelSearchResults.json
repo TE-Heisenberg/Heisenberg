@@ -15,7 +15,7 @@
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
-	"price": "Rs. 5400/day",
+	"price": 5400,
 	"imageUrl": "public/assets/images/1.jpg"
 },
 {
@@ -33,7 +33,7 @@
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
-	"price": "Rs. 1700/day",
+	"price": 1700,
 	"imageUrl": "public/assets/images/2.jpg"
 },
 {
@@ -51,7 +51,7 @@
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
-	"price": "Rs. 3000/day",
+	"price": 3000,
 	"imageUrl": "public/assets/images/3.jpg"
 },
 {
@@ -69,7 +69,7 @@
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
-	"price": "Rs. 4300/day",
+	"price": 4300,
 	"imageUrl": "public/assets/images/4.jpg"
 },
 {
@@ -87,7 +87,7 @@
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
-	"price": "Rs. 2500/day",
+	"price": 2500,
 	"imageUrl": "public/assets/images/5.jpg"
 },
 {
@@ -105,7 +105,7 @@
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
-	"price": "Rs. 4700/day",
+	"price": 4700,
 	"imageUrl": "public/assets/images/6.jpg"
 },
 {
@@ -123,7 +123,7 @@
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
-	"price": "Rs. 3500/day",
+	"price": 3500,
 	"imageUrl": "public/assets/images/7.jpg"
 },
 {
@@ -141,7 +141,7 @@
 					"iconCode": "time_to_leave",
 					"name": "Parking"
 				}],
-	"price": "Rs. 7000/day",
+	"price": 7000,
 	"imageUrl": "public/assets/images/8.jpg"
 }
 ]
