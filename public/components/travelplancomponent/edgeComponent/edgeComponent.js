@@ -18,7 +18,9 @@ function edgeController() {
     var edge = this;
 
     edge.selectededge = function (indexid,type) {
-        edge.currentnodeedgetravel({'index': indexid, 'type': type});
+      console.log("Node is clicked");
+      console.log({'index':indexid,'type':type});
+        edge.currentnodeedgetravel({clicked:{'index':indexid,'type':type }});
     }
 
 }

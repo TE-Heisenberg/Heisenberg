@@ -22,7 +22,8 @@ function nodeController($timeout, $q) {
     // selectedAutocompleteData=null;
     node.selectednode=function(indexid,type){
       console.log("Node is clicked");
-      node.currentnodeedgetravel({'index':indexid,'type':type });
+      console.log({'index':indexid,'type':type});
+      node.currentnodeedgetravel({clicked:{'index':indexid,'type':type }});
     };
     node.show_autocomplete=function(){
         if(node.edit==true)
