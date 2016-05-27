@@ -32,15 +32,16 @@
 		"label":"Price:",
 		"options": {
 						"domainList":{
-							"minValue": 20,
-	                        "maxValue": 80,
-	                        "options":{
-	                        	"floor": 5,
-	                        	"ceil": 95,
-	                        	"step": 1,
-	                        	"noSwitching": true
-	                    	}
-	                    }
-        }	
+							"minValue": 2500,
+	            "maxValue": 9500,
+	            "options":{
+	            	"id": "price",
+	            	"floor": 2000,
+	            	"ceil": 10000,
+	            	"step": 1,
+	              "noSwitching": true
+	          	}
+						}
+    }
 	}
 ]

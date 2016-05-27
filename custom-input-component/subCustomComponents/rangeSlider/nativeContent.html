@@ -1,2 +1,7 @@
 <label>{{rangeSliderCtrl.label}}</label>
+<br>
+<span ng-bind="rangeSliderCtrl.domainList.minValue"></span>
+<span ng-bind="rangeSliderCtrl.domainList.maxValue"></span>
+
+<br>
 <rzslider rz-slider-model="rangeSliderCtrl.domainList.minValue" rz-slider-high="rangeSliderCtrl.domainList.maxValue" rz-slider-options="rangeSliderCtrl.domainList.options"></rzslider>

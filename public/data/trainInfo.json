@@ -1,39 +1,74 @@
 {
   "filters":[
         {
-          "Displayname":"Price",
-          "attribute":"price",
-          "mandatory":true,
-          "type":"slider",
-          "data":{"min":300,"max":5000}
+          "label":"Price",
+          "id":"price",
+          "type":"rangeSlider",
+          "options": {
+      						"domainList":{
+      							"minValue": 500,
+      	            "maxValue": 5000,
+      	            "options":{
+      	            	"id": "price",
+      	            	"floor": 500,
+      	            	"ceil": 5000,
+      	            	"step": 1,
+      	              "noSwitching": true
+      	          	}
+      						}
+          }
         },
         {
-          "Displayname":"Departure Time",
-          "attribute":"departure_time",
-          "mandatory":true,
-          "type":"button",
-          "data":["0-6","6-12","12-18","18-24"]
+          "label":"Departure Time",
+          "id":"departure_time",
+          "type":"rangeSlider",
+          "options": {
+      						"domainList":{
+      							"minValue": 0,
+      	            "maxValue": 24,
+      	            "options":{
+      	            	"id": "departure_time",
+      	            	"floor": 0,
+      	            	"ceil": 24,
+      	            	"step": 1,
+      	              "noSwitching": true
+      	          	}
+      						}
+          }
         },
         {
-          "Displayname":"Arrival Time",
-          "attribute":"arrival_time",
-          "mandatory":true,
-          "type":"button",
-          "data":["0-6","6-12","12-18","18-24"]
+          "label":"Arrival Time",
+          "id":"arrival_time",
+          "type":"rangeSlider",
+          "options": {
+      						"domainList":{
+      							"minValue": 0,
+      	            "maxValue": 24,
+      	            "options":{
+      	            	"id": "arrival_time",
+      	            	"floor": 0,
+      	            	"ceil": 24,
+      	            	"step": 1,
+      	              "noSwitching": true
+      	          	}
+      						}
+          }
         },
         {
-          "Displayname":"Departure Station",
-          "attribute":"departure_station",
-          "mandatory":true,
+          "label":"Departure Station",
+          "id":"departure_station",
           "type":"checkbox",
-          "data":["Banglore city JN","Yeshwanthpur"]
+          "options": {
+      			"domainList": ["Banglore city JN","Yeshwanthpur","Yellanka"]
+      		}
         },
         {
-          "Displayname":"Arrival Station",
-          "attribute":"arrival_station",
-          "mandatory":true,
+          "label":"Arrival Station",
+          "id":"arrival_station",
           "type":"checkbox",
-          "data":["Kacheguda JN","Secundrabad"]
+          "options": {
+      			"domainList": ["Kacheguda JN","Secundrabad"]
+      		}
         }
       ]
   ,
@@ -46,8 +81,8 @@
                   "duration":"13:00 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"2420",
-                  "departure_station":"Banglore city JN",
-                  "arrival_station":"Secundrabad"
+                  "departure_station":["Banglore city JN","Yellanka"],
+                  "arrival_station":["Secundrabad"]
                   },
                   {
                   "trainNo":"17604",
@@ -57,8 +92,8 @@
                   "duration":"13:30 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"2345",
-                  "departure_station":"Yeshwanthpur",
-                  "arrival_station":"Secundrabad"
+                  "departure_station":["Yeshwanthpur","Yellanka"],
+                  "arrival_station":["Secundrabad"]
                   },
                   {
                   "trainNo":"12649",
@@ -68,8 +103,8 @@
                   "duration":"10:20 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"2270",
-                  "departure_station":"Banglore city JN",
-                  "arrival_station":"Kacheguda JN"
+                  "departure_station":["Banglore city JN"],
+                  "arrival_station":["Kacheguda JN"]
                   },
                   {
                   "trainNo":"11111",
@@ -79,8 +114,8 @@
                   "duration":"33:33 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"4444",
-                  "departure_station":"Banglore city JN",
-                  "arrival_station":"Kacheguda JN"
+                  "departure_station":["Banglore city JN"],
+                  "arrival_station":["Kacheguda JN"]
                   },
                   {
                   "trainNo":"22222",
@@ -90,8 +125,8 @@
                   "duration":"10:20 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"2989",
-                  "departure_station":"Banglore city JN",
-                  "arrival_station":"Kacheguda JN"
+                  "departure_station":["Banglore city JN"],
+                  "arrival_station":["Kacheguda JN"]
                   },
                   {
                   "trainNo":"33333",
@@ -101,8 +136,8 @@
                   "duration":"10:20 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"3333",
-                  "departure_station":"Banglore city JN",
-                  "arrival_station":"Kacheguda JN"
+                  "departure_station":["Banglore city JN"],
+                  "arrival_station":["Kacheguda JN"]
                   }
                   ,
                   {
@@ -113,8 +148,8 @@
                   "duration":"10:20 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"3434",
-                  "departure_station":"Yeshwanthpur",
-                  "arrival_station":"Kacheguda JN"
+                  "departure_station":["Yeshwanthpur"],
+                  "arrival_station":["Kacheguda JN"]
                   },
                   {
                   "trainNo":"66666",
@@ -124,8 +159,8 @@
                   "duration":"10:20 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"1270",
-                  "departure_station":"Banglore city JN",
-                  "arrival_station":"Kacheguda JN"
+                  "departure_station":["Banglore city JN"],
+                  "arrival_station":["Kacheguda JN"]
                   },
                   {
                   "trainNo":"99999",
@@ -135,8 +170,8 @@
                   "duration":"10:20 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"0370",
-                  "departure_station":"Yeshwanthpur",
-                  "arrival_station":"Kacheguda JN"
+                  "departure_station":["Yeshwanthpur"],
+                  "arrival_station":["Kacheguda JN"]
                   },
                   {
                   "trainNo":"33349",
@@ -146,8 +181,8 @@
                   "duration":"10:20 hr",
                   "Availability":"RLWL5/WL1",
                   "price":"3740",
-                  "departure_station":"Banglore city JN",
-                  "arrival_station":"Kacheguda JN"
+                  "departure_station":["Banglore city JN"],
+                  "arrival_station":["Kacheguda JN"]
                   }
 
                 ]

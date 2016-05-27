@@ -9,7 +9,7 @@ $routeConfig: [
     {path: '/travelBooking',name: 'TravelBookingParentComponent', component: 'travelBookingParentComponent' },
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
     {path:'/flightSearchResults',name: 'FlightSearchResultsParentComponent', component: 'flightSearchResultsParentComponent'},
-    {path:'/trainSearchResults',name:'TrainSearchResultsComponent',component:'trainSearchResultsParentComponent'},
+    {path:'/trainSearchResults',name:'TrainSearchResultsParentComponent',component:'trainSearchResultsParentComponent'},
     {path:'/hotelSearchResults',name:'HotelSearchResultsParentComponent',component:'hotelSearchResultsParentComponent'},
     {path:'/itinerary',name:'ItineraryComponent',component:'itineraryParentComponent'},
     {path:'/**',redirectTo:["LandingPageComponent"]}

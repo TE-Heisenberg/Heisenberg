@@ -6,14 +6,6 @@
 #sidebar md-card{
   margin-bottom:10px;
 }
-.filt_button{
-  display: inline;
-}
-.filt_button button{
-  width: 50px;
-  height:40px;
-  border: none;
-}
 #sidebar md-checkbox{
   margin:0 5px 10px 15px;
 }
@@ -44,6 +36,15 @@ md-card-title{
   padding-left: 5%;
   padding-right: 5%;
 }
+#showMore{
+  display: block;
+  margin-left: 50%;
+}
+#showMore a{
+  cursor: pointer;
+  background-color: white;
+  color: blue;
+}
 #moreDetails{
   border:1px ridge black;
   padding: 10px;
@@ -52,10 +53,12 @@ md-card-title{
 #moreDetails .value{
   font-size: 18px;
 }
+#selectButton{
+  display: block;
+}
 #selectButton button{
   border: none;
   margin-bottom: 2px;
-  display: block;
   background-color: blue;
   color: white;
 }

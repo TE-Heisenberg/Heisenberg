@@ -6,4 +6,4 @@ angular.module('app').component("hotelSearchResultsParentComponent",{
 function hotelSearchResultsParentController($http,$rootScope){
   var hotelSearchResultsParent=this;
 
-    }
+}

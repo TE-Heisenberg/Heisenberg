@@ -14,6 +14,15 @@ function hotelSearchResultsController($http,$rootScope){
 
         $http.get('public/data/hotelSearchResultsFilter.json').success(function(data){
             hotelSearchResults.filters= data;
+            hotelSearchResults.filters.forEach(function(filter){
+                    if(filter.type=='rangeSlider')
+                        filter.options.domainList.options.onEnd= function(id, minValue, maxValue){
+                            hotelSearchResults.selectedFilters[id]= [minValue, maxValue];
+                            console.log(id);
+                            console.log(minValue);
+                            console.log(maxValue);
+                        };
+            });
         });
 
         hotelSearchResults.selectedFilters= {};
@@ -30,19 +39,13 @@ function hotelSearchResultsController($http,$rootScope){
                                         ceil: 95,
                                         step: 1,
                                         noSwitching: true,
-                                        onStart: function(id) {
-                                            console.log('on start ' + id); // logs 'on start slider-id'
-                                        },
-                                        onChange: function(id) {
-                                            console.log('on change ' + id); // logs 'on change slider-id'
-                                        },
-                                        onEnd: function(id) {
-                                            console.log('on end ' + id); // logs 'on end slider-id'
-                                        }
+                                        // onStart: hotelSearchResults.reflect,
+                                        // onChange: hotelSearchResults.reflect,
+                                        // onEnd: hotelSearchResults.reflect
                             }
             }
         }
-    }
+    };
 
     hotelSearchResults.reflectValue = function(keyString, value, id) {
         console.log("Inside Reflect Value");
@@ -55,7 +58,7 @@ function hotelSearchResultsController($http,$rootScope){
     };
 
     hotelSearchResults.reflect= function(keyString, value, id) {
-        console.log("Inside Reflect Value");
+        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         console.log(keyString);
         console.log(value);
         console.log(id);
@@ -67,12 +70,21 @@ function hotelSearchResultsController($http,$rootScope){
     hotelSearchResults.applyFilters= function(searchResult){
         var counter=0;
         for (filter in hotelSearchResults.selectedFilters){
-            hotelSearchResults.selectedFilters[filter].forEach(function(filterValue){
-                if(filterValue==searchResult[filter]){
-                    counter++;
-                    return;
-                }
-            });
+            if(filter=='price'){
+                if(hotelSearchResults.selectedFilters[filter][0]<=searchResult[filter] && hotelSearchResults.selectedFilters[filter][1]>=searchResult[filter]){
+                        console.log('if called');
+                        counter++;
+                        console.log(counter);
+                    }
+            }
+            else{
+                hotelSearchResults.selectedFilters[filter].forEach(function(filterValue){
+                    if(filterValue==searchResult[filter]){
+                        counter++;
+                        return;
+                    }
+                });
+            }
         }
         if(counter== Object.keys(hotelSearchResults.selectedFilters).length) return true;
         else return false;

@@ -7,9 +7,9 @@ var app = angular.module("app").component("edgeComponent", {
     controllerAs: "edge",
     controller: edgeController,
     bindings: {
-        'edgeid': '<',
-        'travelobject': '<',
-        'currentNode': '&'
+        'travelelement': '<',
+        'currentedge':'<',
+        'currentnodeedgetravel':'&'
     }
 });
 
@@ -17,9 +17,8 @@ function edgeController() {
 
     var edge = this;
 
-    edge.currentNodeChild = function (nodeid, type) {
-        edge.currentNode({'id': nodeid, 'type': type});
+    edge.selectededge = function (indexid,type) {
+        edge.currentnodeedgetravel({'index': indexid, 'type': type});
     }
-
 
 }

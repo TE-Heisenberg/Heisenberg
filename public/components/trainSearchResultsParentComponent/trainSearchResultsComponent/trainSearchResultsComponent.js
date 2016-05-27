@@ -34,13 +34,10 @@ function trainSearchResultsController($http,$filter) {
       //trainSearchResults.previousData=array1;
   };
 
-  // trainSearchResults.onPriceChange=function(range) {
-  //   trainSearchResults=this;
-  //   trainSearchResults.range=range;
-  // };
 
 
-  trainSearchResults.onPriceChange=function(attribute,range){
+
+  trainSearchResults.onSliderChange=function(attribute,range){
     console.log(attribute+"     "+range);
       trainSearchResults.data=trainSearchResults.list;
       var array1=[];
@@ -85,5 +82,58 @@ function trainSearchResultsController($http,$filter) {
     }
     //trainSearchResults.previousData=trainSearchResults.data;
   };
+  trainSearchResults.selectedFilters={};
+  trainSearchResults.reflectValue=function(keyString,value, id){
+    // if(id==="price"){
+    //   return trainSearchResults.onSliderChange(id,value);
+    // }
 
+    console.log("in reflectValue");
+    console.log(id);
+    console.log(value);
+    trainSearchResults.selectedFilters[id]=value;
+    selectedFilters=trainSearchResults.selectedFilters;
+    var afterFilter=[];
+    count=0;
+    for (variable in selectedFilters) {
+      if(selectedFilters[variable].length==0){
+        count++;
+      }
+    }
+    if(count==Object.keys(selectedFilters).length ){
+        trainSearchResults.data=trainSearchResults.previousData;
+        count=0;
+    }
+    else{
+       trainSearchResults.data=trainSearchResults.previousData;
+       var array=trainSearchResults.data;
+
+       for(train of array) {
+         countids=0;
+         for (id in selectedFilters) {
+           countvalues=0;
+           for(filter in selectedFilters[id]){
+             for (station of train[id]) {
+               //console.log(station);
+               if(station===selectedFilters[id][filter]){
+                 countvalues++;
+               }
+             }
+
+           }
+           if(countvalues==selectedFilters[id].length){
+
+             countids++;
+           }
+         }
+
+         if(countids==Object.keys(selectedFilters).length){
+
+           afterFilter.push(train);
+         }
+       }
+       trainSearchResults.data=afterFilter;
+      //  trainSearchResults.previousData=trainSearchResults.data;
+   }
+  }
 };
