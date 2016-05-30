@@ -60,7 +60,7 @@
 
     <!--components-->
     <script src="public/components/mainComponent/mainComponent.js"></script>
-    <script src="public/components/travelplancomponent/travelPlan.js"></script>
+    <script src="public/components/travelplancomponent/travelPlan.crud.js"></script>
     <script src="public/components/travelPlanParentComponent/travelPlanParentComponent.js"></script>
     <script src="public/components/travelPlanFormComponent/travelPlanFormComponent.js"></script>
     <script src="public/components/travelplancomponent/nodeComponent/nodeComponent.js"></script>
@@ -213,7 +213,7 @@
 
     <!--components-->
     <script src="public/components/mainComponent/mainComponent.js"></script>
-    <script src="public/components/travelplancomponent/travelPlan.js"></script>
+    <script src="public/components/travelplancomponent/travelPlan.crud.js"></script>
     <script src="public/components/travelBookingParentComponent/travelBookingParentComponent.js"></script>
     <script src="public/components/travelBookingParentComponent/travelBookingComponent/travelBookingComponent.js"></script>
     <script src="public/components/travelplancomponent/nodeComponent/nodeComponent.js"></script>

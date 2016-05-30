@@ -1,11 +1,33 @@
 var express = require('express');
-var fs=require('fs');
-var bodyParser = require('body-parser');
 var router = express.Router();
+var landingModel = require('../models/landing.model');
 
-router.get('/landingPageData', function(req, res, next) {
-  fs.readFile('/data/landing/landingjson.json',function(err,data){
-    res.json(data);
-  })
+router.get('/myalert', function (req, res, next) {
+
+    landingModel.getMyAlert().then(function (data) {
+        res.send(data);
+    })
+
 });
-module.exports=router;
+router.get('/myfavourities', function (req, res, next) {
+
+    landingModel.getMyFavourites().then(function (data) {
+        res.send(data);
+    });
+
+});
+router.get('/myplans', function (req, res, next) {
+
+    landingModel.getMyPlan().then(function (data) {
+        res.send(data);
+    });
+
+});
+router.get('/myworklist', function (req, res, next) {
+
+    landingModel.getMyWorkList().then(function (data) {
+        res.send(data);
+    });
+
+});
+module.exports = router;
