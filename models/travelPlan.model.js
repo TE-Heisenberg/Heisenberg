@@ -3,8 +3,17 @@
  */
 var Q = require('q');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/TE');
-var db = mongoose.connection;
+var Schema = mongoose.Schema;
+var TravelPlanSchema = mongoose.Schema({
+  travelPlanId:String,
+  components:[{
+  type:String,
+  cityName:{type:String,required:false},
+  essentials:Schema.Types.Mixed,
+  childServices:Schema.Types.Mixed,}]
+});
+var TravelPlan= mongoose.model('TravelPlan', TravelPlanSchema,'TravelPlans_Collection');
+
 
 var services = {};
 
@@ -15,26 +24,49 @@ services.deleteTravelPlan = deleteTravelPlan;
 
 module.escape = services;
 
-function getTravelPlan() {
-    var deferred = Q.defer();
+function getTravelPlan(travelPlanId) {
+      var deferred = Q.defer();
+      TravelPlan.findOne({travelPlanId: travelPlanId})
+                .exec(function(err,data){
+                  travelPlanData = data;
+                   res.json(travelPlanData);
+                 })
 
     return deferred.promise;
 }
 
-function postTravelPlan() {
+function postTravelPlan(travelPlandata) {
     var deferred = Q.defer();
+    var TravelPlandata= new TravelPlan(travelPlandata);
+
+    TravelPlandata.save(function(err){
+      if ( err ) console.log(err);
+      console.log(TravelPlandata.travelPlanId +" Saved Successfully");
+    });
+
 
     return deferred.promise;
 }
 
-function putTravelPlan(d) {
+function putTravelPlan(id,travelPlanNew) {
     var deferred = Q.defer();
-
+     var TravelPlandata= {
+       travelPlanId:id,
+       components:travelPlanNew
+     }
+     TravelPlandata.save(function(err){
+       if ( err ) console.log(err);
+       console.log(TravelPlandata.travelPlanId +" Updated Successfully");
+     });
     return deferred.promise;
 }
 
-function deleteTravelPlan() {
+function deleteTravelPlan(id) {
     var deferred = Q.defer();
-
+    TravelPlan.remove({ travelPlanId: id }, function (err) {
+        if(err)  console.log(err);
+ })
     return deferred.promise;
 }
+
+module.exports=TravelPlan;

@@ -6,30 +6,29 @@ var express = require('express');
 var router = express.Router();
 var travelPlan = require('../models/travelPlan.model');
 
-router.get('/', function (req, res, next) {
-    travelPlan.getTravelPlan().then(function (data) {
+router.get('/travelPlan/:id', function (req, res, next) {
+  var travelPlaId=req.params.id;
+    travelPlan.getTravelPlan(travelPlanId).then(function (data) {
         res.send(data);
     });
 
 });
-router.post('/', function (req, res, next) {
+router.post('/travelPlan', function (req, res, next) {
 
-    travelPlan.postTravelPlan().then(function (data) {
-        res.send(data);
+    travelPlan.postTravelPlan(travelPlandata).then(function () {
+      
     });
 
 });
-router.put('/', function (req, res, next) {
-
-    travelPlan.putTravelPlan().then(function (data) {
-        res.send(data);
+router.put('/travelPlan/:id', function (req, res, next) {
+             var travelPlanId=req.params.id;
+    travelPlan.putTravelPlan(id,travelPlanNew).then(function () {
     });
 
 });
-router.delete('/', function (req, res, next) {
-
-    travelPlan.deleteTravelPlan().then(function (data) {
-        res.send(data);
+router.delete('/travelPlan/:id', function (req, res, next) {
+     var travelPlanId=req.params.id;
+    travelPlan.deleteTravelPlan(travelPlanId).then(function () {
     });
 
 });
