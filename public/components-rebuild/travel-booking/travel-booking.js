@@ -42,7 +42,7 @@ function travelBookingCtrl() {
   for(var mode in travelBooking.metaDataOfEssentialFields.modesToSelectTheServices)
   {
     var modeData = travelBooking.metaDataOfEssentialFields.modesToSelectTheServices[mode];
-    Object.assign(travelBooking.childrenLabels,modeData.specificAttr.domainList )
+    Object.assign(travelBooking.childrenLabels,modeData.specificAttr.domainList)
 
   };
 
