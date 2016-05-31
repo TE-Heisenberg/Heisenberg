@@ -1,4 +1,4 @@
-var customInputComponentApp = angular.module('customInputComponent',["ngMaterial",
+var app = angular.module('app',["ngMaterial",
     "ngAnimate",
     "ngAria",
     "ngMessages",

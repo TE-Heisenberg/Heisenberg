@@ -11,14 +11,22 @@ angular.module('app')
        }
     });
 function childrenRendererController() {
-  var childrenRenderer = this;
+    var childrenRenderer = this;
+  console.log("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}]");
+  console.log("childrenFieldsMetaData");
+console.log(childrenRenderer.childrenFieldsMetaData);
+
   console.log("&*&*&*&* I am inside childrenRendererController");
   console.log(childrenRenderer);
+  console.log(")))))))))))))))))))))))))))))))))))))))))))))))))))");
+  console.log(childrenRenderer.selectedChildren);
   childrenRenderer.selectedChildren.forEach(function(childId)
    {
+     console.log(childId);
     if(childrenRenderer.childrenFieldsData[childId] === undefined){
       childrenRenderer.childrenFieldsData[childId] = [{}];
     }
+    console.log(childrenRenderer.childrenFieldsData[childId]);
   });
 
 

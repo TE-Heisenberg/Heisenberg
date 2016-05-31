@@ -27,7 +27,7 @@ function childFormRendererController() {
         console.log("Case 2");
         break;
       case 3:
-        childFormRenderer.flex = 30;
+        childFormRenderer.flex = 25;
         childFormRenderer.flexOffset = 5;
         console.log("Case 3");
         break;

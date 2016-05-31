@@ -56,12 +56,12 @@ function essentialFieldsRendererCtrl()
       console.log("In the for loop");
       console.log(noDependencyFields);
       console.log(noDependencyField);
-
+      console.log("valu isssssssssssssssssssssssssssssssssss");
       console.log(essentialFieldsRenderer.essentialFieldsData[noDependencyField]);
 
       if (essentialFieldsRenderer.essentialFieldsData[noDependencyField].constructor !== Array) {
 
-        essentialFieldsRenderer.essentialFieldsData[noDnoDependencyField] = [essentialFieldsRenderer.essentialFieldsData[nonoDependencyField]];
+        essentialFieldsRenderer.essentialFieldsData[noDependencyField] = [essentialFieldsRenderer.essentialFieldsData[noDependencyField]];
       }
       noDependencyDataValues = [];
       noDependencyDataValues = essentialFieldsRenderer.arrayUnique(noDependencyDataValues.concat(essentialFieldsRenderer.essentialFieldsData[noDependencyField]));
