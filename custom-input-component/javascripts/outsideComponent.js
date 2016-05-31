@@ -1,4 +1,4 @@
-customInputComponentApp
+angular.module('app')
   .component('outsideComponent',{
     templateUrl: "../views/outsideComponent.html",
     controller: OutsideComponentCtrl
