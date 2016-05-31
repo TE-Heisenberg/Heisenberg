@@ -6,7 +6,7 @@
   <div>{{flightSearchResult.flightSearchResult.arrivalTime}}</div>
   <div>{{flightSearchResult.flightSearchResult.departureTime}}</div>
   <div>{{flightSearchResult.flightSearchResult.duration}}</div>
-  <div>{{flightSearchResult.flightSearchResult.price}}</div>
+  <div>{{flightSearchResult.flightSearchResult.price | currency}}</div>
   <div layout="row" layout-align="center center">
     <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
   </div>

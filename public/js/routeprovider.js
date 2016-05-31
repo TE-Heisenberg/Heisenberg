@@ -1,8 +1,8 @@
 /**
  * Created by lenovo on 29-04-2016.
  */
- var module=angular.module("app", ["rzModule", "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute", "ngMdIcons", "ngMessages", "mdPickers", "angular-click-outside","ngComponentRouter"]);
- module.run(function ($rootScope, $location) {
+ var module=angular.module("app", ["rzModule", "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute", "ngMdIcons", "ngMessages", "mdPickers", "angular-click-outside","ngComponentRouter", "tmh.dynamicLocale"]);
+ module.run(function ($rootScope, $location, tmhDynamicLocale) {
      $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
          if ($location.path().indexOf('landingPage') > 0) {
            console.log("Hello");
@@ -15,10 +15,17 @@
              console.log($rootScope.landingPage);
          }
 
+         tmhDynamicLocale.set('en-in');
+
      });
 
  });
-    module.value("$routerRootComponent","mainComponent");
+
+ module.config(function(tmhDynamicLocaleProvider) {
+    tmhDynamicLocaleProvider.localeLocationPattern('node_modules/angular/i18n/angular-locale_{{locale}}.js');
+});
+
+module.value("$routerRootComponent","mainComponent");
 
 
 //     .config(function ($routeProvider) {

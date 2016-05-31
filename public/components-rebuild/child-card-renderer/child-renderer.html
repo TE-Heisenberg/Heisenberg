@@ -1,9 +1,0 @@
-<md-card>
-  <md-card-title>
-    {{childCardRenderer.cardHeading}}
-  </md-card-title>
-  <div ng-repeat="childFieldsData in childCardRenderer.arrayOfChildFieldsData">
-    <child-form-renderer index="$index" fields-data="childFieldsData" fields-meta-data="childCardRenderer.metaDataOfChildFields" on-add="childCardRenderer.onAdd()" on-delete="childCardRenderer.onDelete(index)"></child-form-renderer>
-    <md-divider layout-margin></md-divider>
-  </div>
-</md-card>

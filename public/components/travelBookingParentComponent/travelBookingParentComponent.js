@@ -336,7 +336,7 @@ if(travelBookingParentCtrl.travelPlanExists)
     "type": "edge",
     "state": "initial"
   };
-  travelBookingParentCtrl.tempSelectedChildren = ["stay","localTravel"];
+  travelBookingParentCtrl.tempSelectedChildren = ["flight"];
 };
 
 
