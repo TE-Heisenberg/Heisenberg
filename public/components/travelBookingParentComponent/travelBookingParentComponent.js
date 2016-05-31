@@ -248,112 +248,84 @@ if(travelBookingParentCtrl.travelPlanExists)
     },
     "edge": {
       "essential": {
-        "noDependencyData":{
-          "location": {
-            "mandatory": true,
-            "displayName": "Cityy",
-            "id": "location",
-            "type": "text"
+        "noDependencyData": {
+          "travelStartDate": {
+            "mandatory": "true",
+            "displayName": "Travel Start Date",
+            "id": "travelStartDate",
+            "type": "date"
           }
         },
         "modesToSelectTheServices": {
-          "basicServices":{
-            "mandatory": false,
-            "displayName": "Select Basic Services",
-            "id": "selectedServices",
-            "type": "checkBox",
-            "specificAttr":{
-              "domainList": {"stay":"Jagah","localTravel":"sthaaneey parivahan"}
-              // "domainList":[{"serviceId":"stay", "serviceDisplayName": "Stay"},{"serviceId":"localTravel", "serviceDisplayName": "Local Travel"}],
-              // "listLabelKey": "serviceId",
-              // "listLabelValue": "serviceDisplayName"
-            },
+          "mode": {
+            "mandatory": true,
+            "displayName": "Select the mode",
+            "id": "mode",
+            "type": "singleSelect",
+            "specificAttr": {
+              "domainList": ["flight", "bus", "train"]
+            }
 
+          },
+          "extraAddOnsServices": {
+            "mandatory": false,
+            "displayName": "Extra Add-on Services",
+            "id": "extraAddOnsServices",
+            "type": "multiSelect",
+            "specificAttr": {
+              "domainList": ["visaOnArrival", "forex"]
+            }
           }
         }
       },
       "services": {
-        "stay":{
-          "travelDate":{
+        "flight": {
+          "travelStartDate": {
             "mandatory": true,
-            "displayName": "Some Good Travel date",
-            "id": "checkindate",
-            "type": "date"
+            "displayName": "Travel Start Date",
+            "id": "travelStartDate",
+            "type": "date",
+            "data-reference": "essential.travelStartDate"
           },
-          "someOtherDate":{
+          "class": {
             "mandatory": true,
-            "displayName": "Travel date",
-            "id": "checkindate",
-            "type": "date"
-          },
-          "checkinDate":{
-            "mandatory": true,
-            "displayName": "Check-in Date",
-            "id": "checkindate",
-            "type": "date"
-          },
-          "checkoutDate":{
-            "mandatory": true,
-            "displayName": "Check-out Date",
-            "id": "checkoutdate",
-            "type": "date"
-          }
-          ,
-          "preferences":{
-            "mandatory": false,
-            "displayName": "Preferences",
-            "id": "preferences",
+            "displayName": "Class",
+            "id": "class",
             "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["ac","non-ac"]
+            "specificAttr": {
+              "domainList": ["Bussiness", "Economy"]
             }
-          },
-          "preferencesss":{
-            "mandatory": false,
-            "displayName": "Preferences",
-            "id": "preferences",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["ac","non-ac"]
-            }
-          },
 
-          "prefer":{
-            "mandatory": false,
-            "displayName": "Preferences",
-            "id": "preferences",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["ac","non-ac"]
-            }
-          }
-        }
-        ,
-        "localTravel":{
-          "checkinDate":{
-            "mandatory": true,
-            "displayName": "Check-in Date",
-            "id": "checkindate",
-            "type": "date"
           },
-          "checkoutDate":{
+          "numberOfHops": {
             "mandatory": true,
-            "displayName": "Check-out Date",
-            "id": "checkoutdate",
-            "type": "date"
-          }
-          ,
-          "preferences":{
-            "mandatory": false,
-            "displayName": "Preferences",
-            "id": "preferences",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["ac","non-ac"]
+            "displayName": "Number of Hops",
+            "id": "numberOfHops",
+            "type": "slider",
+            "specificAttr": {
+              "min": 0,
+              "max": 15
             }
+          },
+          "departureTime": {
+            "mandatory": false,
+            "displayName": "Departure Time",
+            "id": "departureTime",
+            "type": "time"
+          },
+          "airlines": {
+            "mandatory": false,
+            "displayName": "Airlines",
+            "id": "airlines",
+            "type": "singleSelect",
+            "specificAttr": {
+              "domainList": ["Air Asia", "Air Costa", "Jet"]
+            }
+
           }
         }
       }
+
     }
 
   };
@@ -361,7 +333,7 @@ if(travelBookingParentCtrl.travelPlanExists)
     "essential": {
     },
     "childServices": {},
-    "type": "node",
+    "type": "edge",
     "state": "initial"
   };
   travelBookingParentCtrl.tempSelectedChildren = ["stay","localTravel"];
