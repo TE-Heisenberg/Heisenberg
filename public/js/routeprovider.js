@@ -2,7 +2,7 @@
  * Created by lenovo on 29-04-2016.
  */
  var module=angular.module("app", ["rzModule", "ngMaterial", "materialCalendar", "ngSanitize", "ngRoute", "ngMdIcons", "ngMessages", "mdPickers", "angular-click-outside","ngComponentRouter", "tmh.dynamicLocale"]);
- module.run(function ($rootScope, $location) {
+ module.run(function ($rootScope, $location, tmhDynamicLocale) {
      $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
          if ($location.path().indexOf('landingPage') > 0) {
            console.log("Hello");
@@ -14,6 +14,8 @@
              $rootScope.landingPage = false;
              console.log($rootScope.landingPage);
          }
+
+         tmhDynamicLocale.set('en-in');
 
      });
 
