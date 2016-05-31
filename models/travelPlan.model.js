@@ -22,7 +22,6 @@ services.postTravelPlan = postTravelPlan;
 services.putTravelPlan = putTravelPlan;
 services.deleteTravelPlan = deleteTravelPlan;
 
-module.escape = services;
 
 function getTravelPlan(travelPlanId) {
       var deferred = Q.defer();
@@ -69,4 +68,4 @@ function deleteTravelPlan(id) {
     return deferred.promise;
 }
 
-module.exports=TravelPlan;
+module.exports=services;
