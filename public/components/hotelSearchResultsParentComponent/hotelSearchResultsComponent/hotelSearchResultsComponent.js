@@ -5,7 +5,8 @@ angular.module('app')
 	controller: hotelSearchResultsController
 });
 
-function hotelSearchResultsController($http,$rootScope){
+function hotelSearchResultsController($http,$rootScope, tmhDynamicLocale){
+    tmhDynamicLocale.set('en-in');
     var hotelSearchResults= this;
     hotelSearchResults.$onInit= function(){
         $http.get('public/data/hotelSearchResults.json').success(function(searchResults){
