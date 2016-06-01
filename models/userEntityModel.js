@@ -1,4 +1,6 @@
 var mongoose=require('mongoose');
+
+var Q=require('q');
 var schema=mongoose.Schema;
 
 var userEntitySchema= new schema({
@@ -67,26 +69,17 @@ var userEntityModel=mongoose.model('userEntityModel',userEntitySchema,'userEntit
 var userEntityService={};
 
 userEntityService.getAll=function(){
-  console.log('hum aa gye feeling happy........:) ');
-  userEntityModel.find(function(err,userEntityData){
-    if(err) return err;
-    return userEntityData;
-  })
+  console.log('hum aa gye......feeling happy........:) ');
+  return userEntityModel.find({});
 };
 
 userEntityService.getUserEntity=function(userId){
-   userEntityModel.findById(userId,function(err,userEntityObject){
-     if(err) return err;
-     return userEntityObject;
-   })
+   return userEntityModel.findById(userId);
 };
 
 userEntityService.postUserEntity=function(newUserEntityObject){
    var newModel=new userEntityModel(newUserEntityObject);
-   newModel.save(function(err){
-     if(err) return err;
-     return "save successfully";
-   })
+   return newModel.save();
 };
 
 userEntityService.putUserEntity=function(userId,newUserEntityObject){

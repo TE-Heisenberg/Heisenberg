@@ -50,5 +50,4 @@ router.route('/userEntity/:Id')
    })
 });
 
-
 module.exports=router;

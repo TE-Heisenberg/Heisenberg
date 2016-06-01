@@ -30,7 +30,6 @@ function getTravelPlan(travelPlanId) {
                   travelPlanData = data;
                    res.json(travelPlanData);
                  })
-
     return deferred.promise;
 }
 
@@ -42,9 +41,7 @@ function postTravelPlan(travelPlandata) {
       if ( err ) console.log(err);
       console.log(TravelPlandata.travelPlanId +" Saved Successfully");
     });
-
-
-    return deferred.promise;
+   return deferred.promise;
 }
 
 function putTravelPlan(id,travelPlanNew) {
