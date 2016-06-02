@@ -11,5 +11,5 @@ angular.module('app')
 });
 
 function allChildServicesComponentCtrl(updateTravelPlan,childServicesInitializer) {
-  
+
 }
