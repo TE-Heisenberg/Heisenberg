@@ -33,32 +33,18 @@ function mainButtonsController(){
 function bookButtonController($mdDialog, $mdMedia){
   var bookButton=this;
 
-
   bookButton.showBookOptions=function(ev){
     $mdDialog.show({
           clickOutsideToClose: true,
 
           preserveScope: true,
-          // templateUrl:'public/components/landingPageComponent/mainButtons/travelPreferenceDialog.html',
-          template: '<md-dialog>' +
-                    '<md-radio-group>'+
-                    '  <md-radio-button value=oneWay>' +
-                    '     One Way' +
-                    '  </md-radio-button>' +
+          templateUrl:'public/components/landingPageComponent/mainButtons/Book_travelpreference.html',
+          // templateUrl: 'public/components/landingPageComponent/mainButtons/dialog.html',
 
-                    '  <md-radio-button value=roundTrip>' +
-                    '     Round trip' +
-                    '  </md-radio-button>' +
-                    '  <md-radio-button value=multiCity>' +
-                    '     Multi city' +
-                    '  </md-radio-button>' +
-                    '</md-radio-group>'+
-                    '</md-dialog>',
 
        });
   }
 }
-
 function expenseButtonController(){
   var expense=this;
 }
