@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 angular.module('app')
 .component('hotelSearchResultsComponent', {
 	templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
