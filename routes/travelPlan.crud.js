@@ -18,7 +18,6 @@ router.post('/travelPlan', function (req, res, next) {
     services.postTravelPlan(travelPlandata).then(function () {
 
     });
-
 });
 router.put('/travelPlan/:id', function (req, res, next) {
              var travelPlanId=req.params.id;
@@ -29,6 +28,7 @@ router.put('/travelPlan/:id', function (req, res, next) {
 router.delete('/travelPlan/:id', function (req, res, next) {
      var travelPlanId=req.params.id;
     services.deleteTravelPlan(travelPlanId).then(function () {
+      
     });
 
 });
