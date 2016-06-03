@@ -146,7 +146,7 @@ if(travelBookingParentCtrl.travelPlanExists)
             "mandatory": false,
             "displayName": "Near By",
             "id": "nearBy",
-            "type": "slider",
+            "type": "singleSlider",
             "specificAttr":{
               "min":0.1,
               "max":200
@@ -301,7 +301,7 @@ if(travelBookingParentCtrl.travelPlanExists)
         "mandatory": true,
         "displayName": "Number of Hops",
         "id": "numberOfHops",
-        "type": "slider",
+        "type": "singleSlider",
         "specificAttr": {
           "min": 0,
           "max": 15
@@ -346,7 +346,7 @@ if(travelBookingParentCtrl.travelPlanExists)
         "mandatory": true,
         "displayName": "Number of Hops",
         "id": "numberOfHops",
-        "type": "slider",
+        "type": "singleSlider",
         "specificAttr": {
           "min": 0,
           "max": 15
@@ -391,7 +391,7 @@ if(travelBookingParentCtrl.travelPlanExists)
 			"mandatory": true,
 			"displayName": "Number of Hops",
 			"id": "numberOfHops",
-			"type": "slider",
+			"type": "singleSlider",
 			"specificAttr": {
 				"min": 0,
 				"max": 15
