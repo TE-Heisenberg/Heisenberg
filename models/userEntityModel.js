@@ -6,7 +6,7 @@ var schema=mongoose.Schema;
 var userEntitySchema= new schema({
              picture :  String ,
              id :   String ,
-             role :   String ,
+             role :   String,
              band :   String ,
              gender :   String ,
              first_name :   String ,

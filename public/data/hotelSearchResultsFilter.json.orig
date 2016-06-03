@@ -1,0 +1,71 @@
+{
+		"id":"price",
+		"type":"rangeSlider",
+		"label":"Price:",
+		"options": {
+						"domainList":{
+							"minValue": 2500,
+	                        "maxValue": 9500,
+	                        "options":{
+	                        	"id": "price",
+	                        	"floor": 2000,
+	                        	"ceil": 10000,
+	                        	"step": 1,
+	                        	"noSwitching": true
+	                    	}
+	                    }
+        }	
+	},
+	{
+		"id": "rating",
+		"type": "checkBox",
+		"label": "Ratings:",
+		"options": {
+			"domainList": ["1 star", "2 star", "3 star", "4 star", "5 star"]
+		}
+	},
+
+	{
+		"id": "location",
+		"type": "checkBox",
+		"label": "Location:",
+		"options": {
+			"domainList": ["Pune", "Delhi", "Chennai", "Bengaluru", "Gurgaon"]
+		}
+	},
+
+	{
+		"id": "amenities",
+		"type": "checkBox",
+		"label": "Amenities:",
+		"options": {
+			"domainList": ["Wifi", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
+		}
+<<<<<<< HEAD
+	}
+
+	
+]
+=======
+	},
+
+	{
+		"id":"price",
+		"type":"rangeSlider",
+		"label":"Price:",
+		"options": {
+						"domainList":{
+							"minValue": 2500,
+	            "maxValue": 9500,
+	            "options":{
+	            	"id": "price",
+	            	"floor": 2000,
+	            	"ceil": 10000,
+	            	"step": 1,
+	              "noSwitching": true
+	          	}
+						}
+    }
+	}
+]
+>>>>>>> 58025c7d8da34c78c6cb147f9f09ee2679330b80

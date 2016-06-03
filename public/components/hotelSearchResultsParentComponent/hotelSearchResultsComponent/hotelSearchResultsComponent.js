@@ -1,3 +1,4 @@
+
 angular.module('app')
 .component('hotelSearchResultsComponent', {
 	templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
@@ -102,14 +103,12 @@ var setObj = function(obj, keyString,value) {
         obj = obj[hierarchyWiseKeysArray.shift()];
         return obj[hierarchyWiseKeysArray.shift()] = value;
 };
-=======
 angular.module('app')
 .component('hotelSearchResultsComponent', {
-	templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
-	controllerAs:"hotelSearchResults",
-	controller: hotelSearchResultsController
+    templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
+    controllerAs:"hotelSearchResults",
+    controller: hotelSearchResultsController
 });
-
 
 var setObj = function(obj, keyString,value) {
         console.log("Before Replace ", keyString)
@@ -231,4 +230,3 @@ function hotelSearchResultsController($http,$rootScope){
         else return false;
     }
 };
->>>>>>> 37bc1742cb7dec62e4cb2454fad758698e0c1e1c

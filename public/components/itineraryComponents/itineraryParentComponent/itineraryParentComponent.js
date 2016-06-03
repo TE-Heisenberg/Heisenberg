@@ -36,7 +36,7 @@ angular.module('app')
           //console.log('inside onInit model ');
           model.travelPlanData=mainService.getTravelPlanObject();
           console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
-      //   fun();
+         fun();
 
 
          /*model.nodesData= mainService.getElementData('nodes','node1');
@@ -70,7 +70,7 @@ angular.module('app')
 
       }
 
-/*  var fun=function(){
+  var fun=function(){
        model.sequence=model.travelPlanData['sequenceOfJobs'];
        console.log(model.sequence);
 
@@ -98,7 +98,7 @@ angular.module('app')
       model.jsonData=model.finalArray;
 
   }
-*/
+
 
     model.getModePref=function(type){
       console.log('main component type value'+type);

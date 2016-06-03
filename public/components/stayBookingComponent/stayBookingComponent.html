@@ -14,9 +14,11 @@ staybooking comment end -->
 </essential-fields-renderer>
 {{stayBookingCtrl.fieldsData}}
 <children-renderer chidren-fields-data="stayBookingCtrl.fieldsData" children-fields-meta-data="stayBookingCtrl.fieldsMetaData" selected-children="stayBookingCtrl.selectedChildren" children-labels ="stayBookingCtrl.childrenLabels"></children-renderer> -->
-
-<child-selected-data-renderer-component></child-selected-data-renderer-component>
-
+<!-- {{stayBookingCtrl.value}} -->
+<child-selected-data-renderer-component value="stayBookingCtrl.value"
+ get-mode-pref="stayBookingCtrl.getModePref('stay')"
+  get-seat-pref="stayBookingCtrl.getSeatPref('stay')"></child-selected-data-renderer-component>
+  <!-- <child-services-component value="value" get-mode-pref="model.getModePref(type)" get-seat-pref="model.getSeatPref(value)"></child-services-component> -->
 
 <!--<travel-plan></travel-plan>-->
 
