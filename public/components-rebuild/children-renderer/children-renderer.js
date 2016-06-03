@@ -12,8 +12,8 @@ angular.module('app')
     });
 function childrenRendererController() {
     var childrenRenderer = this;
-  console.log("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}]");
-  console.log("childrenFieldsMetaData");
+console.log("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}]");
+console.log("childrenFieldsMetaData");
 console.log(childrenRenderer.childrenFieldsMetaData);
 
   console.log("&*&*&*&* I am inside childrenRendererController");
