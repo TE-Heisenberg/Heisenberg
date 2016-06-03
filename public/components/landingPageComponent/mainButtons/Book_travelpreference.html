@@ -1,26 +1,28 @@
-<md-dialog>
+<md-dialog ng-cloak ng-controller="dialogController">
     <md-dialog-content>
 
         <div class="md-dialog-content">
             <div class="md-headline">Select Travel Preference</div>
-            <form ng-submit="submit()" class="md-padding" ng-cloak >
+            <!-- <form ng-submit="submit()" class="md-padding" ng-cloak > -->
                 <md-radio-group ng-model="typeOfTravel" layout="row"    layout-align="center center">
-                    <md-radio-button value="oneWay" class="md-checked md-primary" >One Way</md-radio-button>
-                    <md-radio-button value="roundTrip" class="md-primary">Round Trip</md-radio-button>
-                    <md-radio-button value="multiCity" class="md-primary">Multi City</md-radio-button>
+                    <md-radio-button value="0" class="md-checked md-primary" >One Way</md-radio-button>
+                    <md-radio-button value="1" class="md-primary">Round Trip</md-radio-button>
+                    <md-radio-button value="2" class="md-primary">Multi City</md-radio-button>
                 </md-radio-group>
-            </form>
+                <md-dialog-actions layout="row">
+                  <!-- {{typeOfTravel}} -->
+                    <md-button ng-click="cancel()" >
+                        Cancel
+                    </md-button>
+                    <span flex></span>
+                    <md-button ng-click="go()" type="submit">
+                        Proceed
+                    </md-button>
+
+                </md-dialog-actions>
+            <!-- </form> -->
         </div>
     </md-dialog-content>
 
-    <md-dialog-actions layout="row">
-        <md-button ng-click="cancel()" >
-            Cancel
-        </md-button>
-        <span flex></span>
-        <md-button ng-click="showPreference.go()">
-            Proceed
-        </md-button>
 
-    </md-dialog-actions>
 </md-dialog>

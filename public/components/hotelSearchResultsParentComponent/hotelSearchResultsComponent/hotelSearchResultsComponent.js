@@ -1,9 +1,42 @@
+
 angular.module('app')
 .component('hotelSearchResultsComponent', {
 	templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
 	controllerAs:"hotelSearchResults",
 	controller: hotelSearchResultsController
 });
+
+
+var setObj = function(obj, keyString,value) {
+        console.log("Before Replace ", keyString)
+        keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
+        console.log("After first replace", keyString);
+        keyString = keyString.replace(/^\./, '');           // strip a leading dot
+        console.log("After second replace", keyString);
+        var hierarchyWiseKeysArray = keyString.split('.');
+
+        while (hierarchyWiseKeysArray.length > 1)
+        obj = obj[hierarchyWiseKeysArray.shift()];
+        return obj[hierarchyWiseKeysArray.shift()] = value;
+};
+
+
+function deleteDynamicKeyValuePair(obj, keyString) {
+  console.log("Before Replace ", keyString)
+  keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
+  console.log("After first replace", keyString);
+  keyString = keyString.replace(/^\./, '');           // strip a leading dot
+  console.log("After second replace", keyString);
+  var hierarchyWiseKeysArray = keyString.split('.');
+  console.log("before while");
+  console.log(hierarchyWiseKeysArray);
+  while (hierarchyWiseKeysArray.length > 1)
+    obj = obj[hierarchyWiseKeysArray.shift()];
+  console.log("before delte");
+  console.log(obj);
+  delete obj[hierarchyWiseKeysArray.shift()];
+  return obj;
+}
 
 function hotelSearchResultsController($http,$rootScope){
     var hotelSearchResults= this;
@@ -15,13 +48,7 @@ function hotelSearchResultsController($http,$rootScope){
         $http.get('public/data/hotelSearchResultsFilter.json').success(function(data){
             hotelSearchResults.filters= data;
             hotelSearchResults.filters.forEach(function(filter){
-                    if(filter.type=='rangeSlider')
-                        filter.options.domainList.options.onEnd= function(id, minValue, maxValue){
-                            hotelSearchResults.selectedFilters[id]= [minValue, maxValue];
-                            console.log(id);
-                            console.log(minValue);
-                            console.log(maxValue);
-                        };
+
             });
         });
 
@@ -52,9 +79,19 @@ function hotelSearchResultsController($http,$rootScope){
         console.log(keyString);
         console.log(value);
         console.log(id);
-        setObj(hotelSearchResults, keyString, value);
-        if(value.length==0) delete hotelSearchResults.selectedFilters[id];
-        else hotelSearchResults.selectedFilters[id]= value;
+        // setObj(hotelSearchResults, keyString, value);
+
+
+
+        if((value.constructor == Array && value.length==0) || (value.constructor == String && value == ""))
+				{
+					console.log("Filter is empty");
+					deleteDynamicKeyValuePair(hotelSearchResults.selectedFilters,id);
+					console.log("after delte");
+					console.log(hotelSearchResults.selectedFilters);
+				}
+				else
+				 	setObj(hotelSearchResults.selectedFilters, id, value);
     };
 
     hotelSearchResults.reflect= function(keyString, value, id) {
@@ -89,16 +126,4 @@ function hotelSearchResultsController($http,$rootScope){
         if(counter== Object.keys(hotelSearchResults.selectedFilters).length) return true;
         else return false;
     }
-};
-var setObj = function(obj, keyString,value) {
-        console.log("Before Replace ", keyString)
-        keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
-        console.log("After first replace", keyString);
-        keyString = keyString.replace(/^\./, '');           // strip a leading dot
-        console.log("After second replace", keyString);
-        var hierarchyWiseKeysArray = keyString.split('.');
-
-        while (hierarchyWiseKeysArray.length > 1)
-        obj = obj[hierarchyWiseKeysArray.shift()];
-        return obj[hierarchyWiseKeysArray.shift()] = value;
 };

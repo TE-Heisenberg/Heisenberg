@@ -1,8 +1,9 @@
 angular.module('app')
- .component('displayComponent',{
+ .component('selectedDataDisplayComponent',{
    controller: itineraryController,
    controllerAs: "itinerary",
-   templateUrl: "public/components/itineraryComponents/childServicesComponent/displayComponent/displayComponent.html",
+   templateUrl: "public/components-rebuild/child-selected-data-renderer/selected-data-display-component/selected-data-display-component.html",
+
    bindings: {
      modeOrSeatKeyObject:'<',
      logo: '<',

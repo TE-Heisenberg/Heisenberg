@@ -13,6 +13,66 @@ function stayBookingController($http)
 
   stayBookingCtrl.cardHeading = "Stay/Accomodation";
 
+
+      stayBookingCtrl.getModePref=function(type){
+        console.log('main component type value'+type);
+        if(type=='flight'){
+             model.array=['flightID','seatNumber'];
+             console.log('inside '+model.array);
+             return model.array;
+        }
+        else if(type=='train'){
+             model.array=['trainNumber','coachNumber','seatNumber'];
+             console.log('inside '+model.array);
+             return model.array;
+        }
+        else if(type=='bus'){
+             model.array=['busNumber','seatNumber'];
+             console.log('inside '+model.array);
+             return model.array;
+        }
+        else if(type=='cab'){
+             model.array=['cabNumber','cabType'];
+             console.log('inside '+model.array);
+             return model.array;
+        }
+        else if(type=='localBus'){
+             model.array=['busNumber','busType','seatsType'];
+             console.log('inside '+model.array);
+             return model.array;
+        }
+      }
+
+      stayBookingCtrl.getSeatPref=function(value){
+        if(value=='flight'){
+             return ['class','meals','extraBaggage'];
+        }
+        else if(value=='train'){
+             return ['class'];
+        }
+        else if(value=='bus'){
+             return  ['class','seatType'];
+        }
+      }
+
+    stayBookingCtrl.value={
+      stay:[
+        {selectedData:{
+          image: "public/assets/images/hotel3.png",
+          name: "JW Mariott",
+          rating: "5",
+          location: "hotel's exact address",
+          roomType: "Deluxe",
+          checkinDate: "6/30/2016",
+          checkinTime: "2:00 PM",
+          checkoutDate: "7/01/2016",
+          checkoutTime: "3:00 PM",
+          price: "10000 INR",
+          comments: "Some useful comment which you may want to convey to the hotel"
+      }
+    }
+      ]
+};
   stayBookingCtrl.fieldsData = {
       "stay":[{
       "area": "Hari Nagar",

@@ -1,0 +1,31 @@
+<<<<<<< HEAD:public/components/flightSearchResultsParentComponent/flightSearchResultsComponent/flightSearchResults/flightSearchResults.html
+<md-card  flex-xs="50" ng-model="flightSearchResult.flightSearchResult" ng-repeat="Result in flightSearchResult.flightSearchResult">
+<div layout="row"  layout-align="space-around center" layout-xs="column">
+  <div>
+    <img  class="img" ng-src="public/assets/images/{{Result.imagePath}}" alt="{{Result.imagePath}}">
+  </div>
+  <div>{{Result.arrivalTime}}</div>
+  <div>{{Result.departureTime}}</div>
+  <div>{{Result.duration}}</div>
+  <div>{{Result.price}}</div>
+  <div layout="row" layout-align="center center">
+    <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
+  </div>
+</div>
+</md-card>
+=======
+<md-card  flex-xs="50" ng-model="flightSearchResult.flightSearchResult">
+<div layout="row"  layout-align="space-around center" layout-xs="column">
+  <div>
+    <img  class="img" ng-src="public/assets/images/{{flightSearchResult.flightSearchResult.imagePath}}" alt="{{flightSearchResult.flightSearchResult.imagePath}}">
+  </div>
+  <div>{{flightSearchResult.flightSearchResult.arrivalTime}}</div>
+  <div>{{flightSearchResult.flightSearchResult.departureTime}}</div>
+  <div>{{flightSearchResult.flightSearchResult.duration}}</div>
+  <div>{{flightSearchResult.flightSearchResult.price}}</div>
+  <div layout="row" layout-align="center center">
+    <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
+  </div>
+</div>
+</md-card>
+>>>>>>> f8b916392d848e77552b01c3382bbae79b872293:public/components/flightSearchResultsComponent/flightSearchResults/flightSearchResults.html
