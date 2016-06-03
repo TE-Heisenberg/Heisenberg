@@ -1,3 +1,11 @@
+
+angular.module('app')
+.component('hotelSearchResultsComponent', {
+    templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
+    controllerAs:"hotelSearchResults",
+    controller: hotelSearchResultsController
+});
+
 var setObj = function(obj, keyString,value) {
         console.log("Before Replace ", keyString)
         keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
