@@ -3,7 +3,7 @@ app.component("myCurrentPlan",{
 
   templateUrl:"public/components/landingPageComponent/myCurrentPlan/myCurrentPlan.html",
   controllerAs:"currentplan",
-  controller:  temCtrl,
+  controller:  myCurrentPlanController,
   bindings:{
     current: '<',
     completed: '<',
@@ -12,17 +12,22 @@ app.component("myCurrentPlan",{
   }
 
 });
-function temCtrl() {
 
-}
-app.controller('myctrl', function($scope,$http) {
+function myCurrentPlanController($scope,$http,$mdDialog) {
+  var currentplan=this;
   console.log('inside controller');
-  // $http.get("public/data/landing/myplans.json").success(function (response) {
-  //   // $scope.finalData=response.data;
-  //   // console.log($scope.finalData);
-  //   $scope.completed =response.completed.date;
-  //   $scope.current = response.current.date;
-  //   $scope.future = response.future.date;
-  //   console.log("res  "+$scope.completed);
-  // });
-});
+  currentplan.showAlert=function (ev,x) {
+  console.log("in dialog");
+    console.log("In click");
+    $mdDialog.show(
+      $mdDialog.alert()
+      .parent(angular.element(document.querySelector('#popupContainer')))
+      .clickOutsideToClose(true)
+      .title()
+      .textContent(x)
+      .ariaLabel('Alert Dialog Demo')
+      .ok('Got it!')
+      .targetEvent(ev)
+    );
+  }
+};
