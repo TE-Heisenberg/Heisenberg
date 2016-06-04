@@ -9,16 +9,16 @@
 			        	"step": 1,
 			        	"noSwitching": true,
 								"endPointsTranslate": {
-									"prefix": "$",
+									"prefix": "",
 									"postfix": ""
 								},
 								"leftSliderHandleTranslate": {
-									"prefix": "@",
+									"prefix": "",
 									"postfix": ""
 								},
 
 								"rightSliderHandleTranslate": {
-									"prefix": "-",
+									"prefix": "",
 									"postfix": ""
 								}
         }
@@ -49,6 +49,4 @@
 			"domainList": ["Wifi", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
 		}
 	}
-
-
 ]

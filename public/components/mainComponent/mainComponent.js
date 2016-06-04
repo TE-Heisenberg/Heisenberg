@@ -2,11 +2,11 @@ angular.module('app')
 .component("mainComponent",{
 templateUrl:"public/components/mainComponent/mainComponent.html",
 controllerAs:"mainComponent",
-controller:["$rootScope","$location",mainComponentController],
+controller:["$rootScope","$location", mainComponentController],
 $routeConfig: [
 
     {path: '/landingPage',name: 'LandingPageComponent', component: 'landingComponent'},
-    {path: '/travelBooking',name: 'TravelBookingParentComponent', component: 'travelBookingParentComponent' },
+    {path: '/travelBooking',name: 'TravelBookingParentComponent', component: 'travelBookingParentComponent'},
     {path:'/stayBooking',name: 'StayBookingComponent', component: 'stayBookingComponent'},
     {path:'/flightSearchResults',name: 'FlightSearchResultsParentComponent', component: 'flightSearchResultsParentComponent'},
     {path:'/trainSearchResults',name:'TrainSearchResultsParentComponent',component:'trainSearchResultsParentComponent'},
@@ -31,8 +31,8 @@ var setObj = function(obj, keyString,value) {
 
 }
 
-function mainComponentController($rootScope,$location){
-    
+function mainComponentController($rootScope,$location, travelPlanManageService){
+
     var mainComponent = this;
      mainComponent.travelPlanData = {};
      mainComponent.travelPlanInitializer = function(indexForTravelMode) {
