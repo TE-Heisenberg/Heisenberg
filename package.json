@@ -41,6 +41,7 @@
     "moment": "^2.13.0",
     "mongoose": "^4.4.19",
     "morgan": "~1.6.1",
+    "node-static": "^0.7.7",
     "path": "latest",
     "q": "^1.4.1",
     "serve-favicon": "~2.3.0"

@@ -73,6 +73,10 @@ app.listen(3040, function () {
 module.exports = app;
 =======
 
+<<<<<<< HEAD
+=======
+>>>>>>> 8a393d69d9c4af6cff26ae0cd128bf0acd434afe
+>>>>>>> 04c89630b7364eaf439208237cd31eee65a7f78a
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -146,6 +150,10 @@ app.listen(3040, function () {
 });
 module.exports = app;
 
+<<<<<<< HEAD
+=======
+>>>>>>> 8a393d69d9c4af6cff26ae0cd128bf0acd434afe
+>>>>>>> 04c89630b7364eaf439208237cd31eee65a7f78a
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -222,4 +230,8 @@ app.listen(3000, function () {
     console.log('App started for Quiz Play Testing!!');
 });
 module.exports = app;
+<<<<<<< HEAD
 >>>>>>> a6742812b1b51cd7290e66a1bc12b5af0e6e2f77
+=======
+>>>>>>> 8a393d69d9c4af6cff26ae0cd128bf0acd434afe
+>>>>>>> 04c89630b7364eaf439208237cd31eee65a7f78a
