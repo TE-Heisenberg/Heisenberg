@@ -2,10 +2,23 @@
   <md-card-title>
     {{childCardRendererWithoutIcons.cardHeading}}
   </md-card-title>
+  <br>
+  childCardRendererWithoutIcons
+<br>
+  {{childCardRendererWithoutIcons.arrayOfChildFieldsData}}
   <div ng-repeat="childFieldsData in childCardRendererWithoutIcons.arrayOfChildFieldsData">
-    <child-form-renderer fields-data="childFieldsData" fields-meta-data="childCardRendererWithoutIcons.metaDataOfChildFields" ></child-form-renderer>
+{{childFieldsData}}
+    <!-- <div ng-if="childFieldsData.state=='initial'"> -->
+      <child-form-renderer fields-data="childFieldsData" fields-meta-data="childCardRendererWithoutIcons.metaDataOfChildFields" ></child-form-renderer>
+    <!-- </div> -->
 
-    
+    <div ng-if="childFieldsData.state=='selected'">
+      {{childFieldsData.state}}
+      <child-selected-data-renderer-component value="childFieldsData"
+      get-mode-pref="childCardRenderer.getModePref('stay')"
+      get-seat-pref="childCardRenderer.getSeatPref('stay')"></child-selected-data-renderer-component>
+    </div>
+
     <md-divider layout-margin></md-divider>
   </div>
 </md-card>

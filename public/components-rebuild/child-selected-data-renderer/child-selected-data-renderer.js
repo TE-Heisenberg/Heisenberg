@@ -4,7 +4,8 @@
 
 angular.module('app')
     .component('childSelectedDataRendererComponent',{
-        templateUrl:'./public/components-rebuild/child-selected-data-renderer/childSelectedDataRendererComponent/childSelectedDataRendererComponent.html',
+        templateUrl:'./public/components-rebuild/child-selected-data-renderer/child-selected-data-renderer.html',
+
         controllerAs:'childSelectedDataRendererComponent',
         bindings:{
             value:'<',
@@ -19,7 +20,8 @@ function childSelectedDataRendererController($scope){
     //  childSelectedDataRendererComponent.getModePref(type);
       console.log("Inside child services component"+this);
       console.log(this,$scope);
-
+      console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+      console.log(childSelectedDataRendererComponent.value);
       this.modePref = function(type) {
         console.log('type value: '+type);
         return this.getModePref({type:type});
