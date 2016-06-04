@@ -7,7 +7,8 @@ angular.module('app')
     "formData":"<",
     "bindDataKey":"<",
     "formFieldEssentialData":"<",
-    "reflectFormData":"&"
+    "reflectFormData":"&",
+    'reflectSelectedChildren': "&"
   }
 
 });

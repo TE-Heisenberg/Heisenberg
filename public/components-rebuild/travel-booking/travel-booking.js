@@ -27,12 +27,16 @@ function travelBookingCtrl() {
       return a;
   }
 
+  travelBooking.$routerOnActivate = function() {
+    console.log(travelBooking.metaDataOfObj.essential);
+  }
 
-
-  //Essential Fiellds
+  // Essential Fiellds
+  console.log(travelBooking);
+  console.log("Printing essen",travelBooking.metaDataOfObj.essential);
   travelBooking.metaDataOfEssentialFields = travelBooking.metaDataOfObj.essential;
   travelBooking.essentialFieldsData = travelBooking.currentSelectedObj.essential;
-  // travelBooking.arrayOfSelectedChildren = [];
+  travelBooking.arrayOfSelectedChildren = [];
   travelBooking.reflectSelectedChildren = function(arrayOfSelectedChildren) {
     travelBooking.currentSelectedChildren = arrayOfSelectedChildren;
 
