@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -71,7 +70,6 @@ app.listen(3040, function () {
     console.log('App started for Quiz Play Testing!!');
 });
 module.exports = app;
-=======
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -148,4 +146,3 @@ app.listen(3000, function () {
     console.log('App started for Quiz Play Testing!!');
 });
 module.exports = app;
->>>>>>> 37bc1742cb7dec62e4cb2454fad758698e0c1e1c
