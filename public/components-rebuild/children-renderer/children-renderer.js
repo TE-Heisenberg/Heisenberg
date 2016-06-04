@@ -11,7 +11,7 @@ angular.module('app')
        }
     });
 function childrenRendererController() {
-    var childrenRenderer = this;
+  var childrenRenderer = this;
 console.log("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}]");
 console.log("childrenFieldsMetaData");
 console.log(childrenRenderer.childrenFieldsMetaData);
@@ -26,7 +26,6 @@ console.log(childrenRenderer.childrenFieldsMetaData);
     if(childrenRenderer.childrenFieldsData[childId] === undefined){
       childrenRenderer.childrenFieldsData[childId] = [{}];
     }
-    console.log(childrenRenderer.childrenFieldsData[childId]);
   });
 
 

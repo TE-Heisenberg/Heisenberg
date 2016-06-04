@@ -5,5 +5,29 @@ angular.module('app').component("flightSearchResultsParentComponent",{
 });
 function flightSearchResultsParentController($http,$rootScope){
   var flightSearchResultsParent=this;
+	var flightSearchResultsParent=this;
+	flightSearchResultsParent.travelPlanObject = [
+		{ type:"location",
+		cityName:"Bangalore"
+	},
+	{
+		type:"transit",
+		childServices:
+		{
+			booking:{
+				requested:{mode:"flight"}
+			}
+		}
+	},
+	{
+		type:"location",
+		cityName:"Delhi"
+	}
+	];
 
+	flightSearchResultsParent.currentnodeedge = function (id, type) {
+	console.log(id);
+	console.log(type);
+
+	};
     }
