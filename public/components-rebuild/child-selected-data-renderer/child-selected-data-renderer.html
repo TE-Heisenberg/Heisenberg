@@ -1,7 +1,10 @@
 <!-- {{childSelectedDataRendererComponent.value}} -->
-
+Inside child selected data renderer
+<br>
+{{childSelectedDataRendererComponent.value}}
+<br>
 <div ng-repeat="(stayOrLocalTravelOrBooking,associatedValue) in childSelectedDataRendererComponent.value">                               <!-- node1s1:value,node1s2:value,node1t1:value-->
-  
+
     <div ng-if="stayOrLocalTravelOrBooking=='stay'">
       <div ng-repeat="stayObject in associatedValue">
         <div ng-repeat="(requestedOrSelected,value) in stayObject">

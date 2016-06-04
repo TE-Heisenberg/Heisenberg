@@ -88,7 +88,9 @@ if(travelBookingParentCtrl.travelPlanExists)
             "displayName": "City",
             "id": "location",
             "type": "autoComplete",
-            "data-reference": "essential.location"
+            "specificAttr":{
+              url:"autoComplete.json"
+            }
           },
           "area": {
             "mandatory": true,
@@ -142,17 +144,7 @@ if(travelBookingParentCtrl.travelPlanExists)
               "domainList":["1-star","2-star","3-star","4-star"]
             }
           },
-          "nearBy" : {
-            "mandatory": false,
-            "displayName": "Near By",
-            "id": "nearBy",
-            "type": "singleSlider",
-            "specificAttr":{
-              "min":0.1,
-              "max":200
-            }
-          }
-          ,
+
           "typeOfProperty":
           {
             "mandatory": true,
@@ -279,141 +271,25 @@ if(travelBookingParentCtrl.travelPlanExists)
     }
   },
   "services": {
-    "flight": {
-      "travelStartDate": {
-        "mandatory": true,
-        "displayName": "Travel Start Date",
-        "id": "travelStartDate",
-        "type": "date",
-        "data-reference": "essential.travelStartDate"
-      },
-      "class": {
-        "mandatory": true,
-        "displayName": "Class",
-        "id": "class",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["Bussiness", "Economy"]
-        }
 
-      },
-      "numberOfHops": {
-        "mandatory": true,
-        "displayName": "Number of Hops",
-        "id": "numberOfHops",
-        "type": "singleSlider",
-        "specificAttr": {
-          "min": 0,
-          "max": 15
-        }
-      },
-      "departureTime": {
-        "mandatory": false,
-        "displayName": "Departure Time",
-        "id": "departureTime",
-        "type": "time"
-      },
-      "airlines": {
-        "mandatory": false,
-        "displayName": "Airlines",
-        "id": "airlines",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["Air Asia", "Air Costa", "Jet"]
-        }
 
-      }
-    },
-    "train": {
-      "travelStartDate": {
-        "mandatory": true,
-        "displayName": "Travel Start Date",
-        "id": "travelStartDate",
-        "type": "date",
-        "data-reference": "essential.travelStartDate"
-      },
-      "class": {
-        "mandatory": true,
-        "displayName": "Class",
-        "id": "class",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["Bussiness", "Economy"]
-        }
-
-      },
-      "numberOfHops": {
-        "mandatory": true,
-        "displayName": "Number of Hops",
-        "id": "numberOfHops",
-        "type": "singleSlider",
-        "specificAttr": {
-          "min": 0,
-          "max": 15
-        }
-      },
-      "departureTime": {
-        "mandatory": false,
-        "displayName": "Departure Time",
-        "id": "departureTime",
-        "type": "time"
-      },
-      "airlines": {
-        "mandatory": false,
-        "displayName": "Airlines",
-        "id": "airlines",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["Air Asia", "Air Costa", "Jet"]
-        }
-
-      }
-    },
     "bus": {
-		"travelStartDate": {
-			"mandatory": true,
-			"displayName": "Travel Start Date",
-			"id": "travelStartDate",
-			"type": "date",
-			"data-reference": "essential.travelStartDate"
-		},
-		"class": {
-			"mandatory": true,
-			"displayName": "Class",
-			"id": "class",
-			"type": "singleSelect",
-			"specificAttr": {
-				"domainList": ["Bussiness", "Economy"]
-			}
 
-		},
-		"numberOfHops": {
-			"mandatory": true,
-			"displayName": "Number of Hops",
-			"id": "numberOfHops",
-			"type": "singleSlider",
-			"specificAttr": {
-				"min": 0,
-				"max": 15
-			}
-		},
-		"departureTime": {
-			"mandatory": false,
-			"displayName": "Departure Time",
-			"id": "departureTime",
-			"type": "time"
-		},
-		"airlines": {
-			"mandatory": false,
-			"displayName": "Airlines",
-			"id": "airlines",
-			"type": "singleSelect",
-			"specificAttr": {
-				"domainList": ["Air Asia", "Air Costa", "Jet"]
-			}
+      "location":{
+        "mandatory": true,
+        "displayName": "City",
+        "id": "location",
+        "type": "autoComplete",
+        "specificAttr":{
+          url:"autoComplete.json",
+          "minLength":2,
+          "maxLength":18
+        }
+      }
 
-		}
-	}
+
+
+    }
   }
 
 }
@@ -483,10 +359,55 @@ if(travelBookingParentCtrl.travelPlanExists)
 //  "type": "node",
 //  "state": "selected"
 // }
+// travelBookingParentCtrl.tempCurrentObj ={
+//   "essential": {},
+//   "childServices": {
+//   "stay": [{
+//     "state": "selection",
+//     "requested": {
+//       "image":"public/assets/images/indigo.png",
+//       "companyName": "Air Costa",
+//       "flightID": "AC2456",
+//       "seatNumber": "45H",
+//       "sourceAirport":"koramangala airport",
+//       "destinationAirport":"delhi airport",
+//       "price": "876547 INR",
+//       "preferences": {
+//         "class": "Bussiness",
+//         "Nonstop": "true",
+//         "meals": "Non Veg",
+//         "extraBaggage": "14 Kg"
+//       }
+//     }
+//   },{
+//     "state": "booking",
+//     "requested": {
+//       "image":"public/assets/images/indigo.png",
+//       "companyName": "Air Costa",
+//       "flightID": "AC2456",
+//       "seatNumber": "45H",
+//       "sourceAirport":"koramangala airport",
+//       "destinationAirport":"delhi airport",
+//       "price": "876547 INR",
+//       "preferences": {
+//         "class": "Bussiness",
+//         "Nonstop": "true",
+//         "meals": "Non Veg",
+//         "extraBaggage": "14 Kg"
+//       }
+//     }
+//   }]
+// },
+//
+//
+//
+//   "type": "node",
+//   "state": "selected"
+// }
+
 travelBookingParentCtrl.tempCurrentObj ={
   "essential": {},
   "childServices": {
-
 
   },
 
@@ -495,7 +416,7 @@ travelBookingParentCtrl.tempCurrentObj ={
   "type": "edge",
   "state": "selected"
 }
-travelBookingParentCtrl.tempSelectedChildren = ["flight","train","bus"];
+travelBookingParentCtrl.tempSelectedChildren = ["bus"];
 };
 
 

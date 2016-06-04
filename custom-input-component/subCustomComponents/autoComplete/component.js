@@ -1,5 +1,5 @@
 angular.module('app')
-  .component('autocompleteBox',{
+.component('autocompleteBox',{
     templateUrl: 'custom-input-component/subCustomComponents/autoComplete/nativeContent.html',
     controller:autocompleteBoxCtrl,
     controllerAs:"autocompleteBoxCtrl",
@@ -11,7 +11,7 @@ angular.module('app')
     }
   });
 
-function autocompleteBoxCtrl($http)
+function autocompleteBoxCtrl($http,$scope)
 {
     var autocompleteBoxCtrl = this;
     console.log("Inside controller of autoCompleteBoxCtrl");
@@ -19,6 +19,7 @@ function autocompleteBoxCtrl($http)
     console.log(autocompleteBoxCtrl.specificAttr);
     console.log(this);
     autocompleteBoxCtrl.reflectValue = function(value) {
+      console.log("reflect value in autocomplete");
       console.log(value);
       autocompleteBoxCtrl.reflectComponent({value:value});
 
@@ -28,23 +29,19 @@ function autocompleteBoxCtrl($http)
     autocompleteBoxCtrl.selectedItem;
     autocompleteBoxCtrl.searchText;
     // autocompleteBoxCtrl.querySearch= querySearch;
+    autocompleteBoxCtrl.queryData=['Alaska','Alabama'];
 
+    // autocompleteBoxCtrl.filteredData(filteredData)
+    // {
+    //   autocompleteBoxCtrl.queryData=filteredData;
+    // }
 
+     autocompleteBoxCtrl.callBack=function(results)
+     {
+       console.log("Inside Auto Complete cb",results)
+       autocompleteBoxCtrl.queryData=results;
+     }
 
     console.log("states is ..............");
-    // console.log(autocompleteBoxCtrl.states);
-
-    // ******************************
-    // Internal methods
-    // ******************************
-
-    /**
-     * Search for states... use $timeout to simulate
-     * remote dataservice call.
-     */
-
-    /**
-     * Create filter function for a query string
-     */
 
 }

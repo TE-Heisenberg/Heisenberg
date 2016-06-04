@@ -1,3 +1,6 @@
+
+
+
 <md-card>
   <md-card-title>
     {{childCardRenderer.cardHeading}}
@@ -13,12 +16,7 @@
     <ng-md-icon flex="40" flex-offset="10" icon="delete" ng-click="childCardRenderer.onDelete(index)"></ng-md-icon>
     <ng-md-icon flex="40" flex-offset="10" icon="add_circle" ng-click="childCardRenderer.onAdd()"></ng-md-icon>
    </div>
-   <div ng-if="childFieldsData.status=='selected'">
-     {{childFieldsData.status}}
-     <child-selected-data-renderer-component value="childFieldsData"
-      get-mode-pref="childCardRenderer.getModePref('stay')"
-       get-seat-pref="childCardRenderer.getSeatPref('stay')"></child-selected-data-renderer-component>
-  </div>
+
     <md-divider layout-margin></md-divider>
   </div>
 </md-card>
