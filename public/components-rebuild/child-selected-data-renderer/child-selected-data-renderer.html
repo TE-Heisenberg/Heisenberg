@@ -1,11 +1,22 @@
+  <md-divider layout-margin></md-divider>
+<selected-data-display-component service-logo="childSelectedDataRendererComponent.serviceLogo" service-details=" childSelectedDataRendererComponent.serviceDetails" begin-date-time="childSelectedDataRendererComponent.beginDateTime" end-date-time="childSelectedDataRendererComponent.endDateTime"price="childSelectedDataRendererComponent.price" extra-description="childSelectedDataRendererComponent.extraDescription">
+</selected-data-display-component>
+  <md-divider layout-margin></md-divider>
+<selected-data-display-component service-logo="childSelectedDataRendererComponent.serviceLogo1" service-details=" childSelectedDataRendererComponent.serviceDetails1" begin-date-time="childSelectedDataRendererComponent.beginDateTime1" end-date-time="childSelectedDataRendererComponent.endDateTime1"
+price="childSelectedDataRendererComponent.price1" extra-description="childSelectedDataRendererComponent.extraDescription1">
+</selected-data-display-component>
+
+
+
+
 <!-- {{childSelectedDataRendererComponent.value}} -->
-Inside child selected data renderer
+<!-- Inside child selected data renderer
 <br>
 {{childSelectedDataRendererComponent.value}}
 <br>
 <div ng-repeat="(stayOrLocalTravelOrBooking,associatedValue) in childSelectedDataRendererComponent.value">                               <!-- node1s1:value,node1s2:value,node1t1:value-->
 
-    <div ng-if="stayOrLocalTravelOrBooking=='stay'">
+    <!-- <div ng-if="stayOrLocalTravelOrBooking=='stay'">
       <div ng-repeat="stayObject in associatedValue">
         <div ng-repeat="(requestedOrSelected,value) in stayObject">
           <div ng-if="requestedOrSelected=='selectedData'">
@@ -13,9 +24,9 @@ Inside child selected data renderer
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div ng-if="stayOrLocalTravelOrBooking=='localTravel'">
+    <!-- <div ng-if="stayOrLocalTravelOrBooking=='localTravel'">
       <div ng-repeat="localTravelObject in associatedValue">
         <div ng-repeat="(requestedOrSelected,localTravelValue) in localTravelObject">
           <div ng-if="requestedOrSelected=='selectedData'">
@@ -44,6 +55,6 @@ Inside child selected data renderer
             </div>
           </div>
         </div>
-    </div>
-
-</div>
+    </div> -->
+<!--
+</div> --> -->

@@ -452,7 +452,7 @@ angular.module('app').factory('mainService',function($http,$q){
              },
 
               getTravelPlanObject: function(){
-                   return travelPlanObjectInitial;
+                   return travelPlanObject;
                 },
 
              getElementData: function(elementType, elementId){
@@ -481,7 +481,7 @@ angular.module('app').factory('mainService',function($http,$q){
                  return true;
                }
              }
-             
+
           }
      return subFactories;
   });

@@ -33,6 +33,7 @@ angular.module('app')
           //console.log('inside onInit model ');
           model.travelPlanData=mainService.getTravelPlanObject();
           console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
+          
         // fun();
 
 

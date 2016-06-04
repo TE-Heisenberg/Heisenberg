@@ -1,39 +1,60 @@
 angular.module('app')
  .component('selectedDataDisplayComponent',{
-   controller: itineraryController,
-   controllerAs: "itinerary",
+   controller: selectedDataDisplayComponentController,
+   controllerAs: "selectedDataDisplayComponent",
    templateUrl: "public/components-rebuild/child-selected-data-renderer/selected-data-display-component/selected-data-display-component.html",
 
    bindings: {
-     modeOrSeatKeyObject:'<',
-     logo: '<',
-     name:'<',
-     roomType: '<',
-     location: '<',
-     startTime: '<',
-     startDate: '<',
-     endTime: '<',
-     endDate: '<',
-     price: '<',
-     source: '<',
-     destination: '<',
-     modeValue: '<',
-     modeKey:'&',
-     seatKey:'&'
+     serviceLogo:'<',
+     serviceDetails:'<',
+     beginDateTime:'<',
+     endDateTime:'<',
+     price:'<',
+     extraDescription:'<'
+
    }
  });
 
- function itineraryController() {
-  var itinerary=this;
-  itinerary.modeKeyArray=[];
-  itinerary.seatKeyArray=[];
-  console.log('object is: '+itinerary.modeOrSeatKeyObject);
-  itinerary.$onInit = function() {
-         console.log("Inside on init")
-         console.log(itinerary.modeValue);
-         itinerary.modeKeyArray=itinerary.modeKey({type:itinerary.modeValue});
-         itinerary.seatKeyArray=itinerary.seatKey({value:itinerary.modeValue});
-         console.log('array of key '+itinerary.modeKeyArray);
-         console.log('seat key array '+itinerary.seatKeyArray);
-      };
+ function selectedDataDisplayComponentController() {
+   var selectedDataDisplayComponent=this;
+  //   selectedDataDisplayComponent.serviceLogo="public/assets/images/taj1.png";
+  //   selectedDataDisplayComponent.serviceDetails={
+  //    "heading":"JW Mariott",
+  //      "roomType": "Deluxe",
+  //      "location": "hotel's exact address",
+  //  }
+   //
+  //   selectedDataDisplayComponent.beginDateTime=
+  //  {
+  //    "startTime":  "2:00 PM",
+  //    "startDate": "4/30/2016",
+  //    "description":"",
+  //  }
+   //
+  //   selectedDataDisplayComponent.endDateTime=
+  //  {
+  //    "endTime":"3:00 PM",
+  //    "endDate":"5/01/2016",
+  //     "description":"",
+  //  }
+   //
+   //
+  //   selectedDataDisplayComponent.price=
+  //  {
+  //    "price": "9000 INR"
+  //  }
+
+  // selectedDataDisplayComponent.modeKeyArray=[];
+  // selectedDataDisplayComponent.seatKeyArray=[];
+  // console.log('object is: '+selectedDataDisplayComponent.modeOrSeatKeyObject);
+  // selectedDataDisplayComponent.$onInit = function() {
+  //        console.log("Inside on init")
+  //        console.log(selectedDataDisplayComponent.modeValue);
+  //        selectedDataDisplayComponent.modeKeyArray=selectedDataDisplayComponent.modeKey({type:selectedDataDisplayComponent.modeValue});
+  //        selectedDataDisplayComponent.seatKeyArray=selectedDataDisplayComponent.seatKey({value:selectedDataDisplayComponent.modeValue});
+  //        console.log('array of key '+selectedDataDisplayComponent.modeKeyArray);
+  //        console.log('seat key array '+selectedDataDisplayComponent.seatKeyArray);
+  //     };
+
+
  }
