@@ -146,7 +146,7 @@ if(travelBookingParentCtrl.travelPlanExists)
             "mandatory": false,
             "displayName": "Near By",
             "id": "nearBy",
-            "type": "singleSlider",
+            "type": "slider",
             "specificAttr":{
               "min":0.1,
               "max":200
@@ -202,300 +202,141 @@ if(travelBookingParentCtrl.travelPlanExists)
             "id": "pickupPoint",
             "type": "autoComplete",
             "data": ["koramangala",
-            "SilkBoard",
-            "Electronic City",
-            "Sarjapura"
-          ]
+              "SilkBoard",
+              "Electronic City",
+              "Sarjapura"
+            ]
+          },
+
+          "dropPoint": {
+            "mandatory": true,
+            "displayName": "Drop Point",
+            "id": "dropPoint",
+            "type": "autoComplete",
+            "data": ["koramangala",
+              "SilkBoard",
+              "Electronic City",
+              "Sarjapura"
+            ]
+          },
+          "typeOfLocalTransport": {
+            "mandatory": true,
+            "displayName": "Type",
+            "id": "typeOfLocalTransport",
+            "type": "singleSelect",
+            "specificAttr":{
+              "domainList":["Cab", "Bus"]
+            }
+          },
+
+          "pickupDate": {
+            "mandatory": true,
+            "displayName": "Pick up Date",
+            "id": "pickupDate",
+            "type": "date"
+          },
+          "pickupTime": {
+            "mandatory": true,
+            "displayName": "Pick up Time",
+            "id": "pickupTime",
+            "type": "time"
+          }
+
+
+        }
+      }
+    },
+    "edge": {
+      "essential": {
+        "noDependencyData": {
+          "travelStartDate": {
+            "mandatory": "true",
+            "displayName": "Travel Start Date",
+            "id": "travelStartDate",
+            "type": "date"
+          }
         },
+        "modesToSelectTheServices": {
+          "mode": {
+            "mandatory": true,
+            "displayName": "Select the mode",
+            "id": "mode",
+            "type": "singleSelect",
+            "specificAttr": {
+              "domainList": ["flight", "bus", "train"]
+            }
 
-        "dropPoint": {
-          "mandatory": true,
-          "displayName": "Drop Point",
-          "id": "dropPoint",
-          "type": "autoComplete",
-          "data": ["koramangala",
-          "SilkBoard",
-          "Electronic City",
-          "Sarjapura"
-        ]
-      },
-      "typeOfLocalTransport": {
-        "mandatory": true,
-        "displayName": "Type",
-        "id": "typeOfLocalTransport",
-        "type": "singleSelect",
-        "specificAttr":{
-          "domainList":["Cab", "Bus"]
+          },
+          "extraAddOnsServices": {
+            "mandatory": false,
+            "displayName": "Extra Add-on Services",
+            "id": "extraAddOnsServices",
+            "type": "multiSelect",
+            "specificAttr": {
+              "domainList": ["visaOnArrival", "forex"]
+            }
+          }
         }
       },
+      "services": {
+        "flight": {
+          "travelStartDate": {
+            "mandatory": true,
+            "displayName": "Travel Start Date",
+            "id": "travelStartDate",
+            "type": "date",
+            "data-reference": "essential.travelStartDate"
+          },
+          "class": {
+            "mandatory": true,
+            "displayName": "Class",
+            "id": "class",
+            "type": "singleSelect",
+            "specificAttr": {
+              "domainList": ["Bussiness", "Economy"]
+            }
 
-      "pickupDate": {
-        "mandatory": true,
-        "displayName": "Pick up Date",
-        "id": "pickupDate",
-        "type": "date"
-      },
-      "pickupTime": {
-        "mandatory": true,
-        "displayName": "Pick up Time",
-        "id": "pickupTime",
-        "type": "time"
+          },
+          "numberOfHops": {
+            "mandatory": true,
+            "displayName": "Number of Hops",
+            "id": "numberOfHops",
+            "type": "slider",
+            "specificAttr": {
+              "min": 0,
+              "max": 15
+            }
+          },
+          "departureTime": {
+            "mandatory": false,
+            "displayName": "Departure Time",
+            "id": "departureTime",
+            "type": "time"
+          },
+          "airlines": {
+            "mandatory": false,
+            "displayName": "Airlines",
+            "id": "airlines",
+            "type": "singleSelect",
+            "specificAttr": {
+              "domainList": ["Air Asia", "Air Costa", "Jet"]
+            }
+
+          }
+        }
       }
-
 
     }
-  }
-},
-"edge": {
-  "essential": {
-    "noDependencyData": {
-      "travelStartDate": {
-        "mandatory": "true",
-        "displayName": "Travel Start Date",
-        "id": "travelStartDate",
-        "type": "date"
-      }
+
+  };
+  travelBookingParentCtrl.tempCurrentObj = {
+    "essential": {
     },
-    "modesToSelectTheServices": {
-      "mode": {
-        "mandatory": true,
-        "displayName": "Select the mode",
-        "id": "mode",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["flight", "bus", "train"]
-        }
-
-      },
-      "extraAddOnsServices": {
-        "mandatory": false,
-        "displayName": "Extra Add-on Services",
-        "id": "extraAddOnsServices",
-        "type": "multiSelect",
-        "specificAttr": {
-          "domainList": ["visaOnArrival", "forex"]
-        }
-      }
-    }
-  },
-  "services": {
-    "flight": {
-      "travelStartDate": {
-        "mandatory": true,
-        "displayName": "Travel Start Date",
-        "id": "travelStartDate",
-        "type": "date",
-        "data-reference": "essential.travelStartDate"
-      },
-      "class": {
-        "mandatory": true,
-        "displayName": "Class",
-        "id": "class",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["Bussiness", "Economy"]
-        }
-
-      },
-      "numberOfHops": {
-        "mandatory": true,
-        "displayName": "Number of Hops",
-        "id": "numberOfHops",
-        "type": "singleSlider",
-        "specificAttr": {
-          "min": 0,
-          "max": 15
-        }
-      },
-      "departureTime": {
-        "mandatory": false,
-        "displayName": "Departure Time",
-        "id": "departureTime",
-        "type": "time"
-      },
-      "airlines": {
-        "mandatory": false,
-        "displayName": "Airlines",
-        "id": "airlines",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["Air Asia", "Air Costa", "Jet"]
-        }
-
-      }
-    },
-    "train": {
-      "travelStartDate": {
-        "mandatory": true,
-        "displayName": "Travel Start Date",
-        "id": "travelStartDate",
-        "type": "date",
-        "data-reference": "essential.travelStartDate"
-      },
-      "class": {
-        "mandatory": true,
-        "displayName": "Class",
-        "id": "class",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["Bussiness", "Economy"]
-        }
-
-      },
-      "numberOfHops": {
-        "mandatory": true,
-        "displayName": "Number of Hops",
-        "id": "numberOfHops",
-        "type": "singleSlider",
-        "specificAttr": {
-          "min": 0,
-          "max": 15
-        }
-      },
-      "departureTime": {
-        "mandatory": false,
-        "displayName": "Departure Time",
-        "id": "departureTime",
-        "type": "time"
-      },
-      "airlines": {
-        "mandatory": false,
-        "displayName": "Airlines",
-        "id": "airlines",
-        "type": "singleSelect",
-        "specificAttr": {
-          "domainList": ["Air Asia", "Air Costa", "Jet"]
-        }
-
-      }
-    },
-    "bus": {
-		"travelStartDate": {
-			"mandatory": true,
-			"displayName": "Travel Start Date",
-			"id": "travelStartDate",
-			"type": "date",
-			"data-reference": "essential.travelStartDate"
-		},
-		"class": {
-			"mandatory": true,
-			"displayName": "Class",
-			"id": "class",
-			"type": "singleSelect",
-			"specificAttr": {
-				"domainList": ["Bussiness", "Economy"]
-			}
-
-		},
-		"numberOfHops": {
-			"mandatory": true,
-			"displayName": "Number of Hops",
-			"id": "numberOfHops",
-			"type": "singleSlider",
-			"specificAttr": {
-				"min": 0,
-				"max": 15
-			}
-		},
-		"departureTime": {
-			"mandatory": false,
-			"displayName": "Departure Time",
-			"id": "departureTime",
-			"type": "time"
-		},
-		"airlines": {
-			"mandatory": false,
-			"displayName": "Airlines",
-			"id": "airlines",
-			"type": "singleSelect",
-			"specificAttr": {
-				"domainList": ["Air Asia", "Air Costa", "Jet"]
-			}
-
-		}
-	}
-  }
-
-}
-
-};
-//  travelBookingParentCtrl.tempCurrentObj ={
-// 	"essential": {},
-// 	"childServices": {
-//    	"state": "selected",
-// 		"selectedData": {
-// 			"travelStartDate": "5/1/2016",
-// 			"mode": "flight",
-// 			"flight": {
-//
-// 				"image": "public/assets/images/indigo.png",
-// 				"companyName": "Air Costa",
-// 				"flightID": "AC2456",
-// 				"seatNumber": "45H",
-// 				"sourceAirport": "koramangala airport",
-// 				"destinationAirport": "delhi airport",
-// 				"price": "876547 INR",
-// 				"preferences": {
-// 					"class": "Bussiness",
-// 					"Nonstop": "true",
-// 					"meals": "Non Veg",
-// 					"extraBaggage": "14 Kg"
-// 				}
-// 			}
-// 		}
-//
-//
-// 	},
-// 	"type": "edge",
-// 	"state": "selected"
-// }
-//  travelBookingParentCtrl.tempCurrentObj ={
-//  "essential": {},
-//  "childServices": {
-//
-//
-//  "stay": [{
-//    "requestedData": {
-//      "area": "Hari Nagar",
-//      "rating": "3",
-//      "roomType": "Executive",
-//      "checkinDate": "6/30/2016",
-//      "checkoutDate": "7/01/2016"
-//    },
-//    "selectedData": {
-//      "image": "public/assets/images/hotel3.png",
-//      "name": "JW Mariott",
-//      "rating": "5",
-//      "location": "hotel's exact address",
-//      "roomType": "Deluxe",
-//      "checkinDate": "6/30/2016",
-//      "checkinTime": "2:00 PM",
-//      "checkoutDate": "7/01/2016",
-//      "checkoutTime": "3:00 PM",
-//      "price": "10000 INR",
-//      "comments": "Some useful comment which you may want to convey to the hotel"
-//    }
-//  }]
-// },
-//
-//
-//
-//  "type": "node",
-//  "state": "selected"
-// }
-travelBookingParentCtrl.tempCurrentObj ={
-  "essential": {},
-  "childServices": {
-
-
-  },
-
-
-
-  "type": "edge",
-  "state": "selected"
-}
-travelBookingParentCtrl.tempSelectedChildren = ["flight","train","bus"];
+    "childServices": {},
+    "type": "edge",
+    "state": "initial"
+  };
+  travelBookingParentCtrl.tempSelectedChildren = ["flight"];
 };
 
 

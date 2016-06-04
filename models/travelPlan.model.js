@@ -97,7 +97,7 @@ function getTravelPlan(travelPlanId) {
       TravelPlan.findOne({travelPlanId: travelPlanId})
                 .exec(function(err,data){
                   travelPlanData = data;
-                   res.json(travelPlanData);
+                   deferred.resolve(travelPlanData);
                  })
 
     return deferred.promise;

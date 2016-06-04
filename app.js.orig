@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8a393d69d9c4af6cff26ae0cd128bf0acd434afe
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -71,7 +74,10 @@ app.listen(3040, function () {
     console.log('App started for Quiz Play Testing!!');
 });
 module.exports = app;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8a393d69d9c4af6cff26ae0cd128bf0acd434afe
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -147,4 +153,8 @@ app.use(function (err, req, res, next) {
 app.listen(3000, function () {
     console.log('App started for Quiz Play Testing!!');
 });
+<<<<<<< HEAD
 module.exports = app;
+=======
+module.exports = app;
+>>>>>>> 8a393d69d9c4af6cff26ae0cd128bf0acd434afe
