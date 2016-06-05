@@ -18,8 +18,8 @@ function rangeSliderCtrl() {
 
   if(rangeSliderCtrl.bindData == undefined)
     rangeSliderCtrl.bindData = [rangeSliderCtrl.specificAttr.floor, rangeSliderCtrl.specificAttr.ceil];
-  console.log("bind data", rangeSliderCtrl.bindData);  
-  console.log("Inside single Slider Ctrl");
+  console.log("bind data", rangeSliderCtrl.bindData);
+  console.log("Inside Double Slider Ctrl");
   console.log(rangeSliderCtrl);
   rangeSliderCtrl.options = {
     floor: rangeSliderCtrl.specificAttr.floor,
@@ -28,12 +28,14 @@ function rangeSliderCtrl() {
     noSwitching: rangeSliderCtrl.specificAttr.noSwitching
   };
   rangeSliderCtrl.options.onEnd = function(id, minValue, maxValue) {
-
-      console.log("I am inside on end of customInputBox");
+    if(minValue===undefined)
+      minValue=rangeSliderCtrl.specificAttr.floor;
+      console.log("I am inside onEnd of customInputBox");
       console.log(minValue);
       console.log(maxValue);
       // console.log(id);
       // console.log(value);
+
       rangeSliderCtrl.reflectComponent({value:[minValue, maxValue]});
   }
 

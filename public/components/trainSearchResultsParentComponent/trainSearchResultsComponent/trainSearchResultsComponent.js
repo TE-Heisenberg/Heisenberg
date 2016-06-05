@@ -19,38 +19,10 @@ function trainSearchResultsController($http,$filter) {
       trainSearchResults.filters=data.filters;
       trainSearchResults.previousData=trainSearchResults.data;
   });
-  trainSearchResults.onTimeChange=function(attribute,time){
-      trainSearchResults.data=trainSearchResults.previousData;
-      var array1=[];
-      var array=trainSearchResults.data;
-      for(obj in array){
-          var object=(array[obj][attribute]);
-          var dep=object.substring(0,2);
-          if(parseInt(dep)>=time*6 && parseInt(dep)<=(time+1)*6){
-              array1.push(array[obj]);
-          }
-      }
-      trainSearchResults.data=array1;
-      //trainSearchResults.previousData=array1;
-  };
 
 
 
 
-  trainSearchResults.onSliderChange=function(attribute,range){
-    console.log(attribute+"     "+range);
-      trainSearchResults.data=trainSearchResults.list;
-      var array1=[];
-      var array=trainSearchResults.data;
-      for(obj in array){
-          var object=(array[obj][attribute]);
-          if(parseInt(object)>=range){
-              array1.push(array[obj]);
-          }
-      }
-      trainSearchResults.data=array1;
-      trainSearchResults.previousData=array1;
-  };
 
   trainSearchResults.reset=function() {
     console.log("im in reset");
@@ -67,30 +39,13 @@ function trainSearchResultsController($http,$filter) {
     trainSearchResults.myorder=time;
     //console.log("sort aaa"+trainSearchResults.myorder);
   };
-  trainSearchResults.onAreaChange=function(area,check){
-    trainSearchResults.data=trainSearchResults.previousData;
-    var curData=trainSearchResults.data;
-    trainSearchResults.check=check;
-    if(trainSearchResults.check==true){
-      curData=$filter('filter')(curData,area);
-      trainSearchResults.check=false;
-      trainSearchResults.data=curData;
-    }
-    else {
-      trainSearchResults.data=trainSearchResults.previousData;
-      //console.log("prev == "+trainSearchResults.data);
-    }
-    //trainSearchResults.previousData=trainSearchResults.data;
-  };
+
   trainSearchResults.selectedFilters={};
   trainSearchResults.reflectValue=function(keyString,value, id){
-    // if(id==="price"){
-    //   return trainSearchResults.onSliderChange(id,value);
-    // }
 
     console.log("in reflectValue");
-    console.log(id);
-    console.log(value);
+    // console.log(id);
+    // console.log("in value : "+value);
     trainSearchResults.selectedFilters[id]=value;
     selectedFilters=trainSearchResults.selectedFilters;
     var afterFilter=[];
@@ -113,10 +68,22 @@ function trainSearchResultsController($http,$filter) {
          for (id in selectedFilters) {
            countvalues=0;
            for(filter in selectedFilters[id]){
-             for (station of train[id]) {
-               //console.log(station);
-               if(station===selectedFilters[id][filter]){
+             if(id==="price"){
+               if(train[id]>=selectedFilters[id][0] && train[id]<=selectedFilters[id][1]){
                  countvalues++;
+               }
+             }
+             else if (id==="arrival_time" || id==="departure_time") {
+
+               if (parseInt(train[id].substring(0,2))>=selectedFilters[id][0] && parseInt(train[id].substring(0,2))<=selectedFilters[id][1]) {
+                  countvalues++;
+               }
+             }
+             else{
+               for (station of train[id]) {
+                 if(station===selectedFilters[id][filter]){
+                   countvalues++;
+                 }
                }
              }
 
