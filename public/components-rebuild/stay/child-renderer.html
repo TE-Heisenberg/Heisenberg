@@ -3,32 +3,33 @@
 <md-card>
   <md-card-title>
     {{stayRenderer.cardHeading}}
+    {{stayRenderer.childFieldsData}}
   </md-card-title>
   <div ng-repeat="childFieldsData in stayRenderer.childFieldsData">
     <br>
-   childFieldsData  Status$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    childFieldsData  Status$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
     <br>
 
     <div ng-if="childFieldsData.state == 'initial' || childFieldsData.state == 'request'">
 
       <child-form-renderer fields-data="childFieldsData.requested" fields-meta-data="stayRenderer.metaDataOfChildFields"></child-form-renderer>
 
-       <ng-md-icon flex="40" flex-offset="10" icon="delete"  ng-click="stayRenderer.onDelete($index)"></ng-md-icon>
-       <ng-md-icon flex="40" flex-offset="10" icon="add_circle" ng-click="stayRenderer.onAdd()" ng-show="$index == stayRenderer.childFieldsData.length"></ng-md-icon>
+      <ng-md-icon flex="40" flex-offset="10" icon="delete"  ng-click="stayRenderer.onDelete($index)"></ng-md-icon>
+      <ng-md-icon flex="40" flex-offset="10" icon="add_circle" ng-click="stayRenderer.onAdd()" ng-show="$index == stayRenderer.childFieldsData.length"></ng-md-icon>
 
     </div>
     <div ng-if="childFieldsData.state == 'select'">
-       <!-- Insert read only component of stay -->
-       {{$index}}
-       <stay-selected-data-renderer index="{{$index}}" selected-meta-data="childFieldsData.selected" delete-selected-stay-child=stayRenderer.onDelete(index) edit-selected-stay-child=stayRenderer.onEdit(index)>
-       </stay-selected-data-renderer>
+      <!-- Insert read only component of stay -->
+      {{$index}}
+      <stay-selected-data-renderer index="{{$index}}" selected-meta-data="childFieldsData.selected" delete-selected-stay-child=stayRenderer.onDelete(index) edit-selected-stay-child=stayRenderer.onEdit(index)>
+      </stay-selected-data-renderer>
     </div>
-<!-- <div ng-if="childFieldsData.status=='selected'">
-     {{childFieldsData.status}}
-       <child-selected-data-renderer-component value="childFieldsData"
-        get-mode-pref="stayRenderer.getModePref('stay')"
-         get-seat-pref="stayRenderer.getSeatPref('stay')"></child-selected-data-renderer-component>
-      </div> -->
-    <md-divider layout-margin></md-divider>
-  </div>
+    <!-- <div ng-if="childFieldsData.status=='selected'">
+    {{childFieldsData.status}}
+    <child-selected-data-renderer-component value="childFieldsData"
+    get-mode-pref="stayRenderer.getModePref('stay')"
+    get-seat-pref="stayRenderer.getSeatPref('stay')"></child-selected-data-renderer-component>
+  </div> -->
+  <md-divider layout-margin></md-divider>
+</div>
 </md-card>

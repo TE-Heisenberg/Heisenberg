@@ -4,7 +4,7 @@ angular.module('app')
        controller: childrenRouterController,
        controllerAs: "childrenRouter",
        bindings: {
-         arrayOfChildFieldsData: "<",
+         childFieldsData: "<",
          metaDataOfChildFields: "<",
          cardHeading: "@",
          childId: "@"
