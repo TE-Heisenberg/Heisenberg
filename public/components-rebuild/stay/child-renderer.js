@@ -12,7 +12,10 @@ var app = angular.module("app").component("stayRenderer", {
 function stayRendererCtrl()
 {
 
+
   var stayRenderer = this;
+  console.log("inside stay %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+  console.log(stayRenderer.arrayOfChildFieldsData);
   // stayRenderer.$onInit = function() {
   //   console.log("I am in stay renderer onit");
   //   console.log(stayRenderer.arrayOfChildFieldsData);
