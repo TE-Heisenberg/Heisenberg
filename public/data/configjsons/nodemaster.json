@@ -25,8 +25,17 @@
 		}
 	},
 	"servicesIntializer":{
-		"stay": [{}],
-		"localTravel": [{}]
+		"stay": [
+							{
+									"state": "inital",
+									"requested": {}
+							}
+						],
+		"localTravel": [{
+
+					"state": "inital",
+					"requested": {}
+			}]
 	}
 	,
 	"services": {
