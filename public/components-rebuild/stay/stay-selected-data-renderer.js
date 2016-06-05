@@ -31,7 +31,7 @@ function staySelectedDataRendererCtrl()
   }
   staySelectedDataRenderer.endDateTime=
  {
-   "checkoutTime":staySelectedDataRenderer.selectedMetaData.checkoutTime,
+   "endTime":staySelectedDataRenderer.selectedMetaData.checkoutTime,
    "endDate":staySelectedDataRenderer.selectedMetaData.checkoutDate,
     "description":"",
  }
