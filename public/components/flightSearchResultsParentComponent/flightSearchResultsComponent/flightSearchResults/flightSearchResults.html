@@ -1,19 +1,45 @@
-<md-card  flex-xs="50" ng-model="flightSearchResult.flightSearchResult">
-<div layout="row"  layout-align="space-around center" layout-xs="column">
-  <div>
-    <img  class="img" ng-src="public/assets/images/{{flightSearchResult.flightSearchResult.imagePath}}" alt="{{flightSearchResult.flightSearchResult.imagePath}}">
-  </div>
-  <div>{{flightSearchResult.flightSearchResult.arrivalTime}}</div>
-  <div>{{flightSearchResult.flightSearchResult.departureTime}}</div>
-  <div>{{flightSearchResult.flightSearchResult.duration}}</div>
-  <div>{{flightSearchResult.flightSearchResult.price}}</div>
-  <div layout="row" layout-align="center center">
-    <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
-  </div>
-</div>
-<md-card-content layout="row" layout-align="space-around center">
-<span>{{flightSearchResult.flightSearchResult.stops}}</span>
-<div>{{flightSearchResult.flightSearchResult.fareType}}</div>
-<div>{{flightSearchResult.flightSearchResult.price}}</div>
-</md-card-content>
+<md-card flex-xs="50" ng-model="flightSearchResult.flightSearchResult">
+    <div layout="row" layout-align="space-around start" layout-xs="column">
+      <div flex="15">
+        <img class="img" ng-src="public/assets/images/{{flightSearchResult.flightSearchResult.imagePath}}" alt="{{flightSearchResult.flightSearchResult.imagePath}}">
+      </div>
+      <div layout="row" flex=25 layout-align="space-around center">
+        <div layout="column">
+          <h4>{{flightSearchResult.flightSearchResult.arrivalTime}}</h4>
+          <div>{{flightSearchResult.from}}</div>
+          <div class="text-align-right">
+            <div>{{flightSearchResult.sourceDetails.date}}</div>
+            <div>{{flightSearchResult.sourceDetails.source}}</div>
+            <div>{{flightSearchResult.sourceDetails.country}}</div>
+          </div>
+        </div>
+        <h3 class="material-icons md-36">trending_flat</h3>
+        <div layout="column">
+          <h4>{{flightSearchResult.flightSearchResult.departureTime}}</h4>
+          <div>{{flightSearchResult.to}}</div>
+          <div class="text-align-left">
+            <div>{{flightSearchResult.destinationDetails.date}}</div>
+            <div>{{flightSearchResult.destinationDetails.source}}</div>
+            <div>{{flightSearchResult.destinationDetails.country}}</div>
+          </div>
+        </div>
+      </div>
+      <!--TODO Have to associate a converter along with the duration-->
+      <div>
+        <div>{{flightSearchResult.flightSearchResult.duration}}</div>
+        <!--TODO If zero stops display Non Stop-->
+        <div>{{flightSearchResult.flightSearchResult.stops}} stops</div>
+      </div>
+      <div layout="column" layout-align="center center">
+        <div layout="row">
+          <i class="material-icons md-16">room_service</i>
+          <i class="material-icons md-16">work</i>
+        </div>
+      </div>
+      <div layout="column" layout-align="center center">
+        <h3>{{flightSearchResult.flightSearchResult.price}}</h3>
+        <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
+      </div>
+    </div>
+
 </md-card>
