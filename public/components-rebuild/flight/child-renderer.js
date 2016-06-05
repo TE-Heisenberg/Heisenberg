@@ -32,7 +32,7 @@ function flightRendererCtrl()
   flightRenderer.onEdit = function(index) {
     console.log("I am inside of flightRenderer onedit");
     console.log(index);
-    flightRenderer.childFieldsData[index].state = "request";
+    flightRenderer.childFieldsData.state = "request";
   }
 
 }
