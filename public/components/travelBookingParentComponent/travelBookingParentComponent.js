@@ -70,11 +70,13 @@ function travelBookingParentCtrl (mainService) {
 
 
 
-  travelBookingParentCtrl.currentnodeedge = function (id, type) {
-    travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[id];
-    travelBookingParentCtrl.selectedChildren = type;
-    console.log(id);
-    console.log(type);
+  travelBookingParentCtrl.currentnodeedge = function (value2) {
+    // travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[id];
+    // travelBookingParentCtrl.selectedChildren = type;
+    console.log("i am inside currentnodeedge");
+    console.log(value2);
+    // console.log(id);
+    // console.log(type);
 
   };
   //PG: 19th May- It is checked before hand if the Travel Plan exists or not

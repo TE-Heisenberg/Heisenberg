@@ -22,6 +22,8 @@ function nodeController($timeout, $q) {
     // selectedAutocompleteData=null;
     node.selectednode=function(indexid,type){
       console.log("Node is clicked");
+      console.log(indexid);
+      console.log(type);
       console.log({'index':indexid,'type':type});
       node.currentnodeedgetravel({clicked:{'index':indexid,'type':type }});
     };
