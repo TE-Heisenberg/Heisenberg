@@ -31,11 +31,31 @@
     }
   },
   "servicesIntializer":{
-    "flight":{},
-    "bus": {},
-    "train": {},
-    "visaOnArrival":{},
-    "forex": {}
+    "flight":{
+
+          "state": "inital",
+          "requested": {}
+    },
+    "bus": {
+
+          "state": "inital",
+          "requested": {}
+    },
+    "train": {
+
+          "state": "inital",
+          "requested": {}
+    },
+    "visaOnArrival":[{
+
+          "state": "inital",
+          "requested": {}
+    }],
+    "forex": [{
+
+          "state": "inital",
+          "requested": {}
+    }]
   }
   ,
   "services": {
