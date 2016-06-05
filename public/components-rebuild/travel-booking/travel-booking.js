@@ -6,7 +6,8 @@ angular.module('app')
        bindings: {
          "currentSelectedObj": "<",
          "metaDataOfObj": "<",
-         "currentSelectedChildren": "<"
+         "currentSelectedChildren": "<",
+         "childrenLabels": "<"
        }
 });
 
@@ -60,13 +61,13 @@ function travelBookingCtrl() {
 
 
   //This needs to be in a function which gets called before html is rendered
-  travelBooking.childrenLabels = {};
-  for(mode in travelBooking.metaDataOfObj.essential.modesToSelectTheServices)
-  {
-    var modeData = travelBooking.metaDataOfObj.essential.modesToSelectTheServices[mode];
-    Object.assign(travelBooking.childrenLabels,modeData.specificAttr.domainList)
-
-  }
+  // travelBooking.childrenLabels = {};
+  // for(mode in travelBooking.metaDataOfObj.essential.modesToSelectTheServices)
+  // {
+  //   var modeData = travelBooking.metaDataOfObj.essential.modesToSelectTheServices[mode];
+  //   Object.assign(travelBooking.childrenLabels,modeData.specificAttr.domainList)
+  //
+  // }
 
   // travelBooking.metaDataOfChildren = travelBooking.metaDataOfObj.services;
 

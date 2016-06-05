@@ -5,7 +5,8 @@ var app = angular.module("app").component("flightRenderer", {
     bindings: {
       "childFieldsData": "<",
       "metaDataOfChildFields": "<",
-      "cardHeading": "@"
+      "cardHeading": "@",
+      "deleteAll": "&"
     }
 });
 
@@ -19,7 +20,8 @@ function flightRendererCtrl()
   flightRenderer.onDelete = function(index) {
     console.log("inside on delete");
     console.log(index);
-    flightRenderer.childFieldsData.splice(index,1);
+    flightRenderer.deleteAll();
+    // flightRenderer.childFieldsData.splice(index,1);
   }
 
   flightRenderer.onAdd = function(index) {
