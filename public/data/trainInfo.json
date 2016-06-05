@@ -5,93 +5,74 @@
           "id":"price",
           "type":"rangeSlider",
           "options": {
-      						"domainList":{
-      							"minValue": 500,
-      	            "maxValue": 5000,
-      	            "options":{
-      	            	"id": "price",
-      	            	"floor": 500,
-      	            	"ceil": 5000,
-      	            	"step": 1,
-      	              "noSwitching": true,
+                      "floor": 300,
+                      "ceil": 5000,
+                      "step": 1,
+                      "noSwitching": true,
                       "endPointsTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								},
-      								"leftSliderHandleTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								},
+                        "prefix": "",
+                        "postfix": ""
+                      },
+                      "leftSliderHandleTranslate": {
+                        "prefix": "",
+                        "postfix": ""
+                      },
 
-      								"rightSliderHandleTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								}
-      	          	}
-      						}
-          }
+                      "rightSliderHandleTranslate": {
+                        "prefix": "",
+                        "postfix": ""
+                      }
+              }
         },
         {
           "label":"Departure Time",
           "id":"departure_time",
           "type":"rangeSlider",
           "options": {
-      						"domainList":{
-      							"minValue": 0,
-      	            "maxValue": 24,
-      	            "options":{
-      	            	"id": "departure_time",
-      	            	"floor": 0,
-      	            	"ceil": 24,
-      	            	"step": 1,
-      	              "noSwitching": true,
+                      "floor": 0,
+                      "ceil": 24,
+                      "step": 1,
+                      "noSwitching": true,
                       "endPointsTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								},
-      								"leftSliderHandleTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								},
+                        "prefix": "",
+                        "postfix": ""
+                      },
+                      "leftSliderHandleTranslate": {
+                        "prefix": "",
+                        "postfix": ""
+                      },
 
-      								"rightSliderHandleTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								}
-      	          	}
-      						}
-          }
+                      "rightSliderHandleTranslate": {
+                        "prefix": "",
+                        "postfix": ""
+                      }
+              }
+
         },
         {
           "label":"Arrival Time",
           "id":"arrival_time",
           "type":"rangeSlider",
           "options": {
-      						"domainList":{
-      							"minValue": 0,
-      	            "maxValue": 24,
-      	            "options":{
-      	            	"id": "arrival_time",
-      	            	"floor": 0,
-      	            	"ceil": 24,
-      	            	"step": 1,
-      	              "noSwitching": true,
+                      "floor": 0,
+                      "ceil": 24,
+                      "step": 1,
+                      "noSwitching": true,
                       "endPointsTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								},
-      								"leftSliderHandleTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								},
+                        "prefix": "",
+                        "postfix": ""
+                      },
+                      "leftSliderHandleTranslate": {
+                        "prefix": "",
+                        "postfix": ""
+                      },
 
-      								"rightSliderHandleTranslate": {
-      									"prefix": "",
-      									"postfix": ""
-      								}
-      	          	}
-      						}
-          }
+                      "rightSliderHandleTranslate": {
+                        "prefix": "",
+                        "postfix": ""
+                      }
+              }
+
         },
         {
           "label":"Departure Station",
