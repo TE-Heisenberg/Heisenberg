@@ -5,7 +5,8 @@ var app = angular.module("app").component("stayRenderer", {
     bindings: {
       "childFieldsData": "<",
       "metaDataOfChildFields": "<",
-      "cardHeading": "@"
+      "cardHeading": "@",
+      "deleteAll": "&"
     }
 });
 
@@ -15,7 +16,7 @@ function stayRendererCtrl()
 
   var stayRenderer = this;
   console.log("inside stay %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-  console.log(stayRenderer.childFieldsData);
+  console.log(stayRenderer);
   // stayRenderer.$onInit = function() {
   //   console.log("I am in stay renderer onit");
   //   console.log(stayRenderer.childFieldsData);
@@ -32,6 +33,11 @@ function stayRendererCtrl()
     console.log("inside on delete");
     console.log(index);
     stayRenderer.childFieldsData.splice(index,1);
+    if(index == 0)
+      {
+        console.log("Inside if of stayRenderer");
+        stayRenderer.deleteAll();
+      }
   }
 
   stayRenderer.onAdd = function(index) {

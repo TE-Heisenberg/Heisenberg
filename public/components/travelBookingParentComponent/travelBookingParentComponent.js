@@ -32,49 +32,13 @@ function travelBookingParentCtrl (mainService) {
       };
       console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type])
     }
-
-    // travelBookingParentCtrl.$canActivate = function() {
-    //   console.log(" I am inside on init");
-    //   travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObject();
-    //   console.log(travelBookingParentCtrl.travelPlanObject);
-    //   travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[0];
-    //   console.log(travelBookingParentCtrl.currentSelectedObj);
-    //   travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.travelPlanObject[0].childServices);
-    //       console.log("I am in travelBookingParentCtrl routerOnActivate before");
-    //       var getPrerequisites = mainService.getPrerequisites();
-    //       console.log(getPrerequisites);
-    //       return getPrerequisites.then(function(data) {
-    //           console.log("I am in travelBookingParentCtrl routerOnActivate");
-    //           console.log(data);
-    //
-    //       });
-    //
-    // }
-
-  // travelBookingParentCtrl.$routerOnActivate = function() {
-  //
-  //
-  //     console.log("I am in travelBookingParentCtrl routerOnActivate before");
-  //     var getPrerequisites = mainService.getPrerequisites();
-  //     console.log(getPrerequisites);
-  //     return getPrerequisites.then(function(data) {
-  //         console.log("I am in travelBookingParentCtrl routerOnActivate");
-  //         console.log(data);
-  //         travelBookingParentCtrl.elementFields = {
-  //           "location": data[0].data,
-  //           "transit": data[1].data
-  //         };
-  //
-  //     });
-  // };
-
-
-
   travelBookingParentCtrl.currentnodeedge = function (value2) {
     // travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[id];
     // travelBookingParentCtrl.selectedChildren = type;
     console.log("i am inside currentnodeedge");
     console.log(value2);
+    travelBookingParentCtrl.currentSelectedObj = value2.currentObject;
+    travelBookingParentCtrl.selectedChildren = value2.selectedChildren;
     // console.log(id);
     // console.log(type);
 

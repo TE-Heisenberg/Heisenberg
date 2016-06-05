@@ -30,6 +30,7 @@ function travelPlanController() {
     console.log(value);
     var currentObjectDetails = {
       "currentObject": plan.travelplanobject[value.index],
+      "index": value.index,
       "selectedChildren": value.type
     }
     plan.currentnodeedgebooking({value2:currentObjectDetails});
