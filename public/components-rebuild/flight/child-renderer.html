@@ -4,7 +4,45 @@
 <br>
 this is flight comp -->
 <!-- <child-card-renderer array-of-child-fields-data="flightRenderer.arrayOfChildFieldsData" meta-data-of-child-fields="flightRenderer.metaDataOfChildFields" card-heading="{{flightRenderer.cardHeading}}"></child-card-renderer> -->
-<br>
+
+
+
+<!-- <br>
 before child-card-renderer-without-icons
 <br>
-<child-card-renderer-without-icons array-of-child-fields-data="flightRenderer.arrayOfChildFieldsData" meta-data-of-child-fields="flightRenderer.metaDataOfChildFields" card-heading="{{flightRenderer.cardHeading}}"></child-card-renderer-without-icons>
+<child-card-renderer-without-icons array-of-child-fields-data="flightRenderer.arrayOfChildFieldsData" meta-data-of-child-fields="flightRenderer.metaDataOfChildFields" card-heading="{{flightRenderer.cardHeading}}"></child-card-renderer-without-icons> -->
+
+
+<!-- <child-card-renderer array-of-child-fields-data="flightRenderer.childFieldsData" meta-data-of-child-fields="flightRenderer.metaDataOfChildFields" card-heading="{{flightRenderer.cardHeading}}"></child-card-renderer> -->
+
+<md-card>
+  <md-card-title>
+    {{flightRenderer.cardHeading}}
+
+  </md-card-title>
+  <div ng-repeat="childFieldsData in flightRenderer.childFieldsData">
+    <br>
+    childFieldsData  Status$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    <br>
+
+    <div ng-if="childFieldsData.state == 'initial' || childFieldsData.state == 'request'">
+
+      <child-form-renderer fields-data="childFieldsData.requested" fields-meta-data="flightRenderer.metaDataOfChildFields"></child-form-renderer>
+
+
+    </div>
+    <div ng-if="childFieldsData.state == 'select'">
+      <!-- Insert read only component of flight -->
+      {{$index}}
+      <flight-selected-data-renderer index="{{$index}}" selected-meta-data="childFieldsData.selected" delete-selected-flight-child=flightRenderer.onDelete(index) edit-selected-flight-child=flightRenderer.onEdit(index)>
+      </flight-selected-data-renderer>
+    </div>
+    <!-- <div ng-if="childFieldsData.status=='selected'">
+    {{childFieldsData.status}}
+    <child-selected-data-renderer-component value="childFieldsData"
+    get-mode-pref="flightRenderer.getModePref('flight')"
+    get-seat-pref="flightRenderer.getSeatPref('flight')"></child-selected-data-renderer-component>
+  </div> -->
+  <md-divider layout-margin></md-divider>
+</div>
+</md-card>
