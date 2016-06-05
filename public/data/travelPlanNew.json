@@ -1,6 +1,6 @@
 [
   {
-    "type": "node",
+    "type": "location",
     "cityName": "Bangalore",
     "basicServices": ["stay","localTravel"],
     "childServices": {
@@ -64,7 +64,7 @@
   },
 
   {
-    "type": "edge",
+    "type": "transit",
     "travelStartDate":"02/04/2016",
     "mode": ["flight", "bus", "train"],
     "otherAddOnServices": ["visa","translator"],
@@ -90,7 +90,7 @@
     }
   },
   {
-    "type": "node",
+    "type": "location",
     "cityName": "Bangalore",
     "basicServices": "",
     "childServices": {

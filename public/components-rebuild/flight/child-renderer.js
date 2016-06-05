@@ -3,7 +3,7 @@ var app = angular.module("app").component("flightRenderer", {
     controllerAs: "flightRenderer",
     controller: flightRendererCtrl,
     bindings: {
-      "arrayOfChildFieldsData": "<",
+      "childFieldsData": "<",
       "metaDataOfChildFields": "<",
       "cardHeading": "@"
     }
@@ -16,4 +16,12 @@ function flightRendererCtrl()
   console.log("Inside flightRenderer");
   console.log(flightRenderer);
 
+
+  flightRenderer.$onInit =  function() {
+
+
+    if (flightRenderer.childFieldsData.length == 0) {
+      flightRenderer.childFieldsData = {};
+    }
+  }
 }
