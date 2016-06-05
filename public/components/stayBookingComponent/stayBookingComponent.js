@@ -10,7 +10,57 @@ function stayBookingController($http)
 
 
   var stayBookingCtrl = this;
+  stayBookingCtrl.selectedMetaDataLocalTravel={
 
+      "source": "Rajiv nagar Chowk",
+      "destination": "New Delhi IGI Airport",
+      "type": "localBus",
+      "pickupDate": "4/30/2016",
+      "pickupTime": "10:00 AM",
+      "dropDate": "4/30/2016",
+      "dropTime": "12:00 PM",
+      "localBus": {
+        "image": "public/assets/images/localBus.png",
+        "companyName": "red bus",
+        "busNumber": "AB 327014",
+        "busType": "AC bus",
+        "seatsType": "sleeper",
+        "price": "100 INR"
+      }
+  };
+  stayBookingCtrl.selectedCabData={
+
+                    "source": "Rajiv nagar Chowk",
+                    "destination": "New Delhi IGI Airport",
+                    "type": "cab",
+                    "pickupDate": "4/30/2016",
+                    "pickupTime": "10:00 AM",
+                    "dropDate": "4/30/2016",
+                    "dropTime": "12:00 PM",
+                    "cab": {
+                      "image": "public/assets/images/ola.png",
+                      "companyName": "Uber",
+                      "cabNumber": "DL AJ 5034",
+                      "driverDetails": {
+                        "name": "Job Elton"
+                      },
+                      "estimatedPrice": "800 INR",
+                      "cabType": "sedan"
+  }
+}
+  stayBookingCtrl.selectedMetaData={
+    "image": "public/assets/images/taj1.png",
+    "name": "JW Mariott",
+    "rating": "5",
+    "location": "hotel's exact address blah blah",
+    "roomType": "Deluxe",
+    "checkinDate": "4/30/2016",
+    "checkinTime": "2:00 PM",
+    "checkoutDate": "5/01/2016",
+    "checkoutTime": "3:00 PM",
+    "price": "9000 INR",
+    "comments": "Some useful comment which you may want to convey to the hotel"
+  };
   stayBookingCtrl.cardHeading = "Stay/Accomodation";
 
 

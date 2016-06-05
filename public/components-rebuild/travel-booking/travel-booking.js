@@ -27,15 +27,33 @@ function travelBookingCtrl() {
       return a;
   }
 
+  travelBooking.$routerOnActivate = function() {
+    console.log(travelBooking.metaDataOfObj.essential);
+  }
 
-
-  //Essential Fiellds
+  // Essential Fiellds
+  console.log(travelBooking);
+  console.log("Printing essen",travelBooking.metaDataOfObj.essential);
   travelBooking.metaDataOfEssentialFields = travelBooking.metaDataOfObj.essential;
   travelBooking.essentialFieldsData = travelBooking.currentSelectedObj.essential;
-  // travelBooking.arrayOfSelectedChildren = [];
+  travelBooking.arrayOfSelectedChildren = [];
   travelBooking.reflectSelectedChildren = function(arrayOfSelectedChildren) {
     travelBooking.currentSelectedChildren = arrayOfSelectedChildren;
+    console.log("I am inside reflectSelectedChildren");
+    console.log(travelBooking.currentSelectedChildren);
+    for(cId in travelBooking.currentSelectedObj.childServices) {
 
+      if(travelBooking.currentSelectedChildren.indexOf(cId) <0){
+        delete travelBooking.currentSelectedObj.childServices[cId];
+      }
+    }
+    travelBooking.currentSelectedChildren.forEach(function(childId){
+      console.log("Inside foreach of children list initial");
+      if(travelBooking.currentSelectedObj.childServices[childId] == undefined){
+        console.log("I am going to intialize childServices");
+        travelBooking.currentSelectedObj.childServices[childId] = travelBooking.metaDataOfObj.servicesIntializer[childId];
+      }
+    });
   }
 
   travelBooking.childrenLabels = {};

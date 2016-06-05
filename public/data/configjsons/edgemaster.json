@@ -15,7 +15,7 @@
         "id": "mode",
         "type": "singleSelect",
         "specificAttr": {
-          "domainList": ["flight", "bus", "train"]
+          "domainList": {"flight":"Flight", "bus":"Bus", "train":"Train"}
         }
 
       },
@@ -25,11 +25,39 @@
         "id": "extraAddOnsServices",
         "type": "multiSelect",
         "specificAttr": {
-          "domainList": ["visaOnArrival", "forex"]
+          "domainList": {"visaOnArrival":"Visa On Arrival", "forex":"Forex"}
         }
       }
     }
   },
+  "servicesIntializer":{
+    "flight":{
+
+          "state": "inital",
+          "requested": {}
+    },
+    "bus": {
+
+          "state": "inital",
+          "requested": {}
+    },
+    "train": {
+
+          "state": "inital",
+          "requested": {}
+    },
+    "visaOnArrival":[{
+
+          "state": "inital",
+          "requested": {}
+    }],
+    "forex": [{
+
+          "state": "inital",
+          "requested": {}
+    }]
+  }
+  ,
   "services": {
     "flight": {
       "travelStartDate": {
@@ -45,7 +73,7 @@
         "id": "class",
         "type": "singleSelect",
         "specificAttr": {
-          "domainList": ["Bussiness", "Economy"]
+          "domainList": {"bussiness":"Bussiness", "economy":"Economy"}
         }
 
       },
@@ -55,9 +83,18 @@
         "id": "numberOfHops",
         "type": "slider",
         "specificAttr": {
-          "min": 0,
-          "max": 15
-        }
+					"floor":0,
+					"ceil": 100,
+					"step": 1,
+					"noSwitching": true,
+					"endPointsTranslate": {
+						"prefix": "",
+						"postfix": "miles"
+					},
+					"sliderHandleTranslate": {
+						"prefix": "mi"
+					}
+				}
       },
       "departureTime": {
         "mandatory": false,
@@ -71,11 +108,10 @@
         "id": "airlines",
         "type": "singleSelect",
         "specificAttr": {
-          "domainList": ["Air Asia", "Air Costa", "Jet"]
+          "domainList": {"airAisa":"Air Asia", "airCosta":"Air Costa", "jet":"Jet"}
         }
 
       }
     }
   }
-
 }
