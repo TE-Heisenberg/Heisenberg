@@ -30,6 +30,14 @@
       }
     }
   },
+  "servicesIntializer":{
+    "flight":{},
+    "bus": {},
+    "train": {},
+    "visaOnArrival":{},
+    "forex": {}
+  }
+  ,
   "services": {
     "flight": {
       "travelStartDate": {
