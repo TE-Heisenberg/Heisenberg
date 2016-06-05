@@ -55,16 +55,16 @@
 				"data": "areaLocationUrl"
 
 			},
-			"checkindate": {
+			"checkinDate": {
 				"mandatory": true,
 				"displayName": "Check-in Date",
-				"id": "checkindate",
+				"id": "checkinDate",
 				"type": "date"
 			},
-			"checkoutdate": {
+			"checkinDate": {
 				"mandatory": true,
 				"displayName": "Check-out Date",
-				"id": "checkoutdate",
+				"id": "checkoutDate",
 				"type": "date"
 			},
 			"checkinTime": {
@@ -85,7 +85,7 @@
 				"id": "preferences",
 				"type": "singleSelect",
 				"specificAttr": {
-					"domainList": [{"ac":"AC"}, {"nonAc":"Non-Ac"}]
+					"domainList": {"ac":"AC" ,"nonAc":"Non-Ac"}
 				}
 			},
 			"rating": {

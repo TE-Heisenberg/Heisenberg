@@ -1,84 +1,44 @@
-var app = angular.module("app").component("localTravelSelectedDataRenderer", {
-  templateUrl: "./public/components-rebuild/localTravel/selected-data-renderer.html",
-  controllerAs: "localTravelSelectedDataRenderer",
-  controller: localTravelSelectedDataRendererCtrl,
-  bindings: {
-    "selectedMetaData": "<"
-  }
+var app = angular.module("app").component("staySelectedDataRenderer", {
+    templateUrl: "./public/components-rebuild/stay/stay-selected-data-renderer.html",
+    controllerAs: "staySelectedDataRenderer",
+    controller: staySelectedDataRendererCtrl,
+    bindings: {
+      "selectedMetaData": "<"
+    }
 });
 
-function localTravelSelectedDataRendererCtrl()
+function staySelectedDataRendererCtrl()
 {
-  var localTravelSelectedDataRenderer=this;
-  console.log("data");
-  console.log(this);
-  console.log("*****************************");
-console.log(localTravelSelectedDataRenderer.selectedMetaData.type);
-  if(localTravelSelectedDataRenderer.selectedMetaData.type=="localBus")
-  {
-    console.log("trrrrrr");
-    localTravelSelectedDataRenderer.serviceLogo=localTravelSelectedDataRenderer.selectedMetaData.localBus.image;
-    localTravelSelectedDataRenderer.serviceDetails=
-    {
-      "heading":localTravelSelectedDataRenderer.selectedMetaData.localBus.companyName,
-      "description":
-      {
-        "busNumber": localTravelSelectedDataRenderer.selectedMetaData.localBus.busNumber,
-        "busType": localTravelSelectedDataRenderer.selectedMetaData.localBus.busType,
-        "seatsType": localTravelSelectedDataRenderer.selectedMetaData.localBus.seatsType
-      }
-    }
+  var staySelectedDataRenderer=this;
 
-    localTravelSelectedDataRenderer.price=
+  staySelectedDataRenderer.serviceLogo=staySelectedDataRenderer.selectedMetaData.image;
+  staySelectedDataRenderer.serviceDetails=
+  {
+    "heading":staySelectedDataRenderer.selectedMetaData.name,
+    "description":
     {
-      "price": localTravelSelectedDataRenderer.selectedMetaData.localBus.price
+      "roomType": staySelectedDataRenderer.selectedMetaData.roomType,
+      "location": staySelectedDataRenderer.selectedMetaData.location
     }
   }
 
-
-  if(localTravelSelectedDataRenderer.selectedMetaData.type=="cab")
+  staySelectedDataRenderer.beginDateTime=
   {
-    console.log("yo got it");
-    console.log(  localTravelSelectedDataRenderer.serviceLogo=localTravelSelectedDataRenderer.selectedMetaData.cab);
-
-    localTravelSelectedDataRenderer.serviceLogo=localTravelSelectedDataRenderer.selectedMetaData.cab.image;
-
-    localTravelSelectedDataRenderer.serviceDetails=
-    {
-      "heading":localTravelSelectedDataRenderer.selectedMetaData.cab.companyName,
-      "description":
-      {
-        "cabNumber": localTravelSelectedDataRenderer.selectedMetaData.cab.cabNumber,
-        "driverDetails": localTravelSelectedDataRenderer.selectedMetaData.cab.driverDetails.name,
-        "cabType": localTravelSelectedDataRenderer.selectedMetaData.cabType
-      }
-    }
-    localTravelSelectedDataRenderer.price=
-    {
-      "price": localTravelSelectedDataRenderer.selectedMetaData.cab.estimatedPrice
-    }
+    "startTime": staySelectedDataRenderer.selectedMetaData.checkinDate,
+    "startDate": staySelectedDataRenderer.selectedMetaData.checkinTime,
+    "description":""
 
   }
+  staySelectedDataRenderer.endDateTime=
+ {
+   "endTime":staySelectedDataRenderer.selectedMetaData.checkoutTime,
+   "endDate":staySelectedDataRenderer.selectedMetaData.checkoutDate,
+    "description":"",
+ }
 
-
-  localTravelSelectedDataRenderer.beginDateTime=
-  {
-    "startTime": localTravelSelectedDataRenderer.selectedMetaData.pickupTime,
-    "startDate": localTravelSelectedDataRenderer.selectedMetaData.pickupDate,
-    "description":{
-      "source": localTravelSelectedDataRenderer.selectedMetaData.source
-    }
-  }
-
-  localTravelSelectedDataRenderer.endDateTime=
-  {
-    "endTime":localTravelSelectedDataRenderer.selectedMetaData.dropTime,
-    "endDate":localTravelSelectedDataRenderer.selectedMetaData.dropDate,
-    "description":{
-      "destination":  localTravelSelectedDataRenderer.selectedMetaData.destination
-    }
-  }
-
-
+ staySelectedDataRenderer.price=
+{
+  "price": staySelectedDataRenderer.selectedMetaData.price
+}
 
 }

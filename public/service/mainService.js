@@ -429,7 +429,7 @@ var travelPlanObject=[
     "type": "location",
     "essential": {
         "noDependencyData": {
-          "cityName": "Bangalore"
+          "location": "Bangalore"
         }
         ,
         "modesToSelectTheServices": {
@@ -444,8 +444,9 @@ var travelPlanObject=[
                     "location": "Bangalore",
                     "area": "MadiWala",
                     "checkinDate": "01/04/2016",
-                    "checkOutDate": "02/04/2016",
+                    "checkinDate": "02/04/2016",
                     "checkinTime": "5:00 AM",
+                    "checkoutTime": "7:00 AM",
                     "preferences": "ac",
                     "rating": ["oneStar","threeStar"],
                     "nearBy": "5",

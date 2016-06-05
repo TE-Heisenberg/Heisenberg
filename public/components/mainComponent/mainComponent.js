@@ -25,7 +25,7 @@ var setObj = function (obj, keyString, value) {
   var hierarchyWiseKeysArray = keyString.split('.');
 
   while (hierarchyWiseKeysArray.length > 1)
-    obj = obj[hierarchyWiseKeysArray.shift()];
+    obj = obj[hierarchyWiseKeysArray.shift()];  
   return obj[hierarchyWiseKeysArray.shift()] = value;
 
 }
