@@ -439,7 +439,7 @@ var travelPlanObject=[
     "childServices": {
       "stay": [
                 {
-                  "state": "request",
+                  "state": "select",
                   "requested": {
                     "location": "Bangalore",
                     "area": "MadiWala",

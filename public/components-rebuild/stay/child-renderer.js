@@ -29,6 +29,8 @@ function stayRendererCtrl()
   console.log("Stay renderer");
   console.log(stayRenderer);
   stayRenderer.onDelete = function(index) {
+    console.log("inside on delete");
+    console.log(index);
     stayRenderer.arrayOfChildFieldsData.splice(index,1);
   }
 
@@ -38,6 +40,8 @@ function stayRendererCtrl()
 
 
   stayRenderer.onEdit = function(index) {
+    console.log("I am inside of stayRenderer onedit");
+    console.log(index);
     stayRenderer.arrayOfChildFieldsData[index].state = "request";
   }
 }

@@ -10,8 +10,9 @@ angular.module('app')
      beginDateTime:'<',
      endDateTime:'<',
      price:'<',
-     extraDescription:'<'
-
+     extraDescription:'<',
+     deleteChild:'&',
+     editChild:'&'
    }
  });
 
