@@ -12,10 +12,11 @@ function localTravelSelectedDataRendererCtrl()
   var localTravelSelectedDataRenderer=this;
   console.log("data");
   console.log(this);
-
-  if(localTravelSelectedDataRenderer.type="localBus")
+  console.log("*****************************");
+console.log(localTravelSelectedDataRenderer.selectedMetaData.type);
+  if(localTravelSelectedDataRenderer.selectedMetaData.type=="localBus")
   {
-console.log("trrrrrr");
+    console.log("trrrrrr");
     localTravelSelectedDataRenderer.serviceLogo=localTravelSelectedDataRenderer.selectedMetaData.localBus.image;
     localTravelSelectedDataRenderer.serviceDetails=
     {
@@ -24,7 +25,7 @@ console.log("trrrrrr");
       {
         "busNumber": localTravelSelectedDataRenderer.selectedMetaData.localBus.busNumber,
         "busType": localTravelSelectedDataRenderer.selectedMetaData.localBus.busType,
-        "seatsType": localTravelSelectedDataRenderer.selectedMetaData.localBus.busType
+        "seatsType": localTravelSelectedDataRenderer.selectedMetaData.localBus.seatsType
       }
     }
 
@@ -35,10 +36,13 @@ console.log("trrrrrr");
   }
 
 
-  if(localTravelSelectedDataRenderer.type=="cab")
+  if(localTravelSelectedDataRenderer.selectedMetaData.type=="cab")
   {
+    console.log("yo got it");
+    console.log(  localTravelSelectedDataRenderer.serviceLogo=localTravelSelectedDataRenderer.selectedMetaData.cab);
 
     localTravelSelectedDataRenderer.serviceLogo=localTravelSelectedDataRenderer.selectedMetaData.cab.image;
+
     localTravelSelectedDataRenderer.serviceDetails=
     {
       "heading":localTravelSelectedDataRenderer.selectedMetaData.cab.companyName,
@@ -49,12 +53,13 @@ console.log("trrrrrr");
         "cabType": localTravelSelectedDataRenderer.selectedMetaData.cabType
       }
     }
+    localTravelSelectedDataRenderer.price=
+    {
+      "price": localTravelSelectedDataRenderer.selectedMetaData.localBus.estimatedPrice
+    }
 
   }
-  localTravelSelectedDataRenderer.price=
-  {
-    "price": localTravelSelectedDataRenderer.selectedMetaData.localBus.estimatedPrice
-  }
+
 
   localTravelSelectedDataRenderer.beginDateTime=
   {
