@@ -1,1 +1,34 @@
-<child-card-renderer array-of-child-fields-data="localTravelRenderer.arrayOfChildFieldsData" meta-data-of-child-fields="localTravelRenderer.metaDataOfChildFields" card-heading="{{localTravelRenderer.cardHeading}}"></child-card-renderer>
+<!-- <child-card-renderer array-of-child-fields-data="localTravelRenderer.arrayOfChildFieldsData" meta-data-of-child-fields="localTravelRenderer.metaDataOfChildFields" card-heading="{{localTravelRenderer.cardHeading}}"></child-card-renderer> -->
+
+<!-- <child-card-renderer array-of-child-fields-data="localTravelRenderer.arrayOfChildFieldsData" meta-data-of-child-fields="localTravelRenderer.metaDataOfChildFields" card-heading="{{localTravelRenderer.cardHeading}}"></child-card-renderer> -->
+
+<md-card>
+  <md-card-title>
+    {{localTravelRenderer.cardHeading}}
+  </md-card-title>
+  <div ng-repeat="childFieldsData in localTravelRenderer.arrayOfChildFieldsData">
+    <br>
+    childFieldsData  Status$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    <br>
+
+    <div ng-if="childFieldsData.state == 'initial' || childFieldsData.state == 'request'">
+      <child-form-renderer fields-data="childFieldsData.requested" fields-meta-data="localTravelRenderer.metaDataOfChildFields"></child-form-renderer>
+      <ng-md-icon flex="40" flex-offset="10" icon="delete"  ng-click="localTravelRenderer.onDelete($index)"></ng-md-icon>
+      <ng-md-icon flex="40" flex-offset="10" icon="add_circle" ng-click="localTravelRenderer.onAdd()" ng-show="$index == localTravelRenderer.arrayOfChildFieldsData.length"></ng-md-icon>
+
+    </div>
+    <div ng-if="childFieldsData.state == 'select'">
+      <!-- Insert read only component of stay -->
+      {{$index}}
+      <local-travel-selected-data-renderer index="{{$index}}" selected-meta-data="childFieldsData.selected" delete-selected-stay-child=localTravelRenderer.onDelete(index) edit-selected-stay-child=localTravelRenderer.onEdit(index)>
+      </local-travel-selected-data-renderer>
+    </div>
+    <!-- <div ng-if="childFieldsData.status=='selected'">
+    {{childFieldsData.status}}
+    <child-selected-data-renderer-component value="childFieldsData"
+    get-mode-pref="localTravelRenderer.getModePref('stay')"
+    get-seat-pref="localTravelRenderer.getSeatPref('stay')"></child-selected-data-renderer-component>
+  </div> -->
+  <md-divider layout-margin></md-divider>
+</div>
+</md-card>

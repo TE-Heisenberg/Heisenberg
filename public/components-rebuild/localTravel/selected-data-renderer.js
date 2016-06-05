@@ -3,7 +3,10 @@ var app = angular.module("app").component("localTravelSelectedDataRenderer", {
   controllerAs: "localTravelSelectedDataRenderer",
   controller: localTravelSelectedDataRendererCtrl,
   bindings: {
-    "selectedMetaData": "<"
+    "selectedMetaData": "<",
+    "deleteSelectedlocalTravelChild":"&",
+    "editSelectedlocalTravelChild":"&",
+    "index":"@"
   }
 });
 
@@ -79,6 +82,19 @@ console.log(localTravelSelectedDataRenderer.selectedMetaData.type);
     }
   }
 
-
+  localTravelSelectedDataRenderer.deletelocalTravelChild=function()
+  {
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("inside deletelocalTravelChild");
+    console.log(localTravelSelectedDataRenderer.index);
+    localTravelSelectedDataRenderer.deleteSelectedlocalTravelChild({index:localTravelSelectedDataRenderer.index})
+  }
+  localTravelSelectedDataRenderer.editlocalTravelChild=function()
+  {
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("inside edit localTravelChild");
+    console.log(localTravelSelectedDataRenderer.index);
+    localTravelSelectedDataRenderer.editSelectedlocalTravelChild({index:localTravelSelectedDataRenderer.index})
+  }
 
 }
