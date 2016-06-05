@@ -3,10 +3,7 @@ var app = angular.module("app").component("localTravelSelectedDataRenderer", {
   controllerAs: "localTravelSelectedDataRenderer",
   controller: localTravelSelectedDataRendererCtrl,
   bindings: {
-    "selectedMetaData": "<",
-    "deleteSelectedLocalTravelChild":"&",
-    "editSelectedLocalTravelChild":"&",
-    "index":"@"
+    "selectedMetaData": "<"
   }
 });
 
