@@ -27,7 +27,27 @@ function stayBookingController($http)
         "seatsType": "sleeper",
         "price": "100 INR"
       }
+  };
+  stayBookingCtrl.selectedCabData={
+
+                    "source": "Rajiv nagar Chowk",
+                    "destination": "New Delhi IGI Airport",
+                    "type": "cab",
+                    "pickupDate": "4/30/2016",
+                    "pickupTime": "10:00 AM",
+                    "dropDate": "4/30/2016",
+                    "dropTime": "12:00 PM",
+                    "cab": {
+                      "image": "public/assets/images/ola.png",
+                      "companyName": "Uber",
+                      "cabNumber": "DL AJ 5034",
+                      "driverDetails": {
+                        "name": "Job Elton"
+                      },
+                      "estimatedPrice": "800 INR",
+                      "cabType": "sedan"
   }
+}
   stayBookingCtrl.selectedMetaData={
     "image": "public/assets/images/taj1.png",
     "name": "JW Mariott",
