@@ -1,6 +1,6 @@
 angular.module('app')
 .component('flightSearchResult', {
-	templateUrl: 'public/components/flightSearchResultsParentComponent/flightSearchResultsComponent/flightSearchResults/flightSearchResultNew.html',
+	templateUrl: 'public/components/flightSearchResultsParentComponent/flightSearchResultsComponent/flightSearchResults/flightSearchResults.html',
 	controllerAs:"flightSearchResult",
 	controller: flightSearchResultController,
 	bindings: {
