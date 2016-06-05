@@ -14,8 +14,8 @@ angular.module('app')
 
 function travelBookingParentCtrl (mainService) {
 
-  var travelBookingParentCtrl = this;
-  console.log(travelBookingParentCtrl);
+    var travelBookingParentCtrl = this;
+    console.log(travelBookingParentCtrl);
 
     console.log(mainService.serviceData);
     travelBookingParentCtrl.$onInit = function()
@@ -117,7 +117,7 @@ function travelBookingParentCtrl (mainService) {
   }
 
   travelBookingParentCtrl.goToNextElement = function() {
-
+    console.log(" I am inside goToNextElement");
     travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj)+1];
 
     travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.currentSelectedObj.childServices);
