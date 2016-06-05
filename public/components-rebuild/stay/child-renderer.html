@@ -3,26 +3,25 @@
 <md-card ng-show="stayRenderer.childFieldsData !== undefined">
   <md-card-title>
     {{stayRenderer.cardHeading}}
-    
-    {{stayRenderer.metaDataOfChildFields}}
+
+
   </md-card-title>
   <div ng-repeat="childFieldsData in stayRenderer.childFieldsData">
 
 
-    <div ng-if="childFieldsData.state === 'initial' || childFieldsData.state === 'request'">
-      <br>
-      before childform rendere
+    <div  layout-margin ng-if="childFieldsData.state === 'initial' || childFieldsData.state === 'request'">
+<md-divider layout-margin></md-divider>
       <child-form-renderer fields-data="childFieldsData.requested" fields-meta-data="stayRenderer.metaDataOfChildFields"></child-form-renderer>
 
-      <ng-md-icon flex="40" flex-offset="10" icon="delete"  ng-click="stayRenderer.onDelete($index)"></ng-md-icon>
-      <ng-md-icon flex="40" flex-offset="10" icon="add_circle" ng-click="stayRenderer.onAdd()" ng-show="$index == stayRenderer.childFieldsData.length-1"></ng-md-icon>
+      <ng-md-icon flex="40" size="35px" flex-offset="10" icon="delete"  ng-click="stayRenderer.onDelete($index)"></ng-md-icon>
+      <ng-md-icon flex="40"  size="35px" flex-offset="10" icon="add_circle" ng-click="stayRenderer.onAdd()" ng-show="$index == stayRenderer.childFieldsData.length-1"></ng-md-icon>
 
     </div>
-    <div ng-if="childFieldsData.state == 'select'">
+    <div layout-margin ng-if="childFieldsData.state == 'select'">
       <!-- Insert read only component of stay -->
-
-      <div layout="row" >
-        <div flex="80">
+<md-divider layout-margin></md-divider>
+      <div layout="row" layout-margin>
+        <div flex="80" layout-margin>
           <stay-selected-data-renderer layout-fill  index="{{$index}}" selected-meta-data="childFieldsData.selected"
           delete-selected-stay-child=stayRenderer.onDelete(index)
           edit-selected-stay-child=stayRenderer.onEdit(index)>
@@ -44,6 +43,6 @@
     get-mode-pref="stayRenderer.getModePref('stay')"
     get-seat-pref="stayRenderer.getSeatPref('stay')"></child-selected-data-renderer-component>
   </div> -->
-  <md-divider layout-margin></md-divider>
+
 </div>
 </md-card>

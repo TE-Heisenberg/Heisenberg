@@ -1,11 +1,3 @@
-<br>
-Inside flight renderer
-<br>
-
-{{flightRenderer.childFieldsData}}
-<br>
-{{flightRenderer.metaDataOfChildFields}}
-<br>
 
 <md-card ng-if="flightRenderer.childFieldsData != undefined">
   <md-card-title>
@@ -13,10 +5,7 @@ Inside flight renderer
 
   </md-card-title>
   <!-- <div ng-repeat="childFieldsData in flightRenderer.childFieldsData"> -->
-    <br>
-    childFieldsData  Status$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-    <br>
-
+    
     <div ng-if="flightRenderer.childFieldsData.state == 'initial' || flightRenderer.childFieldsData.state == 'request'">
 
       <child-form-renderer fields-data="flightRenderer.childFieldsData.requested" fields-meta-data="flightRenderer.metaDataOfChildFields"></child-form-renderer>
@@ -25,7 +14,7 @@ Inside flight renderer
     </div>
     <div ng-if="flightRenderer.childFieldsData.state == 'select'">
       <!-- Insert read only component of flight -->
-      {{$index}}
+
 
       <div layout="row" >
         <div flex="80">

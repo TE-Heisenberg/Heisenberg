@@ -97,6 +97,15 @@
 					"domainList": {"oneStar":"1-star", "twoStar":"2-star", "threeStar":"3-star", "fourStar":"4-star"}
 				}
 			},
+			"typeOfProperty": {
+				"mandatory": true,
+				"displayName": "Type Of Property",
+				"id": "typeOfProperty",
+				"type": "singleSelect",
+				"specificAttr": {
+					"domainList": {"guestHouse":"Guest House", "hotels":"Hotels"}
+				}
+			},
 			"nearBy": {
 				"mandatory": false,
 				"displayName": "Near By",
@@ -117,15 +126,7 @@
 					}
 				}
 			},
-			"typeOfProperty": {
-				"mandatory": true,
-				"displayName": "Type Of Property",
-				"id": "typeOfProperty",
-				"type": "singleSelect",
-				"specificAttr": {
-					"domainList": {"guestHouse":"Guest House", "hotels":"Hotels"}
-				}
-			},
+
 			"stars": {
 				"mandatory": false,
 				"displayName": "Stars",
