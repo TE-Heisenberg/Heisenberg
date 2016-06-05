@@ -6,7 +6,7 @@
   <md-card-title>
     {{localTravelRenderer.cardHeading}}
   </md-card-title>
-  <div ng-repeat="childFieldsData in localTravelRenderer.arrayOfChildFieldsData">
+  <div ng-repeat="childFieldsData in localTravelRenderer.childFieldsData">
     <br>
     childFieldsData  Status$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
     <br>
@@ -20,7 +20,8 @@
     <div ng-if="childFieldsData.state == 'select'">
       <!-- Insert read only component of stay -->
       {{$index}}
-      <local-travel-selected-data-renderer index="{{$index}}" selected-meta-data="childFieldsData.selected" delete-selected-stay-child=localTravelRenderer.onDelete(index) edit-selected-stay-child=localTravelRenderer.onEdit(index)>
+
+      <local-travel-selected-data-renderer index="{{$index}}" selected-meta-data="childFieldsData.selected" delete-selected-local-travel-child=localTravelRenderer.onDelete(index) edit-selected-local-travel-child=localTravelRenderer.onEdit(index)>
       </local-travel-selected-data-renderer>
     </div>
     <!-- <div ng-if="childFieldsData.status=='selected'">

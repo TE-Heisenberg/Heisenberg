@@ -4,8 +4,8 @@ var app = angular.module("app").component("localTravelSelectedDataRenderer", {
   controller: localTravelSelectedDataRendererCtrl,
   bindings: {
     "selectedMetaData": "<",
-    "deleteSelectedlocalTravelChild":"&",
-    "editSelectedlocalTravelChild":"&",
+    "deleteSelectedLocalTravelChild":"&",
+    "editSelectedLocalTravelChild":"&",
     "index":"@"
   }
 });
@@ -87,14 +87,15 @@ console.log(localTravelSelectedDataRenderer.selectedMetaData.type);
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     console.log("inside deletelocalTravelChild");
     console.log(localTravelSelectedDataRenderer.index);
-    localTravelSelectedDataRenderer.deleteSelectedlocalTravelChild({index:localTravelSelectedDataRenderer.index})
+    localTravelSelectedDataRenderer.deleteSelectedLocalTravelChild({index:localTravelSelectedDataRenderer.index})
   }
   localTravelSelectedDataRenderer.editlocalTravelChild=function()
   {
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     console.log("inside edit localTravelChild");
     console.log(localTravelSelectedDataRenderer.index);
-    localTravelSelectedDataRenderer.editSelectedlocalTravelChild({index:localTravelSelectedDataRenderer.index})
+    console.log(localTravelSelectedDataRenderer.editSelectedLocalTravelChild);
+    localTravelSelectedDataRenderer.editSelectedLocalTravelChild({"index":localTravelSelectedDataRenderer.index});
   }
 
 }

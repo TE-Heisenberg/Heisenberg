@@ -500,7 +500,7 @@ var travelPlanObject=[
               ],
       "localTravel": [
           {
-            "state": "request",
+            "state": "select",
             "requested": {},
             "selected":{
 
@@ -562,7 +562,7 @@ var travelPlanObject=[
     ,
     "childServices": {
       "flight": {
-        "state": "request",
+        "state": "select",
         "requested": {},
         "selected": {
           "image":"public/assets/images/indigo.png",
