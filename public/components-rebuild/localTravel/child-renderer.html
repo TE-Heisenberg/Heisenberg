@@ -2,7 +2,7 @@
 
 <!-- <child-card-renderer array-of-child-fields-data="localTravelRenderer.arrayOfChildFieldsData" meta-data-of-child-fields="localTravelRenderer.metaDataOfChildFields" card-heading="{{localTravelRenderer.cardHeading}}"></child-card-renderer> -->
 
-<md-card>
+<md-card ng-show="localTravelRenderer.childFieldsData !== undefined">
   <md-card-title>
     {{localTravelRenderer.cardHeading}}
   </md-card-title>

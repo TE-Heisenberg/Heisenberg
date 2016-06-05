@@ -30,20 +30,24 @@ console.log(flightSelectedDataRenderer.selectedMetaData);
   {
     "startTime": flightSelectedDataRenderer.selectedMetaData.travelStartTime,
     "startDate": flightSelectedDataRenderer.selectedMetaData.travelStartDate,
-    "description":""
+    "description":
+    { "source":flightSelectedDataRenderer.selectedMetaData.sourceAirport
+    }
 
   }
   flightSelectedDataRenderer.endDateTime=
  {
    "endTime":flightSelectedDataRenderer.selectedMetaData.travelEndDate,
    "endDate":flightSelectedDataRenderer.selectedMetaData.travelEndTime,
-    "description":"",
+    "description": { "destination":flightSelectedDataRenderer.selectedMetaData.destinationAirport
+    }
  }
 
  flightSelectedDataRenderer.price=
 {
   "price": flightSelectedDataRenderer.selectedMetaData.price
 }
+flightSelectedDataRenderer.extraDescription=flightSelectedDataRenderer.selectedMetaData.preferences;
 
 flightSelectedDataRenderer.deleteFlightChild=function()
 {

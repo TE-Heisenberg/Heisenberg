@@ -5,7 +5,8 @@ var app = angular.module("app").component("localTravelRenderer", {
     bindings: {
       "childFieldsData": "<",
       "metaDataOfChildFields": "<",
-      "cardHeading": "@"
+      "cardHeading": "@",
+      "deleteAll": "&"
     }
 });
 
@@ -33,6 +34,11 @@ function localTravelRendererCtrl()
     console.log("inside on delete");
     console.log(index);
     localTravelRenderer.childFieldsData.splice(index,1);
+    if(index == 0)
+      {
+        console.log("Inside if of stayRenderer");
+          localTravelRenderer.deleteAll();
+      }
   }
 
   localTravelRenderer.onAdd = function(index) {
