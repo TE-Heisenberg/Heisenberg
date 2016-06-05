@@ -4,9 +4,6 @@ var app = angular.module("app").component("staySelectedDataRenderer", {
     controller: staySelectedDataRendererCtrl,
     bindings: {
       "selectedMetaData": "<",
-      "deleteSelectedStayChild":"&",
-      "editSelectedStayChild":"&",
-      "index":"@"
     }
 });
 
@@ -15,20 +12,7 @@ function staySelectedDataRendererCtrl()
   var staySelectedDataRenderer=this;
   console.log('I am isnide staySelectedDataRenderer');
   console.log(this);
-staySelectedDataRenderer.deleteStayChild=function()
-{
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  console.log("inside deleteStayChild");
-  console.log(staySelectedDataRenderer.index);
-  staySelectedDataRenderer.deleteSelectedStayChild({index:staySelectedDataRenderer.index})
-}
-staySelectedDataRenderer.editStayChild=function()
-{
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  console.log("inside edit StayChild");
-  console.log(staySelectedDataRenderer.index);
-  staySelectedDataRenderer.editSelectedStayChild({index:staySelectedDataRenderer.index})
-}
+
   staySelectedDataRenderer.serviceLogo=staySelectedDataRenderer.selectedMetaData.image;
   staySelectedDataRenderer.serviceDetails=
   {
