@@ -55,7 +55,7 @@ console.log(localTravelSelectedDataRenderer.selectedMetaData.type);
     }
     localTravelSelectedDataRenderer.price=
     {
-      "price": localTravelSelectedDataRenderer.selectedMetaData.localBus.estimatedPrice
+      "price": localTravelSelectedDataRenderer.selectedMetaData.cab.estimatedPrice
     }
 
   }

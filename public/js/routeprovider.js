@@ -23,31 +23,6 @@
 
  module.config(function(tmhDynamicLocaleProvider, $stateProvider, $urlRouterProvider) {
     tmhDynamicLocaleProvider.localeLocationPattern('node_modules/angular/i18n/angular-locale_{{locale}}.js');
-
-    $stateProvider.state('hotelSearchResults', {
-      // url: "/hotelSearchResults",
-      template: "<hotel-search-results-component></hotel-search-results-component>",
-      // controller: function($scope) {
-      //   $scope.items = ["A", "List", "Of", "Items"];
-      // }
-    })
-    .state('trainSearchResults', {
-      // url: "/hotelSearchResults",
-      template: "<train-search-results-component></train-search-results-component>",
-      // controller: function($scope) {
-      //   $scope.items = ["A", "List", "Of", "Items"];
-      // }
-    })
-    .state('flightSearchResults', {
-      // url: "/hotelSearchResults",
-      template: "<flight-search-results-component></flight-search-results-component>",
-      // controller: function($scope) {
-      //   $scope.items = ["A", "List", "Of", "Items"];
-      // }
-    })
-
-
-
 });
 
 module.value("$routerRootComponent","mainComponent");

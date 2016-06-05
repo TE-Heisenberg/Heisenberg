@@ -1,6 +1,14 @@
 
-.material-icons{
-  margin-right: 5px;
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.light-blue-font {
+  color: #261F63
 }
 
 @media( max-width:700px){
