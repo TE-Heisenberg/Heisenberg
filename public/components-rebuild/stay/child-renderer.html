@@ -18,6 +18,9 @@
     </div>
     <div ng-show="childFieldsData.state == 'select'">
        <!-- Insert read only component of stay -->
+
+       <stay-selected-data-renderer selected-meta-data="childFieldsData.selected">
+       </stay-selected-data-renderer>
     </div>
 <!-- <div ng-if="childFieldsData.status=='selected'">
      {{childFieldsData.status}}
