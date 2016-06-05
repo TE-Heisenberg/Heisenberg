@@ -34,7 +34,7 @@ function travelBookingCtrl() {
   // Essential Fiellds
   console.log(travelBooking);
   console.log("Printing essen",travelBooking.metaDataOfObj.essential);
-  travelBooking.metaDataOfEssentialFields = travelBooking.metaDataOfObj.essential;
+  // travelBooking.metaDataOfObj.essential = travelBooking.metaDataOfObj.essential;
   travelBooking.essentialFieldsData = travelBooking.currentSelectedObj.essential;
   travelBooking.arrayOfSelectedChildren = [];
   travelBooking.reflectSelectedChildren = function(arrayOfSelectedChildren) {
@@ -57,14 +57,14 @@ function travelBookingCtrl() {
   }
 
   travelBooking.childrenLabels = {};
-  for(var mode in travelBooking.metaDataOfEssentialFields.modesToSelectTheServices)
+  for(var mode in travelBooking.metaDataOfObj.essential.modesToSelectTheServices)
   {
-    var modeData = travelBooking.metaDataOfEssentialFields.modesToSelectTheServices[mode];
+    var modeData = travelBooking.metaDataOfObj.essential.modesToSelectTheServices[mode];
     Object.assign(travelBooking.childrenLabels,modeData.specificAttr.domainList)
 
   };
 
-  travelBooking.metaDataOfChildren = travelBooking.metaDataOfObj.services;
+  // travelBooking.metaDataOfChildren = travelBooking.metaDataOfObj.services;
 
   travelBooking.childrenData = travelBooking.currentSelectedObj.childServices;
 

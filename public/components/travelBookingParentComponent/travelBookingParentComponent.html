@@ -1,7 +1,7 @@
 <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"
-edgetype=" transit" currentnodeedgebooking=" travelBookingParentCtrl.currentnodeedgebooking(value2)">
+edgetype="transit" currentnodeedgebooking=" travelBookingParentCtrl.currentnodeedge(value2)">
 </travel-plan>
-<!--
+
 <br>
 Before travel booking
 <br>
@@ -9,13 +9,13 @@ Before travel booking
 {{travelBookingParentCtrl.currentSelectedObj}}
 <br>
 <br>
-{{travelBookingParentCtrl.elementFields}}
+{{travelBookingParentCtrl.currentSelectedObj.type}}
 <br>
 <br>
 {{}}
 {{travelBookingParentCtrl.selectedChildren}}
 <br>
-<br> -->
+<br>
 <travel-booking current-selected-obj="travelBookingParentCtrl.currentSelectedObj" meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]" current-selected-children="travelBookingParentCtrl.selectedChildren">
 </travel-booking>
 

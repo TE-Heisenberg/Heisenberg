@@ -11,14 +11,14 @@
     </div>
 
     <div ng-if="multiSelectBoxCtrl.listDataType =='object' ">
-		<md-input-container>
-		    <label>{{multiSelectBoxCtrl.label}}</label>
-		    	<md-select ng-model="multiSelectBoxCtrl.bindData" ng-change="multiSelectBoxCtrl.reflectValue(multiSelectBoxCtrl.bindData)" multiple>
-		   		    	<md-optgroup ng-repeat="uniq in multiSelectBoxCtrl.unique" label={{uniq}} ng-init="multiSelectBoxCtrl.getUniq(uniq)" ng-model="multiSelectBoxCtrl.uniqM">
-		   		     		<md-option
+  		<md-input-container>
+  		    <label>{{multiSelectBoxCtrl.label}}</label>
+  		    	<md-select ng-model="multiSelectBoxCtrl.bindData" ng-change="multiSelectBoxCtrl.reflectValue(multiSelectBoxCtrl.bindData)" multiple>
+  		   		    	<md-optgroup ng-repeat="uniq in multiSelectBoxCtrl.unique" label={{uniq}} ng-init="multiSelectBoxCtrl.getUniq(uniq)" ng-model="multiSelectBoxCtrl.uniqM">
+  		   		     		<md-option
 
-                  ng-value="option" ng-repeat="option in multiSelectBoxCtrl.specificAttr.domainList | filter:multiSelectBoxCtrl.categoryMatch">{{option.name}}</md-option>
-		   		     	</md-optgroup>
-		   		    </md-select>
-		</md-input-container>
-	</div>
+                    ng-value="option" ng-repeat="option in multiSelectBoxCtrl.specificAttr.domainList | filter:multiSelectBoxCtrl.categoryMatch">{{option.name}}</md-option>
+  		   		     	</md-optgroup>
+  		   		    </md-select>
+  		</md-input-container>
+	  </div>
