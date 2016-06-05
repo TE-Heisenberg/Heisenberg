@@ -7,7 +7,8 @@ angular.module('app')
          childFieldsData: "<",
          metaDataOfChildFields: "<",
          cardHeading: "@",
-         childId: "@"
+         childId: "@",
+         deleteAll: "&"
        }
     });
 function childrenRouterController() {
@@ -15,4 +16,7 @@ function childrenRouterController() {
   console.log("Inside childrenRouterController");
   console.log(childrenRouter);
 
+  childrenRouter.deleteAllWrapper = function() {
+    childrenRouter.deleteAll({"childId":childrenRouter.childId});
+  }
 }

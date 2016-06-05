@@ -33,27 +33,27 @@
   "servicesIntializer":{
     "flight":{
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     },
     "bus": {
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     },
     "train": {
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     },
     "visaOnArrival":[{
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     }],
     "forex": [{
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     }]
   }

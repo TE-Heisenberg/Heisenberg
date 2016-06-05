@@ -1,17 +1,19 @@
 <!-- <child-card-renderer array-of-child-fields-data="stayRenderer.childFieldsData" meta-data-of-child-fields="stayRenderer.metaDataOfChildFields" card-heading="{{stayRenderer.cardHeading}}"></child-card-renderer> -->
 
-<md-card>
+<md-card ng-show="stayRenderer.childFieldsData !== undefined">
   <md-card-title>
     {{stayRenderer.cardHeading}}
     {{stayRenderer.childFieldsData}}
+    {{stayRenderer.metaDataOfChildFields}}
   </md-card-title>
   <div ng-repeat="childFieldsData in stayRenderer.childFieldsData">
     <br>
-    childFieldsData  Status$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    {{childFieldsData}}  Status$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
     <br>
 
-    <div ng-if="childFieldsData.state == 'initial' || childFieldsData.state == 'request'">
-
+    <div ng-if="childFieldsData.state === 'initial' || childFieldsData.state === 'request'">
+      <br>
+      before childform rendere
       <child-form-renderer fields-data="childFieldsData.requested" fields-meta-data="stayRenderer.metaDataOfChildFields"></child-form-renderer>
 
       <ng-md-icon flex="40" flex-offset="10" icon="delete"  ng-click="stayRenderer.onDelete($index)"></ng-md-icon>

@@ -27,13 +27,13 @@
 	"servicesIntializer":{
 		"stay": [
 							{
-									"state": "inital",
+									"state": "initial",
 									"requested": {}
 							}
 						],
 		"localTravel": [{
 
-					"state": "inital",
+					"state": "initial",
 					"requested": {}
 			}]
 	}
