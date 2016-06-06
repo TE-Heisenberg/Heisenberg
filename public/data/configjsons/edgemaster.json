@@ -112,10 +112,38 @@
         }
 
       }
-    
+
   },
 
   "train": {
+
+    "travelStartDate": {
+      "mandatory": true,
+      "displayName": "Travel Start Date",
+      "id": "travelStartDate",
+      "type": "date",
+      "data-reference": "essential.travelStartDate"
+    },
+    "class": {
+      "mandatory": true,
+      "displayName": "Class",
+      "id": "class",
+      "type": "singleSelect",
+      "specificAttr": {
+        "domainList": {"sleeper":"Sleeper", "3AC":"third Ac"}
+      }
+
+    },
+
+    "departureTime": {
+      "mandatory": false,
+      "displayName": "Departure Time",
+      "id": "departureTime",
+      "type": "time"
+    }
+
+  },
+  "bus": {
 
     "travelStartDate": {
       "mandatory": true,
