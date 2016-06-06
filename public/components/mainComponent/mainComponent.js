@@ -12,7 +12,7 @@ angular.module('app')
       { path: '/hotelSearchResults', name: 'HotelSearchResultsParentComponent', component: 'hotelSearchResultsParentComponent' },
       { path: '/itinerary', name: 'ItineraryComponent', component: 'itineraryParentComponent' },
       { path: '/searchResults', name: 'SearchResultComponent', component: 'searchResult'},      
-      { path: '/**', redirectTo: ["SearchResultComponent"] },
+      { path: '/**', redirectTo: ["LandingPageComponent"] },
     ]
   });
 
