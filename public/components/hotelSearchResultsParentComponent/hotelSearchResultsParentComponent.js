@@ -24,9 +24,9 @@ function hotelSearchResultsParentController($http,$rootScope){
   }
 ];
 
-hotelSearchResultsParent.currentnodeedge = function (id, type) {
-  console.log(id);
-  console.log(type);
+hotelSearchResultsParent.currentnodeedge = function (value2) {
+  console.log(value2.id);
+  console.log(value2.type);
 
 };
 }
