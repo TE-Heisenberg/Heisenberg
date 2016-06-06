@@ -25,7 +25,7 @@ function searchResultComponent(mainService, $state, _) {
     var childServices;
     var service;
 
-    searchResultComponent.travelPlan = mainService.getTravelPlanObject();
+    searchResultComponent.travelPlan = mainService.getTravelPlanObjectInitial();
     var sequence = [];
     console.log(searchResultComponent.travelPlan);
     _.map(searchResultComponent.travelPlan, function (travelPlan) {
@@ -66,7 +66,7 @@ function searchResultComponent(mainService, $state, _) {
 
 
     // console.log('sequence',sequence);
-    // searchResultComponent.currentObjInSequence = searchResultComponent.next(); 
+    // searchResultComponent.currentObjInSequence = searchResultComponent.next();
     var travelPlanIterator = searchResultComponent.iterator();
     searchResultComponent.onNext = function () {
         console.log('Inside onNext');
@@ -84,12 +84,12 @@ function searchResultComponent(mainService, $state, _) {
                 $state.go('flightSearchResults', null, { reload: true });
                 break;
         }
-            
+
         }
         else {
             searchResultComponent.$router.navigate(['ItineraryComponent']);
         }
-        
+
     };
 
     searchResultComponent.onPrev = function () {
@@ -110,5 +110,3 @@ function searchResultComponent(mainService, $state, _) {
 
 
 }
-
-
