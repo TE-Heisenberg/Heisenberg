@@ -100,35 +100,31 @@ function childFormRendererController($http) {
   childFormRenderer.querySearch =function(searchText,url,callBack)
   {
     console.log(searchText);
-    if(timeout) {
-      clearTimeout(timeout);
-    }
-    timeout = setTimeout(function() {
       $http({
         method: 'GET',
         // url: 'autoComplete.json'
         url:url,
       }).then(function successCallback(response) {
         childFormRenderer.available=response.data;
-        console.log("url is");
+        console.log("url is $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4");
         console.log(url);
         console.log(" first inside sucess callback");
         console.log(response);
         console.log("inside sucess callback");
         console.log(childFormRenderer.available.states);
 
-        // //  childFormRenderer.querySearch(searchText);
-        // var output=response.createFilterFor(searchText)
-        var results = searchText ?childFormRenderer.available.states.filter( createFilterFor(searchText) ) : [];
-        console.log("results are");
-        console.log(results);
-        callBack(results);
+    // //  ctrl.querySearch(searchText);
+    // var output=response.createFilterFor(searchText)
+    var results = searchText ?childFormRenderer.available.states.filter( createFilterFor(searchText) ) : [];
+       console.log("results are");
+       console.log(results);
+       callBack(results);
 
-        //filteredData(results);
-      }, function errorCallback(response) {
+       //filteredData(results);
+        }, function errorCallback(response) {
 
-      });
-    }, 1000);
+        });
+
   }
 
 };
