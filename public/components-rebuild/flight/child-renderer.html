@@ -5,19 +5,19 @@
 
   </md-card-title>
   <!-- <div ng-repeat="childFieldsData in flightRenderer.childFieldsData"> -->
-    
-    <div ng-if="flightRenderer.childFieldsData.state == 'initial' || flightRenderer.childFieldsData.state == 'request'">
+    <md-divider layout-margin></md-divider>
+    <div layout-margin ng-if="flightRenderer.childFieldsData.state == 'initial' || flightRenderer.childFieldsData.state == 'request'">
 
       <child-form-renderer fields-data="flightRenderer.childFieldsData.requested" fields-meta-data="flightRenderer.metaDataOfChildFields"></child-form-renderer>
 
 
     </div>
-    <div ng-if="flightRenderer.childFieldsData.state == 'select'">
+    <div layout-margin ng-if="flightRenderer.childFieldsData.state == 'select'">
       <!-- Insert read only component of flight -->
 
 
-      <div layout="row" >
-        <div flex="80">
+      <div layout="row" layout-margin>
+        <div flex="80" layout-margin>
           <flight-selected-data-renderer index="{{$index}}" selected-meta-data="flightRenderer.childFieldsData.selected" delete-selected-flight-child=flightRenderer.onDelete(index) edit-selected-flight-child=flightRenderer.onEdit(index)>
           </flight-selected-data-renderer>
 

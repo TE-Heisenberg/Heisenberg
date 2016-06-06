@@ -5,7 +5,7 @@
       <div flex="30" flex-xs="70">
         <img flex="100" ng-src="{{selectedDataDisplayComponent.serviceLogo}}">
       </div>
-      <div layout="column" flex="90" flex-xs="30">
+      <div layout="column" layout-align="center center"flex="90" flex-xs="30">
 
         <div class="nameFont">{{selectedDataDisplayComponent.serviceDetails.heading}}</div>
         <div class="seconDivDataFont" ng-repeat='(tag,data) in selectedDataDisplayComponent.serviceDetails.description'>

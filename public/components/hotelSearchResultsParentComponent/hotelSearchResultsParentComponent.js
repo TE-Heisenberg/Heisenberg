@@ -33,13 +33,13 @@ function hotelSearchResultsParentController($http,$rootScope, $state){
 
   };
 
-  hotelSearchResultsParent.currentnodeedge = function (id, type) {
-  console.log(id);
-  console.log(type);
-  if(type=='stay') $state.go('hotelSearchResults');
-  else if(type=='flight') $state.go('flightSearchResults');
-  else if(type=='train')  $state.go('trainSearchResults');
-  };
+  // hotelSearchResultsParent.currentnodeedge = function (id, type) {
+  // console.log(id);
+  // console.log(type);
+  // if(type=='stay') $state.go('hotelSearchResults');
+  // else if(type=='flight') $state.go('flightSearchResults');
+  // else if(type=='train')  $state.go('trainSearchResults');
+  // };
 
   // hotelSearchResultsParent.currentnodeedge("ssd", 'train');
 }
