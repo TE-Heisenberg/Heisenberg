@@ -6,7 +6,8 @@ angular.module('app')
        bindings: {
          "currentSelectedObj": "<",
          "metaDataOfObj": "<",
-         "currentSelectedChildren": "<"
+         "currentSelectedChildren": "<",
+         "childrenLabels": "<"
        }
 });
 
@@ -27,16 +28,18 @@ function travelBookingCtrl() {
       return a;
   }
 
-  travelBooking.$routerOnActivate = function() {
-    console.log(travelBooking.metaDataOfObj.essential);
-  }
+  // travelBooking.$routerOnActivate = function() {
+  //   console.log(travelBooking.metaDataOfObj.essential);
+  // }
 
   // Essential Fiellds
   console.log(travelBooking);
   console.log("Printing essen",travelBooking.metaDataOfObj.essential);
-  travelBooking.metaDataOfEssentialFields = travelBooking.metaDataOfObj.essential;
-  travelBooking.essentialFieldsData = travelBooking.currentSelectedObj.essential;
+  // travelBooking.metaDataOfObj.essential = travelBooking.metaDataOfObj.essential;
+  // travelBooking.essentialFieldsData = travelBooking.currentSelectedObj.essential;
   travelBooking.arrayOfSelectedChildren = [];
+
+
   travelBooking.reflectSelectedChildren = function(arrayOfSelectedChildren) {
     travelBooking.currentSelectedChildren = arrayOfSelectedChildren;
     console.log("I am inside reflectSelectedChildren");
@@ -56,17 +59,19 @@ function travelBookingCtrl() {
     });
   }
 
-  travelBooking.childrenLabels = {};
-  for(var mode in travelBooking.metaDataOfEssentialFields.modesToSelectTheServices)
-  {
-    var modeData = travelBooking.metaDataOfEssentialFields.modesToSelectTheServices[mode];
-    Object.assign(travelBooking.childrenLabels,modeData.specificAttr.domainList)
 
-  };
+  //This needs to be in a function which gets called before html is rendered
+  // travelBooking.childrenLabels = {};
+  // for(mode in travelBooking.metaDataOfObj.essential.modesToSelectTheServices)
+  // {
+  //   var modeData = travelBooking.metaDataOfObj.essential.modesToSelectTheServices[mode];
+  //   Object.assign(travelBooking.childrenLabels,modeData.specificAttr.domainList)
+  //
+  // }
 
-  travelBooking.metaDataOfChildren = travelBooking.metaDataOfObj.services;
+  // travelBooking.metaDataOfChildren = travelBooking.metaDataOfObj.services;
 
-  travelBooking.childrenData = travelBooking.currentSelectedObj.childServices;
+  // travelBooking.childrenData = travelBooking.currentSelectedObj.childServices;
 
 
 }

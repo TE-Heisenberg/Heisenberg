@@ -27,13 +27,13 @@
 	"servicesIntializer":{
 		"stay": [
 							{
-									"state": "inital",
+									"state": "initial",
 									"requested": {}
 							}
 						],
 		"localTravel": [{
 
-					"state": "inital",
+					"state": "initial",
 					"requested": {}
 			}]
 	}
@@ -55,16 +55,16 @@
 				"data": "areaLocationUrl"
 
 			},
-			"checkindate": {
+			"checkinDate": {
 				"mandatory": true,
 				"displayName": "Check-in Date",
-				"id": "checkindate",
+				"id": "checkinDate",
 				"type": "date"
 			},
-			"checkoutdate": {
+			"checkinDate": {
 				"mandatory": true,
 				"displayName": "Check-out Date",
-				"id": "checkoutdate",
+				"id": "checkoutDate",
 				"type": "date"
 			},
 			"checkinTime": {
@@ -85,7 +85,7 @@
 				"id": "preferences",
 				"type": "singleSelect",
 				"specificAttr": {
-					"domainList": [{"ac":"AC"}, {"nonAc":"Non-Ac"}]
+					"domainList": {"ac":"AC" ,"nonAc":"Non-Ac"}
 				}
 			},
 			"rating": {
@@ -95,6 +95,15 @@
 				"type": "singleSelect",
 				"specificAttr": {
 					"domainList": {"oneStar":"1-star", "twoStar":"2-star", "threeStar":"3-star", "fourStar":"4-star"}
+				}
+			},
+			"typeOfProperty": {
+				"mandatory": true,
+				"displayName": "Type Of Property",
+				"id": "typeOfProperty",
+				"type": "singleSelect",
+				"specificAttr": {
+					"domainList": {"guestHouse":"Guest House", "hotels":"Hotels"}
 				}
 			},
 			"nearBy": {
@@ -117,15 +126,7 @@
 					}
 				}
 			},
-			"typeOfProperty": {
-				"mandatory": true,
-				"displayName": "Type Of Property",
-				"id": "typeOfProperty",
-				"type": "singleSelect",
-				"specificAttr": {
-					"domainList": {"guestHouse":"Guest House", "hotels":"Hotels"}
-				}
-			},
+
 			"stars": {
 				"mandatory": false,
 				"displayName": "Stars",

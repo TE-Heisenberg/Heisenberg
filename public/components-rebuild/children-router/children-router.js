@@ -4,10 +4,11 @@ angular.module('app')
        controller: childrenRouterController,
        controllerAs: "childrenRouter",
        bindings: {
-         arrayOfChildFieldsData: "<",
+         childFieldsData: "<",
          metaDataOfChildFields: "<",
          cardHeading: "@",
-         childId: "@"
+         childId: "@",
+         deleteAll: "&"
        }
     });
 function childrenRouterController() {
@@ -15,4 +16,7 @@ function childrenRouterController() {
   console.log("Inside childrenRouterController");
   console.log(childrenRouter);
 
+  childrenRouter.deleteAllWrapper = function() {
+    childrenRouter.deleteAll({"childId":childrenRouter.childId});
+  }
 }

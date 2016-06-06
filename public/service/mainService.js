@@ -429,7 +429,7 @@ var travelPlanObject=[
     "type": "location",
     "essential": {
         "noDependencyData": {
-          "cityName": "Bangalore"
+          "location": "Bangalore"
         }
         ,
         "modesToSelectTheServices": {
@@ -439,13 +439,14 @@ var travelPlanObject=[
     "childServices": {
       "stay": [
                 {
-                  "state": "request",
+                  "state": "select",
                   "requested": {
                     "location": "Bangalore",
                     "area": "MadiWala",
                     "checkinDate": "01/04/2016",
-                    "checkOutDate": "02/04/2016",
+                    "checkinDate": "02/04/2016",
                     "checkinTime": "5:00 AM",
+                    "checkoutTime": "7:00 AM",
                     "preferences": "ac",
                     "rating": ["oneStar","threeStar"],
                     "nearBy": "5",
@@ -499,7 +500,7 @@ var travelPlanObject=[
               ],
       "localTravel": [
           {
-            "state": "request",
+            "state": "select",
             "requested": {},
             "selected":{
 
@@ -561,7 +562,7 @@ var travelPlanObject=[
     ,
     "childServices": {
       "flight": {
-        "state": "request",
+        "state": "select",
         "requested": {},
         "selected": {
           "image":"public/assets/images/indigo.png",
@@ -661,27 +662,27 @@ var travelPlanObject=[
   }
 ]
         var travelPlanObjectInitial = [
-          {
-            "essential": {
-            },
-            "childServices": {},
-            "type": "location",
-            "state": "initial"
-          },
-          {
-            "essential": {
-            },
-            "childServices": {},
-            "type": "transit",
-            "state": "initial"
-          },
-          {
-            "essential": {
-            },
-            "childServices": {},
-            "type": "location",
-            "state": "initial"
-          }
+          // {
+          //   "essential": {
+          //   },
+          //   "childServices": {},
+          //   "type": "location",
+          //   "state": "initial"
+          // },
+          // {
+          //   "essential": {
+          //   },
+          //   "childServices": {},
+          //   "type": "transit",
+          //   "state": "initial"
+          // },
+          // {
+          //   "essential": {
+          //   },
+          //   "childServices": {},
+          //   "type": "location",
+          //   "state": "initial"
+          // }
 
         ];
         var elementMasters = {};
@@ -690,36 +691,62 @@ var travelPlanObject=[
         // var someData;
         var subFactories= {
 
-             nodeEdgeInitializer:function(nodeOrEdge){
-               var numberOfElements = Object.keys(travelPlanObject[nodeOrEdge]).length;
-               var id=nodeOrEdge.slice(0, -1)+numberOfElements;
-               travelPlanObject[nodeOrEdge][id] = {
-                    "status": "initial",
-                    "essential": {},
-                    "childServices": {}
+             travelPlanElementInitializer:function(elementType){
 
-               };
+              travelPlanObjectInitial.push({
+                "type":elementType,
+                "essential": {},
+                "childServices": {},
+                "state":"initial"
+              });
+              console.log("I am inside travelPlanElementInitializer");
              },
 
-             travelPlanInitializer: function(indexForTravelMode){
-               console.log(indexForTravelMode);
-               travelPlanObject=[];
+             travelPlanInitializer: function(indexForTravelMode) {
                var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
+               console.log("I am in travelPlanInitializer");
+               console.log(indexForTravelMode);
+               var i=0;
                if(indexForTravelMode>=0){
-                 for(var i=0;i<indexForTravelMode+1;i++){
-                   subFactories.nodeEdgeInitializer('nodes');
-                   subFactories.nodeEdgeInitializer('edges');
-                 }
-                   subFactories.nodeEdgeInitializer('nodes');
-                 return 'success';
-               }else{
-                 return 'fail';
-               }
-             },
+                    while(i<=indexForTravelMode)
+                    {
+                      console.log("I am inside loop", i,indexForTravelMode );
+                      subFactories.travelPlanElementInitializer('location');
+                      subFactories.travelPlanElementInitializer('transit');
+                      i +=1;
+                    }
+                      subFactories.travelPlanElementInitializer('location');
+                    return true;
+                }
+                else{
+                    return false;
+                }
+             }
+
+            //  travelPlanInitializer: function(indexForTravelMode){
+            //    console.log(indexForTravelMode);
+            //    travelPlanObject=[];
+            //    var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
+            //    if(indexForTravelMode>=0){
+            //      for(var i=0;i<indexForTravelMode+1;i++){
+            //        subFactories.nodeEdgeInitializer('nodes');
+            //        subFactories.nodeEdgeInitializer('edges');
+            //      }
+            //        subFactories.nodeEdgeInitializer('nodes');
+            //      return 'success';
+            //    }else{
+            //      return 'fail';
+            //    }
+            //  }
+             ,
 
               getTravelPlanObject: function(){
                    return travelPlanObject;
                 },
+              getTravelPlanObjectInitial: function() {
+                return travelPlanObjectInitial;
+              }
+                ,
 
              getElementData: function(elementType, elementId){
                  return travelPlanObject[elementType][elementId];

@@ -3,13 +3,15 @@ var app = angular.module("app").component("staySelectedDataRenderer", {
     controllerAs: "staySelectedDataRenderer",
     controller: staySelectedDataRendererCtrl,
     bindings: {
-      "selectedMetaData": "<"
+      "selectedMetaData": "<",
     }
 });
 
 function staySelectedDataRendererCtrl()
 {
   var staySelectedDataRenderer=this;
+  console.log('I am isnide staySelectedDataRenderer');
+  console.log(this);
 
   staySelectedDataRenderer.serviceLogo=staySelectedDataRenderer.selectedMetaData.image;
   staySelectedDataRenderer.serviceDetails=

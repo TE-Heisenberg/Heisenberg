@@ -21,7 +21,7 @@ function travelBookingParentCtrl (mainService) {
     travelBookingParentCtrl.$onInit = function()
     {
       console.log(" I am inside on init");
-      travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObject();
+      travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObjectInitial();
       console.log(travelBookingParentCtrl.travelPlanObject);
       travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[0];
       console.log(travelBookingParentCtrl.currentSelectedObj);
@@ -30,51 +30,30 @@ function travelBookingParentCtrl (mainService) {
         "location": mainService.serviceData[0].data,
         "transit": mainService.serviceData[1].data
       };
-      console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type])
+      travelBookingParentCtrl.childrenLabels = {};
+      for( elementType in travelBookingParentCtrl.elementFields)
+      {
+
+        for(mode in travelBookingParentCtrl.elementFields[elementType].essential.modesToSelectTheServices)
+        {
+          var modeData = travelBookingParentCtrl.elementFields[elementType].essential.modesToSelectTheServices[mode];
+          Object.assign(travelBookingParentCtrl.childrenLabels,modeData.specificAttr.domainList)
+
+        }
+      }
+
+      console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
     }
+  travelBookingParentCtrl.currentnodeedge = function (value2) {
+    // travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[id];
+    // travelBookingParentCtrl.selectedChildren = type;
+    console.log("i am inside currentnodeedge");
+    console.log(value2);
+    travelBookingParentCtrl.currentSelectedObj = value2.currentObject;
+    travelBookingParentCtrl.selectedChildren = value2.selectedChildren;
 
-    // travelBookingParentCtrl.$canActivate = function() {
-    //   console.log(" I am inside on init");
-    //   travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObject();
-    //   console.log(travelBookingParentCtrl.travelPlanObject);
-    //   travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[0];
-    //   console.log(travelBookingParentCtrl.currentSelectedObj);
-    //   travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.travelPlanObject[0].childServices);
-    //       console.log("I am in travelBookingParentCtrl routerOnActivate before");
-    //       var getPrerequisites = mainService.getPrerequisites();
-    //       console.log(getPrerequisites);
-    //       return getPrerequisites.then(function(data) {
-    //           console.log("I am in travelBookingParentCtrl routerOnActivate");
-    //           console.log(data);
-    //
-    //       });
-    //
-    // }
-
-  // travelBookingParentCtrl.$routerOnActivate = function() {
-  //
-  //
-  //     console.log("I am in travelBookingParentCtrl routerOnActivate before");
-  //     var getPrerequisites = mainService.getPrerequisites();
-  //     console.log(getPrerequisites);
-  //     return getPrerequisites.then(function(data) {
-  //         console.log("I am in travelBookingParentCtrl routerOnActivate");
-  //         console.log(data);
-  //         travelBookingParentCtrl.elementFields = {
-  //           "location": data[0].data,
-  //           "transit": data[1].data
-  //         };
-  //
-  //     });
-  // };
-
-
-
-  travelBookingParentCtrl.currentnodeedge = function (id, type) {
-    travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[id];
-    travelBookingParentCtrl.selectedChildren = type;
-    console.log(id);
-    console.log(type);
+    // console.log(id);
+    // console.log(type);
 
   };
   //PG: 19th May- It is checked before hand if the Travel Plan exists or not
@@ -118,8 +97,11 @@ function travelBookingParentCtrl (mainService) {
 
   travelBookingParentCtrl.goToNextElement = function() {
     console.log(" I am inside goToNextElement");
-    travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj)+1];
+    console.log(travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj));
 
+    travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj)+1];
+    console.log("travelBookingParentCtrl.currentSelectedObj");
+    console.log(travelBookingParentCtrl.currentSelectedObj);
     travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.currentSelectedObj.childServices);
 
 

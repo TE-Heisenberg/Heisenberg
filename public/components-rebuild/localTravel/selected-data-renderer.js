@@ -79,6 +79,20 @@ console.log(localTravelSelectedDataRenderer.selectedMetaData.type);
     }
   }
 
-
+  localTravelSelectedDataRenderer.deletelocalTravelChild=function()
+  {
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("inside deletelocalTravelChild");
+    console.log(localTravelSelectedDataRenderer.index);
+    localTravelSelectedDataRenderer.deleteSelectedLocalTravelChild({index:localTravelSelectedDataRenderer.index})
+  }
+  localTravelSelectedDataRenderer.editlocalTravelChild=function()
+  {
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("inside edit localTravelChild");
+    console.log(localTravelSelectedDataRenderer.index);
+    console.log(localTravelSelectedDataRenderer.editSelectedLocalTravelChild);
+    localTravelSelectedDataRenderer.editSelectedLocalTravelChild({"index":localTravelSelectedDataRenderer.index});
+  }
 
 }

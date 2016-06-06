@@ -33,27 +33,27 @@
   "servicesIntializer":{
     "flight":{
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     },
     "bus": {
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     },
     "train": {
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     },
     "visaOnArrival":[{
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     }],
     "forex": [{
 
-          "state": "inital",
+          "state": "initial",
           "requested": {}
     }]
   }
@@ -81,7 +81,7 @@
         "mandatory": true,
         "displayName": "Number of Hops",
         "id": "numberOfHops",
-        "type": "slider",
+        "type": "singleSlider",
         "specificAttr": {
 					"floor":0,
 					"ceil": 100,

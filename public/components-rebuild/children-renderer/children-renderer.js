@@ -21,6 +21,12 @@ function childrenRendererController() {
   console.log(")))))))))))))))))))))))))))))))))))))))))))))))))))");
   console.log(childrenRenderer.selectedChildren);
 
+  childrenRenderer.deleteChildGroup = function(childId){
+    if(childrenRenderer.childrenFieldsData[childId] !== undefined) {
+      delete(childrenRenderer.childrenFieldsData[childId]);
+    }
+  }
+
   // childrenRenderer.$onInit =  function() {
   //
   //   childrenRenderer.selectedChildren.forEach(function(childId)

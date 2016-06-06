@@ -10,6 +10,26 @@ function stayBookingController($http)
 
 
   var stayBookingCtrl = this;
+
+  stayBookingCtrl.selectedFlight={
+    "image":"public/assets/images/indigo.png",
+    "companyName": "Air Costa",
+    "flightID": "AC2456",
+    "seatNumber": "45H",
+    "sourceAirport":"koramangala airport",
+    "destinationAirport":"delhi airport",
+    "price": "876547 INR",
+    "travelStartDate":"02/04/2016",
+    "preferences": {
+      "class": "Bussiness",
+      "Nonstop": "true",
+      "meals": "Non Veg",
+      "extraBaggage": "14 Kg"
+    },
+    "travelStartTime": "2:00 AM",
+    "travelEndDate": "5/2/2016",
+    "travelEndTime": "3:00 AM"
+  }
   stayBookingCtrl.selectedMetaDataLocalTravel={
 
       "source": "Rajiv nagar Chowk",

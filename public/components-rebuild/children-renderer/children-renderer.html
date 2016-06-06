@@ -1,16 +1,6 @@
-<br>
-<br>
-Inside Children renderer
-<br>
-<br>
-{{childrenRenderer.selectedChildren}}
-<br>
+
+
 <div ng-repeat="childId in childrenRenderer.selectedChildren">
-  Inside repeat of children renderer
-  <br>
-  {{childId}}
-  <br>
-  {{childrenRenderer.childrenFieldsData}}
-  <br>
-  <children-router array-of-child-fields-data="childrenRenderer.childrenFieldsData[childId]" meta-data-of-child-fields="childrenRenderer.childrenFieldsMetaData[childId]" card-heading="{{childrenRenderer.childrenLabels[childId]}}" child-id="{{childId}}"></children-router>
+
+  <children-router child-fields-data="childrenRenderer.childrenFieldsData[childId]" meta-data-of-child-fields="childrenRenderer.childrenFieldsMetaData[childId]" card-heading="{{childrenRenderer.childrenLabels[childId]}}" child-id="{{childId}}" delete-all="childrenRenderer.deleteChildGroup(childId)"></children-router>
 </div>
