@@ -1,0 +1,17 @@
+{
+  "name": "Heisenberg",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Nishant Jain <nishantkumarajain@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kshitijjain/Heisenberg",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
