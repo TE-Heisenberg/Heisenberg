@@ -5,7 +5,10 @@
 				"mandatory": true,
 				"displayName": "City",
 				"id": "location",
-				"type": "text"
+				"type": "autoComplete",
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
 			}
 		},
 		"modesToSelectTheServices": {
@@ -45,15 +48,18 @@
 				"displayName": "City",
 				"id": "location",
 				"type": "autoComplete",
-				"data-reference": "essential.location"
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
 			},
 			"area": {
 				"mandatory": true,
 				"displayName": "Area",
 				"id": "area",
 				"type": "autoComplete",
-				"data": "areaLocationUrl"
-
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
 			},
 			"checkinDate": {
 				"mandatory": true,
@@ -163,11 +169,9 @@
 				"displayName": "Pick-up Point",
 				"id": "pickupPoint",
 				"type": "autoComplete",
-				"data": ["koramangala",
-					"SilkBoard",
-					"Electronic City",
-					"Sarjapura"
-				]
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
 			},
 
 			"dropPoint": {
@@ -175,11 +179,9 @@
 				"displayName": "Drop Point",
 				"id": "dropPoint",
 				"type": "autoComplete",
-				"data": ["koramangala",
-					"SilkBoard",
-					"Electronic City",
-					"Sarjapura"
-				]
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
 			},
 			"typeOfLocalTransport": {
 				"mandatory": true,
