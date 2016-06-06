@@ -11,8 +11,8 @@ angular.module('app')
       { path: '/trainSearchResults', name: 'TrainSearchResultsParentComponent', component: 'trainSearchResultsParentComponent' },
       { path: '/hotelSearchResults', name: 'HotelSearchResultsParentComponent', component: 'hotelSearchResultsParentComponent' },
       { path: '/itinerary', name: 'ItineraryComponent', component: 'itineraryParentComponent' },
-      { path: '/**', redirectTo: ["LandingPageComponent"] },
-      { path: '/searchResults', name: 'SearchResultComponent', component: 'searchResultComponent'}
+      { path: '/searchResults', name: 'SearchResultComponent', component: 'searchResult'},      
+      { path: '/**', redirectTo: ["SearchResultComponent"] },
     ]
   });
 

@@ -1,2 +1,12 @@
-<travel-plan></travel-plan>
-<ui-view></ui-view>
+<div>
+    <div ng-init="searchResultComponent.onNext()">
+        <travel-plan travelplanobject="searchResultComponent.travelPlan" nodetype="location" edgetype="transit" currentnodeedgebooking="someMethodToGetTheIndex"></travel-plan>
+        <ui-view class="slide"></ui-view>
+    </div>
+    <md-card>
+        <div layout="row" layout-align="space-between">
+            <md-button ng-click="searchResultComponent.onPrev()">Previous</md-button>            
+            <md-button ng-click="searchResultComponent.onNext()">Next</md-button>
+        </div>
+    </md-card>
+</div>
