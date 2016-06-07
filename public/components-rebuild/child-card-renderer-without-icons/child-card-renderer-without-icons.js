@@ -4,7 +4,7 @@ var app = angular.module("app").component("childCardRendererWithoutIcons", {
 
     controller: childCardRendererWithoutIconsCtrl,
     bindings: {
-      "arrayOfChildFieldsData": "<",
+      "childFieldsData": "<",
       "metaDataOfChildFields": "<",
       "cardHeading": "@"
     }

@@ -1,344 +1,127 @@
 angular.module('app')
 .component('travelBookingParentComponent',{
   templateUrl: "public/components/travelBookingParentComponent/travelBookingParentComponent.html",
-  controller: travelBookingParentCtrl,
-  controllerAs: "travelBookingParentCtrl"
+  controller: ["mainService","$location",travelBookingParentCtrl],
+  controllerAs: "travelBookingParentCtrl",
+  $canActivate: function(mainService) {
+    return mainService.getPrerequisites().then(function(data) {
+      mainService.serviceData = data;
+      return true;
+    });
+  }
 });
 
 
-function travelBookingParentCtrl () {
-  var travelBookingParentCtrl = this;
-  travelBookingParentCtrl.travelPlanObject = [
-    { type:"location",
-    cityName:"Bangalore"
-  },
-  {
-    type:"transit",
-    childServices:
+function travelBookingParentCtrl (mainService, $location) {
+
+    var travelBookingParentCtrl = this;
+    console.log(travelBookingParentCtrl);
+
+    console.log(mainService.serviceData);
+    travelBookingParentCtrl.$onInit = function()
     {
-      booking:{
-        requested:{mode:"flight"}
+      console.log(" I am inside on init");
+      travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObjectInitial();
+      console.log(travelBookingParentCtrl.travelPlanObject);
+      travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[0];
+      console.log(travelBookingParentCtrl.currentSelectedObj);
+      travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.travelPlanObject[0].childServices);
+      travelBookingParentCtrl.elementFields = {
+        "location": mainService.serviceData[0].data,
+        "transit": mainService.serviceData[1].data
+      };
+      travelBookingParentCtrl.childrenLabels = {};
+      for( elementType in travelBookingParentCtrl.elementFields)
+      {
+
+        for(mode in travelBookingParentCtrl.elementFields[elementType].essential.modesToSelectTheServices)
+        {
+          var modeData = travelBookingParentCtrl.elementFields[elementType].essential.modesToSelectTheServices[mode];
+          Object.assign(travelBookingParentCtrl.childrenLabels,modeData.specificAttr.domainList)
+
+        }
       }
+
+      console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
     }
-  },
+     mainService.getNodeMaster.then(function(err,data){
+      travelBookingParentCtrl.nodeMaster=data;
+      travelBookingParentCtrl.locationchildservices=Object.keys(travelBookingParentCtrl.nodeMaster.servicesIntializer);
+    });
+
+  travelBookingParentCtrl.currentnodeedge = function (value2) {
+
+    console.log("i am inside currentnodeedge");
+    console.log(value2);
+    travelBookingParentCtrl.currentSelectedObj = value2.currentObject;
+    travelBookingParentCtrl.selectedChildren = value2.selectedChildren;
+
+  };
+  //PG: 19th May- It is checked before hand if the Travel Plan exists or not
+  // travelBookingParentCtrl.$onInit = function () {
+
+    //travelBookingParentCtrl.travelPlanExists = dataUpdateHelper.travelPlanExists();
+
+  // };
+
+  travelBookingParentCtrl.travelPlanExists = true;
+  if(travelBookingParentCtrl.travelPlanExists)
   {
-    type:"location",
-    cityName:"Delhi"
+
+    travelBookingParentCtrl.tempCurrentObj = {
+      "essential": {
+      },
+      "childServices": {},
+      "type": "edge",
+      "state": "initial"
+    };
+    travelBookingParentCtrl.tempSelectedChildren = ["flight"];
+
+
+
+  };
+
+  travelBookingParentCtrl.ifFirstElement = function() {
+    console.log("Inside first element");
+    console.log(travelBookingParentCtrl.currentSelectedObj);
+    console.log(travelBookingParentCtrl.travelPlanObject);
+    if(travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) == 0)
+      return true;
+    return false;
   }
-];
 
+  travelBookingParentCtrl.ifLastElement = function() {
+    if(travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) == travelBookingParentCtrl.travelPlanObject.length-1)
+      return true;
+    return false;
+  }
 
+  travelBookingParentCtrl.goToNextElement = function()
+  {
+    console.log(" I am inside goToNextElement");
+    if(travelBookingParentCtrl.ifLastElement()) {
+      $location.path('/searchResults');
+      // travelBookingParentCtrl.$router.navigate(['searchResult']);
+    }
+    else {
+      console.log(travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj));
 
-
-travelBookingParentCtrl.currentnodeedge = function (id, type) {
-  console.log(id);
-  console.log(type);
-
-};
-//PG: 19th May- It is checked before hand if the Travel Plan exists or not
-travelBookingParentCtrl.$onInit = function () {
-
-  //travelBookingParentCtrl.travelPlanExists = dataUpdateHelper.travelPlanExists();
-
-};
-
-travelBookingParentCtrl.travelPlanExists = true;
-if(travelBookingParentCtrl.travelPlanExists)
-{
-  // PG: 19th May- Getting all the fields data needed to render the forms
-  // var elementFields = {
-  //   "node": dataUpdateHelper.getNodes(),
-  //   "edge": dataUpdateHelper.getEdges()
-  // }
-
-  travelBookingParentCtrl.elementFields = {
-    "node": {
-      "essential": {
-        "noDependencyData":{
-          "location": {
-            "mandatory": true,
-            "displayName": "City",
-            "id": "location",
-            "type": "text"
-          }
-        },
-        "modesToSelectTheServices": {
-          "basicServices":{
-            "mandatory": false,
-            "displayName": "Select Basic Services",
-            "id": "selectedServices",
-            "type": "checkBox",
-            "specificAttr":{
-              "domainList": {"stay":"Stay","localTravel":"Local Travel"}
-              // "domainList":[{"serviceId":"stay", "serviceDisplayName": "Stay"},{"serviceId":"localTravel", "serviceDisplayName": "Local Travel"}],
-              // "listLabelKey": "serviceId",
-              // "listLabelValue": "serviceDisplayName"
-            }
-
-          },
-
-
-
-        }
-      },
-      "services": {
-        "stay": {
-          "location":{
-            "mandatory": true,
-            "displayName": "City",
-            "id": "location",
-            "type": "autoComplete",
-            "data-reference": "essential.location"
-          },
-          "area": {
-            "mandatory": true,
-            "displayName": "Area",
-            "id": "area",
-            "type": "autoComplete",
-            "data": "areaLocationUrl"
-
-          },
-          "checkindate":{
-            "mandatory": true,
-            "displayName": "Check-in Date",
-            "id": "checkindate",
-            "type": "date"
-          },
-          "checkoutdate":{
-            "mandatory": true,
-            "displayName": "Check-out Date",
-            "id": "checkoutdate",
-            "type": "date"
-          },
-          "checkinTime":{
-            "mandatory": true,
-            "displayName": "Check-in Time",
-            "id": "checkinTime",
-            "type": "time"
-          },
-          "checkoutTime":{
-            "mandatory": true,
-            "displayName": "Check-out Time",
-            "id": "checkoutTime",
-            "type": "time"
-          }
-          ,
-          "preferences":{
-            "mandatory": false,
-            "displayName": "Preferences",
-            "id": "preferences",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["ac","non-ac"]
-            }
-          },
-          "rating":
-          {
-            "mandatory": false,
-            "displayName": "Rating",
-            "id": "rating",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["1-star","2-star","3-star","4-star"]
-            }
-          },
-          "nearBy" : {
-            "mandatory": false,
-            "displayName": "Near By",
-            "id": "nearBy",
-            "type": "slider",
-            "specificAttr":{
-              "min":0.1,
-              "max":200
-            }
-          }
-          ,
-          "typeOfProperty":
-          {
-            "mandatory": true,
-            "displayName": "Type Of Property",
-            "id": "typeOfProperty",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["Guest House", "Hotels"]
-            }
-          },
-          "stars":
-          {
-            "mandatory": false,
-            "displayName": "Stars",
-            "id": "stars",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["1-star","3-star", "5-star", "7-star"]
-            }
-          },
-          "amenities":{
-            "mandatory": false,
-            "displayName": "Amenities",
-            "id": "amenities",
-            "type": "multiSelect",
-            "specificAttr":{
-              "domainList":["meeting rooms", "swimming pool", "fitness", "restaurants"]
-            }
-          },
-          "proximity": {
-            "mandatory": false,
-            "displayName": "Proximity",
-            "id": "proximity",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["metro station", "taxi stands", "airports", "railway stations" ]
-            }
-
-          }
-
-        }
-        ,
-        "localTravel":{
-          "pickupPoint": {
-            "mandatory": true,
-            "displayName": "Pick-up Point",
-            "id": "pickupPoint",
-            "type": "autoComplete",
-            "data": ["koramangala",
-              "SilkBoard",
-              "Electronic City",
-              "Sarjapura"
-            ]
-          },
-
-          "dropPoint": {
-            "mandatory": true,
-            "displayName": "Drop Point",
-            "id": "dropPoint",
-            "type": "autoComplete",
-            "data": ["koramangala",
-              "SilkBoard",
-              "Electronic City",
-              "Sarjapura"
-            ]
-          },
-          "typeOfLocalTransport": {
-            "mandatory": true,
-            "displayName": "Type",
-            "id": "typeOfLocalTransport",
-            "type": "singleSelect",
-            "specificAttr":{
-              "domainList":["Cab", "Bus"]
-            }
-          },
-
-          "pickupDate": {
-            "mandatory": true,
-            "displayName": "Pick up Date",
-            "id": "pickupDate",
-            "type": "date"
-          },
-          "pickupTime": {
-            "mandatory": true,
-            "displayName": "Pick up Time",
-            "id": "pickupTime",
-            "type": "time"
-          }
-
-
-        }
-      }
-    },
-    "edge": {
-      "essential": {
-        "noDependencyData": {
-          "travelStartDate": {
-            "mandatory": "true",
-            "displayName": "Travel Start Date",
-            "id": "travelStartDate",
-            "type": "date"
-          }
-        },
-        "modesToSelectTheServices": {
-          "mode": {
-            "mandatory": true,
-            "displayName": "Select the mode",
-            "id": "mode",
-            "type": "singleSelect",
-            "specificAttr": {
-              "domainList": ["flight", "bus", "train"]
-            }
-
-          },
-          "extraAddOnsServices": {
-            "mandatory": false,
-            "displayName": "Extra Add-on Services",
-            "id": "extraAddOnsServices",
-            "type": "multiSelect",
-            "specificAttr": {
-              "domainList": ["visaOnArrival", "forex"]
-            }
-          }
-        }
-      },
-      "services": {
-        "flight": {
-          "travelStartDate": {
-            "mandatory": true,
-            "displayName": "Travel Start Date",
-            "id": "travelStartDate",
-            "type": "date",
-            "data-reference": "essential.travelStartDate"
-          },
-          "class": {
-            "mandatory": true,
-            "displayName": "Class",
-            "id": "class",
-            "type": "singleSelect",
-            "specificAttr": {
-              "domainList": ["Bussiness", "Economy"]
-            }
-
-          },
-          "numberOfHops": {
-            "mandatory": true,
-            "displayName": "Number of Hops",
-            "id": "numberOfHops",
-            "type": "slider",
-            "specificAttr": {
-              "min": 0,
-              "max": 15
-            }
-          },
-          "departureTime": {
-            "mandatory": false,
-            "displayName": "Departure Time",
-            "id": "departureTime",
-            "type": "time"
-          },
-          "airlines": {
-            "mandatory": false,
-            "displayName": "Airlines",
-            "id": "airlines",
-            "type": "singleSelect",
-            "specificAttr": {
-              "domainList": ["Air Asia", "Air Costa", "Jet"]
-            }
-
-          }
-        }
-      }
-
+      travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj)+1];
+      console.log("travelBookingParentCtrl.currentSelectedObj");
+      console.log(travelBookingParentCtrl.currentSelectedObj);
+      travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.currentSelectedObj.childServices);
     }
 
-  };
-  travelBookingParentCtrl.tempCurrentObj = {
-    "essential": {
-    },
-    "childServices": {},
-    "type": "edge",
-    "state": "initial"
-  };
-  travelBookingParentCtrl.tempSelectedChildren = ["flight"];
-};
 
 
+  }
+
+
+  travelBookingParentCtrl.goToPreviousElement = function() {
+    travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) - 1];
+
+    travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.currentSelectedObj.childServices);
+
+  }
 
 }

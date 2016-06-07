@@ -8,6 +8,7 @@ angular.module("app").component("travelPlan", {
   controller: travelPlanController,
   bindings: {
     travelplanobject:'<',
+    locationchildservices:'<',
     currentnodeedgebooking:'&',
     nodetype:'@',
     edgetype:'@'
@@ -28,7 +29,12 @@ function travelPlanController() {
   plan.currentnodeedgetravel = function (value) {
     console.log("in travel plan")
     console.log(value);
-    plan.currentnodeedgebooking({value2:value});
+    var currentObjectDetails = {
+      "currentObject": plan.travelplanobject[value.index],
+      "index": value.index,
+      "selectedChildren": value.type
+    }
+    plan.currentnodeedgebooking({value2:currentObjectDetails});
   };
   plan.addNode = function () {
     plan.newNode = {

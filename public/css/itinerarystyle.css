@@ -6,7 +6,7 @@
 }
 
 /*********Material icon style and vertical line**********/
-#line {
+#verticalLine {
     height: 200%;
     width: 1.8%;
     background-color: #330099;
@@ -33,6 +33,7 @@
     top: 25%;
     left: 25%;
     color: white;
+    position: absolute;
 }
 /***********horizontal line***********/
 .horizontal {

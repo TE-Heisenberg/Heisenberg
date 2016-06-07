@@ -51,8 +51,10 @@ function essentialFieldsRendererCtrl()
     console.log(id);
     console.log(value);
     essentialFieldsRenderer.essentialFieldsData[id] = value;
-
-    noDependencyFields.forEach(function(noDependencyField){
+    console.log("Before the loop");
+    // console.log(essentialFieldsRenderer.metaDataOfModesToSelectTheServices);
+    // console.log();
+    Object.keys(essentialFieldsRenderer.metaDataOfEssentialFields.modesToSelectTheServices).forEach(function(noDependencyField){
       console.log("In the for loop");
       console.log(noDependencyFields);
       console.log(noDependencyField);

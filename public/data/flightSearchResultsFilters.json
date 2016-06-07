@@ -1,18 +1,36 @@
 [
   {
-		"id": "depTime",
-		"type": "button",
-		"label": "Depart Time:",
-		"options": {
-			"domainList": ["00-06", "06-12", "12-18", "18-24"]
-		}
+    "id":"price",
+    "type":"rangeSlider",
+    "label":"PRICE:",
+    "options": {
+            "domainList":{
+              "minValue": 2500,
+                          "maxValue": 9500,
+                          "options":{
+                            "id": "price",
+                            "floor": 2000,
+                            "ceil": 10000,
+                            "step": 1,
+                            "noSwitching": true
+                        }
+                      }
+        }
   },
+    {
+  		"id": "depTime",
+  		"type": "checkBox",
+  		"label": "DEPARTURE TIME:",
+  		"options": {
+  			"domainList": ["00-06", "06-12", "12-18", "18-24"]
+  		}
+    },
   {
 		"id": "stops",
-		"type": "button",
+		"type": "checkBox",
 		"label": "STOPS:",
 		"options": {
-			"domainList": ["0", "1", "1+"]
+			"domainList":[0,1,2]
 		}
   },
   {

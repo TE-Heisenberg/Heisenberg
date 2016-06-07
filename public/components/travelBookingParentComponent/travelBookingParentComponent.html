@@ -1,6 +1,10 @@
 <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"
-edgetype=" transit" currentnodeedgebooking=" travelBookingParentCtrl.currentnodeedgebooking(value2)">
+edgetype="transit" locationchildServices="travelBookingParentCtrl.locationchildservices" currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
 </travel-plan>
 
-<travel-booking current-selected-obj="travelBookingParentCtrl.tempCurrentObj" meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.tempCurrentObj.type]" current-selected-children="travelBookingParentCtrl.tempSelectedChildren">
+<travel-booking current-selected-obj="travelBookingParentCtrl.currentSelectedObj" meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]" current-selected-children="travelBookingParentCtrl.selectedChildren" children-labels="travelBookingParentCtrl.childrenLabels">
 </travel-booking>
+
+<md-button ng-show="!travelBookingParentCtrl.ifFirstElement()" class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToPreviousElement()" >Previous</md-button>
+
+<md-button  class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToNextElement()">Next</md-button>

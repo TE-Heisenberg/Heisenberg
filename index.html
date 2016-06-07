@@ -16,9 +16,11 @@
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
 
   <!--Javascript libs-->
   <script src="node_modules/angular/angular.js"></script>
+  <script src='node_modules/angular-ui-router/release/angular-ui-router.min.js'></script>
   <script src="node_modules/angular-route/angular-route.js"></script>
   <script src="node_modules/angular-material/angular-material.js"></script>
   <script src="node_modules/angular-animate/angular-animate.js"></script>
@@ -37,7 +39,9 @@
 
 
   <link rel="stylesheet" href="public/css/flightSearchResults.css">
+
   <link rel="stylesheet" href="public/css/hotelSearchResults.css">
+
   <link rel="stylesheet" href="public/css/itinerarystyle.css">
   <link rel="stylesheet" href="public/css/landingpage.css">
   <link rel="stylesheet" href="public/css/searchResult.css">
@@ -56,11 +60,14 @@
   <!-- <script src="public/components/travelBookingParentComponent/travelBookingFormComponent/travelBookingComponent.js"></script> -->
   <script src="public/components/travelplancomponent/nodeComponent/nodeComponent.js"></script>
   <script src="public/components/travelplancomponent/edgeComponent/edgeComponent.js"></script>
+  <script src="public/components/searchResultsComponent/searchResult.component.js"></script>
 
 
   <script src="public/components/landingPageComponent/landingComponent.js"></script>
-  <script src="public/components/landingPageComponent/listComponent/listComponent.js"></script>
   <script src="public/components/landingPageComponent/mainButtons/mainButtonsComponent.js"></script>
+  <script src="public/components/landingPageComponent/mainButtons/dialogController.js"></script>
+
+
   <script src="public/components/landingPageComponent/myAlert/myAlertComponent.js"></script>
   <script src="public/components/landingPageComponent/myCurrentPlan/myCurrentPlanComponent.js"></script>
   <script src="public/components/landingPageComponent/myFavourite/myFavouriteComponent.js"></script>
@@ -100,7 +107,14 @@
   <script src="public/components/childServicesWrapperComponent/childServicesWrapperComponent.js"></script>
   <script src="public/components-rebuild/child-form-renderer/child-form-renderer.js"></script>
   <script src="public/components-rebuild/stay/child-renderer.js"></script>
+    <script src="public/components-rebuild/stay/stay-selected-data-renderer.js"></script>
+  <script src="public/components-rebuild/localTravel/selected-data-renderer.js"></script>
+    <script src="public/components-rebuild/flight/selected-data-renderer.js"></script>
+  <script src="public/components-rebuild/train/selected-data-renderer.js"></script>
+    <script src="public/components-rebuild/bus/selected-data-renderer.js"></script>
   <script src="public/components-rebuild/flight/child-renderer.js"></script>
+    <script src="public/components-rebuild/train/child-renderer.js"></script>
+      <script src="public/components-rebuild/bus/child-renderer.js"></script>
   <script src="public/components-rebuild/localTravel/child-renderer.js"></script>
   <script src="public/components-rebuild/non-autonomous-form/non-autonomous-form.js"></script>
 
@@ -133,9 +147,6 @@
   <script type="text/javascript" src="custom-input-component/subCustomComponents/time/component.js"></script>
   <script type="text/javascript" src="custom-input-component/subCustomComponents/date/component.js"></script>
   <script type="text/javascript" src="custom-input-component/subCustomComponents/slider/component.js"></script>
-
-
-
 </head>
 <body ng-app="app">
   <main-component></main-component>
