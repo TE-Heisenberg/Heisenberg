@@ -2,8 +2,11 @@
     /*body {
         width: 100%
     }*/
-.main-header{
+.main-toolbar{
     border-bottom: 4px solid #2a8ce2;
+    background-color: white !important;
+    position: fixed;
+    z-index: 10000;     
 }
     .plan_1{
         /*width: 70%;*/

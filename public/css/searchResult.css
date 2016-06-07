@@ -1,6 +1,10 @@
+.search-result {
+  margin-top: 320px;  
+}
+
 .prev-next-fixed {
   position: fixed;
-  margin-top: 220px;
+  margin-top: 250px;
   z-index: 1001;
   width: 100%;
 }
@@ -9,6 +13,7 @@
   z-index: 1000;
   background: white;
   width: 100%;
+  margin-top: 45px;
 }
 .slide {
     -webkit-transition: -webkit-transform .7s ease-in-out;
