@@ -1,4 +1,19 @@
 {
+  "servicesDetails":
+  {
+    "flight":{
+      "icons": "path",
+      "displayName": "Flight"
+    },
+    "train":{
+      "icons":"path",
+      "displayName": "Train"
+    },
+    "bus": {
+      "icons":"path",
+      "displayName":"Bus"
+    }
+  },
   "essential": {
     "noDependencyData": {
       "travelStartDate": {
