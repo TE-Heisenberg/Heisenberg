@@ -1,12 +1,18 @@
 <div>
-    <div ng-init="searchResultComponent.onNext()">
-        <travel-plan travelplanobject="searchResultComponent.travelPlan" nodetype="location" edgetype="transit" currentnodeedgebooking="someMethodToGetTheIndex"></travel-plan>
-        <ui-view class="slide"></ui-view>
-    </div>
-    <md-card>
-        <div layout="row" layout-align="space-between">
-            <md-button class="md-primary md-raised" ng-click="searchResultComponent.onPrev()">Previous</md-button>            
-            <md-button class="md-primary md-raised" ng-click="searchResultComponent.onNext()">Next</md-button>
+    <div layout="column" ng-init="searchResultComponent.onNext()">
+        <div class="travel-plan-fixed">
+            <travel-plan travelplanobject="searchResultComponent.travelPlan" nodetype="location" edgetype="transit" currentnodeedgebooking="someMethodToGetTheIndex"></travel-plan>
         </div>
-    </md-card>
+        <div layout="row" class="md-whiteframe-0dp prev-next-fixed" layout-align="space-between none">
+                <md-button class="md-primary md-raised" ng-click="searchResultComponent.onPrev()">Previous</md-button>
+                <md-button class="md-primary md-raised" ng-click="searchResultComponent.onNext()">Next</md-button>
+            </div>
+        <div layout="row" layout-align="center center">
+            <div flex="5" layout-align="center">
+            </div>
+            <div flex="80">
+                <ui-view class="slide"></ui-view>
+            </div>
+        </div>
+    </div>
 </div>

@@ -24,8 +24,9 @@
 
  });
 
- module.config(function(tmhDynamicLocaleProvider, $stateProvider, $urlRouterProvider) {
+ module.config(function(tmhDynamicLocaleProvider, $stateProvider, $urlRouterProvider,$mdThemingProvider) {
     tmhDynamicLocaleProvider.localeLocationPattern('node_modules/angular/i18n/angular-locale_{{locale}}.js');
+    // $mdThemingProvider.theme('default').();
 });
 
 module.value("$routerRootComponent","mainComponent");
