@@ -2,8 +2,25 @@
     /*body {
         width: 100%
     }*/
-.main-header{
+
+    .main-button-fixed {
+        position: fixed;
+        /*margin-top: 350px;*/
+        /*width: 100%;
+        margin-left: 43%;
+        z-index: 10001;*/
+        top:85%;
+        left:90%;
+    }
+
+    .main_toolbar{
+        position: fixed;
+        background-color:white !important;
+        z-index: 1000;
+    }
+.main_toolbar{
     border-bottom: 4px solid #2a8ce2;
+
 }
     .plan_1{
         /*width: 70%;*/
@@ -39,11 +56,9 @@
 
     }
 
+
     .card1 {
         background-color: #70b900;
-        color: white;
-
-        height: 80px;
         border-bottom-width: 3px;
         margin-bottom: 6px;
     }
@@ -58,37 +73,45 @@
         font-weight: normal;
     }
 
-
-
     .card2 {
 
 
         padding: 12px;
         margin-bottom: 6px;
         border-bottom: 4px solid #2a8ce2;
+        margin-top: 70px;
+
     }
+/*#fix{
+    position:relative;
+    /*top: 85%;
+    left:90%;*/
+}
+/*#menuButton{
+    /*position: absolute;
+    top: 85%;
+    left:90%;*/
+/*}*/
+
+/*#bookButton{*/
+    /*position: fixed;*/
+    /*top: 75%;*/
+    /*left:800%;*/
+/*}*/
+/*#expenseButton{
+    /*position: fixed;*/
+    /*top: 55%;
+    left:800%;*/
+/*}*/
+/*#configButton{
+    /*position: fixed;*/
+    /*top: 95%;
+    left:800%;*/
+/*}*/
 
     .card2 .plan_icon {
         font-size: 30px;
         float: left;
-    }
-
-    .card2 .ccfbuttons {
-
-        margin-top: 0px;
-        color: #5bc0de;
-    }
-
-    .card2 .ccfbuttons2 {
-
-        margin-top: 0px;
-        color: #5bc0de;
-    }
-
-    .card2 .ccfbuttons3 {
-
-        margin-top: 0px;
-        color: #5bc0de;
     }
 
     .card2 .cur_icons {
@@ -118,29 +141,12 @@
 
     .card3 .res {
         color: #5bc0de;
+        margin-top: 10px;
     }
 
     .button_flex {
         /*margin-top: 6px;
         margin-bottom: 6px;*/
-    }
-
-    .main_buttons {
-        /*width: 28%;
-        margin: 2%;*/
-    }
-
-    .main_buttons2 {
-
-        /*width: 28%;
-        margin: 2%;*/
-    }
-
-    .main_buttons3 {
-
-        /*width: 28%;
-        margin: 2%;*/
-
     }
 
     #calendar {
@@ -189,22 +195,14 @@
         background-color: orange;
     }
 
-      /*#fav {
+      .myfav {
 
           padding: 12px;
           margin-bottom: 6px;
           border-bottom: 4px solid #2a8ce2;
+          margin-top: 70px;
       }
 
-      #fav .fav_icons {
-          float: right;
-
-      }
-
-      #fav_icon {
-          font-size: 30px;
-          float: left;
-      }*/
 
     #fav_icon1 {
         font-size: 36px;
