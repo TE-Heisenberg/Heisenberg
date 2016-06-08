@@ -23,9 +23,9 @@ function landingController($scope,$http){
   $http.get("public/data/landing/myplans.json").success(function (response) {
     // $scope.finalData=response.data;
     // console.log($scope.finalData);
-    $scope.completed =response.completed.date;
-    $scope.current = response.current.date;
-    $scope.future = response.future.date;
+    $scope.completed =response.completed.plan;
+    $scope.current = response.current.plan;
+    $scope.future = response.future.plan;
 
   });
 
@@ -45,4 +45,6 @@ function landingController($scope,$http){
     // var finalJson={};
     // $scope.finalJson=$scope.locality;
   });
-};
+
+
+}
