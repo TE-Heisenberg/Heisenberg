@@ -721,24 +721,7 @@ var travelPlanObject=[
                 else{
                     return false;
                 }
-             }
-
-            //  travelPlanInitializer: function(indexForTravelMode){
-            //    console.log(indexForTravelMode);
-            //    travelPlanObject=[];
-            //    var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
-            //    if(indexForTravelMode>=0){
-            //      for(var i=0;i<indexForTravelMode+1;i++){
-            //        subFactories.nodeEdgeInitializer('nodes');
-            //        subFactories.nodeEdgeInitializer('edges');
-            //      }
-            //        subFactories.nodeEdgeInitializer('nodes');
-            //      return 'success';
-            //    }else{
-            //      return 'fail';
-            //    }
-            //  }
-             ,
+             },
 
               getTravelPlanObject: function(){
                    return travelPlanObject;

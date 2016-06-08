@@ -34,6 +34,7 @@ function travelPlanController() {
       "index": value.index,
       "selectedChildren": value.type
     }
+    console.log(plan.locationchildservices);
     plan.currentnodeedgebooking({value2:currentObjectDetails});
   };
   plan.addNode = function () {
@@ -44,11 +45,7 @@ function travelPlanController() {
     plan.newEdge = {
       type:"transit",
       childServices:
-      {
-        booking:{
-          requested:{mode:""}
-        }
-      }
+      {}
     };
     plan.travelplanobject.push(plan.newEdge);
     plan.travelplanobject.push(plan.newNode);

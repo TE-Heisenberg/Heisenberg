@@ -25,7 +25,7 @@ function travelBookingParentCtrl (mainService, $location) {
       console.log(travelBookingParentCtrl.travelPlanObject);
       travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[0];
       console.log(travelBookingParentCtrl.currentSelectedObj);
-      travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.travelPlanObject[0].childServices);
+    travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.travelPlanObject[0].childServices);
       travelBookingParentCtrl.elementFields = {
         "location": mainService.serviceData[0].data,
         "transit": mainService.serviceData[1].data
@@ -44,9 +44,10 @@ function travelBookingParentCtrl (mainService, $location) {
 
       console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
     }
-     mainService.getNodeMaster.then(function(err,data){
-      travelBookingParentCtrl.nodeMaster=data;
-      travelBookingParentCtrl.locationchildservices=Object.keys(travelBookingParentCtrl.nodeMaster.servicesIntializer);
+     mainService.getNodeMaster().success(function(data){
+     console.log(data);
+      travelBookingParentCtrl.locationchildservices=data.servicesDetails;
+      console.log(travelBookingParentCtrl.locationchildservices);
     });
 
   travelBookingParentCtrl.currentnodeedge = function (value2) {
@@ -57,12 +58,6 @@ function travelBookingParentCtrl (mainService, $location) {
     travelBookingParentCtrl.selectedChildren = value2.selectedChildren;
 
   };
-  //PG: 19th May- It is checked before hand if the Travel Plan exists or not
-  // travelBookingParentCtrl.$onInit = function () {
-
-    //travelBookingParentCtrl.travelPlanExists = dataUpdateHelper.travelPlanExists();
-
-  // };
 
   travelBookingParentCtrl.travelPlanExists = true;
   if(travelBookingParentCtrl.travelPlanExists)
@@ -82,9 +77,9 @@ function travelBookingParentCtrl (mainService, $location) {
   };
 
   travelBookingParentCtrl.ifFirstElement = function() {
-    console.log("Inside first element");
-    console.log(travelBookingParentCtrl.currentSelectedObj);
-    console.log(travelBookingParentCtrl.travelPlanObject);
+    //console.log("Inside first element");
+    //console.log(travelBookingParentCtrl.currentSelectedObj);
+    //console.log(travelBookingParentCtrl.travelPlanObject);
     if(travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) == 0)
       return true;
     return false;

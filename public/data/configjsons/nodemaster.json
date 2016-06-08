@@ -2,11 +2,11 @@
 	"servicesDetails":
 	{
 		"stay":{
-			"icons": "path",
+			"icons": "hotel",
 			"displayName": "Stay"
 		},
 		"localTravel":{
-			"icons":"path",
+			"icons":"directions_car",
 			"displayName": "Local Travel"
 		}
 	},
