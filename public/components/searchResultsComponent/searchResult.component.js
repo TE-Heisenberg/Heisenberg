@@ -51,6 +51,11 @@ function searchResultComponent(mainService, $state, _) {
             }
         });
     });
+    mainService.getNodeMaster().success(function(data){
+    console.log(data);
+     searchResultComponent.locationchildservices=data.servicesDetails;
+     console.log(searchResultComponent.locationchildservices);
+   });
 
     searchResultComponent.iterator = function* () {
         for (var i = 0; i < sequence.length; i++) {
