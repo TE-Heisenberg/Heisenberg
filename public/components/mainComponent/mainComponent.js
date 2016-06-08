@@ -40,13 +40,13 @@ angular.module('app')
                 component: 'hotelSearchResultsParentComponent'
             },
             {path: '/itinerary', name: 'ItineraryComponent', component: 'itineraryParentComponent'},
-            {path: '/searchResults', name: 'SearchResultComponent', component: 'searchResult'},
+      { path: '/searchResults', name: 'SearchResultComponent', component: 'searchResult'},
             {path: '/**', redirectTo: ["LoginComponent"]},
         ]
     });
 
 var setObj = function (obj, keyString, value) {
-    console.log("Before Replace ", keyString)
+		console.log("Before Replace ", keyString);
     keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
     console.log("After first replace", keyString);
     keyString = keyString.replace(/^\./, '');           // strip a leading dot
@@ -54,7 +54,7 @@ var setObj = function (obj, keyString, value) {
     var hierarchyWiseKeysArray = keyString.split('.');
 
     while (hierarchyWiseKeysArray.length > 1)
-        obj = obj[hierarchyWiseKeysArray.shift()];
+    obj = obj[hierarchyWiseKeysArray.shift()];
     return obj[hierarchyWiseKeysArray.shift()] = value;
 
 }

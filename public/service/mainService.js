@@ -702,6 +702,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
         },
 
         travelPlanInitializer: function (indexForTravelMode) {
+               travelPlanObjectInitial=[];
             var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
             console.log("I am in travelPlanInitializer");
             console.log(indexForTravelMode);

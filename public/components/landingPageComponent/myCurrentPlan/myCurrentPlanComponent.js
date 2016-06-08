@@ -1,4 +1,4 @@
-var app=angular.module("app")
+var app=angular.module("app");
 app.component("myCurrentPlan",{
 
   templateUrl:"public/components/landingPageComponent/myCurrentPlan/myCurrentPlan.html",
@@ -29,5 +29,5 @@ function myCurrentPlanController($scope,$http,$mdDialog) {
       .ok('Got it!')
       .targetEvent(ev)
     );
-  }
-};
+  };
+}

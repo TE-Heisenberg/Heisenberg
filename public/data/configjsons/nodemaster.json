@@ -1,4 +1,15 @@
 {
+	"servicesDetails":
+	{
+		"stay":{
+			"icons": "path",
+			"displayName": "Stay"
+		},
+		"localTravel":{
+			"icons":"path",
+			"displayName": "Local Travel"
+		}
+	},
   "essential": {
     "noDependencyData": {
       "location": {
