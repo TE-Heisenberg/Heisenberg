@@ -1,4 +1,4 @@
-var app=angular.module("app")
+var app=angular.module("app");
 app.controller('myworkctrl', function($scope,$http) {
   console.log('inside controller');
 
@@ -19,7 +19,12 @@ app.component("myWorklist",{
   }
 
 });
-function myworklistController(){
+function myworklistController($http){
   var worklist=this;
-  
+  $http.get("public/data/landing/myWorklist.config.json").success(function (response) {
+    worklist.worklistDisplayName = response.headerDisplayName;
+
+  });
+
+
 }

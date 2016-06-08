@@ -7,10 +7,10 @@
         position: fixed;
         /*margin-top: 350px;*/
         /*width: 100%;
-        margin-left: 43%;
-        z-index: 10001;*/
-        top:85%;
-        left:90%;
+        margin-left: 43%;*/
+        /*z-index: 0;*/
+        top:60%;
+        left:92%;
     }
 
     .main-toolbar{
@@ -90,21 +90,6 @@
     left:90%;*/
 /*}*/
 
-/*#bookButton{*/
-    /*position: fixed;*/
-    /*top: 75%;*/
-    /*left:800%;*/
-/*}*/
-/*#expenseButton{
-    /*position: fixed;*/
-    /*top: 55%;
-    left:800%;*/
-/*}*/
-/*#configButton{
-    /*position: fixed;*/
-    /*top: 95%;
-    left:800%;*/
-/*}*/
 
     .card2 .plan_icon {
         font-size: 30px;
@@ -168,6 +153,10 @@
 
     #cal_layout {
         height: 150px !important;
+    }
+
+    calendar-md md-content md-toolbar {
+        z-index: 0;
     }
 
     #cal1 {
