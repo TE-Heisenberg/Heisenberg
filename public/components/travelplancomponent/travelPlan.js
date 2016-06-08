@@ -9,6 +9,7 @@ angular.module("app").component("travelPlan", {
   bindings: {
     travelplanobject:'<',
     locationchildservices:'<',
+    transitchildservices:'<',
     currentnodeedgebooking:'&',
     nodetype:'@',
     edgetype:'@'
@@ -36,6 +37,7 @@ function travelPlanController() {
       "selectedChildren": value.type
     }
     console.log(plan.locationchildservices);
+    console.log(plan.transitchildservices);
     plan.currentnodeedgebooking({value2:currentObjectDetails});
   };
   plan.addNode = function () {

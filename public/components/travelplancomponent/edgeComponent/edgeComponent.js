@@ -9,6 +9,7 @@ var app = angular.module("app").component("edgeComponent", {
     bindings: {
         'travelelement': '<',
         'currentedge':'<',
+        'transitchildservices':'<',
         'currentnodeedgetravel':'&'
     }
 });

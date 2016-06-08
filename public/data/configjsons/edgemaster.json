@@ -1,17 +1,13 @@
 {
   "servicesDetails":
   {
-    "flight":{
-      "icons": "path",
-      "displayName": "Flight"
+    "visaonarrival":{
+      "icons": "flight_takeoff",
+      "displayName": "Visa on Arrival"
     },
-    "train":{
-      "icons":"path",
-      "displayName": "Train"
-    },
-    "bus": {
-      "icons":"path",
-      "displayName":"Bus"
+    "forex":{
+      "icons":"monetization_on",
+      "displayName": "Foreign Exchange"
     }
   },
   "essential": {
