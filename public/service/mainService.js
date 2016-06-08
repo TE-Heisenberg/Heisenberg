@@ -703,6 +703,7 @@ var travelPlanObject=[
              },
 
              travelPlanInitializer: function(indexForTravelMode) {
+               travelPlanObjectInitial=[];
                var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
                console.log("I am in travelPlanInitializer");
                console.log(indexForTravelMode);

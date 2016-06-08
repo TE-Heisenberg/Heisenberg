@@ -43,7 +43,7 @@ function bookButtonController($mdDialog, $mdMedia){
 
 
        });
-  }
+  };
 }
 function expenseButtonController(){
   var expense=this;

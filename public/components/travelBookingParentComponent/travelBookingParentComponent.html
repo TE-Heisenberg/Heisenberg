@@ -6,5 +6,6 @@ edgetype="transit" locationchildServices="travelBookingParentCtrl.locationchilds
 </travel-booking>
 
 <md-button ng-show="!travelBookingParentCtrl.ifFirstElement()" class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToPreviousElement()" >Previous</md-button>
-
-<md-button  class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToNextElement()">Next</md-button>
+<div layout="row" layout-align="end center">
+    <md-button  class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToNextElement()">Next</md-button>        
+</div>

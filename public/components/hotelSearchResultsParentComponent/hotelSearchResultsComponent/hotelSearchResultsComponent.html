@@ -1,7 +1,9 @@
-<div class='container' layout='row' id='main-wrapper'>
+<div layout='row' id='main-wrapper'>
 	<div flex='25' id='filter-wrapper'>
 		<md-card ng-repeat='filter in hotelSearchResults.filters'>
-			<custom-input-box  type='{{filter.type}}' id='{{filter.id}}' label='{{filter.label}}' specific-attr='filter.options' reflect-custom-input="hotelSearchResults.reflectValue(keyString,value, id)" bind-data="hotelSearchResults.checkBoxInput.data" bind-data-key="checkBoxInput.data"></custom-input-box>
+			<md-card-content>
+				<custom-input-box  type='{{filter.type}}' id='{{filter.id}}' label='{{filter.label}}' specific-attr='filter.options' reflect-custom-input="hotelSearchResults.reflectValue(keyString,value, id)" bind-data="hotelSearchResults.checkBoxInput.data" bind-data-key="checkBoxInput.data"></custom-input-box>
+			</md-card-content>
 		</md-card>
 
 

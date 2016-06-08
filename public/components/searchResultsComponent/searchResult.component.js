@@ -24,8 +24,10 @@ function searchResultComponent(mainService, $state, _) {
     var searchResultComponent = this;
     var childServices;
     var service;
-
-    searchResultComponent.travelPlan = mainService.getTravelPlanObjectInitial();
+    //to-do: this travelPlanInitial uses the object which landing page and booking page uses
+    // searchResultComponent.travelPlan = mainService.getTravelPlanObjectInitial();
+    //to-do: this getTravelPlanObject gives a readymade object having all the services selected
+    searchResultComponent.travelPlan = mainService.getTravelPlanObject();
     var sequence = [];
     console.log(searchResultComponent.travelPlan);
     _.map(searchResultComponent.travelPlan, function (travelPlan) {

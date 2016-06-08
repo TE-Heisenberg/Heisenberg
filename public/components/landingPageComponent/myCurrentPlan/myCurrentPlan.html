@@ -3,9 +3,7 @@
   <md-card-title-text>
     <span class="md-headline">
       <i class="material-icons plan_icon">event_available</i>&nbsp;
-      <head>My Current Plan </head>
-
-
+      My Current Plan </span>
     </md-card-title-text>
     <md-card-content>
       <div ng-cloak class="tabsdemoDynamicHeight">
@@ -15,13 +13,13 @@
               <md-content class="md-padding">
 
                 <md-list>
-
                   <md-list-item class="md-line" ng-repeat="x in currentplan.completed">
                     <div class="md-list-item-text">
-                      <h5>{{x}}</h5>
+                      <a href="#">
+                      <h5>{{x}}</h5></a>
                     </div>
 
-                    <div class="container">
+                    <!-- <div class="container">
                       <div layout=row>
                         <div hide-xs hide-sm layout-align="end">
                           <md-button aria-label="More"
@@ -37,14 +35,10 @@
                       </div>
 
                     </div>
-                  </div>
+                  </div> -->
                   <md-divider ng-if="!$last"></md-divider>
                 </md-list-item>
                 </md-list>
-
-
-
-
               </md-content>
             </md-tab>
             <md-tab label="Current">
@@ -54,10 +48,12 @@
 
                   <md-list-item class="md-line" ng-repeat="x in currentplan.current">
                     <div class="md-list-item-text">
-                      <h5>{{x}}</h5>
+                      <a href="#">
+                      <h5>{{x}}</h5></a>
+
                     </div>
 
-                    <div class="container">
+                    <!-- <div class="container">
                       <div layout=row>
                         <div hide-xs hide-sm layout-align="end">
                           <md-button aria-label="More"
@@ -72,7 +68,7 @@
                       </div>
 
                     </div>
-                  </div>
+                  </div> -->
                   <md-divider ng-if="!$last"></md-divider>
                 </md-list-item>
                 </md-list>
@@ -90,10 +86,11 @@
 
                   <md-list-item class="md-line" ng-repeat="x in currentplan.future">
                     <div class="md-list-item-text">
-                      <h5>{{x}}</h5>
+                      <a href="#">
+                      <h5>{{x}}</h5></a>
                     </div>
 
-                    <div class="container">
+                    <!-- <div class="container">
                       <div layout=row>
                         <div hide-xs hide-sm layout-align="end">
                           <md-button aria-label="More"
@@ -108,7 +105,7 @@
                       </div>
 
                     </div>
-                  </div>
+                  </div> -->
                   <md-divider ng-if="!$last"></md-divider>
                 </md-list-item>
                 </md-list>
