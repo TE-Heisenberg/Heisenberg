@@ -9,38 +9,41 @@ angular.module("app").component("travelPlan", {
   bindings: {
     travelplanobject:'<',
     locationchildservices:'<',
-    transitchildservices:'<',
     currentnodeedgebooking:'&',
     nodetype:'@',
     edgetype:'@',
     metadataoflocation: "<",
     metadataoftransit: "<",
-    currentSelectedObj: "<"
+    currentselectedobj: "<",
+    selectedchildren: "<"
   }
 }).filter('keylength', function () {
   return function (input) {
     if (!angular.isObject(input)) {
-      throw Error("Usage of non-objects with keylength filter!!");
+      throw Error("Usage of non-objects with keylength filter!!")
     }
     return Object.keys(input).length;
-  };
+  }
 });
 
 function travelPlanController() {
 
   var plan = this;
 
-  plan.currentnodeedgetravel = function (value) {
+  plan.currentnodeedgetravel = function (currentElement,currentElementIndex,selectedChildren) {
     console.log("in travel plan")
     console.log(value);
     console.log(plan.travelplanobject[value.index]);
+
+    plan.currentselectedobj = currentElement;
+    plan.selectedchildren = selectedChildren;
     var currentObjectDetails = {
-      "currentObject": plan.travelplanobject[value.index],
-      "index": value.index,
-      "selectedChildren": value.type
+      "currentObject": currentElement,
+      "index": currentElementIndex,
+      "selectedChildren": selectedChildren
     }
+
     console.log(plan.locationchildservices);
-    console.log(plan.transitchildservices);
     plan.currentnodeedgebooking({value2:currentObjectDetails});
   };
   plan.addNode = function () {
