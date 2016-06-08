@@ -7,14 +7,14 @@
             <button class="md-primary md-fab md-button md-raised" ng-click="searchResultComponent.onPrev()"><md-icon md-svg-src="public/assets/images/ic_chevron_left_white_48px.svg"></md-icon></button>
             <button class="md-primary md-button md-fab md-raised" ng-click="searchResultComponent.onNext()"><md-icon md-svg-src="public/assets/images/ic_chevron_right_white_48px.svg"></md-icon></button>
         </div>
-        
+
         <div layout="row" flex="100" layout-align="center center">
-            <div flex="80" class="search-result">
+            <div flex="80" class="view-container">
                 <div flex=100 layout-align="start center" layout="row">
-            <md-button class="md-primary" ng-click="searchResultComponent.onPrev()">Book</md-button>
-            <md-button class="md-accent  md-raised" ng-click="searchResultComponent.onNext()">Search</md-button>
-            <md-button class="md-background" ng-click="searchResultComponent.onPrev()">Finalize</md-button>
-        </div>
+                    <md-button class="md-primary" ng-click="searchResultComponent.onPrev()">Book</md-button>
+                    <md-button class="md-accent  md-raised" ng-click="searchResultComponent.onNext()">Search</md-button>
+                    <md-button class="md-background" ng-click="searchResultComponent.onPrev()">Finalize</md-button>
+                </div>
                 <ui-view class="slide"></ui-view>
             </div>
         </div>
