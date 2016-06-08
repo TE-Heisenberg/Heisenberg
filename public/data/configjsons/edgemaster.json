@@ -1,17 +1,13 @@
 {
   "servicesDetails":
   {
-    "flight":{
-      "icons": "path",
-      "displayName": "Flight"
+    "visaonarrival":{
+      "icons": "flight_takeoff",
+      "displayName": "Visa on Arrival"
     },
-    "train":{
-      "icons":"path",
-      "displayName": "Train"
-    },
-    "bus": {
-      "icons":"path",
-      "displayName":"Bus"
+    "forex":{
+      "icons":"monetization_on",
+      "displayName": "Foreign Exchange"
     }
   },
   "essential": {
@@ -30,9 +26,8 @@
         "id": "mode",
         "type": "singleSelect",
         "specificAttr": {
-          "domainList": {"flight":"Flight", "bus":"Bus", "train":"Train"}
+          "domainList": ["flight", "bus", "train"]
         }
-
       },
       "extraAddOnsServices": {
         "mandatory": false,
@@ -40,39 +35,11 @@
         "id": "extraAddOnsServices",
         "type": "multiSelect",
         "specificAttr": {
-          "domainList": {"visaOnArrival":"Visa On Arrival", "forex":"Forex"}
+          "domainList": ["visaOnArrival", "forex"]
         }
       }
     }
   },
-  "servicesIntializer":{
-    "flight":{
-
-          "state": "initial",
-          "requested": {}
-    },
-    "bus": {
-
-          "state": "initial",
-          "requested": {}
-    },
-    "train": {
-
-          "state": "initial",
-          "requested": {}
-    },
-    "visaOnArrival":[{
-
-          "state": "initial",
-          "requested": {}
-    }],
-    "forex": [{
-
-          "state": "initial",
-          "requested": {}
-    }]
-  }
-  ,
   "services": {
     "flight": {
       "travelStartDate": {
@@ -88,7 +55,7 @@
         "id": "class",
         "type": "singleSelect",
         "specificAttr": {
-          "domainList": {"bussiness":"Bussiness", "economy":"Economy"}
+          "domainList": ["Bussiness", "Economy"]
         }
 
       },
@@ -96,20 +63,11 @@
         "mandatory": true,
         "displayName": "Number of Hops",
         "id": "numberOfHops",
-        "type": "singleSlider",
+        "type": "slider",
         "specificAttr": {
-					"floor":0,
-					"ceil": 100,
-					"step": 1,
-					"noSwitching": true,
-					"endPointsTranslate": {
-						"prefix": "",
-						"postfix": "miles"
-					},
-					"sliderHandleTranslate": {
-						"prefix": "mi"
-					}
-				}
+          "min": 0,
+          "max": 15
+        }
       },
       "departureTime": {
         "mandatory": false,
@@ -123,68 +81,11 @@
         "id": "airlines",
         "type": "singleSelect",
         "specificAttr": {
-          "domainList": {"airAisa":"Air Asia", "airCosta":"Air Costa", "jet":"Jet"}
+          "domainList": ["Air Asia", "Air Costa", "Jet"]
         }
 
       }
-
-  },
-
-  "train": {
-
-    "travelStartDate": {
-      "mandatory": true,
-      "displayName": "Travel Start Date",
-      "id": "travelStartDate",
-      "type": "date",
-      "data-reference": "essential.travelStartDate"
-    },
-    "class": {
-      "mandatory": true,
-      "displayName": "Class",
-      "id": "class",
-      "type": "singleSelect",
-      "specificAttr": {
-        "domainList": {"sleeper":"Sleeper", "3AC":"third Ac"}
-      }
-
-    },
-
-    "departureTime": {
-      "mandatory": false,
-      "displayName": "Departure Time",
-      "id": "departureTime",
-      "type": "time"
     }
-
-  },
-  "bus": {
-
-    "travelStartDate": {
-      "mandatory": true,
-      "displayName": "Travel Start Date",
-      "id": "travelStartDate",
-      "type": "date",
-      "data-reference": "essential.travelStartDate"
-    },
-    "class": {
-      "mandatory": true,
-      "displayName": "Class",
-      "id": "class",
-      "type": "singleSelect",
-      "specificAttr": {
-        "domainList": {"sleeper":"Sleeper", "SemiSleeper":"Semi-Sleeper"}
-      }
-
-    },
-
-    "departureTime": {
-      "mandatory": false,
-      "displayName": "Departure Time",
-      "id": "departureTime",
-      "type": "time"
-    }
-
   }
-}
+
 }
