@@ -13,15 +13,12 @@
         left:90%;
     }
 
-    .main_toolbar{
+    .main-toolbar{
         position: fixed;
         background-color:white !important;
-        z-index: 1000;
+        z-index: 10000;
+        border-bottom: 4px solid #2a8ce2;
     }
-.main_toolbar{
-    border-bottom: 4px solid #2a8ce2;
-
-}
     .plan_1{
         /*width: 70%;*/
 
