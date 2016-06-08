@@ -56,6 +56,11 @@ function searchResultComponent(mainService, $state, _) {
      searchResultComponent.locationchildservices=data.servicesDetails;
      console.log(searchResultComponent.locationchildservices);
    });
+   mainService.getEdgeMaster().success(function(data){
+   console.log(data);
+    searchResultComponent.transitchildservices=data.servicesDetails;
+    console.log(searchResultComponent.transitchildservices);
+  });
 
     searchResultComponent.iterator = function* () {
         for (var i = 0; i < sequence.length; i++) {

@@ -9,6 +9,7 @@ angular.module("app").component("travelPlan", {
   bindings: {
     travelplanobject:'<',
     locationchildservices:'<',
+    transitchildservices:'<',
     currentnodeedgebooking:'&',
     nodetype:'@',
     edgetype:'@',
@@ -19,10 +20,10 @@ angular.module("app").component("travelPlan", {
 }).filter('keylength', function () {
   return function (input) {
     if (!angular.isObject(input)) {
-      throw Error("Usage of non-objects with keylength filter!!")
+      throw Error("Usage of non-objects with keylength filter!!");
     }
     return Object.keys(input).length;
-  }
+  };
 });
 
 function travelPlanController() {
@@ -39,6 +40,7 @@ function travelPlanController() {
       "selectedChildren": value.type
     }
     console.log(plan.locationchildservices);
+    console.log(plan.transitchildservices);
     plan.currentnodeedgebooking({value2:currentObjectDetails});
   };
   plan.addNode = function () {

@@ -9,6 +9,7 @@ var app = angular.module("app").component("edgeComponent", {
     bindings: {
         'travelelement': '<',
         'currentedge':'<',
+        'transitchildservices':'<',
         'currentnodeedgetravel':'&'
     }
 });
@@ -23,6 +24,6 @@ function edgeController() {
       console.log(type);
       console.log({'index':indexid,'type':type});
         edge.currentnodeedgetravel({clicked:{'index':indexid,'type':type }});
-    }
+    };
 
 }

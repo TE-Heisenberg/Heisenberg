@@ -1,9 +1,9 @@
-var app=angular.module("app")
+var app=angular.module("app");
 
 app.component("myFavourite",{
 
   templateUrl:"public/components/landingPageComponent/myFavourite/myFavourite.html",
-  controllerAs:"favourite",
+  controllerAs:'favourite',
   controller: myFavouriteController,
   bindings:{
     locality:'<',
@@ -12,12 +12,18 @@ app.component("myFavourite",{
 
 });
 
-function myFavouriteController(){
+function myFavouriteController($http){
   // $scope.fav=function(locality){
   //   $scope.locality = response[locality].data;
 
   //};
   var favourite =this;
+  $http.get("public/data/landing/myFavourites.config.json").success(function (response) {
+
+     favourite.favouriteDisplayName = response.headerDisplayName;
+
+   });
+
   // $http.get("public/data/landing/myfavourites.json").success(function (response) {
   //
   //    $scope.locality = response.local.data;

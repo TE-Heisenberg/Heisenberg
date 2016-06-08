@@ -1,9 +1,14 @@
 <div class="progress-line">
     <div class=" node-sm travel-button" ng-click="edge.selectededge(edge.currentedge,['flight','bus','train'])">
         <i class="material-icons">
-            {{edge.travelelement.childServices.booking.requested.mode}}
+            {{edge.travelelement.modesToSelectTheServices.mode}}
         </i>
     </div>
-    <div class="middle-bar"></div>
+    <div class="middle-bar">
+
+    </div>
+    <div  class="childServices" ng-repeat="(key,value) in edge.transitchildservices">
+      <i class="material-icons node-stay" ng-click="edge.selectededge(edge.currentnode,[key])">{{value.icons}}</i>
+    </div>
 
 </div>

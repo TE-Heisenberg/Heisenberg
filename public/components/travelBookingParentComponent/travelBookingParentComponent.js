@@ -45,11 +45,10 @@ function travelBookingParentCtrl(mainService, $location) {
 
     console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
   }
-     mainService.getNodeMaster().success(function(data){
-     console.log(data);
-      travelBookingParentCtrl.locationchildservices=data.servicesDetails;
-      console.log(travelBookingParentCtrl.locationchildservices);
-    });
+
+      travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails;
+        travelBookingParentCtrl.transitchildservices=mainService.serviceData[1].data.servicesDetails;
+      //console.log(travelBookingParentCtrl.locationchildservices);
 
   travelBookingParentCtrl.currentnodeedge = function (value2) {
 
