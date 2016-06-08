@@ -29,6 +29,7 @@ function travelPlanController() {
   plan.currentnodeedgetravel = function (value) {
     console.log("in travel plan")
     console.log(value);
+    console.log(plan.travelplanobject[value.index]);
     var currentObjectDetails = {
       "currentObject": plan.travelplanobject[value.index],
       "index": value.index,

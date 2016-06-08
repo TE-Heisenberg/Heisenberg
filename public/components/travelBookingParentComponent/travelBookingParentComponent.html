@@ -1,11 +1,17 @@
-<travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"
-edgetype="transit" locationchildServices="travelBookingParentCtrl.locationchildservices" currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
-</travel-plan>
+<div layout="column">
+    <div class="travel-plan-fixed">
+        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location" edgetype="transit" currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
+        </travel-plan>
+    </div>
+    <div class="view-container" flex="100" layout="column">
+        
+        <travel-booking current-selected-obj="travelBookingParentCtrl.currentSelectedObj" meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]" current-selected-children="travelBookingParentCtrl.selectedChildren"
+            children-labels="travelBookingParentCtrl.childrenLabels">
+        </travel-booking>
 
-<travel-booking current-selected-obj="travelBookingParentCtrl.currentSelectedObj" meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]" current-selected-children="travelBookingParentCtrl.selectedChildren" children-labels="travelBookingParentCtrl.childrenLabels">
-</travel-booking>
-
-<md-button ng-show="!travelBookingParentCtrl.ifFirstElement()" class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToPreviousElement()" >Previous</md-button>
-<div layout="row" layout-align="end center">
-    <md-button  class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToNextElement()">Next</md-button>        
+        <md-button ng-show="!travelBookingParentCtrl.ifFirstElement()" class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToPreviousElement()">Previous</md-button>
+        <div layout="row" layout-align="end center">
+            <md-button class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToNextElement()">Next</md-button>
+        </div>
+    </div>
 </div>
