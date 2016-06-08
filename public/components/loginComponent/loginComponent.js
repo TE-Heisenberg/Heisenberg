@@ -7,11 +7,19 @@ angular.module("app").component("loginComponent", {
     controller: loginController
 });
 
-function loginController() {
+function loginController(loginService, $location) {
 
     var login = this;
 
     login.loginSubmit = function () {
-       
+        loginService.authenticate(login.username, login.password).then(function (response) {
+            if (response.status == 200) {
+                $location.url('/landingPage');
+            }
+        }).catch(function (err) {
+            console.log("catch");
+
+        })
     };
+
 }
