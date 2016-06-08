@@ -11,7 +11,10 @@ angular.module("app").component("travelPlan", {
     locationchildservices:'<',
     currentnodeedgebooking:'&',
     nodetype:'@',
-    edgetype:'@'
+    edgetype:'@',
+    metadataoflocation: "<",
+    metadataoftransit: "<",
+    currentSelectedObj: "<"
   }
 }).filter('keylength', function () {
   return function (input) {

@@ -1,6 +1,9 @@
 <div layout="column">
     <div class="travel-plan-fixed">
-        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location" edgetype="transit" locationchildservices="travelBookingParentCtrl.locationchildservices" currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
+        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location" edgetype="transit" metadataoflocation="travelBookingParentCtrl.elementFields['location']"
+        metadataoftransit="travelBookingParentCtrl.elementFields['transit']"
+        currentSelectedObj="travelBookingParentCtrl.currentSelectedObj"
+         locationchildservices="travelBookingParentCtrl.locationchildservices" currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
         </travel-plan>
     </div>
     <div class="view-container" flex="100" layout="column">
