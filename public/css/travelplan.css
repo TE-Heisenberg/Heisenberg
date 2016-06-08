@@ -192,7 +192,7 @@
         margin-top: 2%;
         cursor: pointer;
         position: relative;
-        bottom: 60px;
+        bottom: 100px;
 
     }
 
@@ -330,4 +330,10 @@
 
     margin-left: -1%;
 
+}
+.childServices
+{
+  position: relative;
+  top: 18px;
+  left:5px;
 }

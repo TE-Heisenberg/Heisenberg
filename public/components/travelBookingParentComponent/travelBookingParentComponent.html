@@ -1,10 +1,15 @@
 <div layout="column">
     <div class="travel-plan-fixed">
-        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location" edgetype="transit" locationchildservices="travelBookingParentCtrl.locationchildservices" currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
+        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"
+        edgetype="transit" locationchildservices="travelBookingParentCtrl.locationchildservices"
+        transitchildservices="travelBookingParentCtrl.transitchildservices"
+        currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
         </travel-plan>
     </div>
     <div class="view-container" flex="100" layout="column">
-        <travel-booking current-selected-obj="travelBookingParentCtrl.currentSelectedObj" meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]" current-selected-children="travelBookingParentCtrl.selectedChildren"
+        <travel-booking current-selected-obj="travelBookingParentCtrl.currentSelectedObj"
+        meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]"
+        current-selected-children="travelBookingParentCtrl.selectedChildren"
             children-labels="travelBookingParentCtrl.childrenLabels">
         </travel-booking>
 
