@@ -18,7 +18,7 @@ var app = angular.module("app").component("nodeComponent", {
 function nodeController(_) {
 
   var node = this;
-  node.locationMetaData = metadata.essential.noDependencyData.location;
+  node.locationMetaData = node.metadata.essential.noDependencyData.location;
 
   node.onReflect = function(keyString,value,id) {
     console.log("Inside on reflect of childCardRenderer");
