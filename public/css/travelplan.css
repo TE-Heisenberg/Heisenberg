@@ -10,6 +10,11 @@
 
 }
 
+.login-box {
+    width: 33%;
+    margin-top: 50px
+}
+
 /*.mainTravelDiv{
   border-bottom: 2px solid #2a8ce2;
   margin-top: 50px;
