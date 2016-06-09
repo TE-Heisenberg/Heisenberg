@@ -16,7 +16,6 @@ function travelBookingParentCtrl(mainService, $location) {
 
   var travelBookingParentCtrl = this;
   console.log(travelBookingParentCtrl);
-
   console.log(mainService.serviceData);
   travelBookingParentCtrl.$onInit = function () {
     console.log(" I am inside on init");
@@ -24,9 +23,7 @@ function travelBookingParentCtrl(mainService, $location) {
     console.log(travelBookingParentCtrl.travelPlanObject);
     travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[0];
     console.log(travelBookingParentCtrl.currentSelectedObj);
-
     travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.travelPlanObject[0].childServices);
-
     travelBookingParentCtrl.elementFields = {
       "location": mainService.serviceData[0].data,
       "transit": mainService.serviceData[1].data
@@ -40,8 +37,6 @@ function travelBookingParentCtrl(mainService, $location) {
 
       }
     }
-
-
 
     console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
   }
@@ -70,6 +65,8 @@ function travelBookingParentCtrl(mainService, $location) {
       "type": "edge",
       "state": "initial"
     };
+    travelBookingParentCtrl.tempSelectedChildren = ["flight"];
+
 
 
   };
@@ -101,8 +98,6 @@ function travelBookingParentCtrl(mainService, $location) {
       travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) + 1];
       console.log("travelBookingParentCtrl.currentSelectedObj");
       console.log(travelBookingParentCtrl.currentSelectedObj);
-
-      // So that the earlier selected child services are also shown on click of next button
       travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.currentSelectedObj.childServices);
     }
 
@@ -113,8 +108,7 @@ function travelBookingParentCtrl(mainService, $location) {
 
   travelBookingParentCtrl.goToPreviousElement = function () {
     travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) - 1];
-    
-    // So that the earlier selected child services are also shown on click of previous button
+
     travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.currentSelectedObj.childServices);
 
   }
