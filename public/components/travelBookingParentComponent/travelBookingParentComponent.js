@@ -51,11 +51,11 @@ function travelBookingParentCtrl(mainService, $location) {
   }
 
 
-      //console.log(travelBookingParentCtrl.locationchildservices);
+   //console.log(travelBookingParentCtrl.locationchildservices);
 
   travelBookingParentCtrl.reflectSelectedChild = function (selectedChildDetails) {
 
-    console.log("i am inside currentnodeedge");
+      console.log("i am inside currentnodeedge");
     console.log(selectedChildDetails);
 
     travelBookingParentCtrl.currentSelectedObj = selectedChildDetails.currentObject;

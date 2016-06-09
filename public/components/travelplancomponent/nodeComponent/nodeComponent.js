@@ -20,11 +20,22 @@ function nodeController(_) {
 
   var node = this;
   node.locationMetaData = node.metadata.essential.noDependencyData.location;
-
+node.edit=false;
   node.onReflect = function(keyString,value,id) {
     console.log("Inside on reflect of childCardRenderer");
     console.log(value);
     node.travelelement[id] = value;
+  };
+  node.show_autocomplete=function(){
+      if(node.edit==true)
+      {
+          node.edit=false;
+      }
+      else
+      {
+          node.edit=true;
+      }
+
   };
 
   node.available = [];
@@ -103,17 +114,7 @@ function nodeController(_) {
   //   node.currentnodeedgetravel({clicked:{'index':indexid,'type':type }});
   // };
   // node.nodekeys=Object.keys(node.locationchildservices);
-  // node.show_autocomplete=function(){
-  //     if(node.edit==true)
-  //     {
-  //         node.edit=false;
-  //     }
-  //     else
-  //     {
-  //         node.edit=true;
-  //     }
   //
-  // }
   //
   // node.states        = loadAll();
   // node.selectedItem  = null;

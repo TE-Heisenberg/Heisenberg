@@ -1,6 +1,6 @@
 
 <span ng-click="node.show_autocomplete()">{{node.travelelement.essential.noDependencyData.location||'edit'}}</span>
-
+<div ng-show="node.edit==true">
 <custom-input-box class="node-md-action-input"  type="{{node.locationMetaData.type}}" label="{{node.locationMetaData.displayName}}" bind-data="node.travelelement[node.locationMetaData.id]"
 id="{{node.locationMetaData.id}}" specific-attr="node.locationMetaData.specificAttr"  reflect-custom-input="node.onReflect(keyString,value,id)"></custom-input-box>
 

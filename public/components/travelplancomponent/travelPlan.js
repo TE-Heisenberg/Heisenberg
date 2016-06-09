@@ -1,35 +1,36 @@
 /**
-* Created by lenovo on 09-05-2016.
-*/
+ * Created by lenovo on 09-05-2016.
+ */
 angular.module("app").component("travelPlan", {
-
-  templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
-  controllerAs: "plan",
-  controller: travelPlanController,
-  bindings: {
-    travelplanobject:'<',
-    locationchildservices:'<',
-    currentnodeedgebooking:'&',
-    nodetype:'@',
-    edgetype:'@',
-    metadataoflocation: "<",
-    metadataoftransit: "<",
-    currentselectedobj: "<",
+   
+   templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
+   controllerAs: "plan",
+   controller: travelPlanController,
+   bindings: {
+      travelplanobject: '<',
+      locationchildservices: '<',
+    transitchildservices:'<',
+      currentnodeedgebooking: '&',
+      nodetype: '@',
+      edgetype: '@',
+      metadataoflocation: "<",
+      metadataoftransit: "<",
+      currentselectedobj: "<",
     selectedchildren: "<",
     reflectselectedchild: "&"
-  }
+   }
 }).filter('keylength', function () {
-  return function (input) {
-    if (!angular.isObject(input)) {
-      throw Error("Usage of non-objects with keylength filter!!")
-    }
-    return Object.keys(input).length;
-  }
+   return function (input) {
+      if (!angular.isObject(input)) {
+         throw Error("Usage of non-objects with keylength filter!!")
+      }
+      return Object.keys(input).length;
+   }
 });
 
 function travelPlanController() {
 
-  var plan = this;
+   var plan = this;
 
   plan.reflectselectedchildwrapper = function(currentElement, currentElementIndex, selectedChild, metadata) {
     var selectedChildDetails = {
@@ -56,7 +57,7 @@ function travelPlanController() {
     };
     console.log("currentObjectDetails : ",currentObjectDetails);
 
-    console.log(plan.locationchildservices);
+         console.log(plan.locationchildservices);
     plan.currentnodeedgebooking({"value2":currentObjectDetails});
   };
   plan.addNode = function () {

@@ -10,6 +10,11 @@
 
 }
 
+.login-box {
+    width: 33%;
+    margin-top: 50px
+}
+
 /*.mainTravelDiv{
   border-bottom: 2px solid #2a8ce2;
   margin-top: 50px;
@@ -336,4 +341,24 @@
   position: relative;
   top: 18px;
   left:5px;
+}
+
+/* for tooltip*/
+
+.travel-button .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.node-sm:hover,.travel-button:hover .tooltiptext {
+    visibility: visible;
 }
