@@ -79,9 +79,19 @@ function nodeController(_) {
 
   node.sendDetailsOfChild = function(elementIndex, selectedChild) {
 
+    console.log(" I am inside sendDetailsOfChild");
+    console.log(elementIndex, selectedChild);
+    console.log(node.metadata);
     for( childGroup in node.metadata.essential.modesToSelectTheServices) {
-      if(node.metadata.essential.modesToSelectTheServices[childGroup].domainList.indexOf(selectedChild) > -1) {
+      console.log("Inside the loop");
+      console.log(childGroup);
+      console.log(node.metadata.essential.modesToSelectTheServices[childGroup].specificAttr.domainList);
+
+      if(Object.keys(node.metadata.essential.modesToSelectTheServices[childGroup].specificAttr.domainList).indexOf(selectedChild) > -1) {
+        console.log("Inside first if");
+        console.log(node.travelelement.essential.modesToSelectTheServices[childGroup]);
         if(node.travelelement.essential.modesToSelectTheServices[childGroup].indexOf(selectedChild) <0) {
+          console.log("Inside sendond if");
           node.travelelement.essential.modesToSelectTheServices[childGroup].push(selectedChild);
           node.travelelement.childServices[childGroup] = node.metadata.servicesIntializer[childGroup];
         }
@@ -90,8 +100,9 @@ function nodeController(_) {
       }
 
     }
-
-    node.currentnodeedgetravel({"currentElement":travelelement, "currentElementIndex":elementIndex,"selectedChildren":[selectedChild]});
+    console.log("after the loop");
+    console.log(node.travelelement);
+    node.currentnodeedgetravel({"currentElement":node.travelelement, "currentElementIndex":elementIndex,"selectedChildren":[selectedChild]});
 
   }
   // node.autoCompleteInput={};
