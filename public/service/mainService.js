@@ -695,7 +695,12 @@ var travelPlanObject=[
 
               travelPlanObjectInitial.push({
                 "type":elementType,
-                "essential": {},
+                "essential": {
+                  "noDependencyField": {},
+                  "modesToSelectTheServices": {
+
+                  }
+                },
                 "childServices": {},
                 "state":"initial"
               });

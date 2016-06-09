@@ -1,6 +1,5 @@
 {
-  "filters":[
-        {
+          {
           "label":"Price",
           "id":"price",
           "type":"rangeSlider",
