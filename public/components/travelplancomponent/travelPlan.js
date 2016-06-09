@@ -9,6 +9,7 @@ angular.module("app").component("travelPlan", {
   bindings: {
     travelplanobject:'<',
     locationchildservices:'<',
+    transitchildservices:'<',
     currentnodeedgebooking:'&',
     nodetype:'@',
     edgetype:'@',

@@ -42,7 +42,7 @@ function travelBookingParentCtrl(mainService, $location) {
   }
 
       travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails;
-        travelBookingParentCtrl.transitchildservices=mainService.serviceData[1].data.servicesDetails;
+        travelBookingParentCtrl.transitchildservices=mainService.serviceData[1].data.servicesDetails.coExistServices;
       //console.log(travelBookingParentCtrl.locationchildservices);
 
   travelBookingParentCtrl.currentnodeedge = function (value2) {
