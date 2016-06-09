@@ -17,6 +17,12 @@ angular.module('app')
         templateUrl: 'public/components/searchResultsComponent/searchResult.view.html',
         bindings: {
             $router: '<'
+        },
+        $canActivate: function (mainService) {
+          return mainService.getPrerequisites().then(function (data) {
+            mainService.serviceData = data;
+            return true;
+          });
         }
     });
 
@@ -51,16 +57,12 @@ function searchResultComponent(mainService, $state, _) {
             }
         });
     });
-    mainService.getNodeMaster().success(function(data){
-    console.log(data);
-     searchResultComponent.locationchildservices=data.servicesDetails;
+
+     searchResultComponent.locationchildservices=mainService.serviceData[0].data.servicesDetails;
      console.log(searchResultComponent.locationchildservices);
-   });
-   mainService.getEdgeMaster().success(function(data){
-   console.log(data);
-    searchResultComponent.transitchildservices=data.servicesDetails;
+
+    searchResultComponent.transitchildservices=mainService.serviceData[1].data.servicesDetails;
     console.log(searchResultComponent.transitchildservices);
-  });
 
     searchResultComponent.iterator = function* () {
         for (var i = 0; i < sequence.length; i++) {

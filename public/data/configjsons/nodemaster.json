@@ -18,7 +18,7 @@
         "id": "location",
         "type": "autoComplete",
         "specificAttr": {
-          "url": "autoComplete.json"
+					"url":"autoComplete.json"
         }
       }
     },
@@ -33,7 +33,8 @@
             "stay": "Stay",
             "localTravel": "Local Travel"
           }
-        }
+				},
+				"javascriptDataType": "Array"
       }
     }
   },

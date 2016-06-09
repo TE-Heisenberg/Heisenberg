@@ -32,8 +32,10 @@
 =======
 >>>>>>> 3c0ea8c37651a85714619e4acf363120414c8374
 
+id="{{node.locationMetaData.id}}"
+specific-attr="node.locationMetaData.specificAttr"
+reflect-custom-input="node.onReflect(keyString,value,id)"></custom-input-box>
 <span ng-click="node.show_autocomplete()">{{node.travelelement.essential.noDependencyData.location||'edit'}}</span>
-
 <custom-input-box class="node-md-action-input" type="{{node.locationMetaData.type}}" label="{{node.locationMetaData.displayName}}" bind-data="node.travelelement[node.locationMetaData.id]"
 id="{{node.locationMetaData.id}}" specific-attr="node.locationMetaData.specificAttr"  reflect-custom-input="node.onReflect(keyString,value,id)"></custom-input-box>
 <!--
@@ -63,6 +65,6 @@ id="{{node.locationMetaData.id}}" specific-attr="node.locationMetaData.specificA
   {{node.travelelement.essential.noDependencyData.location|limitTo:3|uppercase}}
 </div>
 <div ng-repeat="(key,value) in node.locationchildservices">
-  <i class="material-icons node-stay" ng-click="node.selectednode(node.currentnode,[key])">{{value.icons}}</i>
+  <i class="material-icons node-stay" ng-click="node.sendDetailsOfChild(node.currentnode,key)">{{value.icons}}</i>
 </div>
 </div>

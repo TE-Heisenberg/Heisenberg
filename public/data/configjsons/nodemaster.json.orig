@@ -1,4 +1,15 @@
 {
+	"servicesDetails":
+	{
+		"stay":{
+			"icons": "hotel",
+			"displayName": "Stay"
+		},
+		"localTravel":{
+			"icons":"directions_car",
+			"displayName": "Local Travel"
+		}
+	},
 <<<<<<< HEAD
   "essential": {
     "noDependencyData": {
@@ -232,17 +243,6 @@
     }
   }
 =======
-	"servicesDetails":
-	{
-		"stay":{
-			"icons": "path",
-			"displayName": "Stay"
-		},
-		"localTravel":{
-			"icons":"path",
-			"displayName": "Local Travel"
-		}
-	},
 	"essential": {
 		"noDependencyData": {
 			"location": {
@@ -251,7 +251,7 @@
 				"id": "location",
 				"type": "autoComplete",
 				"specificAttr": {
-			"url":"autoComplete.json"
+					"url":"autoComplete.json"
 				}
 			}
 		},
@@ -266,7 +266,8 @@
 						"stay": "Stay",
 						"localTravel": "Local Travel"
 					}
-				}
+				},
+				"javascriptDataType": "Array"
 
 			}
 		}
@@ -451,5 +452,5 @@
 			}
 		}
 	}
->>>>>>> 0643527d63ce876cc3092a8eba0f228eab013dc0
+>>>>>>> 813fd44e5864209df3125f0578add86b548fd759
 }
