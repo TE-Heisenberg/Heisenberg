@@ -23,7 +23,7 @@ function edgeController() {
       console.log(indexid);
       console.log(type);
       console.log({'index':indexid,'type':type});
-        edge.currentnodeedgetravel({clicked:{'index':indexid,'type':type }});
+      //  edge.currentnodeedgetravel({clicked:{'index':indexid,'type':type }});
     };
 
 }

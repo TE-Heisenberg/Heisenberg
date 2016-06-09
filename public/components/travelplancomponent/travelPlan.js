@@ -2,7 +2,7 @@
  * Created by lenovo on 09-05-2016.
  */
 angular.module("app").component("travelPlan", {
-   
+
    templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
    controllerAs: "plan",
    controller: travelPlanController,

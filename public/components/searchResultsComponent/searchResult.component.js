@@ -61,7 +61,7 @@ function searchResultComponent(mainService, $state, _) {
      searchResultComponent.locationchildservices=mainService.serviceData[0].data.servicesDetails;
      console.log(searchResultComponent.locationchildservices);
 
-    searchResultComponent.transitchildservices=mainService.serviceData[1].data.servicesDetails;
+    searchResultComponent.transitchildservices=mainService.serviceData[1].data.servicesDetails.coExistServices;
     console.log(searchResultComponent.transitchildservices);
 
     searchResultComponent.iterator = function* () {
