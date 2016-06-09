@@ -1,9 +1,10 @@
 <div layout="column">
     <div class="travel-plan-fixed">
-        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"
-        edgetype="transit" locationchildservices="travelBookingParentCtrl.locationchildservices"
-        transitchildservices="travelBookingParentCtrl.transitchildservices"
-        currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
+        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location" edgetype="transit" metadataoflocation="travelBookingParentCtrl.elementFields['location']"
+        metadataoftransit="travelBookingParentCtrl.elementFields['transit']"
+        currentselectedobj="travelBookingParentCtrl.currentSelectedObj"
+        selectedchildren="travelBookingParentCtrl.selectedChildren"
+        locationchildservices="travelBookingParentCtrl.locationchildservices" currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
         </travel-plan>
     </div>
     <div class="view-container" flex="100" layout="column">
@@ -14,7 +15,7 @@
         </travel-booking>
 
         <div layout="row" layout-align="end center">
-        <md-button ng-show="!travelBookingParentCtrl.ifFirstElement()" class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToPreviousElement()">Previous</md-button>            
+        <md-button ng-show="!travelBookingParentCtrl.ifFirstElement()" class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToPreviousElement()">Previous</md-button>
             <md-button class='md-raised md-primary select-button' ng-click="travelBookingParentCtrl.goToNextElement()">Next</md-button>
         </div>
     </div>
