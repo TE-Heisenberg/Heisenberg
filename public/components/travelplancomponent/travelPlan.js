@@ -15,7 +15,8 @@ angular.module("app").component("travelPlan", {
     metadataoflocation: "<",
     metadataoftransit: "<",
     currentselectedobj: "<",
-    selectedchildren: "<"
+    selectedchildren: "<",
+    reflectselectedchild: "&"
   }
 }).filter('keylength', function () {
   return function (input) {
@@ -30,21 +31,33 @@ function travelPlanController() {
 
   var plan = this;
 
-  plan.currentnodeedgetravel = function (currentElement,currentElementIndex,selectedChildren) {
-    console.log("in travel plan")
-    console.log(value);
-    console.log(plan.travelplanobject[value.index]);
+  plan.reflectselectedchildwrapper = function(currentElement, currentElementIndex, selectedChild, metadata) {
+    var selectedChildDetails = {
+      "currentObject": currentElement,
+      "index": currentElementIndex,
+      "selectedChild": selectedChild,
+      "metaData": metadata
+    }
+    plan.reflectselectedchild({"selectedChildDetails":selectedChildDetails});
+  }
+  plan.currentnodeedgetravel = function (currentElement,currentElementIndex,selectedChildren, metadata) {
+    console.log("in travel plan");
+    console.log(currentElement,currentElementIndex,selectedChildren);
+    // console.log(value);
+    // console.log(plan.travelplanobject[value.index]);
 
     plan.currentselectedobj = currentElement;
     plan.selectedchildren = selectedChildren;
     var currentObjectDetails = {
       "currentObject": currentElement,
       "index": currentElementIndex,
-      "selectedChildren": selectedChildren
-    }
+      "selectedChildren": selectedChildren,
+      "metadata": metadata
+    };
+    console.log("currentObjectDetails : ",currentObjectDetails);
 
     console.log(plan.locationchildservices);
-    plan.currentnodeedgebooking({value2:currentObjectDetails});
+    plan.currentnodeedgebooking({"value2":currentObjectDetails});
   };
   plan.addNode = function () {
     plan.newNode = {

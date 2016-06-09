@@ -44,35 +44,49 @@ function travelBookingParentCtrl(mainService, $location) {
 
 
     console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
+
+    travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails;
+
+    travelBookingParentCtrl.transitchildservices=mainService.serviceData[1].data.servicesDetails;
   }
 
-      travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails;
-        travelBookingParentCtrl.transitchildservices=mainService.serviceData[1].data.servicesDetails;
+
       //console.log(travelBookingParentCtrl.locationchildservices);
 
-  travelBookingParentCtrl.currentnodeedge = function (value2) {
+  travelBookingParentCtrl.reflectSelectedChild = function (selectedChildDetails) {
 
     console.log("i am inside currentnodeedge");
-    console.log(value2);
-    travelBookingParentCtrl.currentSelectedObj = value2.currentObject;
-    travelBookingParentCtrl.selectedChildren = value2.selectedChildren;
-    travelBookingParentCtrl.reflectSelectedChildren(value2.selectedChildren);
+    console.log(selectedChildDetails);
+
+    travelBookingParentCtrl.currentSelectedObj = selectedChildDetails.currentObject;
+    travelBookingParentCtrl.selectedChildren = [selectedChildDetails.selectedChild];
+    for( childGroup in selectedChildDetails.metaData.essential.modesToSelectTheServices) {
+      console.log("Inside the loop");
+      console.log(childGroup);
+      console.log(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].specificAttr.domainList);
+
+      if(Object.keys(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].specificAttr.domainList).indexOf(selectedChildDetails.selectedChild) > -1) {
+        console.log("Inside first if");
+        console.log(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup]);
+        if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] === undefined) {
+
+        }
+        if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup].indexOf(selectedChildDetails.selectedChild) <0) {
+          console.log("Inside sendond if");
+          selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup].push(selectedChildDetails.selectedChild);
+          selectedChildDetails.currentObject.childServices[childGroup] = selectedChildDetails.metaData.servicesIntializer[childGroup];
+        }
+        break;
+
+      }
+
+    }
+
+
+    travelBookingParentCtrl.reflectSelectedChildren(selectedChildDetails.selectedChildren);
+
   };
   //travelBookingParentCtrl.travelPlanExists = dataUpdateHelper.travelPlanExists();
-
-  travelBookingParentCtrl.travelPlanExists = true;
-  if (travelBookingParentCtrl.travelPlanExists) {
-
-    travelBookingParentCtrl.tempCurrentObj = {
-      "essential": {
-      },
-      "childServices": {},
-      "type": "edge",
-      "state": "initial"
-    };
-
-
-  };
 
   travelBookingParentCtrl.ifFirstElement = function () {
     //console.log("Inside first element");
@@ -113,7 +127,7 @@ function travelBookingParentCtrl(mainService, $location) {
 
   travelBookingParentCtrl.goToPreviousElement = function () {
     travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) - 1];
-    
+
     // So that the earlier selected child services are also shown on click of previous button
     travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.currentSelectedObj.childServices);
 
