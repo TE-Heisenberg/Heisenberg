@@ -30,6 +30,6 @@ id="{{node.locationMetaData.id}}" specific-attr="node.locationMetaData.specificA
   {{node.travelelement.essential.noDependencyData.location|limitTo:3|uppercase}}
 </div>
 <div ng-repeat="(key,value) in node.locationchildservices">
-  <i class="material-icons node-stay" ng-click="node.selectednode(node.currentnode,[key])">{{value.icons}}</i>
+  <i class="material-icons node-stay" ng-click="node.sendDetailsOfChild(node.currentnode,key)">{{value.icons}}</i>
 </div>
 </div>
