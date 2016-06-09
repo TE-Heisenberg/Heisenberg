@@ -4,7 +4,7 @@
 
                     <md-card-title-text>
             <span class="md-headline">
-              <i id="cal" class="material-icons">flight</i> My Travel Calendar</span>
+              <i id="cal" class="material-icons">flight</i>{{calendar.calendarDisplayName}}</span>
                         <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
                     </md-card-title-text>
                     <div id="calctrl" >
@@ -30,11 +30,13 @@
                         ></calendar-md>
                         <div id="cal1" layout="row" layout-align="space-between center">
                             <div id="cal2"></div>
-                            Approved Travel
+
+                            {{calendar.approved}}
                             <div id="cal3"></div>
-                            Past Travel
+
+                            {{calendar.past}}
                             <div id="cal4"></div>
-                            Pending Travel
+                            {{calendar.pending}}
                         </div>
                     </div>
                 </md-card>

@@ -5,16 +5,23 @@ angular.module("app").component("landingComponent", {
    controller: landingController,
    bindings: {
       alertdata: '<',
+   },
+   $canActivate: function ($location, TokenService) {
+      var token = TokenService.getToken('token');
+      console.log(token);
+      TokenService.verifyToken().then(function () {
 
+      });
+
+      return true
    }
+
 
 });
 function landingController($scope, $http, $location) {
 
    var landing = this;
-   landing.$onActivate(function () {
-      console.log(window.jwtToken);
-   });
+
 
    // alertbox
    console.log("inside alert");
@@ -49,8 +56,4 @@ function landingController($scope, $http, $location) {
       // var finalJson={};
       // $scope.finalJson=$scope.locality;
    });
-};
-
-landingController.prototype.$onActivate = function () {
-   alert('$onActivate');
 };
