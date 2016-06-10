@@ -2,7 +2,7 @@
  * Created by lenovo on 09-05-2016.
  */
 angular.module("app").component("travelPlan", {
-   
+
    templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
    controllerAs: "plan",
    controller: travelPlanController,
@@ -33,6 +33,8 @@ function travelPlanController() {
    var plan = this;
 
   plan.reflectselectedchildwrapper = function(currentElement, currentElementIndex, selectedChild, metadata) {
+    console.log("I am inside reflectselectedchildwrapper");
+    console.log(currentElement, currentElementIndex, selectedChild, metadata);
     var selectedChildDetails = {
       "currentObject": currentElement,
       "index": currentElementIndex,
@@ -40,6 +42,9 @@ function travelPlanController() {
       "metaData": metadata
     }
     plan.reflectselectedchild({"selectedChildDetails":selectedChildDetails});
+  }
+  plan.currentnodeedgetravel1 = function(clicked) {
+    
   }
   plan.currentnodeedgetravel = function (currentElement,currentElementIndex,selectedChildren, metadata) {
     console.log("in travel plan");

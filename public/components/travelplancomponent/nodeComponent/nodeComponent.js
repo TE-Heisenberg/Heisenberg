@@ -19,22 +19,27 @@ var app = angular.module("app").component("nodeComponent", {
 function nodeController(_) {
 
   var node = this;
+  console.log("travel element inside node controller");
+  console.log(node.travelelement);
+  console.log("value got is");
+  console.log(node.travelelement.essential.noDependencyData);
   node.locationMetaData = node.metadata.essential.noDependencyData.location;
-node.edit=false;
+  node.edit=false;
   node.onReflect = function(keyString,value,id) {
-    console.log("Inside on reflect of childCardRenderer");
+    console.log("Inside on reflect of node component");
     console.log(value);
-    node.travelelement[id] = value;
+    console.log(id);
+    node.travelelement.essential.noDependencyData[id] = value;
   };
   node.show_autocomplete=function(){
-      if(node.edit==true)
-      {
-          node.edit=false;
-      }
-      else
-      {
-          node.edit=true;
-      }
+    if(node.edit==true)
+    {
+      node.edit=false;
+    }
+    else
+    {
+      node.edit=true;
+    }
 
   };
 
@@ -77,18 +82,25 @@ node.edit=false;
   };
   node.sendDetailsOfElement  = function(elementIndex) {
     var selectedChildren = [];
-
-
     for  (childGroup in node.travelelement.essential.modesToSelectTheServices) {
       selectedChildren = selectedChildren.concat(node.travelelement.essential.modesToSelectTheServices[childGroup]);
 
     }
     selectedChildren = _.uniq(selectedChildren);
-
-
-    node.currentnodeedgetravel({"currentElement":travelelement, "currentElementIndex":elementIndex,"selectedChildren":selectedChildren});
+    node.currentnodeedgetravel({"currentElement":node.travelelement, "currentElementIndex":elementIndex,"selectedChildren":selectedChildren});
 
   }
+
+
+  // // Reflecting the value changed in the custom input box
+  // node.onReflect = function(keyString,value,id) {
+  //   console.log("Inside on reflect of nodeComponent");
+  //   console.log("id is");
+  //   console.log(id);
+  //   console.log("value is");
+  //   console.log(value);
+  //   node.fieldsData[id] = value;
+  // };
 
   node.sendDetailsOfChild = function(elementIndex, selectedChild) {
 
@@ -101,62 +113,4 @@ node.edit=false;
     node.reflectselectedchild({"currentElement":node.travelelement, "currentElementIndex":elementIndex,"selectedChild":selectedChild,"metadata":node.metadata});
 
   }
-  // node.autoCompleteInput={};
-  // node.edit=false;
-  // console.log(node.currentnode);
-  // console.log(node.locationchildservices);
-  // selectedAutocompleteData=null;
-  // node.selectednode=function(indexid,type){
-  //   console.log("Node is clicked");
-  //   console.log(indexid);
-  //   console.log(type);
-  //   console.log({'index':indexid,'type':type});
-  //   node.currentnodeedgetravel({clicked:{'index':indexid,'type':type }});
-  // };
-  // node.nodekeys=Object.keys(node.locationchildservices);
-  //
-  //
-  // node.states        = loadAll();
-  // node.selectedItem  = null;
-  // node.searchText    = null;
-  // node.querySearch   = querySearch;
-  // // ******************************
-  // // Internal methods
-  // // ******************************
-  // /**
-  //  * Search for states... use $timeout to simulate
-  //  * remote dataservice call.
-  //  */
-  // function querySearch (query) {
-  //   var results = query ? node.states.filter( createFilterFor(query) ) : [];
-  //   return results;
-  // }
-  // /**
-  //  * Build `states` list of key/value pairs
-  //  */
-  // function loadAll() {
-  //   var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
-  //           Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
-  //           Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
-  //           Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
-  //           North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
-  //           South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
-  //           Wisconsin, Wyoming';
-  //   return allStates.split(/, +/g).map( function (state) {
-  //     return {
-  //       value: state.toLowerCase(),
-  //       display: state
-  //     };
-  //   });
-  // }
-  // /**
-  //  * Create filter function for a query string
-  //  */
-  // function createFilterFor(query) {
-  //   var lowercaseQuery = angular.lowercase(query);
-  //   return function filterFn(state) {
-  //     return (state.value.indexOf(lowercaseQuery) === 0);
-  //   };
-  // }
-
 };

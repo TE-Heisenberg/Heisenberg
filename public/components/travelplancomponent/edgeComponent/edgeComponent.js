@@ -10,7 +10,9 @@ var app = angular.module("app").component("edgeComponent", {
         'travelelement': '<',
         'currentedge':'<',
         'transitchildservices':'<',
-        'currentnodeedgetravel':'&'
+        'currentnodeedgetravel':'&',
+        'reflectselectedchild': '&',
+        'metadata': "<"
     }
 });
 
