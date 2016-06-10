@@ -439,7 +439,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
          "childServices": {
             "stay": [
                {
-                  "state": "select",
+                  "state": "request",
                   "requested": {
                      "location": "Bangalore",
                      "area": "MadiWala",
@@ -503,7 +503,6 @@ angular.module('app').factory('mainService', function ($http, $q) {
                   "state": "select",
                   "requested": {},
                   "selected": {
-
                      "source": "Rajiv nagar Chowk",
                      "destination": "New Delhi IGI Airport",
                      "type": "localBus",
@@ -590,7 +589,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
          "type": "location",
          "essential": {
             "noDependencyData": {
-               "cityName": "Bangalore"
+               "location": "Pune"
             }
             ,
             "modesToSelectTheServices": {
