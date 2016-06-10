@@ -35,6 +35,11 @@ angular.module('app')
                 component: 'trainSearchResultsParentComponent'
             },
             {
+              path: '/localTravelResults',
+              name: 'LocalTravelResultsParentComponent',
+              component: 'localTravelParentComponent'
+            },
+            {
                 path: '/hotelSearchResults',
                 name: 'HotelSearchResultsParentComponent',
                 component: 'hotelSearchResultsParentComponent'
