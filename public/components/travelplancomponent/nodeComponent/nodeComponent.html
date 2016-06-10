@@ -9,7 +9,22 @@
   <div class="node-md" ng-click="node.sendDetailsOfElement(node.currentnode)">
     {{node.travelelement.essential.noDependencyData.location|limitTo:3|uppercase}}
   </div>
-  <div ng-repeat="(key,value) in node.locationchildservices">
-    <i class="material-icons" ng-click="node.sendDetailsOfChild(node.currentnode,key)">{{value.icons}}</i>
+  <div class=""  ng-repeat="(key,value) in node.locationchildservices">
+    <div class="wrapper">
+      <i class="material-icons"  class="childservices" ng-click="node.sendDetailsOfChild(node.currentnode,key)">{{value.icons}}</i>
+      <div class="tooltip" ng-if="node.travelelement.childServices[key]==''">
+        Please select a {{key}}
+      </div>
+      <div class="tooltip" ng-if="!node.travelelement.childServices[key]==''">
+        <div ng-repeat="x in node.travelelement.childServices[key]">
+          <div ng-if="x.state=='request'">
+            Requested at {{x.requested.location}}
+          </div>
+          <div ng-if="x.state=='select'">
+            Seclected at {{x.selected.location}}
+          </div>
+        </div>
+      </div>
+  </div>
   </div>
 </div>
