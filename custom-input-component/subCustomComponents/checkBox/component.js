@@ -18,7 +18,7 @@ function CheckBoxBoxCtrl($scope) {
    console.log(ctrl);
 
    ctrl.$onChanges = function(changedObj) {
-    alert("I am in on changes");
+    
     console.log("In Changed Object");
     console.log(changedObj);
     console.log(changedObj.bindData);
