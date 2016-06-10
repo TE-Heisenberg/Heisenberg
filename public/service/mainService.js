@@ -695,7 +695,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
          travelPlanObjectInitial.push({
             "type": elementType,
                 "essential": {
-                  "noDependencyField": {},
+                  "noDependencyData": {},
                   "modesToSelectTheServices": {
 
                   }

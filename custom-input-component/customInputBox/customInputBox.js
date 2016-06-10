@@ -10,7 +10,6 @@ angular.module('app')
       required: '@',
       id: '@'
     },
-
     templateUrl: 'custom-input-component/customInputBox/customInputBox.html',
     controller: CustomInputBoxCtrl,
     controllerAs: "CustomInputBoxCtrl"

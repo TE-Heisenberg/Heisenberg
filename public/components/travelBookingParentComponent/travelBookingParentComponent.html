@@ -10,6 +10,10 @@
         reflectselectedchild="travelBookingParentCtrl.reflectSelectedChild(selectedChildDetails)">
         </travel-plan>
     </div>
+
+    Before travel booking
+    {{travelBookingParentCtrl.currentSelectedObj}}
+
     <div class="view-container" flex="100" layout="column">
         <travel-booking current-selected-obj="travelBookingParentCtrl.currentSelectedObj"
         meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]"

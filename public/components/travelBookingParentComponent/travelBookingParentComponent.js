@@ -55,9 +55,10 @@ function travelBookingParentCtrl(mainService, $location) {
 
   travelBookingParentCtrl.reflectSelectedChild = function (selectedChildDetails) {
 
-      console.log("i am inside currentnodeedge");
+      console.log("i am inside reflectSelectedChild");
     console.log(selectedChildDetails);
-
+    console.log("selectedChildDetails.metaData.essential.modesToSelectTheServices");
+    console.log(selectedChildDetails.metaData.essential.modesToSelectTheServices);
     travelBookingParentCtrl.currentSelectedObj = selectedChildDetails.currentObject;
     travelBookingParentCtrl.selectedChildren = [selectedChildDetails.selectedChild];
     for( childGroup in selectedChildDetails.metaData.essential.modesToSelectTheServices) {
@@ -69,21 +70,58 @@ function travelBookingParentCtrl(mainService, $location) {
         console.log("Inside first if");
         console.log(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup]);
         if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] === undefined) {
+          console.log("Property is not defined inside the object");
+          console.log(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].javascriptDataType);
+          switch (selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].javascriptDataType) {
+            case "String":
+              console.log("inside string of when property is undefined");
+              selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] =  selectedChildDetails.selectedChild;
+              break;
+            case "Array":
+              console.log("inside array of when property is  undefined");
+              selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] =  [selectedChildDetails.selectedChild];
+              break;
+            default:
 
+          }
+          break;
         }
-        if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup].indexOf(selectedChildDetails.selectedChild) <0) {
-          console.log("Inside sendond if");
-          selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup].push(selectedChildDetails.selectedChild);
-          selectedChildDetails.currentObject.childServices[childGroup] = selectedChildDetails.metaData.servicesIntializer[childGroup];
+        else {
+          //When the property is defined inisde the oject
+          console.log("Property is  defined inside the object");
+          switch(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].javascriptDataType) {
+            case "String":
+                console.log("inside string when property is defined");
+                if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] === selectedChildDetails.selectedChild) {
+                  console.log("Inside sendond if");
+
+                  selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup]=selectedChildDetails.selectedChild;
+
+                }
+                break;
+
+            case "Array":
+                console.log("inside array of when property is defined");
+              if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup].indexOf(selectedChildDetails.selectedChild) <0) {
+                console.log("Inside sendond if");
+
+                // selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup]=selectedChildDetails.selectedChild;
+
+                selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] = selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup].concat(selectedChildDetails.selectedChild);
+                // selectedChildDetails.currentObject.childServices[childGroup] = selectedChildDetails.metaData.servicesIntializer[childGroup];
+              }
+              break;
+          }
+
+          break;
         }
-        break;
 
       }
 
     }
 
 
-    travelBookingParentCtrl.reflectSelectedChildren(selectedChildDetails.selectedChildren);
+    travelBookingParentCtrl.reflectSelectedChildren([selectedChildDetails.selectedChild]);
 
   };
   //travelBookingParentCtrl.travelPlanExists = dataUpdateHelper.travelPlanExists();
