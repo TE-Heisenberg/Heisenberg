@@ -33,7 +33,7 @@ function stayRendererCtrl()
     console.log("inside on delete");
     console.log(index);
     stayRenderer.childFieldsData.splice(index,1);
-    if(index == 0)
+    if(stayRenderer.childFieldsData == 0)
       {
         console.log("Inside if of stayRenderer");
         stayRenderer.deleteAll();
@@ -41,7 +41,7 @@ function stayRendererCtrl()
   }
 
   stayRenderer.onAdd = function(index) {
-    stayRenderer.childFieldsData.push({"state":"initial"});
+    stayRenderer.childFieldsData.push({"state":"initial","requested": {}});
   }
 
 

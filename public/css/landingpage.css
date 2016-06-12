@@ -1,16 +1,16 @@
 
-    /*body {
-        width: 100%
-    }*/
+    body {
+        width: 100%;
+    }
 
     .main-button-fixed {
-        position: fixed;
+        position: absolute;
         /*margin-top: 350px;*/
         /*width: 100%;
         margin-left: 43%;*/
         /*z-index: 0;*/
-        top:60%;
-        left:92%;
+        top:75%;
+        left:93%;
     }
 
     .main-toolbar{
@@ -206,4 +206,12 @@
 
 .show_sum {
     background: #2a8ce2 !important;
+}
+
+.book_button{
+   /*position: absolute;*/
+   top: 0;
+   right: 0;
+   bottom:20;
+   left: 0;
 }

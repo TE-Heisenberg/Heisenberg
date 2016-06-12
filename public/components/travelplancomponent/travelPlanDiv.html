@@ -8,19 +8,18 @@
 
                 <div ng-repeat="travelelement in plan.travelplanobject" class="node-add-action">
 
-                    <div ng-if="travelelement.type == plan.nodetype">
+                    <div ng-if="travelelement.types == plan.nodetype">
                         <node-component travelelement="travelelement"  locationchildservices="plan.locationchildservices" currentnode="$index"
                          currentnodeedgetravel="plan.currentnodeedgetravel(currentElement,currentElementIndex,selectedChildren,metadata)"
                         reflectselectedchild = "plan.reflectselectedchildwrapper(currentElement, currentElementIndex, selectedChild, metadata)"
                          metadata="plan.metadataoflocation"></node-component>
 
                     </div>
-                    <div ng-if="travelelement.type == plan.edgetype">
+                    <div ng-if="travelelement.types == plan.edgetype">
                         <edge-component travelelement="travelelement" transitchildservices="plan.transitchildservices" currentedge="$index" currentnodeedgetravel="plan.currentnodeedgetravel(clicked)" reflectselectedchild = "plan.reflectselectedchildwrapper(currentElement, currentElementIndex, selectedChild, metadata)"
                          metadata="plan.metadataoflocation"
 
                         ></edge-component>
-
                     </div>
 
                 </div>

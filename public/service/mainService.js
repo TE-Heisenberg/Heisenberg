@@ -424,6 +424,24 @@ angular.module('app').factory('mainService', function ($http, $q) {
 //   }
 // ]
 
+<<<<<<< HEAD
+/*var travelPlanObject={
+  components:
+  [{
+    "type": "location",
+    "essential": {
+        "noDependencyData": {
+          "location": "Bangalore"
+        },
+        "modesToSelectTheServices": {
+          "basicServices": ["stay","localTravel"]
+        }
+    },
+    "childServices": {
+      "stay": [
+                {
+                  "state": "select",
+=======
    var travelPlanObject = [
       {
          "type": "location",
@@ -440,6 +458,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
             "stay": [
                {
                   "state": "request",
+>>>>>>> e0a029d6c0ba5a129cadc1c29e83486c3465e380
                   "requested": {
                      "location": "Bangalore",
                      "area": "MadiWala",
@@ -636,6 +655,120 @@ angular.module('app').factory('mainService', function ($http, $q) {
                   "requested": {},
                   "selected": {
 
+<<<<<<< HEAD
+                "source": "Rajiv nagar Chowk",
+                "destination": "New Delhi IGI Airport",
+                "type": "cab",
+                "pickupDate": "4/30/2016",
+                "pickupTime": "10: 00 AM",
+                "dropDate": "4/30/2016",
+                "dropTime": "12:00 PM",
+                "cab": {
+                  "image": "public/assets/images/ola.png",
+                  "companyName": "Uber",
+                  "cabNumber": "DL AJ 5034",
+                  "driverDetails": {
+                    "name": "Job Elton"
+                  }
+                  ,
+                  "estimatedPrice": "800 INR",
+                  "cabType": "sedan"
+                }
+            }
+          }
+      ]
+    }
+  }
+]
+}*/
+
+        var travelPlanObjectInitial = {};
+          // {
+          //   "essential": {
+          //   },
+          //   "childServices": {},
+          //   "type": "location",
+          //   "state": "initial"
+          // },
+          // {
+          //   "essential": {
+          //   },
+          //   "childServices": {},
+          //   "type": "transit",
+          //   "state": "initial"
+          // },
+          // {
+          //   "essential": {
+          //   },
+          //   "childServices": {},
+          //   "type": "location",
+          //   "state": "initial"
+          // }
+        var elementMasters = {};
+        var nodeMaster = {};
+        var edgeMaster = {};
+        var travelId='';
+        var components=[];
+        // var someData;
+//         var events = (function(){
+//             var topics = {};
+//             var hOP = topics.hasOwnProperty;
+//
+//             return {
+//               subscribe: function(topic, listener) {
+//                 // Create the topic's object if not yet created
+//                 if(!hOP.call(topics, topic)) topics[topic] = [];
+//
+//                 // Add the listener to queue
+//                 var index = topics[topic].push(listener) -1;
+//
+//                 // Provide handle back for removal of topic
+//                 return {
+//                   remove: function() {
+//                     delete topics[topic][index];
+//                   }
+//                 };
+//               },
+//               publish: function(topic, info) {
+//                 // If the topic doesn't exist, or there's no listeners in queue, just leave
+//                 if(!hOP.call(topics, topic)) return;
+//
+//                 // Cycle through topics queue, fire!
+//                 topics[topic].forEach(function(item) {
+//                 		item(info != undefined ? info : {});
+//                 });
+//               }
+//             };
+// })();
+
+function travelPlanSaver(travelPlanobject)
+{
+        console.log("In travelPlanSaver");
+        var deferred=$q.defer();
+        $http.post("http://172.23.238.144:8080/travelPlan/crud/travelPlan",travelPlanobject)
+        .success(function(data){
+               console.log(data.components[0]);
+          deferred.resolve(data);
+      });
+      return deferred.promise;
+}
+function travelPlanGetter(travelPlanid)
+{
+
+        console.log("in travelplan getter");
+        console.log(travelPlanid);
+        var deferred=$q.defer();
+        $http.get("http://172.23.238.144:8080/travelPlan/crud/travelPlan/"+travelPlanid)
+        .success(function(data){
+                console.log("again in travelplan getter");
+                //console.log(data);
+                console.log(data.components[0]);
+          deferred.resolve(data);
+      });
+      return deferred.promise;
+}
+        var subFactories= {
+=======
                      "source": "Rajiv nagar Chowk",
                      "destination": "New Delhi IGI Airport",
                      "type": "cab",
@@ -682,6 +815,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
       //   "type": "location",
       //   "state": "initial"
       // }
+>>>>>>> e0a029d6c0ba5a129cadc1c29e83486c3465e380
 
    ];
    var elementMasters = {};
@@ -690,6 +824,62 @@ angular.module('app').factory('mainService', function ($http, $q) {
    // var someData;
    var subFactories = {
 
+<<<<<<< HEAD
+              components.push({
+                "types":elementType,
+                "state":"initial",
+                "essential": {},
+                "childServices": {}
+              });
+              console.log("I am inside travelPlanElementInitializer");
+             },
+
+
+
+             travelPlanInitializer: function(indexForTravelMode) {
+                var deferred = $q.defer();
+               travelPlanObjectInitial={};
+               var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
+               console.log("I am in travelPlanInitializer");
+               console.log(indexForTravelMode);
+               var i=0;
+               if(indexForTravelMode>=0){
+                    while(i<=indexForTravelMode)
+                    {
+                      console.log("I am inside loop", i,indexForTravelMode );
+                      subFactories.travelPlanElementInitializer('location');
+                      subFactories.travelPlanElementInitializer('transit');
+                      i +=1;
+                    }
+                      subFactories.travelPlanElementInitializer('location');
+                      travelPlanObjectInitial['components']=components;
+                    // return true;
+                    travelPlanSaver(travelPlanObjectInitial).then(function(data){
+                            deferred.resolve(data._id);
+                    });
+                    return deferred.promise;
+                }
+
+             },
+              getTravelPlanId:function(){
+                return travelId;
+              },
+              getTravelPlanObject: function(tid)
+              {
+                      var deferred=$q.defer();
+
+                      travelPlanGetter(tid).then(function(data)
+                      {
+                         deferred.resolve(data);
+                      });
+                      return deferred.promise;
+                   //return travelPlanObject;
+
+                },
+              getTravelPlanObjectInitial: function() {
+                return travelPlanObjectInitial;
+              },
+=======
       travelPlanElementInitializer: function (elementType) {
 
          travelPlanObjectInitial.push({
@@ -705,6 +895,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
          });
          console.log("I am inside travelPlanElementInitializer");
       },
+>>>>>>> e0a029d6c0ba5a129cadc1c29e83486c3465e380
 
       travelPlanInitializer: function (indexForTravelMode) {
          travelPlanObjectInitial = [];
@@ -740,6 +931,72 @@ angular.module('app').factory('mainService', function ($http, $q) {
 
       },
 
+<<<<<<< HEAD
+
+             getPrerequisites: function(tid) {
+                  console.log("in get prerequisites");
+                     console.log(tid);
+               return $q.all([subFactories.getNodeMaster(),subFactories.getEdgeMaster(),subFactories.getTravelPlanObject(tid)]);
+             },
+
+             travelPlanExists :function(){
+               if(travelPlanObject==null || travelPlanObject.length==0){
+                 return false;
+               }
+               else{
+                 return true;
+               }
+             },
+             currentplanLabels :function(){
+               currentplan ={};
+              return $http.get("public/data/landing/myPlans.config.json");
+
+              //  .success(function (response) {
+                //  currentplan.planDisplayName =response.headerDisplayName;
+                //  currentplan.planSubHeaderCompleted=response.subHeadersDisplayName.completed;
+                //  currentplan.planSubHeaderCurrent=response.subHeadersDisplayName.current;
+                //  currentplan.planSubHeaderFuture=response.subHeadersDisplayName.future;
+              //    return currentplan;
+              //  });
+             },
+
+             worklistLabels :function(){
+                 worklist={};
+               return $http.get("public/data/landing/myWorklist.config.json");
+              //  .success(function (response) {
+                //  worklist.worklistDisplayName = response.headerDisplayName;
+                //  worklist.actiontDisplayName = response.actionButtonDisplayName;
+              //        return worklist;
+              //  });
+             },
+
+             favouriteLables :function(){
+
+                   favourite={};
+               return $http.get("public/data/landing/myFavourites.config.json");
+              //  .success(function (response) {
+
+              //     favourite.favouriteDisplayName = response.headerDisplayName;
+              //          return favourite;
+              //   });
+              },
+
+              calendarLabel:function(){
+                calendar ={};
+              return  $http.get("public/data/landing/myTravelcalendar.config.json");
+              // .success(function (response) {
+              //     calendar.calendarDisplayName = response.headerDisplayName;
+              //     calendar.approved=response.subHeaders.approved;
+              //     calendar.past=response.subHeaders.past;
+              //     calendar.pending=response.subHeaders.pending;
+              //     return calendar;
+              //   });
+             }
+
+          };
+     return subFactories;
+  });
+=======
       getEdgeMaster: function () {
          return $http.get('public/data/configjsons/edgemaster.json');
       },
@@ -765,3 +1022,4 @@ angular.module('app').factory('mainService', function ($http, $q) {
    }
    return subFactories;
 });
+>>>>>>> e0a029d6c0ba5a129cadc1c29e83486c3465e380

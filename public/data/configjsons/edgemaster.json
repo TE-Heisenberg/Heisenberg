@@ -4,16 +4,19 @@
     "coExistServices": {
       "visaonarrival":{
         "icons": "flight_takeoff",
-        "displayName": "Visa on Arrival"
+        "displayName": "Visa on Arrival",
+        "chooseCaption":"Do you want Visa on Arrival?"
       },
       "forex":{
         "icons":"monetization_on",
-        "displayName": "Foreign Exchange"
+        "displayName": "Foreign Exchange",
+        "chooseCaption": "Do you want Forex service?"
         }
     },
     "mutuallyExclusive": {
       "mode":{
         "displayName":"Mode of travel",
+        "chooseCaption": "Choose Travel Mode.",
         "servicesDetails": {
           "flight": {
             "icons": "",

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 angular.module("app").controller('dialogController',function($scope,$location,$mdDialog, $mdMedia,mainService) {
   console.log("im in controller");
 
@@ -58,3 +59,26 @@ angular.module("app").controller('dialogController',function($scope,$location,$m
   };
 
 });
+=======
+angular.module("app").controller('dialogController', function ($scope, $location, $mdDialog, $mdMedia, mainService) {
+    console.log("im in controller");
+
+    dialog = this;
+    $scope.typeOfTravel = 0;
+
+    $scope.go = function () {
+        console.log("i am inside go of landing page");
+        console.log($scope);
+        mainService.travelPlanInitializer($scope.typeOfTravel);
+        $location.path('/travelBooking');
+
+        $mdDialog.hide();
+    };
+
+    $scope.cancel = function () {
+
+        $mdDialog.hide();
+    };
+
+});
+>>>>>>> e0a029d6c0ba5a129cadc1c29e83486c3465e380
