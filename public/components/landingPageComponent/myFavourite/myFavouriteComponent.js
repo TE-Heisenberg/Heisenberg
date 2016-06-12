@@ -12,26 +12,14 @@ app.component("myFavourite",{
 
 });
 
-function myFavouriteController($http){
+function myFavouriteController($http,mainService){
   // $scope.fav=function(locality){
   //   $scope.locality = response[locality].data;
 
   //};
   var favourite =this;
-  $http.get("public/data/landing/myFavourites.config.json").success(function (response) {
-
-     favourite.favouriteDisplayName = response.headerDisplayName;
-
+  var response=mainService.favouriteLables();
+  response.success(function (response) {
+    favourite.favouriteDisplayName = response.headerDisplayName;
    });
-
-  // $http.get("public/data/landing/myfavourites.json").success(function (response) {
-  //
-  //    $scope.locality = response.local.data;
-  //    $scope.fav=function(locality){
-  //      $scope.locality = response[locality].data;
-  //    };
-  //   console.log(response);
-  //   var finalJson={};
-    // $scope.finalJson=$scope.locality;
-  // });
 }

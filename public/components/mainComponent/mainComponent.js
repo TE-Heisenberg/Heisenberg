@@ -5,7 +5,7 @@ angular.module('app')
     controller: ["$rootScope", "$location", mainComponentController],
     $routeConfig: [
       { path: '/landingPage', name: 'LandingPageComponent', component: 'landingComponent' },
-      { path: '/travelBooking', name: 'TravelBookingParentComponent', component: 'travelBookingParentComponent' },
+      { path: '/travelBooking/:id', name: 'TravelBookingParentComponent', component: 'travelBookingParentComponent' },
       { path: '/stayBooking', name: 'StayBookingComponent', component: 'stayBookingComponent' },
       { path: '/flightSearchResults', name: 'FlightSearchResultsParentComponent', component: 'flightSearchResultsParentComponent' },
       { path: '/trainSearchResults', name: 'TrainSearchResultsParentComponent', component: 'trainSearchResultsParentComponent' },
