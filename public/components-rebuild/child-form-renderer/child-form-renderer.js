@@ -13,6 +13,13 @@ function childFormRendererController($http) {
   var childFormRenderer = this;
   console.log("Inside child form renderer");
   //adding querySearch function in specific attr for autocomplete
+  childFormRenderer.dataInitializer = function() {
+    // for(fieldId in childFormRenderer.fieldsMetaData) {
+    //   if(childFormRenderer.fieldsMetaData[fieldId].defaultValue !== undefined) {
+    //     childFormRenderer.fieldsData[fieldMetaDataId] = childFormRenderer.fieldsMetaData[fieldId].defaultValue;
+    //   }
+    // }
+  }
   childFormRenderer.$onInit=function(){
     for(key in childFormRenderer.fieldsMetaData)
     {

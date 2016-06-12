@@ -1,13 +1,37 @@
 {
   "servicesDetails":
   {
-    "visaonarrival":{
-      "icons": "flight_takeoff",
-      "displayName": "Visa on Arrival"
+    "coExistServices": {
+      "visaonarrival":{
+        "icons": "flight_takeoff",
+        "displayName": "Visa on Arrival",
+        "chooseCaption":"Do you want Visa on Arrival?"
+      },
+      "forex":{
+        "icons":"monetization_on",
+        "displayName": "Foreign Exchange",
+        "chooseCaption": "Do you want Forex service?"
+        }
     },
-    "forex":{
-      "icons":"monetization_on",
-      "displayName": "Foreign Exchange"
+    "mutuallyExclusive": {
+      "mode":{
+        "displayName":"Mode of travel",
+        "chooseCaption": "Choose Travel Mode.",
+        "servicesDetails": {
+          "flight": {
+            "icons": "",
+            "displayName": "Flight"
+          },
+          "train": {
+            "icons":"",
+            "displayName":"Train"
+          },
+          "bus":{
+            "icons":"",
+            "displayName":"Bus"
+          }
+        }
+      }
     }
   },
   "essential": {
@@ -27,7 +51,8 @@
         "type": "singleSelect",
         "specificAttr": {
           "domainList": ["flight", "bus", "train"]
-        }
+        },
+        "javascriptDataType": "String"
       },
       "extraAddOnsServices": {
         "mandatory": false,
@@ -36,7 +61,8 @@
         "type": "multiSelect",
         "specificAttr": {
           "domainList": ["visaOnArrival", "forex"]
-        }
+        },
+        "javascriptDataType": "Array"
       }
     }
   },

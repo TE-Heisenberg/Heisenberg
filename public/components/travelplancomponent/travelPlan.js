@@ -1,44 +1,69 @@
 /**
-* Created by lenovo on 09-05-2016.
-*/
+ * Created by lenovo on 09-05-2016.
+ */
 angular.module("app").component("travelPlan", {
 
-  templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
-  controllerAs: "plan",
-  controller: travelPlanController,
-  bindings: {
-    travelplanobject:'<',
-    locationchildservices:'<',
+   templateUrl: "public/components/travelplancomponent/travelPlanDiv.html",
+   controllerAs: "plan",
+   controller: travelPlanController,
+   bindings: {
+      travelplanobject: '<',
+      locationchildservices: '<',
     transitchildservices:'<',
-    currentnodeedgebooking:'&',
-    nodetype:'@',
-    edgetype:'@'
-  }
+      currentnodeedgebooking: '&',
+      nodetype: '@',
+      edgetype: '@',
+      metadataoflocation: "<",
+      metadataoftransit: "<",
+      currentselectedobj: "<",
+    selectedchildren: "<",
+    reflectselectedchild: "&"
+   }
 }).filter('keylength', function () {
-  return function (input) {
-    if (!angular.isObject(input)) {
-      throw Error("Usage of non-objects with keylength filter!!");
-    }
-    return Object.keys(input).length;
-  };
+   return function (input) {
+      if (!angular.isObject(input)) {
+         throw Error("Usage of non-objects with keylength filter!!")
+      }
+      return Object.keys(input).length;
+   }
 });
 
 function travelPlanController() {
 
-  var plan = this;
+   var plan = this;
 
-  plan.currentnodeedgetravel = function (value) {
-    console.log("in travel plan")
-    console.log(value);
-    console.log(plan.travelplanobject[value.index]);
-    var currentObjectDetails = {
-      "currentObject": plan.travelplanobject[value.index],
-      "index": value.index,
-      "selectedChildren": value.type
+  plan.reflectselectedchildwrapper = function(currentElement, currentElementIndex, selectedChild, metadata) {
+    console.log("I am inside reflectselectedchildwrapper");
+    console.log(currentElement, currentElementIndex, selectedChild, metadata);
+    var selectedChildDetails = {
+      "currentObject": currentElement,
+      "index": currentElementIndex,
+      "selectedChild": selectedChild,
+      "metaData": metadata
     }
-    console.log(plan.locationchildservices);
-    console.log(plan.transitchildservices);
-    plan.currentnodeedgebooking({value2:currentObjectDetails});
+    plan.reflectselectedchild({"selectedChildDetails":selectedChildDetails});
+  }
+  plan.currentnodeedgetravel1 = function(clicked) {
+    
+  }
+  plan.currentnodeedgetravel = function (currentElement,currentElementIndex,selectedChildren, metadata) {
+    console.log("in travel plan");
+    console.log(currentElement,currentElementIndex,selectedChildren);
+    // console.log(value);
+    // console.log(plan.travelplanobject[value.index]);
+
+    plan.currentselectedobj = currentElement;
+    plan.selectedchildren = selectedChildren;
+    var currentObjectDetails = {
+      "currentObject": currentElement,
+      "index": currentElementIndex,
+      "selectedChildren": selectedChildren,
+      "metadata": metadata
+    };
+    console.log("currentObjectDetails : ",currentObjectDetails);
+
+         console.log(plan.locationchildservices);
+    plan.currentnodeedgebooking({"value2":currentObjectDetails});
   };
   plan.addNode = function () {
     plan.newNode = {

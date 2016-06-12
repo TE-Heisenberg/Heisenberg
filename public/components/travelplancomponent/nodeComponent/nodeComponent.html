@@ -1,32 +1,38 @@
-
 <span ng-click="node.show_autocomplete()">{{node.travelelement.essential.noDependencyData.location||'edit'}}</span>
-<div class="node-md-action-input" id="node-md-main-action" ng-show="node.edit==true">
-  <md-autocomplete flex required
-  md-input-name="autocompleteField"
-  md-input-minlength="2"
-  md-input-maxlength="18"
-  md-no-cache="node.noCache"
-  md-selected-item="node.selectedItem"
-  md-search-text="node.searchText"
-  md-items="item in node.querySearch(node.searchText)"
-  md-item-text="item.display"
-  md-floating-label="City">
-  <md-item-template>
-    <span md-highlight-text="node.searchText">{{item.display}}</span>
-  </md-item-template>
-  <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
-    <div ng-message="required">You <b>must</b> have a favorite state.</div>
-    <div ng-message="minlength">Your entry is not long enough.</div>
-    <div ng-message="maxlength">Your entry is too long.</div>
+<div ng-show="node.edit==true">
+  <custom-input-box class="node-md-action-input"  type="{{node.locationMetaData.type}}" label="{{node.locationMetaData.displayName}}" bind-data="node.travelelement.essential.noDependencyData[node.locationMetaData.id]"
+  id="{{node.locationMetaData.id}}" specific-attr="node.locationMetaData.specificAttr"  reflect-custom-input="node.onReflect(keyString,value,id)"></custom-input-box>
+</div>
+<div class="node" click-outside="node.closeThis(value)" outside-if-not="nodeid,node-md-main-action">
+  <div class="node-md" ng-click="node.sendDetailsOfElement(node.currentnode)">
+    {{node.travelelement.essential.noDependencyData.location|limitTo:3|uppercase}}
   </div>
-</md-autocomplete>
-</div>
-<div class="node" click-outside="node.closeThis(value)"
-outside-if-not="nodeid,node-md-main-action">
-<div class="node-md" ng-click="node.selectednode(node.currentnode, node.nodekeys)">
-  {{node.travelelement.essential.noDependencyData.location|limitTo:3|uppercase}}
-</div>
-<div ng-repeat="(key,value) in node.locationchildservices">
-  <i class="material-icons node-stay" ng-click="node.selectednode(node.currentnode,[key])">{{value.icons}}</i>
-</div>
+  <div class=""  ng-repeat="(childId,childDetails) in node.locationchildservices">
+    <div class="wrapper">
+
+      <child-icon-router-component child-type="childId" child-details="childDetails" reflect-child-select="node.reflectChildSelect(childId)">
+    </child-icon-router-component>
+
+      <!-- Below code is supposed to be changed according to change in ng-repeat -->
+      <i class="material-icons childservices" ng-click="node.sendDetailsOfChild(node.currentnode,childId)">{{value.icons}}</i>
+
+      <div class="tooltip" ng-if="node.travelelement.childServices[childId]==''">
+        <!-- If that child service exist or not -->
+        Please select a {{childId}}
+      </div>
+      <div class="tooltip" ng-if="!node.travelelement.childServices[childId]==''">
+        <!-- If that child service exist -->
+        <div ng-repeat="x in node.travelelement.childServices[childId]">
+          <!-- Iterating on a child service group to get a single child service in x -->
+          <div ng-if="x.state=='request'">
+            Requested at {{x.requested.location}}
+          </div>
+          <div ng-if="x.state=='select'">
+            Seclected at {{x.selected.location}}
+          </div>
+          <!-- When state is initial then empty tool tip box is shown. NEEDS TO BE IMPLEMENTED -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

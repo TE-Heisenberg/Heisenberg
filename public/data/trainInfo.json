@@ -1,5 +1,5 @@
 {
-  "filters":[
+      "filters":[
         {
           "label":"Price",
           "id":"price",
