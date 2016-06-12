@@ -20,7 +20,7 @@ function travelBookingParentCtrl(mainService, $location) {
   console.log(mainService.serviceData);
   travelBookingParentCtrl.$onInit = function () {
     console.log(" I am inside on init");
-    travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObject();
+    travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObjectInitial();
     console.log(travelBookingParentCtrl.travelPlanObject);
     travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[0];
     console.log(travelBookingParentCtrl.currentSelectedObj);
