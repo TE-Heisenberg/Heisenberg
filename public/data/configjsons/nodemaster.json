@@ -4,11 +4,14 @@
         "coExistServices":{
             "stay":{
                 "icons": "hotel",
-                "displayName": "Stay"
+			"displayName": "Stay",
+			"chooseCaption": "Do you want Stay?"
+
             },
             "localTravel":{
                 "icons":"directions_car",
-                "displayName": "Local Travel"
+			"displayName": "Local Travel",
+			"chooseCaption": "Do you want Local Travel?"
             }
         },
         "mutuallyExclusive": {}

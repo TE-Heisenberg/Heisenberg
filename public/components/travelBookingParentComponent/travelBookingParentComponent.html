@@ -1,17 +1,19 @@
 <div layout="column">
     <div class="travel-plan-fixed">
-        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location" edgetype="transit" metadataoflocation="travelBookingParentCtrl.elementFields['location']"
-        metadataoftransit="travelBookingParentCtrl.elementFields['transit']"
-        currentselectedobj="travelBookingParentCtrl.currentSelectedObj"
-        selectedchildren="travelBookingParentCtrl.selectedChildren"
-        locationchildservices="travelBookingParentCtrl.locationchildservices" transitchildservices="travelBookingParentCtrl.transitchildservices" currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)">
-        reflectselectedchild="travelBookingParentCtrl.reflectSelectedChild(selectedChildDetails)"
-        >
+        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"
+        edgetype="transit" locationchildservices="travelBookingParentCtrl.locationchildservices"
+        transitchildservices="travelBookingParentCtrl.transitchildservices"
+        currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)"
+        reflectselectedchild="travelBookingParentCtrl.reflectSelectedChild(selectedChildDetails)">
         </travel-plan>
     </div>
+
+    Before travel booking
+    {{travelBookingParentCtrl.currentSelectedObj}}
+
     <div class="view-container" flex="100" layout="column">
         <travel-booking current-selected-obj="travelBookingParentCtrl.currentSelectedObj"
-        meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]"
+        meta-data-of-obj="travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types]"
         current-selected-children="travelBookingParentCtrl.selectedChildren"
             children-labels="travelBookingParentCtrl.childrenLabels">
         </travel-booking>

@@ -1,16 +1,16 @@
 
-    /*body {
-        width: 100%
-    }*/
+    body {
+        width: 100%;
+    }
 
     .main-button-fixed {
-        position: fixed;
+        position: absolute;
         /*margin-top: 350px;*/
         /*width: 100%;
         margin-left: 43%;*/
         /*z-index: 0;*/
-        top:60%;
-        left:92%;
+        top:75%;
+        left:93%;
     }
 
     .main-toolbar{
@@ -206,4 +206,23 @@
 
 .show_sum {
     background: #2a8ce2 !important;
+}
+
+.main_button{
+    vertical-align: middle;
+
+}
+.book_button{
+   vertical-align: middle;
+
+}
+
+.expense_button{
+    vertical-align: middle;
+
+}
+
+.configure_button{
+    vertical-align: middle;
+    
 }
