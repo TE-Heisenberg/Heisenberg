@@ -497,6 +497,12 @@ favouriteLables :function(){
 
       getFabButtons:function(){
         return $http.get("public/data/landing/fabButton.config.json");
+      },
+      getLocalTravelFilters:function(){
+        return $http.get("public/data/configjsons/localTravelFilters.json");
+      },
+      getLocalTravelSearchResults:function(){
+        return $http.get("public/data/localTravelSearchResults.json");
       }
 
 };
