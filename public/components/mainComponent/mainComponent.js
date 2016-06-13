@@ -45,7 +45,7 @@ angular.module('app')
                 component: 'hotelSearchResultsParentComponent'
             },
             {path: '/itinerary', name: 'ItineraryComponent', component: 'itineraryParentComponent'},
-            {path: '/searchResults', name: 'SearchResultComponent', component: 'searchResult'},
+            {path: '/searchResults/:id', name: 'SearchResultComponent', component: 'searchResult'},
             {path: '/**', redirectTo: ["LoginComponent"]},
         ]
     });

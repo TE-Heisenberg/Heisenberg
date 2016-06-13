@@ -25,7 +25,7 @@
   -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
 }
 
-.wrapper .ourtooltip {
+.wrapper .tooltip {
   background: #1496bb;
   bottom: 100%;
   color: #fff;
@@ -55,7 +55,7 @@
 }
 
 /* This bridges the gap so you can mouse into the tooltip without it disappearing */
-.wrapper .ourtooltip:before {
+.wrapper .tooltip:before {
   bottom: -20px;
   content: " ";
   display: block;
@@ -65,7 +65,7 @@
 }
 
 /* CSS Triangles - see Trevor's post */
-.wrapper .ourtooltip:after {
+.wrapper .tooltip:after {
   border-left: solid transparent 10px;
   border-right: solid transparent 10px;
   border-top: solid #1496bb 10px;
@@ -78,7 +78,7 @@
   width: 0;
 }
 
-.wrapper:hover .ourtooltip {
+.wrapper:hover .tooltip {
   opacity: 1;
   pointer-events: auto;
   -webkit-transform: translateY(0px);
@@ -89,11 +89,11 @@
 }
 
 /* IE can just show/hide with no transition */
-.lte8 .wrapper .ourtooltip {
+.lte8 .wrapper .tooltip {
   display: none;
 }
 
-.lte8 .wrapper:hover .ourtooltip {
+.lte8 .wrapper:hover .tooltip {
   display: block;
 }
 
@@ -214,9 +214,6 @@ margin-top: 50px;
   margin-left: 20px
 }
 
-.node-stay {
-
-}
 
 @media screen and (min-width: 768px) {
   .node {
@@ -272,7 +269,7 @@ margin-top: 50px;
   .node-add {
     width: 20px;
     height: 20px;
-    line-height: 19px;
+    line-height: 13px;
     border: 1px solid #464646;
     border-radius: 50%;
     color: #ececec;
@@ -284,6 +281,7 @@ margin-top: 50px;
     margin-top: 2%;
     cursor: pointer;
     position: relative;
+    top: -88px;
   }
 
   .node-add-action {
@@ -308,134 +306,132 @@ margin-top: 50px;
     font-size: 12px;
     background: #464646;
     margin-left: 15px;
-    cursor: pointer;
+    cursor: pointer;  }
+  }
+
+  /*.material-icons {
+  font-size: 16px !important;
+
+  }*/
+
+  .node-md-indigo {
+    background: #7986cb;
+    color: #e6ee9c;
 
   }
-}
 
-/*.material-icons {
-font-size: 16px !important;
+  .margin-node {
+    /*width: 90%;*/
+    /*margin: 20px auto;*/
 
-}*/
+  }
 
-.node-md-indigo {
-  background: #7986cb;
-  color: #e6ee9c;
+  @media screen and (min-width: 768px) {
+    .progress-line {
+      top: -15px;
+      position: relative;
+      width: 200px;
+      z-index: -100;
+      height: 10px;
 
-}
+    }
+  }
 
-.margin-node {
-  /*width: 90%;*/
-  /*margin: 20px auto;*/
+  @media screen and (max-width: 767px) {
+    .progress-line {
+      width: 25%;
+      margin-left: 25px;
+      z-index: 2;
+      position: relative;
+      top: -20px;
+      height: 130px;
+    }
+  }
 
-}
+  @media screen and (min-width: 768px) {
+    .travel-button {
+      position: relative;
+      z-index: 4;
+      margin-left: 46%;
+      top: -48px;
+    }
+  }
 
-@media screen and (min-width: 768px) {
-  .progress-line {
-    top: 84px;
+  @media screen and (max-width: 767px) {
+    .travel-button {
+      z-index: 4;
+      margin-top: 60px;
+      margin-left: -12px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .middle-bar {
+      height: 3px;
+      background-color: #0000cc;
+      margin-left: -4px;
+      margin-top:-63px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .middle-bar {
+      width: 3px;
+      height: 150px;
+      background: #0000cc;
+    }
+
+  }
+
+  @media screen and (min-width: 768px) {
+    .node-md-action-input {
+      position: absolute;
+      margin-left: -40px;
+    }
+
+    .travel-button-action {
+      position: absolute;
+      margin-left: 5%;
+      margin-top: 2%;
+      background-color: #6666ff;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .node-md-action-input {
+      position: absolute;
+      margin-left: 90px;
+      margin-top: -60px;
+    }
+
+    .travel-button-action {
+      position: relative;
+      margin-left: 32%;
+      margin-top: -65%;
+      background-color: #6666ff;
+    }
+  }
+
+  .node-add-action {
+  }
+
+  .node-md-child{
+    margin-left: 7px;
+    zoom:0.88;
+  }
+
+  .edgechildServices
+  {
     position: relative;
-    width: 200px;
-    z-index: -100;
-    height: 10px;
-
+    top: 18px;
+    left:92px;
   }
-}
 
-@media screen and (max-width: 767px) {
-  .progress-line {
-    width: 25%;
-    margin-left: 25px;
-    z-index: 2;
+
+  .childservices{
     position: relative;
-    top: -20px;
-    height: 130px;
+    top:5px;
+    left:10px;
+
   }
-}
-
-@media screen and (min-width: 768px) {
-  .travel-button {
-    position: relative;
-    z-index: 4;
-    margin-left: 46%;
-    top: -48px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .travel-button {
-    z-index: 4;
-    margin-top: 60px;
-    margin-left: -12px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .middle-bar {
-    height: 3px;
-    background-color: #0000cc;
-    margin-left: -4px;
-    margin-top:-63px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .middle-bar {
-    width: 3px;
-    height: 150px;
-    background: #0000cc;
-  }
-
-}
-
-@media screen and (min-width: 768px) {
-  .node-md-action-input {
-    position: absolute;
-    margin-left: -40px;
-  }
-
-  .travel-button-action {
-    position: absolute;
-    margin-left: 5%;
-    margin-top: 2%;
-    background-color: #6666ff;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .node-md-action-input {
-    position: absolute;
-    margin-left: 90px;
-    margin-top: -60px;
-  }
-
-  .travel-button-action {
-    position: relative;
-    margin-left: 32%;
-    margin-top: -65%;
-    background-color: #6666ff;
-  }
-}
-
-.node-add-action {
-}
-
-.node-md-child{
-  margin-left: 13px;
-  zoom:0.90;
-}
-
-.edgechildServices
-{
-  position: relative;
-  top: 18px;
-  left:92px;
-}
-
-
-.childservices{
-  position: relative;
-  top:20px;
-  left:10px;
-
-}
-/* for tooltip*/
+  /* for tooltip*/

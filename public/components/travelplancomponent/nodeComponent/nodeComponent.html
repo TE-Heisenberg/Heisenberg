@@ -9,33 +9,39 @@
   </div>
   <div class="node-md-child"  ng-repeat="(key,value) in node.locationchildservices">
     <div class="wrapper">
-
-      <div class="ourtooltip" ng-if="!node.travelelement.childServices[key]">
-
       <!-- Below code is supposed to be changed according to change in ng-repeat -->
       <i class="material-icons childservices" ng-click="node.sendDetailsOfChild(node.currentnode,childId)">{{value.icons}}</i>
-
-      <div class="ourtooltip" ng-if="node.travelelement.childServices[childId]==''">
+      <div class="tooltip" ng-if="node.travelelement.childServices[key]=='' || !node.travelelement.childServices[key]">
         <!-- If that child service exist or not -->
-        Please select a {{childId}}
+        Please select a {{key}}
       </div>
-      <div class="ourtooltip" ng-if="node.travelelement.childServices[key]">
+      <div class="tooltip" ng-if="node.travelelement.childServices[key]">
         <!-- If that child service exist -->
-          <div ng-if="x.state==''">
-            Requested at {{x.requested.location}}
-          </div>
+        <div ng-if="key=='stay'">
           <div ng-if="x.state=='initial'">
             Please Fill {{key}} details
           </div>
           <div ng-if="x.state=='request'">
-            Requested at {{x.requested.location}}
+            Requested at {{x.requested.location}} on {{x.requested.checkinDate}}
           </div>
           <div ng-if="x.state=='select'">
-            Seclected at {{x.selected.location}}
+            Selected at {{x.selected.location}}  on {{x.selected.checkinDate}}
           </div>
-          <!-- When state is initial then empty tool tip box is shown. NEEDS TO BE IMPLEMENTED -->
         </div>
+        <div ng-if="key=='localTravel'">
+          <div ng-if="x.state=='initial'">
+            Please Fill {{key}} details
+          </div>
+          <div ng-if="x.state=='request'">
+            Requested from {{x.requested.source }} to {{x.requested.destination}} on {{x.requested.pickupDate}}  at {{x.requested.pickupTime}}
+          </div>
+          <div ng-if="x.state=='select'">
+            Selected from {{x.selected.source }} to {{x.selected.destination}} on {{x.selected.pickupDate}}  at {{x.selected.pickupTime}}
+          </div>
+        </div>
+        <!-- When state is initial then empty tool tip box is shown. NEEDS TO BE IMPLEMENTED -->
       </div>
     </div>
   </div>
+</div>
 </div>

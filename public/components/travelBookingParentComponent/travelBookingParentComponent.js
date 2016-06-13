@@ -61,7 +61,7 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
 
     console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types]);
 
-    travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails;
+    travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails.coExistServices;
 
     travelBookingParentCtrl.transitchildservices=mainService.serviceData[1].data.servicesDetails.coExistServices;
   }
@@ -160,7 +160,8 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
   travelBookingParentCtrl.goToNextElement = function () {
     console.log(" I am inside goToNextElement");
     if (travelBookingParentCtrl.ifLastElement()) {
-      $location.path('/searchResults');
+        mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id,travelBookingParentCtrl.travelobjectmain);
+      $location.path('/searchResults/'+travelBookingParentCtrl.travelobjectmain._id);
       // travelBookingParentCtrl.$router.navigate(['searchResult']);
     }
     else {
