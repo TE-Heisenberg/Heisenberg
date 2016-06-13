@@ -1,18 +1,22 @@
 {
 	"servicesDetails":
-	{
-		"stay":{
-			"icons": "hotel",
-			"displayName": "Stay"
-		},
-		"localTravel":{
-			"icons":"directions_car",
-			"displayName": "Local Travel"
-		}
-	},
+    {
+        "coExistServices":{
+            "stay":{
+                "icons": "hotel",
+                "displayName": "Stay"
+            },
+            "localTravel":{
+                "icons":"directions_car",
+                "displayName": "Local Travel"
+            }
+        },
+        "mutuallyExclusive": {}
+    },
   "essential": {
     "noDependencyData": {
       "location": {
+				"icons":"location_on",
         "mandatory": true,
         "displayName": "City",
         "id": "location",

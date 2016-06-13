@@ -590,15 +590,12 @@ angular.module('app').factory('mainService', function ($http, $q) {
          "type": "location",
          "essential": {
             "noDependencyData": {
-               "cityName": "Bangalore"
-            }
-            ,
+               "location": "Bangalore"
+            },
             "modesToSelectTheServices": {
                "basicServices": ["stay", "localTravel"]
             }
-
-         }
-         ,
+         },
          "childServices": {
             "stay": [
                {
