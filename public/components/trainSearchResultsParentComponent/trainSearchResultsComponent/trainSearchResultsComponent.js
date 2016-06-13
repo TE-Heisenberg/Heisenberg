@@ -7,7 +7,7 @@ app.component('trainSearchResultsComponent',{
   bindings:{
     filterType:'<',
     filterDetails:'<',
-    searchResults:'<'
+    list:'<'
   }
 });
 function trainSearchResultsController($http,$filter) {
@@ -16,13 +16,13 @@ function trainSearchResultsController($http,$filter) {
   trainSearchResults.range=300;
   trainSearchResults.check=false;
   trainSearchResults.sortIcon=true;
-  //
+//  trainSearchResults.list=data.trainResult;
+  trainSearchResults.data=trainSearchResults.list;
+//  trainSearchResults.filters=data.filters;
+  trainSearchResults.previousData=trainSearchResults.data;
   // $http.get('public/data/trainInfo.json').success(function(data){
   //
-  //     trainSearchResults.list=data.trainResult;
-  //     trainSearchResults.data=trainSearchResults.list;
-  //     trainSearchResults.filters=data.filters;
-  //     trainSearchResults.previousData=trainSearchResults.data;
+  //
   // });
 
 

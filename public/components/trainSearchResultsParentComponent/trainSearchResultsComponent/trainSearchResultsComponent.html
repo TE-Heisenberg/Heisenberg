@@ -6,9 +6,10 @@
       <md-grid-tile>
         <md-button class="md-primary" ng-click="trainSearchResults.reset()">Reset All</md-grid-tile>
     </md-grid-list>
-    <md-card ng-repeat="filter in trainSearchResults.filters">
+    <md-card ng-repeat="filter in trainSearchResults.filterType">
       <md-card-content>
-        <custom-input-box type='{{filter.type}}' id='{{filter.id}}' label='{{filter.label}}' specific-attr='filter.options' reflect-custom-input="trainSearchResults.reflectValue(keyString,value, id)" bind-data="" bind-data-key=""></custom-input-box>
+
+        <custom-input-box type='{{filter.type}}' id='{{filter.id}}' label="{{trainSearchResults.filterDetails[filter.id].displayName}}" specific-attr='trainSearchResults.filterDetails[filter.id].specificAttr' reflect-custom-input="trainSearchResults.reflectValue(keyString,value, id)" bind-data="" bind-data-key=""></custom-input-box>
       </md-card-content>
       <!-- <md-card-title>
                 <md-card-title-text>

@@ -455,7 +455,8 @@ var subFactories = {
       },
       getTrainSearchResults:function(){
         return $http.get('public/data/trainSearchResults.json');
-  calendarLabel:function(){
+      },
+    calendarLabel:function(){
     calendar ={};
     return  $http.get("public/data/landing/myTravelcalendar.config.json");
 
