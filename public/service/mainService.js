@@ -438,15 +438,29 @@ var subFactories = {
       return true;
     }
       },
-      getFlightServices:function(){
-        return $http.get('public/data/configjsons/flightServices.json');
-      },
-      getFlightSearchResults:function(){
-        return $http.get('public/data/flightSearchResults.json');
-      },
-      getHotelFilters:function () {
-        return $http.get('public/data/configjsons/hotelFilters.json');
-      },
+
+  getCurrentplan:function()
+  {
+    return  $http.get("public/data/landing/myPlans.json");
+  },
+  getWorklist:function()
+  {
+    return $http.get("public/data/landing/myworklist.json");
+  },
+    getFlightFilters: function(){
+      return $http.get("public/data/configjsons/flightServices.json");
+    },
+    getFlightSearchResults: function(){
+      return $http.get("http://172.23.238.208:8080/SearchResults/flight");
+    },
+    getHotelFilters:function () {
+      return $http.get("public/data/configjsons/hotelFilters.json");
+    },
+
+     getfavouriteList:function()
+     {
+       return $http.get("public/data/landing/myfavourites.json");
+     },
       getHotelSearchResults:function(){
         return $http.get('public/data/hotelSearchResults.json');
       },
@@ -456,11 +470,34 @@ var subFactories = {
       getTrainSearchResults:function(){
         return $http.get('public/data/trainSearchResults.json');
       },
-    calendarLabel:function(){
-    calendar ={};
-    return  $http.get("public/data/landing/myTravelcalendar.config.json");
 
-  }
+      currentplanLabels :function(){
+  currentplan ={};
+ return $http.get("public/data/landing/myPlans.config.json");
+},
+
+worklistLabels :function(){
+    worklist={};
+  return $http.get("public/data/landing/myWorklist.config.json");
+
+},
+
+favouriteLables :function(){
+
+     favourite={};
+  return $http.get("public/data/landing/myFavourites.config.json");
+
+ },
+
+
+      calendarLabel:function(){
+        calendar ={};
+        return  $http.get("public/data/landing/myTravelcalendar.config.json");
+      },
+
+      getFabButtons:function(){
+        return $http.get("public/data/landing/fabButton.config.json");
+      }
 
 };
 return subFactories;

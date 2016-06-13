@@ -18,8 +18,10 @@ angular.module('app')
         bindings: {
             $router: '<'
         },
-        $canActivate: function (mainService) {
-          return mainService.getPrerequisites().then(function (data) {
+        $canActivate: function (mainService,$nextInstruction) {
+          var tid=decodeURIComponent($nextInstruction.params.id);
+          console.log(tid);
+          return mainService.getPrerequisites(tid).then(function (data) {
             mainService.serviceData = data;
             return true;
           });
@@ -33,9 +35,10 @@ function searchResultComponent(mainService, $state, _) {
     //to-do: this travelPlanInitial uses the object which landing page and booking page uses
     // searchResultComponent.travelPlan = mainService.getTravelPlanObjectInitial();
     //to-do: this getTravelPlanObject gives a readymade object having all the services selected
-    searchResultComponent.travelPlan = mainService.getTravelPlanObject();
+    searchResultComponent.travelPlan = mainService.serviceData[2].components;
     var sequence = [];
     console.log(searchResultComponent.travelPlan);
+    console.log(_);
     _.map(searchResultComponent.travelPlan, function (travelPlan) {
         _.mapObject(travelPlan.childServices, function (val, key) {
             console.log("value", val);
@@ -57,7 +60,6 @@ function searchResultComponent(mainService, $state, _) {
             }
         });
     });
-
      searchResultComponent.locationchildservices=mainService.serviceData[0].data.servicesDetails;
      console.log(searchResultComponent.locationchildservices);
 
