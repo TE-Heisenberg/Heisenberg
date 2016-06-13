@@ -208,10 +208,21 @@
     background: #2a8ce2 !important;
 }
 
+.main_button{
+    vertical-align: middle;
+
+}
 .book_button{
-   /*position: absolute;*/
-   top: 0;
-   right: 0;
-   bottom:20;
-   left: 0;
+   vertical-align: middle;
+
+}
+
+.expense_button{
+    vertical-align: middle;
+
+}
+
+.configure_button{
+    vertical-align: middle;
+    
 }

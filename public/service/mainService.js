@@ -172,7 +172,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
 "modesToSelectTheServices": {
 "basicServices": ["stay", "localTravel"]
 }
-
+         },
 }
 ,
 "childServices": {
