@@ -9,7 +9,8 @@ angular.module('app')
         bindings:{
             value:'<',
             getModePref:'&',
-            getSeatPref:'&'
+            getSeatPref:'&',
+            getDisplayKeys :'&'
         },
         controller: childServicesController
     });
@@ -27,5 +28,10 @@ function childServicesController($scope){
 
       this.seatPref=function(value){
          return this.getSeatPref({value:value});
-      }
+      };
+
+      this.displayKeys=function(parentKey){
+        console.log("parent key is "+parentKey);
+         return this.getDisplayKeys({parentKey:parentKey});
+      };
 }

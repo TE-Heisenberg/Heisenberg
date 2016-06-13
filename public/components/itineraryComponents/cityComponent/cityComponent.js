@@ -7,7 +7,8 @@ angular.module('app')
         templateUrl:'public/components/itineraryComponents/cityComponent/cityComponent.html',
         controllerAs:'cityComponentCtrl',
         bindings:{
-            value:'<'
+            value:'<',
+            getDisplayKeys:'&'
         },
         controller: cityController
     });
@@ -15,4 +16,7 @@ angular.module('app')
 function cityController(){
     var cityComponentCtrl=this;
     cityComponentCtrl.data='hello';
+    cityComponentCtrl.displayKeyObject=cityComponentCtrl.getDisplayKeys({parentKey:'location'});
+    console.log("city component...................");
+    console.log(cityComponentCtrl.displayKeyObject);
 }

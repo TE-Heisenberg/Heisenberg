@@ -10,17 +10,16 @@
   <div class="node-md-child"  ng-repeat="(key,value) in node.locationchildservices">
     <div class="wrapper">
 
-      <div class="tooltip" ng-if="!node.travelelement.childServices[key]">
-    </child-icon-router-component>
+      <div class="ourtooltip" ng-if="!node.travelelement.childServices[key]">
 
       <!-- Below code is supposed to be changed according to change in ng-repeat -->
       <i class="material-icons childservices" ng-click="node.sendDetailsOfChild(node.currentnode,childId)">{{value.icons}}</i>
 
-      <div class="tooltip" ng-if="node.travelelement.childServices[childId]==''">
+      <div class="ourtooltip" ng-if="node.travelelement.childServices[childId]==''">
         <!-- If that child service exist or not -->
         Please select a {{childId}}
       </div>
-      <div class="tooltip" ng-if="node.travelelement.childServices[key]">
+      <div class="ourtooltip" ng-if="node.travelelement.childServices[key]">
         <!-- If that child service exist -->
           <div ng-if="x.state==''">
             Requested at {{x.requested.location}}

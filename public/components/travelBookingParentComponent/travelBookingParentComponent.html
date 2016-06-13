@@ -1,11 +1,25 @@
 <div layout="column">
     <div class="travel-plan-fixed">
-        <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"
-        edgetype="transit" locationchildservices="travelBookingParentCtrl.locationchildservices"
+      <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject"
+        nodetype="location"
+        edgetype="transit"
+        metadataoflocation="travelBookingParentCtrl.elementFields['location']"
+        metadataoftransit="travelBookingParentCtrl.elementFields['transit']"
+        currentselectedobj="travelBookingParentCtrl.currentSelectedObj"
+        selectedchildren="travelBookingParentCtrl.selectedChildren"
+        locationchildservices="travelBookingParentCtrl.locationchildservices"
         transitchildservices="travelBookingParentCtrl.transitchildservices"
         currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)"
         reflectselectedchild="travelBookingParentCtrl.reflectSelectedChild(selectedChildDetails)">
-        </travel-plan>
+      </travel-plan>
+        <!-- <travel-plan travelplanobject="travelBookingParentCtrl.travelPlanObject" nodetype="location"
+        edgetype="transit"
+
+        locationchildservices="travelBookingParentCtrl.locationchildservices"
+        transitchildservices="travelBookingParentCtrl.transitchildservices"
+        currentnodeedgebooking="travelBookingParentCtrl.currentnodeedge(value2)"
+        reflectselectedchild="travelBookingParentCtrl.reflectSelectedChild(selectedChildDetails)">
+        </travel-plan> -->
     </div>
 
     Before travel booking

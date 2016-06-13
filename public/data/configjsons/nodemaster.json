@@ -1,21 +1,25 @@
 {
 	"servicesDetails":
-	{
-		"stay":{
-			"icons": "hotel",
+    {
+        "coExistServices":{
+            "stay":{
+                "icons": "hotel",
 			"displayName": "Stay",
 			"chooseCaption": "Do you want Stay?"
 
-		},
-		"localTravel":{
-			"icons":"directions_car",
+            },
+            "localTravel":{
+                "icons":"directions_car",
 			"displayName": "Local Travel",
 			"chooseCaption": "Do you want Local Travel?"
-		}
-	},
+            }
+        },
+        "mutuallyExclusive": {}
+    },
   "essential": {
     "noDependencyData": {
       "location": {
+				"icons":"location_on",
         "mandatory": true,
         "displayName": "City",
         "id": "location",
@@ -198,8 +202,44 @@
             "railwayStations": "Railway Stations"
           }
         }
-      }
-    },
+      },
+			"location":{
+				"mandatory":false,
+				"id": "location",
+				"type": "checkBox",
+				"displayName": "Location:",
+				"specificAttr": {
+					"domainList": ["Pune", "Delhi", "Chennai", "Bengaluru", "Gurgaon"]
+				}
+    	},
+			"price":	{
+					"mandatory":false,
+					"id":"price",
+					"type":"rangeSlider",
+					"displayName":"Price:",
+					"specificAttr": {
+						          "floor": 2000,
+						        	"ceil": 10000,
+						        	"step": 1,
+						        	"noSwitching": true,
+											"endPointsTranslate": {
+												"prefix": "",
+												"postfix": ""
+											},
+											"leftSliderHandleTranslate": {
+												"prefix": "",
+												"postfix": ""
+											},
+
+											"rightSliderHandleTranslate": {
+												"prefix": "",
+												"postfix": ""
+											}
+			        }
+				}
+
+		}
+		,
     "localTravel": {
       "pickupPoint": {
         "mandatory": true,

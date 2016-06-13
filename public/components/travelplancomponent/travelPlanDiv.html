@@ -16,10 +16,9 @@
 
                     </div>
                     <div ng-if="travelelement.types == plan.edgetype">
-                        <edge-component travelelement="travelelement" transitchildservices="plan.transitchildservices" currentedge="$index" currentnodeedgetravel="plan.currentnodeedgetravel(clicked)" reflectselectedchild = "plan.reflectselectedchildwrapper(currentElement, currentElementIndex, selectedChild, metadata)"
-                         metadata="plan.metadataoflocation"
-
-                        ></edge-component>
+                        <edge-component travelelement="travelelement" transitchildservices="plan.transitchildservices" currentedge="$index" currentnodeedgetravel="plan.currentnodeedgetravel(currentElement,currentElementIndex,selectedChildren,metadata)"
+                        reflectselectedchild = "plan.reflectselectedchildwrapper(currentElement, currentElementIndex, selectedChild, metadata)"
+                         metadata="plan.metadataoftransit"></edge-component>
                     </div>
 
                 </div>

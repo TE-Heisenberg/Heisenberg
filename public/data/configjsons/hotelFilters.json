@@ -1,0 +1,18 @@
+[
+ {
+   "id":"price",
+   "type":"rangeSlider"
+ },
+ {
+   "id": "rating",
+   "type": "checkBox"
+ },
+ {
+   "id": "location",
+   "type": "checkBox"
+ },
+ {
+   "id": "amenities",
+   "type": "checkBox"
+ }
+]

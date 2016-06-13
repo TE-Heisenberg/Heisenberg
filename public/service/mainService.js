@@ -172,7 +172,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
 "modesToSelectTheServices": {
 "basicServices": ["stay", "localTravel"]
 }
-
+         },
 }
 ,
 "childServices": {
@@ -319,6 +319,23 @@ function travelPlanGetter(travelPlanid)
   });
   return deferred.promise;
 }
+function travelPlanUpdater(travelPlanid,travelPlanObject)
+{
+
+  console.log("in travelplan updater");
+  console.log(travelPlanid);
+  console.log(travelPlanObject);
+  var deferred=$q.defer();
+  $http.put("http://localhost:5432/travelPlan/crud/travelPlan/"+travelPlanid,travelPlanObject)
+  .success(function(data){
+    console.log("again in travelplan updater");
+    //console.log(data);
+    console.log(data);
+    deferred.resolve(data);
+  });
+  return deferred.promise;
+}
+
 var elementMasters = {};
 var nodeMaster = {};
 var edgeMaster = {};
@@ -382,6 +399,14 @@ var subFactories = {
     return deferred.promise;
 
   },
+  UpdateTravelPlanObject:function(tid,tpobject){
+    var deferred=$q.defer();
+    travelPlanUpdater(tid,tpobject).then(function(data){
+      deferred.resolve(data);
+    });
+    return deferred.promise;
+  },
+
   getTravelPlanObjectInitial: function() {
     return travelPlanObjectInitial;
   },
@@ -412,38 +437,35 @@ var subFactories = {
     else{
       return true;
     }
-  },
+      },
 
   getCurrentplan:function()
   {
     return  $http.get("public/data/landing/myPlans.json");
   },
-  currentplanLabels :function(){
-    currentplan ={};
-    return $http.get("public/data/landing/myPlans.config.json");
-  },
+      },
   getWorklist:function()
   {
     return $http.get("public/data/landing/myworklist.json");
   },
-  worklistLabels :function(){
 
-    return $http.get("public/data/landing/myWorklist.config.json");
-
-  },
-
+      },
+      getHotelFilters:function () {
   getfavouriteList:function()
   {
 
       return $http.get("public/data/landing/myfavourites.json");
   },
 
-  favouriteLables :function(){
-
-    favourite={};
-    return $http.get("public/data/landing/myFavourites.config.json");
-  },
-
+      },
+      getHotelSearchResults:function(){
+        return $http.get('public/data/hotelSearchResults.json');
+      },
+      getTrainFilters:function(){
+        return $http.get('public/data/configjsons/trainFilters.json');
+      },
+      getTrainSearchResults:function(){
+        return $http.get('public/data/trainSearchResults.json');
   calendarLabel:function(){
     calendar ={};
     return  $http.get("public/data/landing/myTravelcalendar.config.json");

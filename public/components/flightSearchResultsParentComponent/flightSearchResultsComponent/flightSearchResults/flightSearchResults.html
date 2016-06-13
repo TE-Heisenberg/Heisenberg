@@ -1,3 +1,4 @@
+
 <md-card flex-xs="50" ng-model="flightSearchResult.flightSearchResult">
     <div layout="column">
         <div layout="row" layout="center center">
@@ -5,13 +6,13 @@
                 <img ng-src="public/assets/images/{{flightSearchResult.flightSearchResult.imagePath}}" alt="{{flightSearchResult.flightSearchResult.imagePath}}">
             </div>
             <div layout="column" flex="10" layout-align="center none" class="text-align-right">
-                <h4>{{flightSearchResult.flightSearchResult.arrivalTime}}</h4>  
+                <h4>{{flightSearchResult.flightSearchResult.arrivalTime}}</h4>
                 <div>{{flightSearchResult.from}}</div>
             </div>
             <div layout="column" flex="10" layout-align="center center" class="text-align-left">
                 <h3 class="material-icons md-36">trending_flat</h3>
             </div>
-            <div layout="column" flex="10" layout-align="center none" class="text-align-left">    
+            <div layout="column" flex="10" layout-align="center none" class="text-align-left">
                 <h4>{{flightSearchResult.flightSearchResult.departureTime}}</h4>
                 <div>{{flightSearchResult.to}}</div>
             </div>
@@ -50,14 +51,14 @@
                             <i class="material-icons md-16 light-blue-font" flex="10">room_service</i>
                             <div flex="30" flex-offset="5" layout="column">
                                 <div>{{flightSearchResult.mealsInformation.displayName}}</div>
-                                <div>{{flightSearchResult.mealsInformation.information}}</div>                                
-                            </div>                            
+                                <div>{{flightSearchResult.mealsInformation.information}}</div>
+                            </div>
                         </div>
                         <div layout="row">
                             <i class="material-icons md-16 light-blue-font">work</i>
                             <div flex="30" flex-offset="5" layout="column">
                                 <div>{{flightSearchResult.baggageInformation.displayName}}</div>
-                                <div>{{flightSearchResult.baggageInformation.information}}</div>                                
+                                <div>{{flightSearchResult.baggageInformation.information}}</div>
                             </div>
                         </div>
                     </div>
