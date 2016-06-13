@@ -24,7 +24,9 @@ function myCurrentPlanController($scope,$http,$mdDialog,mainService) {
     currentplan.planSubHeaderCompleted=response.subHeadersDisplayName.completed;
     currentplan.planSubHeaderCurrent=response.subHeadersDisplayName.current;
     currentplan.planSubHeaderFuture=response.subHeadersDisplayName.future;
-   });
+  });
+  
+
   currentplan.showAlert=function (ev,x) {
   console.log("in dialog");
     console.log("In click");

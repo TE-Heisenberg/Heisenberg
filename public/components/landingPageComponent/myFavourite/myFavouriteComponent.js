@@ -15,8 +15,8 @@ app.component("myFavourite",{
 function myFavouriteController($http,mainService){
   // $scope.fav=function(locality){
   //   $scope.locality = response[locality].data;
-
-  //};
+  //
+  // };
   var favourite =this;
   var response=mainService.favouriteLables();
   response.success(function (response) {

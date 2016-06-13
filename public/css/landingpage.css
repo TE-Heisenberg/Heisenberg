@@ -4,13 +4,13 @@
     }
 
     .main-button-fixed {
-        position: absolute;
+        position: fixed;
         /*margin-top: 350px;*/
         /*width: 100%;
         margin-left: 43%;*/
         /*z-index: 0;*/
-        top:75%;
-        left:93%;
+        top:60%;
+        left:95%;
     }
 
     .main-toolbar{
@@ -224,5 +224,5 @@
 
 .configure_button{
     vertical-align: middle;
-    
+
 }

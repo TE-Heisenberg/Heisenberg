@@ -1,0 +1,23 @@
+[
+ {
+   "id":"price",
+   "type":"rangeSlider"
+ },
+ {
+   "id":"departure_time",
+   "type":"rangeSlider",
+ },
+ {
+ "id":"arrival_time",
+ "type":"rangeSlider"
+},
+{
+ "id":"departure_station",
+ "type":"checkbox"
+},
+{
+ "id":"arrival_station",
+ "type":"checkbox"
+}
+
+]

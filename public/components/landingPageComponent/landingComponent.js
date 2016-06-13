@@ -18,7 +18,7 @@ angular.module("app").component("landingComponent", {
 
 
 });
-function landingController($scope, $http, $location) {
+function landingController($scope, $http, $location,mainService) {
 
    var landing = this;
 
@@ -31,29 +31,50 @@ function landingController($scope, $http, $location) {
       console.log("alert---" + response.alertdata);
    });
 
-   $http.get("public/data/landing/myplans.json").success(function (response) {
-      // $scope.finalData=response.data;
-      // console.log($scope.finalData);
-      $scope.completed = response.completed.plan;
-      $scope.current = response.current.plan;
-      $scope.future = response.future.plan;
+   // $http.get("public/data/landing/myplans.json").success(function (response) {
+   //    // $scope.finalData=response.data;
+   //    // console.log($scope.finalData);
+   //    $scope.completed = response.completed.plan;
+   //    $scope.current = response.current.plan;
+   //    $scope.future = response.future.plan;
+   //
+   // });
+   var response =mainService.getCurrentplan();
+  response.success(function (data)
+  {
+    $scope.completed = data.completed.plan;
+      $scope.current = data.current.plan;
+      $scope.future = data.future.plan;
 
-   });
+  });
 
-   $http.get("public/data/landing/myworklist.json").success(function (response) {
-      $scope.messages = response.what;
+  response =mainService.getWorklist();
+  response.success(function (data)
+  {
+  $scope.messages = data.what;
+  });
 
-   });
 
-   $http.get("public/data/landing/myfavourites.json").success(function (response) {
+  //  $http.get("public/data/landing/myfavourites.json").success(function (response) {
+   //
+  //     $scope.locality = response.local.data;
+  //     console.log("fav-----" + $scope.locality);
+  //     $scope.fav = function (value) {
+  //        $scope.locality = response[value].data;
+  //     };
+   //
+  //     // var finalJson={};
+  //     // $scope.finalJson=$scope.locality;
+  //  });
+  response =mainService.getfavouriteList();
+  response.success(function (data)
+  {
+    $scope.locality = data.local.data;
+       console.log("fav-----" + $scope.locality);
+       $scope.fav = function (value) {
+          $scope.locality = data[value].data;
+       };
 
-      $scope.locality = response.local.data;
-      console.log("fav-----" + $scope.locality);
-      $scope.fav = function (value) {
-         $scope.locality = response[value].data;
-      };
+  });
 
-      // var finalJson={};
-      // $scope.finalJson=$scope.locality;
-   });
-};
+}

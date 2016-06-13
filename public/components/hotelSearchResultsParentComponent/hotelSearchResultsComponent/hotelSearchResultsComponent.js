@@ -2,7 +2,12 @@ angular.module('app')
     .component('hotelSearchResultsComponent', {
         templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsComponent/hotelSearchResultsComponent.html',
         controllerAs: "hotelSearchResults",
-        controller: hotelSearchResultsController
+        controller: hotelSearchResultsController,
+        bindings:{
+          filterType:'<',
+          filterDetails:'<',
+          searchResults:'<'
+        }
     });
 var setObj = function (obj, keyString, value) {
     console.log("Before Replace ", keyString)
@@ -34,14 +39,14 @@ function deleteDynamicKeyValuePair(obj, keyString) {
 function hotelSearchResultsController($http, $rootScope) {
     var hotelSearchResults = this;
     hotelSearchResults.$onInit = function () {
-        $http.get('public/data/hotelSearchResults.json').success(function (searchResults) {
-            hotelSearchResults.searchResults = searchResults;
-        });
-        $http.get('public/data/hotelSearchResultsFilter.json').success(function (data) {
-            hotelSearchResults.filters = data;
-            hotelSearchResults.filters.forEach(function (filter) {
-            });
-        });
+        // $http.get('public/data/hotelSearchResults.json').success(function (searchResults) {
+        //     hotelSearchResults.searchResults = searchResults;
+        // });
+        // $http.get('public/data/hotelSearchResultsFilter.json').success(function (data) {
+        //     hotelSearchResults.filters = data;
+        //     hotelSearchResults.filters.forEach(function (filter) {
+        //     });
+        // });
         hotelSearchResults.selectedFilters = {};
         hotelSearchResults.checkBoxInput = {};
         hotelSearchResults.rangeSliderInput = {};

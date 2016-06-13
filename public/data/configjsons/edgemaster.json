@@ -109,17 +109,19 @@
         "mandatory": true,
         "displayName": "Number of Hops",
         "id": "numberOfHops",
-        "type": "slider",
+        "type": "checkBox",
         "specificAttr": {
-          "min": 0,
-          "max": 15
+          "domainList": [0,1,2]
         }
       },
       "departureTime": {
         "mandatory": false,
         "displayName": "Departure Time",
         "id": "departureTime",
-        "type": "time"
+        "type": "time",
+        "specificAttr": {
+          "domainList": ["00-06", "06-12", "12-18", "18-24"]
+        }
       },
       "airlines": {
         "mandatory": false,
@@ -127,11 +129,141 @@
         "id": "airlines",
         "type": "singleSelect",
         "specificAttr": {
-          "domainList": ["Air Asia", "Air Costa", "Jet"]
+          "domainList": ["AIR INDIA", "INDIGO", "JET AIRWAYS", "SPICEJET", "TRUJET", "VISTARA"]
         }
+      },
+      "FareType":{
+        "mandatory":false,
+        "displayName":"FARE TYPE",
+    		"id": "FareType",
+    		"type": "checkBox",
+    		"specificAttr": {
+    			"domainList": ["REFUNDABLE", "NON REFUNDABLE"]
+    		}
+      },
+      "price":{
+        "mandatory":false,
+        "displayName":"Price",
+        "id":"price",
+        "type":"rangeSlider",
+        "specificAttr":{
+                    "floor": 2000,
+                    "ceil": 10000,
+                    "step": 1,
+                    "noSwitching": true,
+                    "endPointsTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    },
+                    "leftSliderHandleTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    },
 
+                    "rightSliderHandleTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    }
+            }
       }
-    }
-  }
+    },
+  "train":{
+     "price":{
+       "mandatory": false,
+       "displayName": "Price",
+       "id": "price",
+       "type": "rangeSlider",
+       "specificAttr": {
+                    "floor": 300,
+                    "ceil": 5000,
+                    "step": 1,
+                    "noSwitching": true,
+                    "endPointsTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    },
+                    "leftSliderHandleTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    },
 
+                    "rightSliderHandleTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    }
+                  }
+     },
+     "departureTime":{
+       "mandatory":false,
+       "displayName":"Departure Time",
+       "id":"departure_time",
+       "type":"rangeSlider",
+        "specificAttr":{
+          "floor": 0,
+                     "ceil": 24,
+                     "step": 1,
+                     "noSwitching": true,
+                     "endPointsTranslate": {
+                       "prefix": "",
+                       "postfix": ""
+                     },
+                     "leftSliderHandleTranslate": {
+                       "prefix": "",
+                       "postfix": ""
+                     },
+
+                     "rightSliderHandleTranslate": {
+                       "prefix": "",
+                       "postfix": ""
+                     }
+        }
+     },
+     "arrivalTime":{
+       "mandatory":false,
+       "displayName":"Arrival Time",
+       "id":"arrival_time",
+       "type":"rangeSlider",
+      "specificAttr":{
+        "floor": 0,
+                    "ceil": 24,
+                    "step": 1,
+                    "noSwitching": true,
+                    "endPointsTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    },
+                    "leftSliderHandleTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    },
+
+                    "rightSliderHandleTranslate": {
+                      "prefix": "",
+                      "postfix": ""
+                    }
+      }
+     },
+     "departureStation":{
+       "mandatory":false,
+       "displayName":"Departure Station",
+       "id":"departure_station",
+       "type":"checkbox",
+      "specificAttr":{
+        "domainList": ["Banglore city JN","Yeshwanthpur","Yellanka"]
+      }
+     },
+     "arrivalStation":{
+       "mandatory":false,
+       "displayName":"Arrival Station",
+       "id":"arrival_station",
+       "type":"checkbox",
+      "specificAttr":{
+        "domainList": ["Kacheguda JN","Secundrabad"]
+      }
+     }
+
+
+   }
+
+ }
 }

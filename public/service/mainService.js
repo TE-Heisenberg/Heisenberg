@@ -437,28 +437,42 @@ var subFactories = {
     else{
       return true;
     }
+      },
+
+  getCurrentplan:function()
+  {
+    return  $http.get("public/data/landing/myPlans.json");
   },
-  currentplanLabels :function(){
-    currentplan ={};
-    return $http.get("public/data/landing/myPlans.config.json");
-  },
-
-  worklistLabels :function(){
-    worklist={};
-    return $http.get("public/data/landing/myWorklist.config.json");
-
-  },
-
-  favouriteLables :function(){
-
-    favourite={};
-    return $http.get("public/data/landing/myFavourites.config.json");
+      },
+  getWorklist:function()
+  {
+    return $http.get("public/data/landing/myworklist.json");
   },
 
+      },
+      getHotelFilters:function () {
+  getfavouriteList:function()
+  {
+
+      return $http.get("public/data/landing/myfavourites.json");
+  },
+
+      },
+      getHotelSearchResults:function(){
+        return $http.get('public/data/hotelSearchResults.json');
+      },
+      getTrainFilters:function(){
+        return $http.get('public/data/configjsons/trainFilters.json');
+      },
+      getTrainSearchResults:function(){
+        return $http.get('public/data/trainSearchResults.json');
   calendarLabel:function(){
     calendar ={};
     return  $http.get("public/data/landing/myTravelcalendar.config.json");
+  },
 
+  getFabButtons:function(){
+    return $http.get("public/data/landing/fabButton.config.json");
   }
 
 };

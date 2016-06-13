@@ -1,10 +1,25 @@
 angular.module('app').component("trainSearchResultsParentComponent", {
     templateUrl: 'public/components/trainSearchResultsParentComponent/trainSearchResultsParentComponent.html',
     controllerAs: "trainSearchResultsParent",
-    controller: trainSearchResultsParentController
+    controller: trainSearchResultsParentController,
+    $canActivate:function(mainService){
+  		mainService.getTrainFilters().then(function(data){
+  			mainService.filter_type=data;
+  		});
+  		mainService.getEdgeMaster().then(function(data){
+  			mainService.filter_details=data;
+  		});
+  		mainService.getTrainSearchResults().then(function(data){
+  			mainService.searchResults=data;
+  		});
+  		return true;
+  	}
 });
-function trainSearchResultsParentController($http, $rootScope) {
+function trainSearchResultsParentController($http, $rootScope,mainService) {
     var trainSearchResultsParent = this;
+    trainSearchResultsParent.filter_type=mainService.filter_type.data;
+  	trainSearchResultsParent.filter_details=mainService.filter_details.data.services.flight;
+  	trainSearchResultsParent.searchResults=mainService.searchResults.data;
     trainSearchResultsParent.travelPlanObject = [
         {
             type: "location",
