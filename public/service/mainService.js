@@ -471,6 +471,25 @@ var subFactories = {
         return $http.get('public/data/trainSearchResults.json');
       },
 
+      currentplanLabels :function(){
+  currentplan ={};
+ return $http.get("public/data/landing/myPlans.config.json");
+},
+
+worklistLabels :function(){
+    worklist={};
+  return $http.get("public/data/landing/myWorklist.config.json");
+
+},
+
+favouriteLables :function(){
+
+     favourite={};
+  return $http.get("public/data/landing/myFavourites.config.json");
+
+ },
+
+
       calendarLabel:function(){
         calendar ={};
         return  $http.get("public/data/landing/myTravelcalendar.config.json");
