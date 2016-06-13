@@ -319,6 +319,23 @@ function travelPlanGetter(travelPlanid)
   });
   return deferred.promise;
 }
+function travelPlanUpdater(travelPlanid,travelPlanObject)
+{
+
+  console.log("in travelplan updater");
+  console.log(travelPlanid);
+  console.log(travelPlanObject);
+  var deferred=$q.defer();
+  $http.put("http://localhost:5432/travelPlan/crud/travelPlan/"+travelPlanid,travelPlanObject)
+  .success(function(data){
+    console.log("again in travelplan updater");
+    //console.log(data);
+    console.log(data);
+    deferred.resolve(data);
+  });
+  return deferred.promise;
+}
+
 var elementMasters = {};
 var nodeMaster = {};
 var edgeMaster = {};
@@ -382,6 +399,14 @@ var subFactories = {
     return deferred.promise;
 
   },
+  UpdateTravelPlanObject:function(tid,tpobject){
+    var deferred=$q.defer();
+    travelPlanUpdater(tid,tpobject).then(function(data){
+      deferred.resolve(data);
+    });
+    return deferred.promise;
+  },
+
   getTravelPlanObjectInitial: function() {
     return travelPlanObjectInitial;
   },

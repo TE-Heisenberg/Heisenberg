@@ -38,6 +38,7 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
     console.log(travelBookingParentCtrl.elementFields);
     console.log(" I am inside on init");
     // travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObjectInitial();
+    travelBookingParentCtrl.travelobjectmain=mainService.serviceData[2];
     console.log(mainService.serviceData[2].components);
     travelBookingParentCtrl.travelPlanObject = mainService.serviceData[2].components;
     console.log(travelBookingParentCtrl.travelPlanObject);
@@ -58,7 +59,7 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
 
 
 
-    console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
+    console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types]);
 
     travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails;
 
@@ -166,7 +167,10 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
       console.log(travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj));
 
       travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) + 1];
+      mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id,travelBookingParentCtrl.travelobjectmain);
+
       console.log("travelBookingParentCtrl.currentSelectedObj");
+
       console.log(travelBookingParentCtrl.currentSelectedObj);
 
       // So that the earlier selected child services are also shown on click of next button
@@ -201,8 +205,8 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
       console.log("Inside foreach of children list initial");
       if (travelBookingParentCtrl.currentSelectedObj.childServices[childId] == undefined) {
         console.log("I am going to intialize childServices");
-        console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
-        travelBookingParentCtrl.currentSelectedObj.childServices[childId] = travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type].servicesIntializer[childId];
+        console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types]);
+        travelBookingParentCtrl.currentSelectedObj.childServices[childId] = travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types].servicesIntializer[childId];
       }
     });
   }

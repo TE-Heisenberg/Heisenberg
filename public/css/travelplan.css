@@ -25,7 +25,7 @@
   -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
 }
 
-.wrapper .tooltip {
+.wrapper .ourtooltip {
   background: #1496bb;
   bottom: 100%;
   color: #fff;
@@ -55,7 +55,7 @@
 }
 
 /* This bridges the gap so you can mouse into the tooltip without it disappearing */
-.wrapper .tooltip:before {
+.wrapper .ourtooltip:before {
   bottom: -20px;
   content: " ";
   display: block;
@@ -65,7 +65,7 @@
 }
 
 /* CSS Triangles - see Trevor's post */
-.wrapper .tooltip:after {
+.wrapper .ourtooltip:after {
   border-left: solid transparent 10px;
   border-right: solid transparent 10px;
   border-top: solid #1496bb 10px;
@@ -78,7 +78,7 @@
   width: 0;
 }
 
-.wrapper:hover .tooltip {
+.wrapper:hover .ourtooltip {
   opacity: 1;
   pointer-events: auto;
   -webkit-transform: translateY(0px);
@@ -89,11 +89,11 @@
 }
 
 /* IE can just show/hide with no transition */
-.lte8 .wrapper .tooltip {
+.lte8 .wrapper .ourtooltip {
   display: none;
 }
 
-.lte8 .wrapper:hover .tooltip {
+.lte8 .wrapper:hover .ourtooltip {
   display: block;
 }
 
@@ -284,8 +284,6 @@ margin-top: 50px;
     margin-top: 2%;
     cursor: pointer;
     position: relative;
-    bottom: 100px;
-
   }
 
   .node-add-action {
@@ -334,7 +332,7 @@ font-size: 16px !important;
 
 @media screen and (min-width: 768px) {
   .progress-line {
-    top: -27px;
+    top: 84px;
     position: relative;
     width: 200px;
     z-index: -100;
@@ -433,4 +431,11 @@ font-size: 16px !important;
   left:92px;
 }
 
+
+.childservices{
+  position: relative;
+  top:20px;
+  left:10px;
+
+}
 /* for tooltip*/
