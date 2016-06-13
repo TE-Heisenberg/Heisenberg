@@ -413,15 +413,29 @@ var subFactories = {
       return true;
     }
   },
+
+  getCurrentplan:function()
+  {
+    return  $http.get("public/data/landing/myPlans.json");
+  },
   currentplanLabels :function(){
     currentplan ={};
     return $http.get("public/data/landing/myPlans.config.json");
   },
-
+  getWorklist:function()
+  {
+    return $http.get("public/data/landing/myworklist.json");
+  },
   worklistLabels :function(){
-    worklist={};
+
     return $http.get("public/data/landing/myWorklist.config.json");
 
+  },
+
+  getfavouriteList:function()
+  {
+
+      return $http.get("public/data/landing/myfavourites.json");
   },
 
   favouriteLables :function(){
@@ -433,7 +447,10 @@ var subFactories = {
   calendarLabel:function(){
     calendar ={};
     return  $http.get("public/data/landing/myTravelcalendar.config.json");
+  },
 
+  getFabButtons:function(){
+    return $http.get("public/data/landing/fabButton.config.json");
   }
 
 };

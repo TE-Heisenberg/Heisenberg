@@ -27,10 +27,17 @@ app.component("configureButton",{
   controllerAs:"configureButton",
   controller: configureButtonController
 });
-function mainButtonsController(){
+function mainButtonsController($mdDialog, $mdMedia,mainService){
   var button=this;
+
+  response=mainService.getFabButtons();
+  response.success(function (data) {
+   button.name = data.menu;
+
+   });
+
 }
-function bookButtonController($mdDialog, $mdMedia){
+function bookButtonController($mdDialog, $mdMedia,mainService){
   var bookButton=this;
 
   bookButton.showBookOptions=function(ev){
@@ -44,12 +51,30 @@ function bookButtonController($mdDialog, $mdMedia){
 
        });
   };
+
+  var response=mainService.getFabButtons();
+  response.success(function (data) {
+    bookButton.name = data.book;
+
+   });
+
+
 }
-function expenseButtonController(){
-  var expense=this;
+function expenseButtonController($mdDialog, $mdMedia,mainService){
+  var expenseButton=this;
+  response=mainService.getFabButtons();
+  response.success(function (data) {
+    expenseButton.name = data.expense;
+
+   });
 }
 
-function configureButtonController(){
-  var Configure=this;
+function configureButtonController($mdDialog, $mdMedia,mainService){
+  var configureButton=this;
 
+       response=mainService.getFabButtons();
+      response.success(function (data) {
+        configureButton.name = data.configure;
+
+       });
 }
