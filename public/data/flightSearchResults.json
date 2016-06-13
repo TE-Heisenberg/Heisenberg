@@ -5,7 +5,7 @@
 		"arrivalTime": "05:05",
 		"departureTime": "17:45",
 		"duration": "12:40",
-		"price": "$4500",
+		"price": "4500",
 		"stops":1,
 		"fareType":"REFUNDABLE"
 	}, {
@@ -14,7 +14,7 @@
 		"arrivalTime": "14:05",
 		"departureTime": "24:45",
 		"duration": "10:40",
-		"price": "$4234",
+		"price": "4234",
 		"stops":2,
 		"fareType":"REFUNDABLE"
 	}, {
@@ -23,7 +23,7 @@
 		"arrivalTime": "03:15",
 		"departureTime": "17:45",
 		"duration": "14:30",
-		"price": "$5500",
+		"price": "5500",
 		"stops":1,
 		"fareType":"NON REFUNDABLE"
 	}, {
@@ -32,7 +32,7 @@
 		"arrivalTime": "15:05",
 		"departureTime": "20:45",
 		"duration": "05:30",
-		"price": "$4599",
+		"price": "4599",
 		"stops":0,
 		"fareType":"REFUNDABLE"
 	}, {
@@ -41,7 +41,7 @@
 		"arrivalTime": "22:05",
 		"departureTime": "05:45",
 		"duration": "07:30",
-		"price": "$4500",
+		"price": "4500",
 		"stops":2,
 		"fareType":"NON REFUNDABLE"
 	}, {
@@ -50,7 +50,7 @@
 		"arrivalTime": "20:05",
 		"departureTime": "03:45",
 		"duration": "07:30",
-		"price": "$5999",
+		"price": "5999",
 		"stops":1,
 		"fareType":"REFUNDABLE"
 	}

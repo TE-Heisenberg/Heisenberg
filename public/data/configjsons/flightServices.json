@@ -1,0 +1,23 @@
+[
+    {
+      "id":"price",
+      "type":"rangeSlider"
+    }
+    ,
+    {
+      "id": "numberOfHops",
+      "type": "checkBox"
+    },
+    {
+      "id": "departureTime",
+      "type": "checkBox"
+    },
+    {
+      "id": "airlines",
+      "type": "checkBox"
+    },
+    {
+      "id": "FareType",
+      "type": "checkBox"
+    }
+]

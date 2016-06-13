@@ -760,6 +760,24 @@ angular.module('app').factory('mainService', function ($http, $q) {
          else {
             return true;
          }
+      },
+      getFlightServices:function(){
+        return $http.get('public/data/configjsons/flightServices.json');
+      },
+      getFlightSearchResults:function(){
+        return $http.get('public/data/flightSearchResults.json');
+      },
+      getHotelFilters:function () {
+        return $http.get('public/data/configjsons/hotelFilters.json');
+      },
+      getHotelSearchResults:function(){
+        return $http.get('public/data/hotelSearchResults.json');
+      },
+      getTrainFilters:function(){
+        return $http.get('public/data/configjsons/trainFilters.json');
+      },
+      getTrainSearchResults:function(){
+        return $http.get('public/data/trainSearchResults.json');
       }
 
    }

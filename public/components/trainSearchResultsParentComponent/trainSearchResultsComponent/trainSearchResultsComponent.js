@@ -3,7 +3,12 @@ app.component('trainSearchResultsComponent',{
   templateUrl:'public/components/trainSearchResultsParentComponent/trainSearchResultsComponent/trainSearchResultsComponent.html',
   controllerAs:'trainSearchResults',
   controller:trainSearchResultsController
-
+  ,
+  bindings:{
+    filterType:'<',
+    filterDetails:'<',
+    searchResults:'<'
+  }
 });
 function trainSearchResultsController($http,$filter) {
   trainSearchResults=this;
@@ -11,14 +16,14 @@ function trainSearchResultsController($http,$filter) {
   trainSearchResults.range=300;
   trainSearchResults.check=false;
   trainSearchResults.sortIcon=true;
-
-  $http.get('public/data/trainInfo.json').success(function(data){
-
-      trainSearchResults.list=data.trainResult;
-      trainSearchResults.data=trainSearchResults.list;
-      trainSearchResults.filters=data.filters;
-      trainSearchResults.previousData=trainSearchResults.data;
-  });
+  //
+  // $http.get('public/data/trainInfo.json').success(function(data){
+  //
+  //     trainSearchResults.list=data.trainResult;
+  //     trainSearchResults.data=trainSearchResults.list;
+  //     trainSearchResults.filters=data.filters;
+  //     trainSearchResults.previousData=trainSearchResults.data;
+  // });
 
 
 
