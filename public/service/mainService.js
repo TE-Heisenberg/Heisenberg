@@ -443,21 +443,24 @@ var subFactories = {
   {
     return  $http.get("public/data/landing/myPlans.json");
   },
-      },
   getWorklist:function()
   {
     return $http.get("public/data/landing/myworklist.json");
   },
+    getFlightFilters: function(){
+      return $http.get("public/data/configjsons/flightServices.json");
+    },
+    getFlightSearchResults: function(){
+      return $http.get("http://172.23.238.208:8080/SearchResults/flight");
+    },
+    getHotelFilters:function () {
+      return $http.get("public/data/configjsons/hotelFilters.json");
+    },
 
-      },
-      getHotelFilters:function () {
-  getfavouriteList:function()
-  {
-
-      return $http.get("public/data/landing/myfavourites.json");
-  },
-
-      },
+     getfavouriteList:function()
+     {
+       return $http.get("public/data/landing/myfavourites.json");
+     },
       getHotelSearchResults:function(){
         return $http.get('public/data/hotelSearchResults.json');
       },
@@ -466,14 +469,16 @@ var subFactories = {
       },
       getTrainSearchResults:function(){
         return $http.get('public/data/trainSearchResults.json');
-  calendarLabel:function(){
-    calendar ={};
-    return  $http.get("public/data/landing/myTravelcalendar.config.json");
-  },
+      },
 
-  getFabButtons:function(){
-    return $http.get("public/data/landing/fabButton.config.json");
-  }
+      calendarLabel:function(){
+        calendar ={};
+        return  $http.get("public/data/landing/myTravelcalendar.config.json");
+      },
+
+      getFabButtons:function(){
+        return $http.get("public/data/landing/fabButton.config.json");
+      }
 
 };
 return subFactories;

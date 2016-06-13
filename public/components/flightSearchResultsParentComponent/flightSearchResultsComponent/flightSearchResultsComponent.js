@@ -14,6 +14,8 @@ angular.module('app')
 function flightSearchResultsController($http){
     var flightSearchResults= this;
 
+	 console.log("ppppppppppppppp");
+	 console.log(flightSearchResults.searchResults);
     flightSearchResults.$onInit= function(){
 
             //flightSearchResults.searchResults= searchResults;

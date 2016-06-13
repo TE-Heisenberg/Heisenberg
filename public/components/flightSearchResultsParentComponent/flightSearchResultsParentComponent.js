@@ -3,14 +3,17 @@ angular.module('app').component("flightSearchResultsParentComponent",{
 	controllerAs:"flightSearchResultsParent",
 	controller: flightSearchResultsParentController,
 	$canActivate:function(mainService){
-		mainService.getFlightServices().then(function(data){
+
+		mainService.getFlightFilters().then(function(data){
 			mainService.filter_type=data;
 		});
 		mainService.getEdgeMaster().then(function(data){
-			mainService.filter_details=data;
+			mainService.filter_details=data.data;
 		});
 		mainService.getFlightSearchResults().then(function(data){
-			mainService.searchResults=data;
+			mainService.searchResults=data.data;
+			console.log("data aa raha h");
+			console.log(mainService.searchResults);
 		});
 		return true;
 	}
@@ -18,9 +21,10 @@ angular.module('app').component("flightSearchResultsParentComponent",{
 function flightSearchResultsParentController($http,$rootScope,mainService){
   var flightSearchResultsParent=this;
 	flightSearchResultsParent.filter_type=mainService.filter_type.data;
-	flightSearchResultsParent.filter_details=mainService.filter_details.data.services.flight;
-	flightSearchResultsParent.searchResults=mainService.searchResults.data;
-	// console.log(flightSearchResultsParent.filters);
+	flightSearchResultsParent.filter_details=mainService.filter_details.services.flight;
+	flightSearchResultsParent.searchResults=mainService.searchResults;
+	console.log("*****************");
+  console.log(flightSearchResultsParent.searchResults);
 	flightSearchResultsParent.travelPlanObject = [
 		{ type:"location",
 		cityName:"Bangalore"
