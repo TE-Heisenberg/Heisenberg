@@ -10,5 +10,7 @@ app.component('resultsComponent',{
 function resultComponentController() {
   resultComponent=this;
   resultComponent.showbutton=true;
-
+  resultComponent.showButtonName="ShowDetails";
+  resultComponent.hideButtonName="HideDetails";
+  resultComponent.selectButtonName="Select";
 };

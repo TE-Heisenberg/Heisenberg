@@ -2,9 +2,9 @@
 
   <div id="sidebar" hide-sm hide-xs flex="20">
     <md-grid-list md-cols=2 md-row-height="4:1" class="det_header">
-      <md-grid-tile>Filter results</md-grid-tile>
+      <md-grid-tile></md-grid-tile>
       <md-grid-tile>
-        <md-button class="md-primary" ng-click="localTravelResults.reset()">Reset All</md-grid-tile>
+        <md-button class="md-primary" ng-click="localTravelResults.reset()">{{localTravelResults.functionName}}</md-grid-tile>
     </md-grid-list>
     <md-card ng-repeat="filter in localTravelResults.filterType">
       <md-card-content>
@@ -54,7 +54,7 @@
     </md-grid-list> -->
 
     <md-card ng-if="localTravelResults.data.length==0">
-      <center>No train runs on the filters you have applied. <br> Please modify the filters.
+      <center>{{localTravelResults.message}}
       </center>
     </md-card>
     <md-card class="animate-repeat" ng-repeat="one in localTravelResults.data | orderBy:localTravelResults.myorder">

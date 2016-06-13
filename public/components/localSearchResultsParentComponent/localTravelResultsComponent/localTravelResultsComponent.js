@@ -8,16 +8,17 @@ app.component('localTravelResultsComponent',{
     filterDetails:'<',
     list:'<'
   }
-
 });
 function localTravelResultsController($http,$filter) {
   localTravelResults=this;
+  localTravelResults.functionName="Reset All";
+  localTravelResults.message="No train runs on the filters you have applied. Please modify the filters.";
   // localTravelResults.myorder="before";
   // localTravelResults.range=300;
   // localTravelResults.check=false;
   // localTravelResults.sortIcon=true;
-  console.log("im in-------------------------");
-  console.log(localTravelResults.filterDetails);
+
+  // console.log(localTravelResults.filterDetails);
   // $http.get('public/data/localTravelSearchResults.json').success(function(data){
 
       // localTravelResults.list=data.searchResults;

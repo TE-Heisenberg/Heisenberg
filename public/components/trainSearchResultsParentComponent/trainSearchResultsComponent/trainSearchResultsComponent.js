@@ -14,6 +14,7 @@ function trainSearchResultsController($http,$filter) {
 
 
   trainSearchResults=this;
+  trainSearchResults.message="No train runs on the filters you have applied. Please modify the filters.";
   trainSearchResults.functionName="Reset All";
   trainSearchResults.myorder="before";
   trainSearchResults.range=300;
