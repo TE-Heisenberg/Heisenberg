@@ -7,23 +7,26 @@
   <div class="node-md" ng-click="node.sendDetailsOfElement(node.currentnode)">
     {{node.travelelement.essential.noDependencyData.location|limitTo:3|uppercase}}
   </div>
-  <div class=""  ng-repeat="(childId,childDetails) in node.locationchildservices">
+  <div class="node-md-child"  ng-repeat="(key,value) in node.locationchildservices">
     <div class="wrapper">
 
-      <child-icon-router-component child-type="childId" child-details="childDetails" reflect-child-select="node.reflectChildSelect(childId)">
-    </child-icon-router-component>
+      <div class="ourtooltip" ng-if="!node.travelelement.childServices[key]">
 
       <!-- Below code is supposed to be changed according to change in ng-repeat -->
       <i class="material-icons childservices" ng-click="node.sendDetailsOfChild(node.currentnode,childId)">{{value.icons}}</i>
 
-      <div class="tooltip" ng-if="node.travelelement.childServices[childId]==''">
+      <div class="ourtooltip" ng-if="node.travelelement.childServices[childId]==''">
         <!-- If that child service exist or not -->
         Please select a {{childId}}
       </div>
-      <div class="tooltip" ng-if="!node.travelelement.childServices[childId]==''">
+      <div class="ourtooltip" ng-if="node.travelelement.childServices[key]">
         <!-- If that child service exist -->
-        <div ng-repeat="x in node.travelelement.childServices[childId]">
-          <!-- Iterating on a child service group to get a single child service in x -->
+          <div ng-if="x.state==''">
+            Requested at {{x.requested.location}}
+          </div>
+          <div ng-if="x.state=='initial'">
+            Please Fill {{key}} details
+          </div>
           <div ng-if="x.state=='request'">
             Requested at {{x.requested.location}}
           </div>

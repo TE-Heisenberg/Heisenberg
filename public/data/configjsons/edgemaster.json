@@ -1,39 +1,58 @@
-{
+ {
   "servicesDetails":
-  {
-    "coExistServices": {
-      "visaonarrival":{
-        "icons": "flight_takeoff",
+ {
+     "coExistServices": {
+     "visaonarrival":{
+       "icons": "flight_takeoff",
         "displayName": "Visa on Arrival",
         "chooseCaption":"Do you want Visa on Arrival?"
-      },
-      "forex":{
-        "icons":"monetization_on",
+     },
+     "forex":{
+       "icons":"monetization_on",
         "displayName": "Foreign Exchange",
         "chooseCaption": "Do you want Forex service?"
-        }
-    },
-    "mutuallyExclusive": {
-      "mode":{
-        "displayName":"Mode of travel",
+     }
+   },
+   "mutuallyExclusive": {
+     "mode":{
+       "displayName":"Mode of travel",
         "chooseCaption": "Choose Travel Mode.",
-        "servicesDetails": {
-          "flight": {
-            "icons": "",
-            "displayName": "Flight"
+       "servicesDetails": {
+         "flight": {
+           "icons": "flight",
+           "displayName": "Flight",
+           "selectedFieldDetails":{
+             "preferences": {
+               "class":"Class",
+               "nonStop": "Non-Stop",
+               "meals": "Meals",
+               "extraBaggage": "Extra Baggage"
+             }
+           }
           },
-          "train": {
-            "icons":"",
-            "displayName":"Train"
-          },
-          "bus":{
-            "icons":"",
-            "displayName":"Bus"
-          }
-        }
-      }
-    }
-  },
+         "train": {
+           "icons":"train",
+           "displayName":"Train",
+           "selectedFieldDetails":{
+             "preferences": {
+               "class":"Class"
+             }
+           }
+         },
+         "bus":{
+           "icons":"directions_bus",
+           "displayName":"Bus",
+           "selectedFieldDetails":{
+             "preferences": {
+               "class":"Class",
+               "seatType": "Seat Type"
+             }
+           }
+         }
+       }
+     }
+   }
+ },
   "essential": {
     "noDependencyData": {
       "travelStartDate": {
@@ -44,13 +63,14 @@
       }
     },
     "modesToSelectTheServices": {
+
       "mode": {
         "mandatory": true,
         "displayName": "Select the mode",
         "id": "mode",
         "type": "singleSelect",
         "specificAttr": {
-          "domainList": ["flight", "bus", "train"]
+          "domainList": {"flight":"Flight", "bus":"Bus", "train":"Train"}
         },
         "javascriptDataType": "String"
       },

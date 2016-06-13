@@ -6,17 +6,16 @@ app.component("myCalendar",{
   controller:myCalendarController
 });
 
-function myCalendarController($http){
+function myCalendarController($http,mainService){
   var calendar=this;
 
-  $http.get("public/data/landing/myTravelcalendar.config.json").success(function (response) {
+  var response=mainService.calendarLabel();
+  response.success(function (response) {
     calendar.calendarDisplayName = response.headerDisplayName;
     calendar.approved=response.subHeaders.approved;
     calendar.past=response.subHeaders.past;
     calendar.pending=response.subHeaders.pending;
 
   });
-
-
 
 }

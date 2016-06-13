@@ -12,12 +12,21 @@
       <div layout="column">
           <div ng-repeat="data in model.travelPlanData">
              <div ng-repeat="(key,value) in data">
-               <div ng-if="key=='cityName'">
-                 <city-component value="value"></city-component>
+
+               <div ng-if="key=='essential'">
+                 <div ng-repeat="(key,value) in value">
+                   <div ng-if="key=='noDependencyData'">
+                     <div ng-repeat="(key,value) in value">
+                       <div ng-if="key=='location'">
+                          <city-component value="value" get-display-keys="model.getDisplayKeys(parentKey)"></city-component>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
                </div>
 
               <div ng-if="key=='childServices'">
-                <child-services-component value="value" get-mode-pref="model.getModePref(type)" get-seat-pref="model.getSeatPref(value)"></child-services-component>
+                <child-services-component value="value" get-mode-pref="model.getModePref(type)" get-seat-pref="model.getSeatPref(value)" get-display-keys="model.getDisplayKeys(parentKey)"></child-services-component>
              </div>
          </div>
      </div>

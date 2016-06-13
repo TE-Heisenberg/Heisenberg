@@ -1,36 +1,52 @@
 angular.module('app')
   .component('travelBookingParentComponent', {
     templateUrl: "public/components/travelBookingParentComponent/travelBookingParentComponent.html",
-    controller: ["mainService", "$location", travelBookingParentCtrl],
+    controller: ["mainService", "$location","$routeParams",travelBookingParentCtrl],
     controllerAs: "travelBookingParentCtrl",
-    $canActivate: function (mainService) {
-      return mainService.getPrerequisites().then(function (data) {
+    $canActivate: function ($nextInstruction,mainService) {
+      console.log("I am inside Can acticate");
+      var tid=decodeURIComponent($nextInstruction.params.id);
+      console.log(tid);
+      return mainService.getPrerequisites(tid).then(function (data) {
         mainService.serviceData = data;
+        console.log(data);
         return true;
       });
+
     }
   });
 
 
-function travelBookingParentCtrl(mainService, $location) {
+function travelBookingParentCtrl(mainService, $location,$routeParams) {
 
   var travelBookingParentCtrl = this;
-  console.log(travelBookingParentCtrl);
 
+  travelBookingParentCtrl.$routerOnActivate=function(next){
+
+    var id = next.params.id;
+    console.log("-------routeronActivate--------");
+    console.log(id);
+  };
+  console.log("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
   console.log(mainService.serviceData);
   travelBookingParentCtrl.$onInit = function () {
+    travelBookingParentCtrl.elementFields = {
+      "location": mainService.serviceData[0].data,
+      "transit": mainService.serviceData[1].data
+    };
+    console.log("Essential fields");
+    console.log(travelBookingParentCtrl.elementFields);
     console.log(" I am inside on init");
-    travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObject();
+    // travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObjectInitial();
+    travelBookingParentCtrl.travelobjectmain=mainService.serviceData[2];
+    console.log(mainService.serviceData[2].components);
+    travelBookingParentCtrl.travelPlanObject = mainService.serviceData[2].components;
     console.log(travelBookingParentCtrl.travelPlanObject);
     travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[0];
     console.log(travelBookingParentCtrl.currentSelectedObj);
 
     travelBookingParentCtrl.selectedChildren = Object.keys(travelBookingParentCtrl.travelPlanObject[0].childServices);
 
-    travelBookingParentCtrl.elementFields = {
-      "location": mainService.serviceData[0].data,
-      "transit": mainService.serviceData[1].data
-    };
     travelBookingParentCtrl.childrenLabels = {};
     for (elementType in travelBookingParentCtrl.elementFields) {
 
@@ -43,7 +59,7 @@ function travelBookingParentCtrl(mainService, $location) {
 
 
 
-    console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
+    console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types]);
 
     travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails;
 
@@ -151,7 +167,10 @@ function travelBookingParentCtrl(mainService, $location) {
       console.log(travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj));
 
       travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) + 1];
+      mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id,travelBookingParentCtrl.travelobjectmain);
+
       console.log("travelBookingParentCtrl.currentSelectedObj");
+
       console.log(travelBookingParentCtrl.currentSelectedObj);
 
       // So that the earlier selected child services are also shown on click of next button
@@ -186,8 +205,8 @@ function travelBookingParentCtrl(mainService, $location) {
       console.log("Inside foreach of children list initial");
       if (travelBookingParentCtrl.currentSelectedObj.childServices[childId] == undefined) {
         console.log("I am going to intialize childServices");
-        console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type]);
-        travelBookingParentCtrl.currentSelectedObj.childServices[childId] = travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.type].servicesIntializer[childId];
+        console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types]);
+        travelBookingParentCtrl.currentSelectedObj.childServices[childId] = travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types].servicesIntializer[childId];
       }
     });
   }

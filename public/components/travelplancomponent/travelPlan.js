@@ -44,7 +44,7 @@ function travelPlanController() {
     plan.reflectselectedchild({"selectedChildDetails":selectedChildDetails});
   }
   plan.currentnodeedgetravel1 = function(clicked) {
-    
+
   }
   plan.currentnodeedgetravel = function (currentElement,currentElementIndex,selectedChildren, metadata) {
     console.log("in travel plan");
@@ -67,13 +67,23 @@ function travelPlanController() {
   };
   plan.addNode = function () {
     plan.newNode = {
-      type:"location",
-      cityName:" "
+      types:"location",
+      essential:{"noDependencyData": {},
+                  "modesToSelectTheServices": {
+                  }
+                },
+      childServices:{},
+      state:"initial"
     };
     plan.newEdge = {
-      type:"transit",
-      childServices:
-      {}
+      types:"transit",
+      childServices:{},
+      essential:{"noDependencyData": {},
+                 "modesToSelectTheServices": {
+
+                 }
+              },
+      state:"initial"
     };
     plan.travelplanobject.push(plan.newEdge);
     plan.travelplanobject.push(plan.newNode);
