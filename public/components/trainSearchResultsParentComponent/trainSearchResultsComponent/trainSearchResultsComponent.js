@@ -11,7 +11,10 @@ app.component('trainSearchResultsComponent',{
   }
 });
 function trainSearchResultsController($http,$filter) {
+
+
   trainSearchResults=this;
+  trainSearchResults.functionName="Reset All";
   trainSearchResults.myorder="before";
   trainSearchResults.range=300;
   trainSearchResults.check=false;
@@ -20,15 +23,6 @@ function trainSearchResultsController($http,$filter) {
   trainSearchResults.data=trainSearchResults.list;
 //  trainSearchResults.filters=data.filters;
   trainSearchResults.previousData=trainSearchResults.data;
-  // $http.get('public/data/trainInfo.json').success(function(data){
-  //
-  //
-  // });
-
-
-
-
-
   trainSearchResults.reset=function() {
     console.log("im in reset");
     trainSearchResults.check=false;

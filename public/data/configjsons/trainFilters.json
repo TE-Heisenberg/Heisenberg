@@ -1,13 +1,13 @@
 [
- {
+{
    "id":"price",
    "type":"rangeSlider"
- },
- {
+},
+{
    "id":"departure_time",
-   "type":"rangeSlider",
- },
- {
+   "type":"rangeSlider"
+},
+{
  "id":"arrival_time",
  "type":"rangeSlider"
 },
