@@ -7,7 +7,9 @@ angular.module('app')
         $canActivate: function(mainService,$nextInstruction){
           var tid = decodeURIComponent($nextInstruction.params.id);
           console.log("Inside Can activate of iti");
+          console.log(tid);
            return mainService.getPrerequisites(tid).then(function(data){
+             console.log(data);
              mainService.nodeOrEdgeMasterData=data;
              return true;
            });
@@ -19,6 +21,7 @@ angular.module('app')
     model.displayKeyObject=new Object();
     model.nodeMasterData=mainService.nodeOrEdgeMasterData[0].data;
     model.edgeMasterData=mainService.nodeOrEdgeMasterData[1].data;
+    model.travelPlanObject=mainService.nodeOrEdgeMasterData[2].data;
 
     console.log("node and edge master data............");
     console.log(model.nodeMasterData);
@@ -31,10 +34,11 @@ angular.module('app')
 
     model.travelPlanData=new Object();
 
-    model.$onInit=function(){
-      model.travelPlanData=mainService.getTravelPlanObject();
-      console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
-    }
+    // model.$onInit=function(){
+    //    model.travelPlanData=
+    //   //  console.log("kkkkkkkkkkkkkk "+model.travelPlanData);
+    //   //  console.log(model.travelPlanData);
+    // }
 
     model.edgeMasterFinder=function(type,servicesDetailsObject){
       for(key in servicesDetailsObject){
@@ -44,8 +48,8 @@ angular.module('app')
                 return servicesDetailsObject[key][innerKey][type];
            }
          }
-      }
-    }
+       }
+     }
 
     model.nodeMasterFinder=function(type,servicesDetailsObject){
        for(key in servicesDetailsObject){
