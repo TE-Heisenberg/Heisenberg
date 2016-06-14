@@ -7,28 +7,23 @@ app.component('trainSearchResultsComponent',{
   bindings:{
     filterType:'<',
     filterDetails:'<',
-    searchResults:'<'
+    list:'<'
   }
 });
 function trainSearchResultsController($http,$filter) {
+
+
   trainSearchResults=this;
+  trainSearchResults.message="No train runs on the filters you have applied. Please modify the filters.";
+  trainSearchResults.functionName="Reset All";
   trainSearchResults.myorder="before";
   trainSearchResults.range=300;
   trainSearchResults.check=false;
   trainSearchResults.sortIcon=true;
-  //
-  // $http.get('public/data/trainInfo.json').success(function(data){
-  //
-  //     trainSearchResults.list=data.trainResult;
-  //     trainSearchResults.data=trainSearchResults.list;
-  //     trainSearchResults.filters=data.filters;
-  //     trainSearchResults.previousData=trainSearchResults.data;
-  // });
-
-
-
-
-
+//  trainSearchResults.list=data.trainResult;
+  trainSearchResults.data=trainSearchResults.list;
+//  trainSearchResults.filters=data.filters;
+  trainSearchResults.previousData=trainSearchResults.data;
   trainSearchResults.reset=function() {
     console.log("im in reset");
     trainSearchResults.check=false;

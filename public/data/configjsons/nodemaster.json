@@ -282,7 +282,41 @@
         "displayName": "Pick up Time",
         "id": "pickupTime",
         "type": "time"
-      }
+      },
+			"price":{
+				"mandatory":false,
+				"displayName":"Price",
+				"id":"price",
+				"type":"rangeSlider",
+				"specificAttr":{
+										"floor": 100,
+										"ceil": 1000,
+										"step": 1,
+										"noSwitching": true,
+										"endPointsTranslate": {
+											"prefix": "",
+											"postfix": ""
+										},
+										"leftSliderHandleTranslate": {
+											"prefix": "",
+											"postfix": ""
+										},
+
+										"rightSliderHandleTranslate": {
+											"prefix": "",
+											"postfix": ""
+										}
+						}
+			},
+			"companyName":{
+				"mandatory":false,
+				"displayName":"Company",
+				"id":"companyName",
+				"type":"checkBox",
+				"specificAttr":{
+					"domainList": ["Ola","Uber","MeruCabs","MegaCabs"]
+				}
+			}
     }
   }
 }

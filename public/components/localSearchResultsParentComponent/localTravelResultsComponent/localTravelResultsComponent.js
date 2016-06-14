@@ -2,27 +2,30 @@ var app=angular.module("app");
 app.component('localTravelResultsComponent',{
   templateUrl:'public/components/localSearchResultsParentComponent/localTravelResultsComponent/localTravelResultsComponent.html',
   controllerAs:'localTravelResults',
-  controller:localTravelResultsController
-
+  controller:localTravelResultsController,
+  bindings:{
+    filterType:'<',
+    filterDetails:'<',
+    list:'<'
+  }
 });
 function localTravelResultsController($http,$filter) {
   localTravelResults=this;
+  localTravelResults.functionName="Reset All";
+  localTravelResults.message="No train runs on the filters you have applied. Please modify the filters.";
   // localTravelResults.myorder="before";
   // localTravelResults.range=300;
   // localTravelResults.check=false;
   // localTravelResults.sortIcon=true;
 
-  $http.get('public/data/localTravelSearchResults.json').success(function(data){
+  // console.log(localTravelResults.filterDetails);
+  // $http.get('public/data/localTravelSearchResults.json').success(function(data){
 
-      localTravelResults.list=data.searchResults;
+      // localTravelResults.list=data.searchResults;
       localTravelResults.data=localTravelResults.list;
-      localTravelResults.filters=data.filters;
+      // localTravelResults.filters=data.filters;
       localTravelResults.previousData=localTravelResults.data;
-  });
-
-
-
-
+  // });
 
   localTravelResults.reset=function() {
     console.log("im in reset");
@@ -75,7 +78,7 @@ function localTravelResultsController($http,$filter) {
                  countvalues++;
                }
              }
-             else if(id==="company"){
+             else{
                console.log("im in check box ");
                console.log(train[id]);
                console.log(selectedFilters[id][filter]);

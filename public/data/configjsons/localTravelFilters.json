@@ -1,0 +1,10 @@
+[
+ {
+   "id":"price",
+   "type":"rangeSlider"
+ },
+ {
+   "id":"companyName",
+   "type":"checkBox"
+ }
+]

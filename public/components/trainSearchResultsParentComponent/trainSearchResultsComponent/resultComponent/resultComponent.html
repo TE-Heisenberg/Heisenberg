@@ -1,5 +1,5 @@
 
-<md-grid-list class="det_cards" md-cols="7"  md-row-height="2:1">
+<md-grid-list class="det_cards" md-cols="7"  md-row-height="2:1" ng-cloak>
   <md-grid-tile>
     <div>{{resultComponent.one.trainNo}}<br>
     <span class="spann">{{resultComponent.one.Name}}</span>
@@ -12,13 +12,13 @@
   <md-grid-tile>Rs.{{resultComponent.one.price}}</md-grid-tile>
   <md-grid-tile>
       <div id="selectButton">
-        <button>Select</button>
+        <button>{{resultComponent.selectButtonName}}</button>
       </div>
   </md-grid-tile>
 </md-grid-list>
 <div id="showMore">
-  <a ng-show="resultComponent.showbutton" ng-click="resultComponent.showbutton=false;">ShowDetails</a>
-  <a ng-show="!resultComponent.showbutton" ng-click="resultComponent.showbutton=true;">HideDetails
+  <a ng-show="resultComponent.showbutton" ng-click="resultComponent.showbutton=false;">{{resultComponent.showButtonName}}</a>
+  <a ng-show="!resultComponent.showbutton" ng-click="resultComponent.showbutton=true;">{{resultComponent.hideButtonName}}
   </a>
 </div>
 <div ng-show="!resultComponent.showbutton" id="moreDetails">

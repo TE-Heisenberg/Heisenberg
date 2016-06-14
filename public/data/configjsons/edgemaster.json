@@ -193,13 +193,13 @@
                     }
                   }
      },
-     "departureTime":{
+     "departure_time":{
        "mandatory":false,
        "displayName":"Departure Time",
        "id":"departure_time",
        "type":"rangeSlider",
         "specificAttr":{
-          "floor": 0,
+                    "floor": 0,
                      "ceil": 24,
                      "step": 1,
                      "noSwitching": true,
@@ -218,7 +218,7 @@
                      }
         }
      },
-     "arrivalTime":{
+     "arrival_time":{
        "mandatory":false,
        "displayName":"Arrival Time",
        "id":"arrival_time",
@@ -243,7 +243,7 @@
                     }
       }
      },
-     "departureStation":{
+     "departure_station":{
        "mandatory":false,
        "displayName":"Departure Station",
        "id":"departure_station",
@@ -252,7 +252,7 @@
         "domainList": ["Banglore city JN","Yeshwanthpur","Yellanka"]
       }
      },
-     "arrivalStation":{
+     "arrival_station":{
        "mandatory":false,
        "displayName":"Arrival Station",
        "id":"arrival_station",

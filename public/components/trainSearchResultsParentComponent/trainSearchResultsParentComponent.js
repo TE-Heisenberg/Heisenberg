@@ -18,7 +18,7 @@ angular.module('app').component("trainSearchResultsParentComponent", {
 function trainSearchResultsParentController($http, $rootScope,mainService) {
     var trainSearchResultsParent = this;
     trainSearchResultsParent.filter_type=mainService.filter_type.data;
-  	trainSearchResultsParent.filter_details=mainService.filter_details.data.services.flight;
+  	trainSearchResultsParent.filter_details=mainService.filter_details.data.services.train;
   	trainSearchResultsParent.searchResults=mainService.searchResults.data;
     trainSearchResultsParent.travelPlanObject = [
         {
