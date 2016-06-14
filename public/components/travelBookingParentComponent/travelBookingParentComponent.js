@@ -171,7 +171,7 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
       },
       "train": {}
     };
-  //  travelBookingParentCtrl.currentSelectedObj.childServices
+    //  travelBookingParentCtrl.currentSelectedObj.childServices
     for (childService in mimicDataNode) {
       // travelBookingParentCtrl.currentSelectedObj.childServices[childService].forEach(function(service)
       //   {
@@ -179,14 +179,236 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
       //  });
 
       mimicDataNode[childService].forEach(function (service) {
-        console.log("from MIMIC NODe",service);
+        console.log("from MIMIC NODe", service);
         // travelBookingParentCtrl.currentSelectedObj.childServices[childService]
         mainService.saveInSearch(childService, service)
       });
     }
     if (travelBookingParentCtrl.ifLastElement()) {
-      mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id, travelBookingParentCtrl.travelobjectmain);
-      $location.path('/searchResults/' + travelBookingParentCtrl.travelobjectmain._id);
+      var travelPlanObject = {
+        "components": [{
+          "types": "location",
+          "state":"initial",
+          "essential": {
+            "noDependencyData": {
+              "location": "Bangalore"
+            },
+            "modesToSelectTheServices": {
+              "basicServices": ["stay", "localTravel"]
+            }
+          },
+          "childServices": {
+            "stay": [{
+              "state": "request",
+              "requested": {
+                "location": "Bangalore",
+                "area": "MadiWala",
+                "checkinDate": "01/04/2016",
+                "checkoutDate": "02/04/2016",
+                "checkinTime": "5:00 AM",
+                "checkoutTime": "7:00 AM",
+                "preferences": "ac",
+                "rating": ["oneStar", "threeStar"],
+                "nearBy": "5",
+                "typeOfProperty": "guestHouse",
+                "stars": ["twoStar", "threeStar"],
+                "amenities": ["meetingRooms", "swimmingPools"]
+              },
+              "selected": {
+                "image": "public/assets/images/taj1.png",
+                "name": "JW Mariott",
+                "rating": "5",
+                "location": "hotel's exact address",
+                "roomType": "Deluxe",
+                "checkinDate": "4/30/2016",
+                "checkinTime": "2:00 PM",
+                "checkoutDate": "5/01/2016",
+                "checkoutTime": "3:00 PM",
+                "price": "9000 INR",
+                "comments": "Some useful comment which you may want to convey to the hotel"
+              }
+            }, {
+                "state": "request",
+                "requested": {
+                  "location": "Bangalore",
+                  "area": "MadiWala",
+                  "checkinDate": "01/04/2016",
+                  "checkOutDate": "02/04/2016",
+                  "checkinTime": "5:00 AM",
+                  "preferences": "ac",
+                  "rating": ["oneStar", "threeStar"],
+                  "nearBy": "5",
+                  "typeOfProperty": "guestHouse",
+                  "stars": ["twoStar", "threeStar"],
+                  "amenities": ["meetingRooms", "swimmingPools"]
+                },
+                "selected": {
+                  "image": "public/assets/images/taj1.png",
+                  "name": "JW Mariott",
+                  "rating": "5",
+                  "location": "hotel's exact address",
+                  "roomType": "Deluxe",
+                  "checkinDate": "4/30/2016",
+                  "checkinTime": "2:00 PM",
+                  "checkoutDate": "5/01/2016",
+                  "checkoutTime": "3:00 PM",
+                  "price": "9000 INR",
+                  "comments": "Some useful comment which you may want to convey to the hotel"
+                }
+              }],
+            "localTravel": [{
+              "state": "select",
+              "requested": {},
+              "selected": {
+                "source": "Rajiv nagar Chowk",
+                "destination": "New Delhi IGI Airport",
+                "type": "localBus",
+                "pickupDate": "4/30/2016",
+                "pickupTime": "10:00 AM",
+                "dropDate": "4/30/2016",
+                "dropTime": "12:00 PM",
+                "localBus": {
+                  "image": "public/assets/images/localBus.png",
+                  "companyName": "red bus",
+                  "busNumber": "AB 327014",
+                  "busType": "AC bus",
+                  "seatsType": "sleeper",
+                  "price": "100 INR"
+                }
+              }
+            }, {
+                "state": "request",
+                "requested": {},
+                "selected": {
+
+                  "source": "Rajiv nagar Chowk",
+                  "destination": "New Delhi IGI Airport",
+                  "type": "cab",
+                  "pickupDate": "4/30/2016",
+                  "pickupTime": "10:00 AM",
+                  "dropDate": "4/30/2016",
+                  "dropTime": "12:00 PM",
+                  "cab": {
+                    "image": "public/assets/images/ola.png",
+                    "companyName": "Uber",
+                    "cabNumber": "DL AJ 5034",
+                    "driverDetails": {
+                      "name": "Job Elton"
+                    },
+                    "estimatedPrice": "800 INR",
+                    "cabType": "sedan"
+                  }
+                }
+              }]
+          }
+        }, {
+            "types": "transit",
+            "state":"initial",
+            "essential": {
+              "noDependencyData": {
+                "travelStartDate": "02/04/2016"
+              },
+              "modesToSelectTheServices": {
+                "mode": "flight",
+                "otherAddOnServices": ["visa", "translator"]
+              }
+            },
+            "childServices": {
+              "flight": {
+                "state": "select",
+                "requested": {},
+                "selected": {
+                  "image": "public/assets/images/indigo.png",
+                  "companyName": "Air Costa",
+                  "flightID": "AC2456",
+                  "seatNumber": "45H",
+                  "sourceAirport": "koramangala airport",
+                  "destinationAirport": "delhi airport",
+                  "price": "876547 INR",
+                  "travelStartDate": "02/04/2016",
+                  "preferences": {
+                    "class": "Bussiness",
+                    "Nonstop": "true",
+                    "meals": "Non Veg",
+                    "extraBaggage": "14 Kg"
+                  },
+                  "travelStartTime": "2:00 AM",
+                  "travelEndDate": "5/2/2016",
+                  "travelEndTime": "3:00 AM"
+                }
+              }
+            }
+          }, {
+            "types": "location",
+            "essential": {
+              "noDependencyData": {
+                "location": "Pune"
+              },
+              "modesToSelectTheServices": {
+                "basicServices": ["stay", "localTravel"]
+              }
+            },
+            "childServices": {
+              "stay": [{
+                "state": "select",
+                "requested": {
+                  "location": "Bangalore",
+                  "area": "MadiWala",
+                  "checkinDate": "01/04/2016",
+                  "checkOutDate": "02/04/2016",
+                  "checkinTime": "5:00 AM",
+                  "preferences": "ac",
+                  "rating": ["oneStar", "threeStar"],
+                  "nearBy": "5",
+                  "typeOfProperty": "guestHouse",
+                  "stars": ["twoStar", "threeStar"],
+                  "amenities": ["meetingRooms", "swimmingPools"]
+                },
+                "selected": {
+                  "image": "public/assets/images/taj1.png",
+                  "name": "JW Mariott",
+                  "rating": "5",
+                  "location": "hotel's exact address",
+                  "roomType": "Deluxe",
+                  "checkinDate": "4/30/2016",
+                  "checkinTime": "2:00 PM",
+                  "checkoutDate": "5/01/2016",
+                  "checkoutTime": "3:00 PM",
+                  "price": "9000 INR",
+                  "comments": "Some useful comment which you may want to convey to the hotel"
+                }
+              }],
+              "localTravel": [{
+                "state": "select",
+                "requested": {},
+                "selected": {
+                  "source": "Rajiv nagar Chowk",
+                  "destination": "New Delhi IGI Airport",
+                  "type": "cab",
+                  "pickupDate": "4/30/2016",
+                  "pickupTime": "10: 00 AM",
+                  "dropDate": "4/30/2016",
+                  "dropTime": "12:00 PM",
+                  "cab": {
+                    "image": "public/assets/images/ola.png",
+                    "companyName": "Uber",
+                    "cabNumber": "DL AJ 5034",
+                    "driverDetails": {
+                      "name": "Job Elton"
+                    },
+                    "estimatedPrice": "800 INR",
+                    "cabType": "sedan"
+                  }
+
+                }
+              }]
+            }
+          }]
+      };
+      mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id, travelPlanObject).then(function (data) {
+        $location.path('/searchResults/' + travelBookingParentCtrl.travelobjectmain._id);
+        console.log(data);
+      });
       // travelBookingParentCtrl.$router.navigate(['searchResult']);
     }
     else {

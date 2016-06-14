@@ -4,8 +4,10 @@ angular.module('app')
         templateUrl:'public/components/itineraryComponents/itineraryParentComponent/itineraryParentComponent.html',
         controllerAs:'model',
         controller: mainController,
-        $canActivate: function(mainService){
-           return mainService.getPrerequisites().then(function(data){
+        $canActivate: function(mainService,$nextInstruction){
+          var tid = decodeURIComponent($nextInstruction.params.id);
+          console.log("Inside Can activate of iti");
+           return mainService.getPrerequisites(tid).then(function(data){
              mainService.nodeOrEdgeMasterData=data;
              return true;
            });
@@ -23,7 +25,7 @@ angular.module('app')
     console.log(model.edgeMasterData);
     console.log('inside mainController');
 
-    model.displayKeyObject=model.edgeMasterData.servicesDetails.mutuallyExclusive.mode.servicesDetails.flight;
+    model.displayKeyObject = model.edgeMasterData.servicesDetails.mutuallyExclusive.mode.servicesDetails.flight;
     console.log("display key object");
     console.log(model.displayKeyObject);
 

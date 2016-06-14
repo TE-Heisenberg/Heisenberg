@@ -36,6 +36,7 @@ function searchResultComponent(mainService, $state, _) {
     // searchResultComponent.travelPlan = mainService.getTravelPlanObjectInitial();
     //to-do: this getTravelPlanObject gives a readymade object having all the services selected
     searchResultComponent.travelPlan = mainService.serviceData[2].components;
+    console.log(searchResultComponent.travelPlan);
     var sequence = [];
     console.log(searchResultComponent.travelPlan);
     console.log(_);
@@ -60,7 +61,7 @@ function searchResultComponent(mainService, $state, _) {
             }
         });
     });
-     searchResultComponent.locationchildservices=mainService.serviceData[0].data.servicesDetails;
+     searchResultComponent.locationchildservices=mainService.serviceData[0].data.servicesDetails.coExistServices;
      console.log(searchResultComponent.locationchildservices);
 
     searchResultComponent.transitchildservices=mainService.serviceData[1].data.servicesDetails.coExistServices;
@@ -103,7 +104,7 @@ function searchResultComponent(mainService, $state, _) {
 
         }
         else {
-            searchResultComponent.$router.navigate(['ItineraryComponent']);
+            searchResultComponent.$router.navigate(['ItineraryComponent',{id: mainService.serviceData[2]._id}]);
         }
 
     };
