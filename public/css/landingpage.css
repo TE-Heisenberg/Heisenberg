@@ -5,10 +5,6 @@
 
     .main-button-fixed {
         position: fixed;
-        /*margin-top: 350px;*/
-        /*width: 100%;
-        margin-left: 43%;*/
-        /*z-index: 0;*/
         top:60%;
         left:95%;
     }
@@ -79,17 +75,6 @@
         margin-top: 70px;
 
     }
-/*#fix{
-    position:relative;
-    /*top: 85%;
-    left:90%;*/
-}
-/*#menuButton{
-    /*position: absolute;
-    top: 85%;
-    left:90%;*/
-/*}*/
-
 
     .card2 .plan_icon {
         font-size: 30px;
@@ -214,11 +199,12 @@
 }
 .book_button{
    vertical-align: middle;
-
+   width:20px;
 }
 
 .expense_button{
     vertical-align: middle;
+    width:20px;
 
 }
 

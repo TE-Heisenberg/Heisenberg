@@ -54,7 +54,8 @@ function bookButtonController($mdDialog, $mdMedia,mainService){
 
   var response=mainService.getFabButtons();
   response.success(function (data) {
-    bookButton.name = data.book;
+    bookButton.label = data.book;
+    bookButton.name=data.b;
 
    });
 
@@ -64,7 +65,8 @@ function expenseButtonController($mdDialog, $mdMedia,mainService){
   var expenseButton=this;
   response=mainService.getFabButtons();
   response.success(function (data) {
-    expenseButton.name = data.expense;
+    expenseButton.label = data.expense;
+     expenseButton.name = data.e;
 
    });
 }
