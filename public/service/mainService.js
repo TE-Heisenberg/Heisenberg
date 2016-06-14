@@ -359,7 +359,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
     console.log("in searchresult getter");
     console.log(searchResultId);
     var deferred = $q.defer();
-    $http.get("http://localhost:8060/" + searchResultId)
+    $http.get("http://localhost:8060/search/" + searchResultId)
       .success(function (data) {
         console.log("again in searchresult getter");
         //console.log(data);
