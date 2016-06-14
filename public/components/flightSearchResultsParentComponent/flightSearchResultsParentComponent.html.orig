@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+<travel-plan travelplanobject="flightSearchResultsParent.travelPlanObject" nodetype="location"
+edgetype=" transit" currentnodeedgebooking=" flightSearchResultsParent.currentnodeedgebooking(value2)">
+</travel-plan>
+<flight-search-results-component filter-type="flightSearchResultsParent.filter_type" filter-details="flightSearchResultsParent.filter_details" search-results="flightSearchResultsParent.searchResults"
+ selected="flightSearchResultsParent.selectResultParentObject(value)"></flight-search-results-component>
+=======
+<flight-search-results-component filter-type="flightSearchResultsParent.filter_type" filter-details="flightSearchResultsParent.filter_details" search-results="flightSearchResultsParent.searchResults" ></flight-search-results-component>
+>>>>>>> d8a37f1c07b87a1773abc1870b30d522f5dbf80b

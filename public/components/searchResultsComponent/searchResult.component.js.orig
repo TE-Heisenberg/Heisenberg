@@ -8,7 +8,11 @@ angular.module('app')
                 template: "<train-search-results-component selected-data='searchResultComponent.selectedData(value)'></train-search-results-component>"
             })
             .state('flightSearchResults', {
-                template: "<flight-search-results-parent-component search-results='searchResultComponent.searchResults' selected-data='searchResultComponent.selectedData(value)'></flight-search-results-parent-component>"
+<<<<<<< HEAD
+                template: "<flight-search-results-component selected-data='searchResultComponent.selectedData(value)'></flight-search-results-component>"
+=======
+                template: "<flight-search-results-parent-component search-results='searchResultComponent.searchResults'></flight-search-results-parent-component>"
+>>>>>>> d8a37f1c07b87a1773abc1870b30d522f5dbf80b
             })
     })
     .component('searchResult', {
@@ -21,6 +25,18 @@ angular.module('app')
         $canActivate: function (mainService, $nextInstruction) {
             var tid = decodeURIComponent($nextInstruction.params.id);
             console.log(tid);
+<<<<<<< HEAD
+             mainService.getPrerequisites(tid).then(function (data) {
+                mainService.serviceData = data;
+
+            });
+            mainService.getHotelFilters().then(function (data) {
+			    mainService.filter_type = data;
+            });
+            mainService.getNodeMaster().then(function (data) {
+                mainService.filter_details = data.data;
+            });
+=======
            return mainService.getSearchPrerequisites(tid).then(function(data){
                 mainService.searchdata=data;
                 mainService.nodeMaster = data[0].data;
@@ -34,6 +50,7 @@ angular.module('app')
             // mainService.getNodeMaster().then(function (data) {
             //     mainService.filter_details = data;
             // });
+>>>>>>> d8a37f1c07b87a1773abc1870b30d522f5dbf80b
             return true;
            });
         }
@@ -47,19 +64,26 @@ function searchResultComponent(mainService, $state, _) {
     // searchResultComponent.hotel_filter_details=mainService.searchdata[0].data;
     // searchResultComponent.flight_filter_type=mainService.searchdata[3];
     // searchResultComponent.hotel_filter_type=mainService.searchdata[4];
-
-
+    
+    
     //to-do: this travelPlanInitial uses the object which landing page and booking page uses
     // searchResultComponent.travelPlan = mainService.getTravelPlanObjectInitial();
     //to-do: this getTravelPlanObject gives a readymade object having all the services selected
     searchResultComponent.$onInit=function(){
+<<<<<<< HEAD
+      searchResultComponent.elementFields={
+          "location":mainService.serviceData[0].data,
+          "transit":mainService.serviceData[1].data
+      }
+=======
         searchResultComponent.travelPlan = mainService.travelPlanObject.components;
         searchResultComponent.locationchildservices = mainService.nodeMaster.servicesDetails;
         searchResultComponent.transitchildservices = mainService.edgeMaster.servicesDetails;
         searchResultComponent.elementFields={
           "location": mainService.nodeMaster,
           "transit": mainService.edgeMaster
-        }
+        }  
+>>>>>>> d8a37f1c07b87a1773abc1870b30d522f5dbf80b
     };
     searchResultComponent.travelPlan = mainService.travelPlanObject.component;
     var sequence = mainService.getSequence();
@@ -154,30 +178,8 @@ function searchResultComponent(mainService, $state, _) {
         });
     };
     searchResultComponent.selectedData=function(value){
-      // console.log("in selectObject-------------");
-      // console.log(value);
-      // console.log("id-----------------");
-      // var id=mainService.travelPlanObject._id;
-      var tpo=mainService.travelPlanObject;
-      // console.log(tpo);
-      console.log("cuurent object----------");
-      console.log(searchResultComponent.currentObjInSequence);
-      var prev=searchResultComponent.currentObjInSequence.value.selected;
-      for (key in value) {
-        if(key==="imageUrl"){
-            prev['image']=value[key];
-        }
-        else
-          prev[key]=value[key];
-      }
-      searchResultComponent.currentObjInSequence.value.selected=prev;
-      // console.log("updaated");
-      // console.log(prev);
-      // console.log(tpo.components[]);
-      // console.log(mainService.travelPlanObject._id);
-      // mainService.getTravelPlanObject(id);
-      // mainService.UpdateTravelPlanObject()
-      console.log(mainService.travelPlanObject);
-    };
+      console.log("in selectObject-------------");
+      console.log(value);
 
+    };
 }
