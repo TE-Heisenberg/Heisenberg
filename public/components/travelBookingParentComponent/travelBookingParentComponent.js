@@ -27,7 +27,6 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
     console.log("-------routeronActivate--------");
     console.log(id);
   };
-  console.log("HOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
   console.log(mainService.serviceData);
   travelBookingParentCtrl.$onInit = function () {
     travelBookingParentCtrl.elementFields = {
