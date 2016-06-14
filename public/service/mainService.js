@@ -238,6 +238,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
 ]
 }*/
 
+
   var travelPlanObjectInitial = {};
   // {
   //   "essential": {
@@ -350,7 +351,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
       .success(function (data) {
         console.log("again in searchresult saver");
         console.log(data);
-        var data = { 
+        var data = {
           id:data,
           childServiceType:serviceName
         };
@@ -360,7 +361,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
       });
     return deferred.promise;
   };
-  
+
   function SearchResultGetter(searchResultId) {
     console.log("in searchresult getter");
     console.log(searchResultId);
@@ -375,7 +376,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
       });
     return deferred.promise;
   };
-  
+
   // var someData;
   var subFactories = {
     saveInSearch: function (serviceName, childService) {
