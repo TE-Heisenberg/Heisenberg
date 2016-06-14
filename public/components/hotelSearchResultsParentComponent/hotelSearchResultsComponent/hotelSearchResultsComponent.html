@@ -16,6 +16,6 @@
 
 
 	<div flex='75' flex-sm='100' flex-xs='100' id='results-wrapper'>
-		<hotel-search-result ng-repeat='searchResult in hotelSearchResults.searchResults' hotel-search-result='searchResult ' selected-filters='hotelSearchResults.selectedFilters' ng-if='hotelSearchResults.applyFilters(searchResult)'></hotel-search-result>
+		<hotel-search-result ng-repeat='searchResult in hotelSearchResults.searchResults' hotel-search-result='searchResult ' selected-filters='hotelSearchResults.selectedFilters' ng-if='hotelSearchResults.applyFilters(searchResult)' select-object="hotelSearchResults.selectResultObject(value)"></hotel-search-result>
 	</div>
 </div>

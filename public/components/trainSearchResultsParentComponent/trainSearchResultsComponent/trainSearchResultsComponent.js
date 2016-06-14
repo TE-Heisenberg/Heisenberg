@@ -7,7 +7,8 @@ app.component('trainSearchResultsComponent',{
   bindings:{
     filterType:'<',
     filterDetails:'<',
-    list:'<'
+    list:'<',
+    selected:'&'
   }
 });
 function trainSearchResultsController($http,$filter) {
@@ -102,5 +103,10 @@ function trainSearchResultsController($http,$filter) {
        trainSearchResults.data=afterFilter;
       //  trainSearchResults.previousData=trainSearchResults.data;
    }
+  }
+  trainSearchResults.selectResultObject=function(value){
+    // console.log("step2");
+    // return value;
+     trainSearchResults.selected({value:value});
   }
 };

@@ -3,8 +3,9 @@ angular.module('app').component("flightSearchResultsParentComponent", {
 	controllerAs: "flightSearchResultsParent",
 	controller: flightSearchResultsParentController,
 	bindings: {
-		'searchResults': '<'
-	}
+		searchResults:'<',
+	 selectedData:'&'
+  }
 });
 function flightSearchResultsParentController($http, $rootScope, mainService) {
 	var flightSearchResultsParent = this;
@@ -17,4 +18,9 @@ function flightSearchResultsParentController($http, $rootScope, mainService) {
 		console.log(id);
 		console.log(type);
 	};
+	flightSearchResultsParent.selectResultParentObject=function(value){
+		console.log("sstep3");
+		// return value;
+		 flightSearchResultsParent.selectedData({value:value});
+	}
 }

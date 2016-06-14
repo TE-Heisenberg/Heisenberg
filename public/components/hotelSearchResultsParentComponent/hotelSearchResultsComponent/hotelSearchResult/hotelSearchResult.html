@@ -27,6 +27,6 @@
 						<div flex='25' layout='column' layout-align='none center'>
 							<div flex='25'></div>
 							<div class='hotel-price'>{{hotelSearchResult.hotelSearchResult.price | currency}}</div>
-							<md-button class='md-raised md-primary select-button'>Select</md-button>
+							<md-button class='md-raised md-primary select-button' ng-click="hotelSearchResult.selectedData(hotelSearchResult.hotelSearchResult)">Select</md-button>
 						</div>
 </md-card>

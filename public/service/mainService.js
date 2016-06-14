@@ -503,7 +503,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
         subFactories.getFlightFilters(),
         subFactories.getHotelFilters(),
         subFactories.getLocalTravelFilters()
-        ]);           
+        ]);
     },
 
     getfavouriteList: function () {

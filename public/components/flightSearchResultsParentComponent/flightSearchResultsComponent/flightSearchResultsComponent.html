@@ -14,7 +14,7 @@
       </div>
       <div layout-xs="column" class="results" layout='column' flex='75' flex-sm="100" flex-xs="100">
 
-        <flight-search-result ng-repeat='searchResult in flightSearchResults.searchResults' flight-search-result='searchResult' selected-filters='flightSearchResults.selectedFilters' ng-if='flightSearchResults.applyFilters(searchResult)'></flight-search-result>
+        <flight-search-result ng-repeat='searchResult in flightSearchResults.searchResults' flight-search-result='searchResult' selected-filters='flightSearchResults.selectedFilters' ng-if='flightSearchResults.applyFilters(searchResult)' select-object="flightSearchResults.selectResultObject(value)"></flight-search-result>
       </div>
     </div>
   </div>

@@ -60,9 +60,15 @@ function searchResultComponent(mainService, $state, _) {
         searchResultComponent.travelPlan = mainService.travelPlanObject.components;
         searchResultComponent.locationchildservices = mainService.nodeMaster.servicesDetails;
         searchResultComponent.transitchildservices = mainService.edgeMaster.servicesDetails;
+<<<<<<< HEAD
+        searchResultComponent.elementFields={
+          "location": mainService.nodeMaster,
+          "transit": mainService.edgeMaster
+=======
         searchResultComponent.elementFields = {
             "location": mainService.nodeMaster,
             "transit": mainService.edgeMaster
+>>>>>>> 1b8acc87dbcbe6ca0de7d888e6eb954729a3c967
         }
     };
     searchResultComponent.travelPlan = mainService.travelPlanObject.component;
