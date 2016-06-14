@@ -238,6 +238,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
 ]
 }*/
 
+
   var travelPlanObjectInitial = {};
   // {
   //   "essential": {
@@ -492,9 +493,6 @@ angular.module('app').factory('mainService', function ($http, $q) {
     getFlightFilters: function () {
       return $http.get("public/data/configjsons/flightServices.json");
     },
-    getFlightSearchResults: function () {
-      return $http.get("http://172.23.238.144:8060/SearchResults/flight");
-    },
     getHotelFilters: function () {
       return $http.get("public/data/configjsons/hotelFilters.json");
     },
@@ -503,15 +501,13 @@ angular.module('app').factory('mainService', function ($http, $q) {
         subFactories.getEdgeMaster(),
         subFactories.getTravelPlanObject(tid),
         subFactories.getFlightFilters(),
-        subFactories.getHotelFilters()
+        subFactories.getHotelFilters(),
+        subFactories.getLocalTravelFilters()
         ]);
     },
 
     getfavouriteList: function () {
       return $http.get("public/data/landing/myfavourites.json");
-    },
-    getHotelSearchResults: function () {
-      return $http.get('public/data/hotelSearchResults.json');
     },
     getTrainFilters: function () {
       return $http.get('public/data/configjsons/trainFilters.json');
@@ -530,15 +526,10 @@ angular.module('app').factory('mainService', function ($http, $q) {
       return $http.get("public/data/landing/myWorklist.config.json");
 
     },
-
     favouriteLables: function () {
-
       favourite = {};
       return $http.get("public/data/landing/myFavourites.config.json");
-
     },
-
-
     calendarLabel: function () {
       calendar = {};
       return $http.get("public/data/landing/myTravelcalendar.config.json");
@@ -549,9 +540,6 @@ angular.module('app').factory('mainService', function ($http, $q) {
     },
     getLocalTravelFilters: function () {
       return $http.get("public/data/configjsons/localTravelFilters.json");
-    },
-    getLocalTravelSearchResults: function () {
-      return $http.get("public/data/localTravelSearchResults.json");
     },
     getSequence: function() {
       return sequence;
