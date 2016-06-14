@@ -10,6 +10,9 @@ angular.module('app')
             .state('flightSearchResults', {
                 template: "<flight-search-results-parent-component search-results='searchResultComponent.searchResults'></flight-search-results-parent-component>"
             })
+            .state('localTravelSearchResults', {
+                template: "<local-travel-parent-component search-results='searchResultComponent.searchResults'></local-travel-parent-component>"
+            });
     })
     .component('searchResult', {
         controller: searchResultComponent,
@@ -21,23 +24,24 @@ angular.module('app')
         $canActivate: function (mainService, $nextInstruction) {
             var tid = decodeURIComponent($nextInstruction.params.id);
             console.log(tid);
-           return mainService.getSearchPrerequisites(tid).then(function(data){
-                mainService.searchdata=data;
+            return mainService.getSearchPrerequisites(tid).then(function (data) {
+                mainService.searchdata = data;
                 mainService.nodeMaster = data[0].data;
                 mainService.edgeMaster = data[1].data;
                 mainService.travelPlanObject = data[2];
                 mainService.flight_filter_type = data[3].data;
                 mainService.hotel_filter_type = data[4].data;
-            // mainService.getHotelFilters().then(function (data) {
-			//     mainService.filter_type = data;
-            // });
-            // mainService.getNodeMaster().then(function (data) {
-            //     mainService.filter_details = data;
-            // });
-            return true;
-           });
+                mainService.localTravel_filter_type = data[5].data;
+                // mainService.getHotelFilters().then(function (data) {
+                //     mainService.filter_type = data;
+                // });
+                // mainService.getNodeMaster().then(function (data) {
+                //     mainService.filter_details = data;
+                // });
+                return true;
+            });
         }
-        });
+    });
 
 function searchResultComponent(mainService, $state, _) {
     var searchResultComponent = this;
@@ -47,19 +51,19 @@ function searchResultComponent(mainService, $state, _) {
     // searchResultComponent.hotel_filter_details=mainService.searchdata[0].data;
     // searchResultComponent.flight_filter_type=mainService.searchdata[3];
     // searchResultComponent.hotel_filter_type=mainService.searchdata[4];
-    
-    
+
+
     //to-do: this travelPlanInitial uses the object which landing page and booking page uses
     // searchResultComponent.travelPlan = mainService.getTravelPlanObjectInitial();
     //to-do: this getTravelPlanObject gives a readymade object having all the services selected
-    searchResultComponent.$onInit=function(){
+    searchResultComponent.$onInit = function () {
         searchResultComponent.travelPlan = mainService.travelPlanObject.components;
         searchResultComponent.locationchildservices = mainService.nodeMaster.servicesDetails;
         searchResultComponent.transitchildservices = mainService.edgeMaster.servicesDetails;
-        searchResultComponent.elementFields={
-          "location": mainService.nodeMaster,
-          "transit": mainService.edgeMaster
-        }  
+        searchResultComponent.elementFields = {
+            "location": mainService.nodeMaster,
+            "transit": mainService.edgeMaster
+        }
     };
     searchResultComponent.travelPlan = mainService.travelPlanObject.component;
     var sequence = mainService.getSequence();
@@ -124,7 +128,7 @@ function searchResultComponent(mainService, $state, _) {
                         $state.go('flightSearchResults', null, { reload: true });
                         break;
                     case 'localTravel':
-                        $state.go('flightSearchResults', null, { reload: true });
+                        $state.go('localTravelSearchResults', null, { reload: true });
                         break;
                 }
             });
@@ -148,7 +152,7 @@ function searchResultComponent(mainService, $state, _) {
                     $state.go('flightSearchResults', null, { reload: true });
                     break;
                 case 'localTravel':
-                    $state.go('flightSearchResults', null, { reload: true });
+                    $state.go('localTravelSearchResults', null, { reload: true });
                     break;
             }
         });
