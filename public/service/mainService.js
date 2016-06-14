@@ -310,7 +310,7 @@ function travelPlanGetter(travelPlanid)
   console.log("in travelplan getter");
   console.log(travelPlanid);
   var deferred=$q.defer();
-  $http.get("http://localhost:5432/travelPlan/crud/travelPlan/"+travelPlanid)
+  $http.get("http://172.23.238.144:8060/travelPlan/crud/travelPlan/"+travelPlanid)
   .success(function(data){
     console.log("again in travelplan getter");
     //console.log(data);
@@ -326,7 +326,7 @@ function travelPlanUpdater(travelPlanid,travelPlanObject)
   console.log(travelPlanid);
   console.log(travelPlanObject);
   var deferred=$q.defer();
-  $http.put("http://localhost:5432/travelPlan/crud/travelPlan/"+travelPlanid,travelPlanObject)
+  $http.put("http://172.23.238.144:8060/travelPlan/crud/travelPlan/"+travelPlanid,travelPlanObject)
   .success(function(data){
     console.log("again in travelplan updater");
     //console.log(data);
