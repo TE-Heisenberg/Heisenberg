@@ -238,273 +238,303 @@ angular.module('app').factory('mainService', function ($http, $q) {
 ]
 }*/
 
-var travelPlanObjectInitial = {};
-// {
-//   "essential": {
-//   },
-//   "childServices": {},
-//   "type": "location",
-//   "state": "initial"
-// },
-// {
-//   "essential": {
-//   },
-//   "childServices": {},
-//   "type": "transit",
-//   "state": "initial"
-// },
-// {
-//   "essential": {
-//   },
-//   "childServices": {},
-//   "type": "location",
-//   "state": "initial"
-// }
+  var travelPlanObjectInitial = {};
+  // {
+  //   "essential": {
+  //   },
+  //   "childServices": {},
+  //   "type": "location",
+  //   "state": "initial"
+  // },
+  // {
+  //   "essential": {
+  //   },
+  //   "childServices": {},
+  //   "type": "transit",
+  //   "state": "initial"
+  // },
+  // {
+  //   "essential": {
+  //   },
+  //   "childServices": {},
+  //   "type": "location",
+  //   "state": "initial"
+  // }
 
-// var someData;
-//         var events = (function(){
-//             var topics = {};
-//             var hOP = topics.hasOwnProperty;
-//
-//             return {
-//               subscribe: function(topic, listener) {
-//                 // Create the topic's object if not yet created
-//                 if(!hOP.call(topics, topic)) topics[topic] = [];
-//
-//                 // Add the listener to queue
-//                 var index = topics[topic].push(listener) -1;
-//
-//                 // Provide handle back for removal of topic
-//                 return {
-//                   remove: function() {
-//                     delete topics[topic][index];
-//                   }
-//                 };
-//               },
-//               publish: function(topic, info) {
-//                 // If the topic doesn't exist, or there's no listeners in queue, just leave
-//                 if(!hOP.call(topics, topic)) return;
-//
-//                 // Cycle through topics queue, fire!
-//                 topics[topic].forEach(function(item) {
-//                 		item(info != undefined ? info : {});
-//                 });
-//               }
-//             };
-// })();
+  // var someData;
+  //         var events = (function(){
+  //             var topics = {};
+  //             var hOP = topics.hasOwnProperty;
+  //
+  //             return {
+  //               subscribe: function(topic, listener) {
+  //                 // Create the topic's object if not yet created
+  //                 if(!hOP.call(topics, topic)) topics[topic] = [];
+  //
+  //                 // Add the listener to queue
+  //                 var index = topics[topic].push(listener) -1;
+  //
+  //                 // Provide handle back for removal of topic
+  //                 return {
+  //                   remove: function() {
+  //                     delete topics[topic][index];
+  //                   }
+  //                 };
+  //               },
+  //               publish: function(topic, info) {
+  //                 // If the topic doesn't exist, or there's no listeners in queue, just leave
+  //                 if(!hOP.call(topics, topic)) return;
+  //
+  //                 // Cycle through topics queue, fire!
+  //                 topics[topic].forEach(function(item) {
+  //                 		item(info != undefined ? info : {});
+  //                 });
+  //               }
+  //             };
+  // })();
 
-function travelPlanSaver(travelPlanobject)
-{
-  console.log("In travelPlanSaver");
-  var deferred=$q.defer();
-  $http.post("http://localhost:5432/travelPlan/crud/travelPlan",travelPlanobject)
-  .success(function(data){
-    console.log(data.components[0]);
-    deferred.resolve(data);
-  });
-  return deferred.promise;
-}
-function travelPlanGetter(travelPlanid)
-{
-
-  console.log("in travelplan getter");
-  console.log(travelPlanid);
-  var deferred=$q.defer();
-  $http.get("http://localhost:5432/travelPlan/crud/travelPlan/"+travelPlanid)
-  .success(function(data){
-    console.log("again in travelplan getter");
-    //console.log(data);
-    console.log(data.components[0]);
-    deferred.resolve(data);
-  });
-  return deferred.promise;
-}
-function travelPlanUpdater(travelPlanid,travelPlanObject)
-{
-
-  console.log("in travelplan updater");
-  console.log(travelPlanid);
-  console.log(travelPlanObject);
-  var deferred=$q.defer();
-  $http.put("http://localhost:5432/travelPlan/crud/travelPlan/"+travelPlanid,travelPlanObject)
-  .success(function(data){
-    console.log("again in travelplan updater");
-    //console.log(data);
-    console.log(data);
-    deferred.resolve(data);
-  });
-  return deferred.promise;
-}
-
-var elementMasters = {};
-var nodeMaster = {};
-var edgeMaster = {};
-var travelId='';
-var components=[];
-
-// var someData;
-var subFactories = {
-
-  travelPlanElementInitializer:function(elementType)
-  {
-    components.push({
-      "types":elementType,
-      "state":"initial",
-      "essential": {
-                    "noDependencyData": {},
-                  "modesToSelectTheServices": {
-
-                  }
-                },
-      "childServices": {}
-    });
-    console.log("I am inside travelPlanElementInitializer");
-  },
-  travelPlanInitializer: function(indexForTravelMode) {
+  function travelPlanSaver(travelPlanobject) {
+    console.log("In travelPlanSaver");
     var deferred = $q.defer();
-    travelPlanObjectInitial={};
-    var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
-    console.log("I am in travelPlanInitializer");
-    console.log(indexForTravelMode);
-    var i=0;
-    if(indexForTravelMode>=0){
-      while(i<=indexForTravelMode)
-      {
-        console.log("I am inside loop", i,indexForTravelMode );
+    $http.post("http://localhost:8060/travelPlan/crud/travelPlan", travelPlanobject)
+      .success(function (data) {
+        console.log(data.components[0]);
+        deferred.resolve(data);
+      });
+    return deferred.promise;
+  }
+  function travelPlanGetter(travelPlanid) {
+
+    console.log("in travelplan getter");
+    console.log(travelPlanid);
+    var deferred = $q.defer();
+    $http.get("http://localhost:8060/travelPlan/crud/travelPlan/" + travelPlanid)
+      .success(function (data) {
+        console.log("again in travelplan getter");
+        //console.log(data);
+        console.log(data.components[0]);
+        deferred.resolve(data);
+      });
+    return deferred.promise;
+  }
+  function travelPlanUpdater(travelPlanid, travelPlanObject) {
+
+    console.log("in travelplan updater");
+    console.log(travelPlanid);
+    console.log(travelPlanObject);
+    var deferred = $q.defer();
+    $http.put("http://localhost:8060/travelPlan/crud/travelPlan/" + travelPlanid, travelPlanObject)
+      .success(function (data) {
+        console.log("again in travelplan updater");
+        //console.log(data);
+        console.log(data);
+        deferred.resolve(data);
+      });
+    return deferred.promise;
+  }
+
+  var elementMasters = {};
+  var nodeMaster = {};
+  var edgeMaster = {};
+  var travelId = '';
+  var components = [];
+  var searchMap = new WeakMap();
+
+  function SearchResultSaver(serviceName, childService) {
+    console.log("in searchresult saver");
+    console.log(serviceName);
+    console.log(childService.requestedData);
+    var deferred = $q.defer();
+    $http.post("http://localhost:8060/search/" + serviceName, childService.requested)
+      .success(function (data) {
+        console.log("again in searchresult saver");
+        console.log(data);
+        searchMap.set(childService,data)
+        deferred.resolve(data);
+      });
+    return deferred.promise;
+  };
+  
+  function SearchResultGetter(searchResultId) {
+    console.log("in searchresult getter");
+    console.log(searchResultId);
+    var deferred = $q.defer();
+    $http.get("http://localhost:8060/" + searchResultId)
+      .success(function (data) {
+        console.log("again in searchresult getter");
+        //console.log(data);
+        console.log(data);
+        deferred.resolve(data);
+      });
+    return deferred.promise;
+  };
+  
+  // var someData;
+  var subFactories = {
+    saveInSearch: function (serviceName, childService) {
+      SearchResultSaver(serviceName, childService).then(function (data) {
+        return data;
+      });
+    },
+    getFromSearch: function (childService) {
+      var id = searchMap.get(childService)
+      SearchResultGetter(id).then(function (data) {
+        return data;
+      });
+    },
+    travelPlanElementInitializer: function (elementType) {
+      components.push({
+        "types": elementType,
+        "state": "initial",
+        "essential": {
+          "noDependencyData": {},
+          "modesToSelectTheServices": {
+
+          }
+        },
+        "childServices": {}
+      });
+      console.log("I am inside travelPlanElementInitializer");
+    },
+    travelPlanInitializer: function (indexForTravelMode) {
+      var deferred = $q.defer();
+      travelPlanObjectInitial = {};
+      var modeOfTravel = ["oneWay", "twoWay", "multiWay"];
+      console.log("I am in travelPlanInitializer");
+      console.log(indexForTravelMode);
+      var i = 0;
+      if (indexForTravelMode >= 0) {
+        while (i <= indexForTravelMode) {
+          console.log("I am inside loop", i, indexForTravelMode);
+          subFactories.travelPlanElementInitializer('location');
+          subFactories.travelPlanElementInitializer('transit');
+          i += 1;
+        }
         subFactories.travelPlanElementInitializer('location');
-        subFactories.travelPlanElementInitializer('transit');
-        i +=1;
+        travelPlanObjectInitial['components'] = components;
+        // return true;
+        travelPlanSaver(travelPlanObjectInitial).then(function (data) {
+          deferred.resolve(data._id);
+        });
+        return deferred.promise;
       }
-      subFactories.travelPlanElementInitializer('location');
-      travelPlanObjectInitial['components']=components;
-      // return true;
-      travelPlanSaver(travelPlanObjectInitial).then(function(data){
-        deferred.resolve(data._id);
+
+    },
+    getTravelPlanId: function () {
+      return travelId;
+    },
+    getTravelPlanObject: function (tid) {
+      var deferred = $q.defer();
+
+      travelPlanGetter(tid).then(function (data) {
+        deferred.resolve(data);
       });
       return deferred.promise;
-    }
 
-  },
-  getTravelPlanId:function(){
-    return travelId;
-  },
-  getTravelPlanObject: function(tid)
-  {
-    var deferred=$q.defer();
+    },
+    UpdateTravelPlanObject: function (tid, tpobject) {
+      var deferred = $q.defer();
+      travelPlanUpdater(tid, tpobject).then(function (data) {
+        deferred.resolve(data);
+      });
+      return deferred.promise;
+    },
 
-    travelPlanGetter(tid).then(function(data)
-    {
-      deferred.resolve(data);
-    });
-    return deferred.promise;
+    getTravelPlanObjectInitial: function () {
+      return travelPlanObjectInitial;
+    },
 
-  },
-  UpdateTravelPlanObject:function(tid,tpobject){
-    var deferred=$q.defer();
-    travelPlanUpdater(tid,tpobject).then(function(data){
-      deferred.resolve(data);
-    });
-    return deferred.promise;
-  },
+    getElementData: function (elementType, elementId) {
+      return travelPlanObject[elementType][elementId];
 
-  getTravelPlanObjectInitial: function() {
-    return travelPlanObjectInitial;
-  },
+    },
+    getEdgeMaster: function () {
+      return $http.get('public/data/configjsons/edgemaster.json');
+    },
 
-  getElementData: function (elementType, elementId) {
-    return travelPlanObject[elementType][elementId];
+    getNodeMaster: function () {
+      console.log('I am in getNodeMaster');
+      return $http.get('public/data/configjsons/nodemaster.json');
+    },
 
-  },
-  getEdgeMaster: function () {
-         return $http.get('public/data/configjsons/edgemaster.json');
-      },
+    getPrerequisites: function (tid) {
+      console.log("in get prerequisites");
+      console.log(tid);
+      return $q.all([subFactories.getNodeMaster(), subFactories.getEdgeMaster(), subFactories.getTravelPlanObject(tid)]);
+    },
 
-      getNodeMaster: function () {
-         console.log('I am in getNodeMaster');
-         return $http.get('public/data/configjsons/nodemaster.json');
-      },
+    travelPlanExists: function () {
+      if (travelPlanObject == null || travelPlanObject.length == 0) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    },
 
-  getPrerequisites: function(tid) {
-    console.log("in get prerequisites");
-    console.log(tid);
-    return $q.all([subFactories.getNodeMaster(),subFactories.getEdgeMaster(),subFactories.getTravelPlanObject(tid)]);
-  },
-
-  travelPlanExists :function(){
-    if(travelPlanObject==null || travelPlanObject.length==0){
-      return false;
-    }
-    else{
-      return true;
-    }
-      },
-
-  getCurrentplan:function()
-  {
-    return  $http.get("public/data/landing/myPlans.json");
-  },
-  getWorklist:function()
-  {
-    return $http.get("public/data/landing/myworklist.json");
-  },
-    getFlightFilters: function(){
+    getCurrentplan: function () {
+      return $http.get("public/data/landing/myPlans.json");
+    },
+    getWorklist: function () {
+      return $http.get("public/data/landing/myworklist.json");
+    },
+    getFlightFilters: function () {
       return $http.get("public/data/configjsons/flightServices.json");
     },
-    getFlightSearchResults: function(){
-      return $http.get("http://172.23.238.208:8080/SearchResults/flight");
+    getFlightSearchResults: function () {
+      return $http.get("http://localhost:8060/SearchResults/flight");
     },
-    getHotelFilters:function () {
+    getHotelFilters: function () {
       return $http.get("public/data/configjsons/hotelFilters.json");
     },
 
-     getfavouriteList:function()
-     {
-       return $http.get("public/data/landing/myfavourites.json");
-     },
-      getHotelSearchResults:function(){
-        return $http.get('public/data/hotelSearchResults.json');
-      },
-      getTrainFilters:function(){
-        return $http.get('public/data/configjsons/trainFilters.json');
-      },
-      getTrainSearchResults:function(){
-        return $http.get('public/data/trainSearchResults.json');
-      },
+    getfavouriteList: function () {
+      return $http.get("public/data/landing/myfavourites.json");
+    },
+    getHotelSearchResults: function () {
+      return $http.get('public/data/hotelSearchResults.json');
+    },
+    getTrainFilters: function () {
+      return $http.get('public/data/configjsons/trainFilters.json');
+    },
+    getTrainSearchResults: function () {
+      return $http.get('public/data/trainSearchResults.json');
+    },
 
-      currentplanLabels :function(){
-  currentplan ={};
- return $http.get("public/data/landing/myPlans.config.json");
-},
+    currentplanLabels: function () {
+      currentplan = {};
+      return $http.get("public/data/landing/myPlans.config.json");
+    },
 
-worklistLabels :function(){
-    worklist={};
-  return $http.get("public/data/landing/myWorklist.config.json");
+    worklistLabels: function () {
+      worklist = {};
+      return $http.get("public/data/landing/myWorklist.config.json");
 
-},
+    },
 
-favouriteLables :function(){
+    favouriteLables: function () {
 
-     favourite={};
-  return $http.get("public/data/landing/myFavourites.config.json");
+      favourite = {};
+      return $http.get("public/data/landing/myFavourites.config.json");
 
- },
+    },
 
 
-      calendarLabel:function(){
-        calendar ={};
-        return  $http.get("public/data/landing/myTravelcalendar.config.json");
-      },
+    calendarLabel: function () {
+      calendar = {};
+      return $http.get("public/data/landing/myTravelcalendar.config.json");
+    },
 
-      getFabButtons:function(){
-        return $http.get("public/data/landing/fabButton.config.json");
-      },
-      getLocalTravelFilters:function(){
-        return $http.get("public/data/configjsons/localTravelFilters.json");
-      },
-      getLocalTravelSearchResults:function(){
-        return $http.get("public/data/localTravelSearchResults.json");
-      }
+    getFabButtons: function () {
+      return $http.get("public/data/landing/fabButton.config.json");
+    },
+    getLocalTravelFilters: function () {
+      return $http.get("public/data/configjsons/localTravelFilters.json");
+    },
+    getLocalTravelSearchResults: function () {
+      return $http.get("public/data/localTravelSearchResults.json");
+    }
 
-};
-return subFactories;
+  };
+  return subFactories;
 });

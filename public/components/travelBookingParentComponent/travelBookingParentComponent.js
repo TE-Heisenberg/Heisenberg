@@ -1,11 +1,11 @@
 angular.module('app')
   .component('travelBookingParentComponent', {
     templateUrl: "public/components/travelBookingParentComponent/travelBookingParentComponent.html",
-    controller: ["mainService", "$location","$routeParams",travelBookingParentCtrl],
+    controller: ["mainService", "$location", "$routeParams", travelBookingParentCtrl],
     controllerAs: "travelBookingParentCtrl",
-    $canActivate: function ($nextInstruction,mainService) {
+    $canActivate: function ($nextInstruction, mainService) {
       console.log("I am inside Can acticate");
-      var tid=decodeURIComponent($nextInstruction.params.id);
+      var tid = decodeURIComponent($nextInstruction.params.id);
       console.log(tid);
       return mainService.getPrerequisites(tid).then(function (data) {
         mainService.serviceData = data;
@@ -17,11 +17,11 @@ angular.module('app')
   });
 
 
-function travelBookingParentCtrl(mainService, $location,$routeParams) {
+function travelBookingParentCtrl(mainService, $location, $routeParams) {
 
   var travelBookingParentCtrl = this;
 
-  travelBookingParentCtrl.$routerOnActivate=function(next){
+  travelBookingParentCtrl.$routerOnActivate = function (next) {
 
     var id = next.params.id;
     console.log("-------routeronActivate--------");
@@ -38,7 +38,7 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
     console.log(travelBookingParentCtrl.elementFields);
     console.log(" I am inside on init");
     // travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObjectInitial();
-    travelBookingParentCtrl.travelobjectmain=mainService.serviceData[2];
+    travelBookingParentCtrl.travelobjectmain = mainService.serviceData[2];
     console.log(mainService.serviceData[2].components);
     travelBookingParentCtrl.travelPlanObject = mainService.serviceData[2].components;
     console.log(travelBookingParentCtrl.travelPlanObject);
@@ -61,41 +61,41 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
 
     console.log(travelBookingParentCtrl.elementFields[travelBookingParentCtrl.currentSelectedObj.types]);
 
-    travelBookingParentCtrl.locationchildservices=mainService.serviceData[0].data.servicesDetails.coExistServices;
+    travelBookingParentCtrl.locationchildservices = mainService.serviceData[0].data.servicesDetails.coExistServices;
 
-    travelBookingParentCtrl.transitchildservices=mainService.serviceData[1].data.servicesDetails.coExistServices;
+    travelBookingParentCtrl.transitchildservices = mainService.serviceData[1].data.servicesDetails.coExistServices;
   }
 
 
-   //console.log(travelBookingParentCtrl.locationchildservices);
+  //console.log(travelBookingParentCtrl.locationchildservices);
 
   travelBookingParentCtrl.reflectSelectedChild = function (selectedChildDetails) {
 
-      console.log("i am inside reflectSelectedChild");
+    console.log("i am inside reflectSelectedChild");
     console.log(selectedChildDetails);
     console.log("selectedChildDetails.metaData.essential.modesToSelectTheServices");
     console.log(selectedChildDetails.metaData.essential.modesToSelectTheServices);
     travelBookingParentCtrl.currentSelectedObj = selectedChildDetails.currentObject;
     travelBookingParentCtrl.selectedChildren = [selectedChildDetails.selectedChild];
-    for( childGroup in selectedChildDetails.metaData.essential.modesToSelectTheServices) {
+    for (childGroup in selectedChildDetails.metaData.essential.modesToSelectTheServices) {
       console.log("Inside the loop");
       console.log(childGroup);
       console.log(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].specificAttr.domainList);
 
-      if(Object.keys(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].specificAttr.domainList).indexOf(selectedChildDetails.selectedChild) > -1) {
+      if (Object.keys(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].specificAttr.domainList).indexOf(selectedChildDetails.selectedChild) > -1) {
         console.log("Inside first if");
         console.log(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup]);
-        if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] === undefined) {
+        if (selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] === undefined) {
           console.log("Property is not defined inside the object");
           console.log(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].javascriptDataType);
           switch (selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].javascriptDataType) {
             case "String":
               console.log("inside string of when property is undefined");
-              selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] =  selectedChildDetails.selectedChild;
+              selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] = selectedChildDetails.selectedChild;
               break;
             case "Array":
               console.log("inside array of when property is  undefined");
-              selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] =  [selectedChildDetails.selectedChild];
+              selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] = [selectedChildDetails.selectedChild];
               break;
             default:
 
@@ -105,20 +105,20 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
         else {
           //When the property is defined inisde the oject
           console.log("Property is  defined inside the object");
-          switch(selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].javascriptDataType) {
+          switch (selectedChildDetails.metaData.essential.modesToSelectTheServices[childGroup].javascriptDataType) {
             case "String":
-                console.log("inside string when property is defined");
-                if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] === selectedChildDetails.selectedChild) {
-                  console.log("Inside sendond if");
+              console.log("inside string when property is defined");
+              if (selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] === selectedChildDetails.selectedChild) {
+                console.log("Inside sendond if");
 
-                  selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup]=selectedChildDetails.selectedChild;
+                selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup] = selectedChildDetails.selectedChild;
 
-                }
-                break;
+              }
+              break;
 
             case "Array":
-                console.log("inside array of when property is defined");
-              if(selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup].indexOf(selectedChildDetails.selectedChild) <0) {
+              console.log("inside array of when property is defined");
+              if (selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup].indexOf(selectedChildDetails.selectedChild) < 0) {
                 console.log("Inside sendond if");
 
                 // selectedChildDetails.currentObject.essential.modesToSelectTheServices[childGroup]=selectedChildDetails.selectedChild;
@@ -159,16 +159,41 @@ function travelBookingParentCtrl(mainService, $location,$routeParams) {
 
   travelBookingParentCtrl.goToNextElement = function () {
     console.log(" I am inside goToNextElement");
+    var mimicDataNode = {
+      "stay": [{ "location": "Alaska", "area": "Arkansas", "checkinDate": "2016-06-12T18:30:00.000Z", "checkinTime": "2016-06-13T15:33:00.000Z", "checkoutTime": "2016-06-13T12:33:00.000Z", "preferences": "nonAc", "rating": "twoStar", "nearBy": 21, "typeOfProperty": "hotels", "stars": "twoStar", "amenities": ["meetingRooms", "swimmingPools"], "proximity": "taxiStands" }],
+      "localTravel": [{ "pickupPoint": "Alabama", "dropPoint": "Alaska", "typeOfLocalTransport": "cab", "pickupDate": "2016-06-12T18:30:00.000Z", "pickupTime": "2016-06-13T12:31:00.000Z" }]
+    };
+
+    var mimicDataEdge = {
+      "flight": {
+        "source": "",
+        "destination": ""
+      },
+      "train": {}
+    };
+  //  travelBookingParentCtrl.currentSelectedObj.childServices
+    for (childService in mimicDataNode) {
+      // travelBookingParentCtrl.currentSelectedObj.childServices[childService].forEach(function(service)
+      //   {
+      //    mainService.saveInSearch(travelBookingParentCtrl.currentSelectedObj.childServices[childService],service.requested)
+      //  });
+
+      mimicDataNode[childService].forEach(function (service) {
+        console.log("from MIMIC NODe",service);
+        // travelBookingParentCtrl.currentSelectedObj.childServices[childService]
+        mainService.saveInSearch(childService, service)
+      });
+    }
     if (travelBookingParentCtrl.ifLastElement()) {
-        mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id,travelBookingParentCtrl.travelobjectmain);
-      $location.path('/searchResults/'+travelBookingParentCtrl.travelobjectmain._id);
+      mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id, travelBookingParentCtrl.travelobjectmain);
+      $location.path('/searchResults/' + travelBookingParentCtrl.travelobjectmain._id);
       // travelBookingParentCtrl.$router.navigate(['searchResult']);
     }
     else {
       console.log(travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj));
 
       travelBookingParentCtrl.currentSelectedObj = travelBookingParentCtrl.travelPlanObject[travelBookingParentCtrl.travelPlanObject.indexOf(travelBookingParentCtrl.currentSelectedObj) + 1];
-      mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id,travelBookingParentCtrl.travelobjectmain);
+      mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id, travelBookingParentCtrl.travelobjectmain);
 
       console.log("travelBookingParentCtrl.currentSelectedObj");
 

@@ -17,7 +17,7 @@
 
       function authenticate(username, password) {
          var deferred = $q.defer();
-         $http.post("http://localhost:3031/credentials/authenticate", {
+         $http.post("http://localhost:8060/credentials/authenticate", {
             username: username,
             password: password
          }).then(function (response) {
