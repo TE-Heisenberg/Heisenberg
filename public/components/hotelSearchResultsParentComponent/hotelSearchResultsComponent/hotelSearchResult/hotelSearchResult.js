@@ -5,10 +5,16 @@ angular.module('app')
 	controller: hotelSearchResultController,
 	bindings: {
 		hotelSearchResult: '<',
-		selectedFilters: '<'
+		selectedFilters: '<',
+		selectObject:'&'
 	}
 });
 
 function hotelSearchResultController(){
-
+	  var hotelSearchResult=this;
+    hotelSearchResult.selectedData=function(value){
+				console.log("in step1");
+				hotelSearchResult.selectObject({value:value});
+			   //return value;
+		}
 }

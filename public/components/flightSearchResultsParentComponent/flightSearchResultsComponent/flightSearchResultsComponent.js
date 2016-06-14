@@ -7,7 +7,8 @@ angular.module('app')
 	bindings:{
 		filterType:'<',
 		filterDetails:'<',
-		searchResults:'<'
+		searchResults:'<',
+		selected:'&'
 	}
 });
 
@@ -82,4 +83,9 @@ function flightSearchResultsController($http){
 						obj = obj[hierarchyWiseKeysArray.shift()];
 						return obj[hierarchyWiseKeysArray.shift()] = value;
 			};
+			flightSearchResults.selectResultObject=function(value){
+	      // console.log("step2");
+	      // return value;
+	       flightSearchResults.selected({value:value});
+	    }
 }

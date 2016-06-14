@@ -2,6 +2,11 @@ angular.module('app').component("trainSearchResultsParentComponent", {
     templateUrl: 'public/components/trainSearchResultsParentComponent/trainSearchResultsParentComponent.html',
     controllerAs: "trainSearchResultsParent",
     controller: trainSearchResultsParentController,
+    bindings:{
+      searchResults: '<',
+   	 selectedData:'&'
+    }
+    ,
     $canActivate:function(mainService){
   		mainService.getTrainFilters().then(function(data){
   			mainService.filter_type=data;
@@ -44,4 +49,9 @@ function trainSearchResultsParentController($http, $rootScope,mainService) {
         console.log(type);
 
     };
+    trainSearchResultsParent.selectResultParentObject=function(value){
+  		console.log("sstep3");
+  		// return value;
+  		 trainSearchResultsParent.selectedData({value:value});
+  	}
 }

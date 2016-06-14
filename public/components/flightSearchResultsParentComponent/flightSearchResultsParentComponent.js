@@ -2,6 +2,10 @@ angular.module('app').component("flightSearchResultsParentComponent", {
 	templateUrl: 'public/components/flightSearchResultsParentComponent/flightSearchResultsParentComponent.html',
 	controllerAs: "flightSearchResultsParent",
 	controller: flightSearchResultsParentController,
+	bindings: {
+		searchResults:'<',
+	 selectedData:'&'
+  },
 	$canActivate: function (mainService) {
 		mainService.getFlightFilters().then(function (data) {
 			mainService.filter_type = data;
@@ -48,4 +52,9 @@ function flightSearchResultsParentController($http, $rootScope, mainService) {
 		console.log(type);
 
 	};
+	flightSearchResultsParent.selectResultParentObject=function(value){
+		console.log("sstep3");
+		// return value;
+		 flightSearchResultsParent.selectedData({value:value});
+	}
 }

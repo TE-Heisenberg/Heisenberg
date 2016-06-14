@@ -3,7 +3,8 @@ angular.module('app').component("hotelSearchResultsParentComponent",{
 	controllerAs:"hotelSearchResultsParent",
 	controller: hotelSearchResultsParentController,
   bindings: {
-   searchResults: '<'
+   searchResults: '<',
+	 selectedData:'&'
   },
 	$canActivate:function(mainService){
 		mainService.getHotelFilters().then(function(data){
@@ -59,4 +60,9 @@ function hotelSearchResultsParentController($http,$rootScope, $state,mainService
   // };
 
   // hotelSearchResultsParent.currentnodeedge("ssd", 'train');
+	hotelSearchResultsParent.selectResultParentObject=function(value){
+		console.log("sstep3");
+		// return value;
+		 hotelSearchResultsParent.selectedData({value:value});
+	}
 }

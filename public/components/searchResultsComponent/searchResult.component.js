@@ -2,13 +2,13 @@ angular.module('app')
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('hotelSearchResultsParentComponent', {
-                template: "<hotel-search-results-parent-component search-results='searchResultComponent.searchResults'></hotel-search-results-parent-component>"
+                template: "<hotel-search-results-parent-component search-results='searchResultComponent.searchResults' selected-data='searchResultComponent.selectedData(value)'></hotel-search-results-parent-component>"
             })
             .state('trainSearchResults', {
-                template: "<train-search-results-component></train-search-results-component>"
+                template: "<train-search-results-component selected-data='searchResultComponent.selectedData(value)'></train-search-results-component>"
             })
             .state('flightSearchResults', {
-                template: "<flight-search-results-component></flight-search-results-component>"
+                template: "<flight-search-results-component selected-data='searchResultComponent.selectedData(value)'></flight-search-results-component>"
             })
     })
     .component('searchResult', {
@@ -23,7 +23,7 @@ angular.module('app')
             console.log(tid);
              mainService.getPrerequisites(tid).then(function (data) {
                 mainService.serviceData = data;
-                
+
             });
             mainService.getHotelFilters().then(function (data) {
 			    mainService.filter_type = data;
@@ -46,7 +46,7 @@ function searchResultComponent(mainService, $state, _) {
       searchResultComponent.elementFields={
           "location":mainService.serviceData[0].data,
           "transit":mainService.serviceData[1].data
-      }  
+      }
     };
     searchResultComponent.travelPlan = mainService.serviceData[2].components;
     console.log(searchResultComponent.travelPlan);
@@ -142,5 +142,10 @@ function searchResultComponent(mainService, $state, _) {
                     break;
             }
         });
+    };
+    searchResultComponent.selectedData=function(value){
+      console.log("in selectObject-------------");
+      console.log(value);
+
     };
 }

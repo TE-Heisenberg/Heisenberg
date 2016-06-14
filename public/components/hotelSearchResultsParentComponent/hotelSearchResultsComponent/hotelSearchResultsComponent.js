@@ -6,7 +6,8 @@ angular.module('app')
         bindings:{
           filterType:'<',
           filterDetails:'<',
-          searchResults:'<'
+          searchResults:'<',
+          selected:'&'
         }
     });
 var setObj = function (obj, keyString, value) {
@@ -112,6 +113,11 @@ function hotelSearchResultsController($http, $rootScope) {
         }
         if (counter == Object.keys(hotelSearchResults.selectedFilters).length) return true;
         else return false;
+    }
+    hotelSearchResults.selectResultObject=function(value){
+      // console.log("step2");
+      // return value;
+       hotelSearchResults.selected({value:value});
     }
 };
 // angular.module('app')

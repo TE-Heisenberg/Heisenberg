@@ -41,7 +41,7 @@
     </md-card>
     <md-card class="animate-repeat" ng-repeat="one in trainSearchResults.data | orderBy:trainSearchResults.myorder">
       <!--ng-if="one.price > trainSearchResults.range"-->
-      <result-component one="one"></result-component>
+      <result-component one="one" select-object="trainSearchResults.selectResultObject(value)"></result-component>
     </md-card>
   </div>
 </div>

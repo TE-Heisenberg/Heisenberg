@@ -29,7 +29,7 @@
             </div>
             <div layout="column" flex="25" layout-align="center center">
                 <h3>{{flightSearchResult.flightSearchResult.price}}</h3>
-                <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
+                <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="flightSearchResult.selectedData(flightSearchResult.flightSearchResult)" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
             </div>
         </div>
         <div layout="row" layout="center center">
