@@ -2,6 +2,31 @@
     body {
         width: 100%;
     }
+    .dialogClass{
+      height:250px;
+      width:550px;
+        border-bottom: 4px solid #2a8ce2;
+    }
+    .dialogHeader{
+      color:white;
+      margin-left: 0px;
+      text-align: center;
+      background-color:#3f51b5;
+      height:47px;
+      font-size: xx-large;
+    }
+    .dialogRadio{
+      margin-top: 50px;
+    }
+    .dialogCancel{
+      margin-right:280px;
+    }
+    .dialogProceed{
+      margin-left: 60px;
+    }
+    .dialogButtons{
+      margin-top: 40px;
+    }
 
     .main-button-fixed {
         position: fixed;
@@ -26,8 +51,12 @@
     }
 
     .md-headline {
-        color: #333333;
+        color:black;
+        margin-top:0px;
     }
+    /*.md-headline dialogHeader{
+      color:white;
+    }*/
 
     .header_icons {
         float: right;
