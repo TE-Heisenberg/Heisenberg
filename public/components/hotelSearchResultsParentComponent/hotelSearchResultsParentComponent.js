@@ -2,6 +2,9 @@ angular.module('app').component("hotelSearchResultsParentComponent",{
 	templateUrl: 'public/components/hotelSearchResultsParentComponent/hotelSearchResultsParentComponent.html',
 	controllerAs:"hotelSearchResultsParent",
 	controller: hotelSearchResultsParentController,
+  bindings: {
+   searchResults: '<'
+  },
 	$canActivate:function(mainService){
 		mainService.getHotelFilters().then(function(data){
 			mainService.filter_type=data;
@@ -9,17 +12,17 @@ angular.module('app').component("hotelSearchResultsParentComponent",{
 		mainService.getNodeMaster().then(function(data){
 			mainService.filter_details=data;
 		});
-		mainService.getHotelSearchResults().then(function(data){
-			mainService.searchResults=data;
-		});
+		// mainService.getHotelSearchResults().then(function(data){
+		// 	mainService.searchResults=data;
+		// });
 		return true;
 	}
 });
 function hotelSearchResultsParentController($http,$rootScope, $state,mainService){
   var hotelSearchResultsParent=this;
 	hotelSearchResultsParent.filter_type=mainService.filter_type.data;
-	hotelSearchResultsParent.filter_details=mainService.filter_details.data.services.stay;
-	hotelSearchResultsParent.searchResults=mainService.searchResults.data;
+	hotelSearchResultsParent.filter_details=mainService.filter_details.services.stay;
+	// hotelSearchResultsParent.searchResults=mainService.searchResults.data;
   hotelSearchResultsParent.call= function(){
     $state.go('hotelSearchResults');
   };

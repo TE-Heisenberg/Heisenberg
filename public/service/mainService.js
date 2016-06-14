@@ -339,17 +339,23 @@ angular.module('app').factory('mainService', function ($http, $q) {
   var travelId = '';
   var components = [];
   var searchMap = new WeakMap();
+  var sequence = [];
 
   function SearchResultSaver(serviceName, childService) {
     console.log("in searchresult saver");
     console.log(serviceName);
-    console.log(childService.requestedData);
     var deferred = $q.defer();
+     console.log("printing childservice inside search result saver",childService);
     $http.post("http://localhost:8060/search/" + serviceName, childService.requested)
       .success(function (data) {
         console.log("again in searchresult saver");
         console.log(data);
-        searchMap.set(childService,data)
+        var data = { 
+          id:data,
+          childServiceType:serviceName
+        };
+        sequence.push(childService);
+        searchMap.set(childService,data);
         deferred.resolve(data);
       });
     return deferred.promise;
@@ -359,6 +365,7 @@ angular.module('app').factory('mainService', function ($http, $q) {
     console.log("in searchresult getter");
     console.log(searchResultId);
     var deferred = $q.defer();
+    console.log(searchResultId);
     $http.get("http://localhost:8060/search/" + searchResultId)
       .success(function (data) {
         console.log("again in searchresult getter");
@@ -372,15 +379,17 @@ angular.module('app').factory('mainService', function ($http, $q) {
   // var someData;
   var subFactories = {
     saveInSearch: function (serviceName, childService) {
-      SearchResultSaver(serviceName, childService).then(function (data) {
-        return data;
-      });
+      console.log("Printing saveInSearch in ",childService)
+      return SearchResultSaver(serviceName, childService);
     },
     getFromSearch: function (childService) {
-      var id = searchMap.get(childService)
-      SearchResultGetter(id).then(function (data) {
-        return data;
-      });
+      var data = searchMap.get(childService)
+      console.log("Printing Child Service",childService);
+      console.log("Printing Seaarch Map",searchMap);
+      return SearchResultGetter(data.id)
+    },
+    getChildServiceTypeFromMap: function(childService) {
+      return searchMap.get(childService).childServiceType;
     },
     travelPlanElementInitializer: function (elementType) {
       components.push({
@@ -533,6 +542,9 @@ angular.module('app').factory('mainService', function ($http, $q) {
     },
     getLocalTravelSearchResults: function () {
       return $http.get("public/data/localTravelSearchResults.json");
+    },
+    getSequence: function() {
+      return sequence;
     }
 
   };

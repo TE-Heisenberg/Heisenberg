@@ -172,26 +172,26 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
       "train": {}
     };
     //  travelBookingParentCtrl.currentSelectedObj.childServices
-    for (childService in mimicDataNode) {
-      // travelBookingParentCtrl.currentSelectedObj.childServices[childService].forEach(function(service)
-      //   {
-      //    mainService.saveInSearch(travelBookingParentCtrl.currentSelectedObj.childServices[childService],service.requested)
-      //  });
+    // for (childService in mimicDataNode) {
+    //   // travelBookingParentCtrl.currentSelectedObj.childServices[childService].forEach(function(service)
+    //   //   {
+    //   //    mainService.saveInSearch(travelBookingParentCtrl.currentSelectedObj.childServices[childService],service.requested)
+    //   //  });
 
-      mimicDataNode[childService].forEach(function (service) {
-        console.log("from MIMIC NODe", service);
-        // travelBookingParentCtrl.currentSelectedObj.childServices[childService]
-        mainService.saveInSearch(childService, service)
-      });
-    }
+    //   mimicDataNode[childService].forEach(function (service) {
+    //     console.log("from MIMIC NODe", service);
+    //     // travelBookingParentCtrl.currentSelectedObj.childServices[childService]
+    //     mainService.saveInSearch(childService, service)
+    //   });
+    // }
     if (travelBookingParentCtrl.ifLastElement()) {
       var travelPlanObject = {
         "components": [{
           "types": "location",
-          "state":"initial",
+          "state": "initial",
           "essential": {
             "noDependencyData": {
-              "location": "Bangalore"
+              "location": "Bengaluru"
             },
             "modesToSelectTheServices": {
               "basicServices": ["stay", "localTravel"]
@@ -201,7 +201,7 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
             "stay": [{
               "state": "request",
               "requested": {
-                "location": "Bangalore",
+                "location": "Bengaluru",
                 "area": "MadiWala",
                 "checkinDate": "01/04/2016",
                 "checkoutDate": "02/04/2016",
@@ -230,7 +230,7 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
             }, {
                 "state": "request",
                 "requested": {
-                  "location": "Bangalore",
+                  "location": "Bengaluru",
                   "area": "MadiWala",
                   "checkinDate": "01/04/2016",
                   "checkOutDate": "02/04/2016",
@@ -303,7 +303,7 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
           }
         }, {
             "types": "transit",
-            "state":"initial",
+            "state": "initial",
             "essential": {
               "noDependencyData": {
                 "travelStartDate": "02/04/2016"
@@ -352,7 +352,7 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
               "stay": [{
                 "state": "select",
                 "requested": {
-                  "location": "Bangalore",
+                  "location": "Bengaluru",
                   "area": "MadiWala",
                   "checkinDate": "01/04/2016",
                   "checkOutDate": "02/04/2016",
@@ -405,6 +405,19 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
             }
           }]
       };
+      travelPlanObject.components.forEach(function (travelPlan) {
+        for (childService in travelPlan.childServices) {
+          console.log(childService);
+          if(angular.isArray(travelPlan.childServices[childService])) {
+            travelPlan.childServices[childService].forEach(function (service) {
+            mainService.saveInSearch(childService,service);
+          });  
+          }else {
+            console.log("Inside else", travelPlan.childServices[childService]);
+            mainService.saveInSearch(childService,travelPlan.childServices[childService]);
+          }
+        }
+      });
       mainService.UpdateTravelPlanObject(travelBookingParentCtrl.travelobjectmain._id, travelPlanObject).then(function (data) {
         $location.path('/searchResults/' + travelBookingParentCtrl.travelobjectmain._id);
         console.log(data);
