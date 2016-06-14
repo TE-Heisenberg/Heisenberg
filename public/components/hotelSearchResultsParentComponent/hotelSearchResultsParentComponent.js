@@ -4,24 +4,14 @@ angular.module('app').component("hotelSearchResultsParentComponent",{
 	controller: hotelSearchResultsParentController,
   bindings: {
    searchResults: '<'
-  },
-	$canActivate:function(mainService){
-		mainService.getHotelFilters().then(function(data){
-			mainService.filter_type=data;
-		});
-		mainService.getNodeMaster().then(function(data){
-			mainService.filter_details=data;
-		});
-		// mainService.getHotelSearchResults().then(function(data){
-		// 	mainService.searchResults=data;
-		// });
-		return true;
-	}
+  }
 });
 function hotelSearchResultsParentController($http,$rootScope, $state,mainService){
   var hotelSearchResultsParent=this;
-	hotelSearchResultsParent.filter_type=mainService.filter_type.data;
-	hotelSearchResultsParent.filter_details=mainService.filter_details.services.stay;
+	hotelSearchResultsParent.filter_type=mainService.hotel_filter_type;
+  console.log(hotelSearchResultsParent.filter_type);
+	hotelSearchResultsParent.filter_details=mainService.nodeMaster.services.stay;
+  console.log(hotelSearchResultsParent.filter_details);
 	// hotelSearchResultsParent.searchResults=mainService.searchResults.data;
   hotelSearchResultsParent.call= function(){
     $state.go('hotelSearchResults');

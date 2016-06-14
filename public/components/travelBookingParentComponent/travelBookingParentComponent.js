@@ -39,6 +39,7 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
     console.log(" I am inside on init");
     // travelBookingParentCtrl.travelPlanObject = mainService.getTravelPlanObjectInitial();
     travelBookingParentCtrl.travelobjectmain = mainService.serviceData[2];
+    console.log(mainService.serviceData);
     console.log(mainService.serviceData[2].components);
     travelBookingParentCtrl.travelPlanObject = mainService.serviceData[2].components;
     console.log(travelBookingParentCtrl.travelPlanObject);
@@ -316,14 +317,22 @@ function travelBookingParentCtrl(mainService, $location, $routeParams) {
             "childServices": {
               "flight": {
                 "state": "select",
-                "requested": {},
+                "requested": {
+                  "source": "Bengaluru",
+                  "destination": "Pune",
+                  "travelStartDate":"2016-06-13T18:30:00.000Z",
+                  "class":"Bussiness",
+                  "numberOfHops":4,
+                  "departureTime":"2016-06-13T11:35:00.000Z",
+                  "airlines":"Air Costa"
+                },
                 "selected": {
                   "image": "public/assets/images/indigo.png",
                   "companyName": "Air Costa",
                   "flightID": "AC2456",
                   "seatNumber": "45H",
-                  "sourceAirport": "koramangala airport",
-                  "destinationAirport": "delhi airport",
+                  "sourceAirport": "Bengaluru",
+                  "destinationAirport": "Pune",
                   "price": "876547 INR",
                   "travelStartDate": "02/04/2016",
                   "preferences": {

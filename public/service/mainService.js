@@ -466,7 +466,9 @@ angular.module('app').factory('mainService', function ($http, $q) {
       console.log('I am in getNodeMaster');
       return $http.get('public/data/configjsons/nodemaster.json');
     },
-
+    getHotelPrerequisites: function() {
+      return $q.all([subFactories.getNodeMaster(),subFactories.getHotelFilters()]);
+    },
     getPrerequisites: function (tid) {
       console.log("in get prerequisites");
       console.log(tid);
@@ -496,6 +498,14 @@ angular.module('app').factory('mainService', function ($http, $q) {
     },
     getHotelFilters: function () {
       return $http.get("public/data/configjsons/hotelFilters.json");
+    },
+    getSearchPrerequisites:function(tid){
+        return $q.all([subFactories.getNodeMaster(),
+        subFactories.getEdgeMaster(),
+        subFactories.getTravelPlanObject(tid),
+        subFactories.getFlightFilters(),
+        subFactories.getHotelFilters()
+        ]);           
     },
 
     getfavouriteList: function () {
