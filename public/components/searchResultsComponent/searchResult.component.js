@@ -110,7 +110,7 @@ function searchResultComponent(mainService, $state, _) {
 
     searchResultComponent.onPrev = function () {
         searchResultComponent.currentObjInSequence = travelPlanIterator.next(true);
-        console.log(searchResultComponent.currentObjInSequence);
+        console.log("Current object in the sequence",searchResultComponent.currentObjInSequence);
         switch (searchResultComponent.currentObjInSequence.value.childServicesType) {
             case 'stay':
                 $state.go('hotelSearchResultsParentComponent', null, { reload: true });
