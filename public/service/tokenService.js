@@ -40,7 +40,7 @@
 
       function verifyToken() {
          var deferred = $q.defer();
-         $http.get("http://localhost:8060/credentials/verifytoken").then(function (response) {
+         $http.get("http://172.23.238.144:8060/credentials/verifytoken").then(function (response) {
             deferred.resolve(response);
          });
          return deferred.promise;

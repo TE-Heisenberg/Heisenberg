@@ -2,47 +2,18 @@ angular.module('app').component("flightSearchResultsParentComponent", {
 	templateUrl: 'public/components/flightSearchResultsParentComponent/flightSearchResultsParentComponent.html',
 	controllerAs: "flightSearchResultsParent",
 	controller: flightSearchResultsParentController,
-	$canActivate: function (mainService) {
-		mainService.getFlightFilters().then(function (data) {
-			mainService.filter_type = data;
-		});
-		mainService.getEdgeMaster().then(function (data) {
-			mainService.filter_details = data.data;
-		});
-		mainService.getFlightSearchResults().then(function (data) {
-			mainService.searchResults = data.data;
-			console.log(mainService.searchResults);
-		});
-		return true;
+	bindings: {
+		'searchResults': '<'
 	}
 });
 function flightSearchResultsParentController($http, $rootScope, mainService) {
 	var flightSearchResultsParent = this;
-	flightSearchResultsParent.filter_type = mainService.filter_type.data;
-	flightSearchResultsParent.filter_details = mainService.filter_details.services.flight;
-	flightSearchResultsParent.searchResults = mainService.searchResults;
-	console.log("*****************");
-	console.log(flightSearchResultsParent.searchResults);
-	flightSearchResultsParent.travelPlanObject = [
-		{
-			type: "location",
-			cityName: "Bangalore"
-		},
-		{
-			type: "transit",
-			childServices:
-			{
-				booking: {
-					requested: { mode: "flight" }
-				}
-			}
-		},
-		{
-			type: "location",
-			cityName: "Delhi"
-		}
-	];
 
+	flightSearchResultsParent.filter_type = mainService.flight_filter_type;
+	flightSearchResultsParent.filter_details = mainService.edgeMaster.services.flight;
+	console.log("Printing filter type",flightSearchResultsParent.filter_type);
+	console.log("Printing filter details", flightSearchResultsParent.filter_details);
+	console.log(flightSearchResultsParent.searchResults);
 	flightSearchResultsParent.currentnodeedge = function (id, type) {
 		console.log(id);
 		console.log(type);

@@ -8,7 +8,7 @@ angular.module('app')
                 template: "<train-search-results-component></train-search-results-component>"
             })
             .state('flightSearchResults', {
-                template: "<flight-search-results-component></flight-search-results-component>"
+                template: "<flight-search-results-parent-component search-results='searchResultComponent.searchResults'></flight-search-results-parent-component>"
             })
     })
     .component('searchResult', {
@@ -21,38 +21,48 @@ angular.module('app')
         $canActivate: function (mainService, $nextInstruction) {
             var tid = decodeURIComponent($nextInstruction.params.id);
             console.log(tid);
-             mainService.getPrerequisites(tid).then(function (data) {
-                mainService.serviceData = data;
-                
-            });
-            mainService.getHotelFilters().then(function (data) {
-			    mainService.filter_type = data;
-            });
-            mainService.getNodeMaster().then(function (data) {
-                mainService.filter_details = data.data;
-            });
+           return mainService.getSearchPrerequisites(tid).then(function(data){
+                mainService.searchdata=data;
+                mainService.nodeMaster = data[0].data;
+                mainService.edgeMaster = data[1].data;
+                mainService.travelPlanObject = data[2];
+                mainService.flight_filter_type = data[3].data;
+                mainService.hotel_filter_type = data[4].data;
+            // mainService.getHotelFilters().then(function (data) {
+			//     mainService.filter_type = data;
+            // });
+            // mainService.getNodeMaster().then(function (data) {
+            //     mainService.filter_details = data;
+            // });
             return true;
+           });
         }
-    });
+        });
 
 function searchResultComponent(mainService, $state, _) {
     var searchResultComponent = this;
     var childServices;
     var service;
+    // searchResultComponent.flight_filter_details=mainService.searchdata[1].data;
+    // searchResultComponent.hotel_filter_details=mainService.searchdata[0].data;
+    // searchResultComponent.flight_filter_type=mainService.searchdata[3];
+    // searchResultComponent.hotel_filter_type=mainService.searchdata[4];
+    
+    
     //to-do: this travelPlanInitial uses the object which landing page and booking page uses
     // searchResultComponent.travelPlan = mainService.getTravelPlanObjectInitial();
     //to-do: this getTravelPlanObject gives a readymade object having all the services selected
     searchResultComponent.$onInit=function(){
-      searchResultComponent.elementFields={
-          "location":mainService.serviceData[0].data,
-          "transit":mainService.serviceData[1].data
-      }  
+        searchResultComponent.travelPlan = mainService.travelPlanObject.components;
+        searchResultComponent.locationchildservices = mainService.nodeMaster.servicesDetails;
+        searchResultComponent.transitchildservices = mainService.edgeMaster.servicesDetails;
+        searchResultComponent.elementFields={
+          "location": mainService.nodeMaster,
+          "transit": mainService.edgeMaster
+        }  
     };
-    searchResultComponent.travelPlan = mainService.serviceData[2].components;
-    console.log(searchResultComponent.travelPlan);
+    searchResultComponent.travelPlan = mainService.travelPlanObject.component;
     var sequence = mainService.getSequence();
-    console.log(searchResultComponent.travelPlan);
-    console.log(_);
     // _.map(searchResultComponent.travelPlan, function (travelPlan) {
     //     _.mapObject(travelPlan.childServices, function (val, key) {
     //         console.log("value", val);
@@ -74,10 +84,10 @@ function searchResultComponent(mainService, $state, _) {
     //         }
     //     });
     // });
-    searchResultComponent.locationchildservices = mainService.serviceData[0].data.servicesDetails.coExistServices;
+    searchResultComponent.locationchildservices = mainService.nodeMaster.servicesDetails.coExistServices;
     console.log(searchResultComponent.locationchildservices);
 
-    searchResultComponent.transitchildservices = mainService.serviceData[1].data.servicesDetails.coExistServices;
+    searchResultComponent.transitchildservices = mainService.edgeMaster.servicesDetails.coExistServices;
     console.log(searchResultComponent.transitchildservices);
 
     searchResultComponent.iterator = function* () {
@@ -120,7 +130,7 @@ function searchResultComponent(mainService, $state, _) {
             });
         }
         else {
-            searchResultComponent.$router.navigate(['ItineraryComponent', { id: mainService.serviceData[2]._id }]);
+            searchResultComponent.$router.navigate(['ItineraryComponent', { id: mainService.travelPlanObject._id }]);
         }
 
     };
