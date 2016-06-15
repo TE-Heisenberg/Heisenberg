@@ -4,7 +4,7 @@ angular.module('app').component("flightSearchResultsParentComponent", {
 	controller: flightSearchResultsParentController,
 	bindings: {
 		searchResults:'<',
-	 selectedData:'&'
+	 	selectedData:'&'
   }
 });
 function flightSearchResultsParentController($http, $rootScope, mainService) {
