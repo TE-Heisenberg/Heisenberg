@@ -21,7 +21,7 @@
       "location": {
 				"icons":"location_on",
         "mandatory": true,
-        "displayName": "City",
+        "displayName": "My location",
         "id": "location",
         "type": "autoComplete",
         "specificAttr": {
@@ -37,8 +37,7 @@
         "type": "checkBox",
         "specificAttr": {
           "domainList": {
-            "stay": "Stay",
-            "localTravel": "Local Travel"
+            "stay": "Stay"
           }
 				},
 				"javascriptDataType": "Array"
@@ -63,7 +62,7 @@
     "stay": {
       "location": {
         "mandatory": true,
-        "displayName": "City",
+        "displayName": "My Location",
         "id": "location",
         "type": "autoComplete",
         "specificAttr": {
@@ -81,7 +80,7 @@
       },
       "checkinDate": {
         "mandatory": true,
-        "displayName": "Check-in Date",
+        "displayName": "Travel Date",
         "id": "checkinDate",
         "type": "date"
       },
